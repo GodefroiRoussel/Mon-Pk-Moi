@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A2C29FF205429CA000EC45C /* miseAJourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2C29FE205429CA000EC45C /* miseAJourViewController.swift */; };
 		7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BB35E2050281C00A46AB3 /* AppDelegate.swift */; };
 		7A6BB3612050281C00A46AB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BB3602050281C00A46AB3 /* ViewController.swift */; };
 		7A6BB3642050281C00A46AB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A6BB3622050281C00A46AB3 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A2C29FE205429CA000EC45C /* miseAJourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = miseAJourViewController.swift; path = ../miseAJourViewController.swift; sourceTree = "<group>"; };
 		7A6BB35B2050281C00A46AB3 /* Mon Pk & Moi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mon Pk & Moi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A6BB35E2050281C00A46AB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A6BB3602050281C00A46AB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				7A6BB3972050285B00A46AB3 /* images */,
 				7A6BB35E2050281C00A46AB3 /* AppDelegate.swift */,
+				7A2C29FE205429CA000EC45C /* miseAJourViewController.swift */,
 				7A6BB3602050281C00A46AB3 /* ViewController.swift */,
 				7A6BB3622050281C00A46AB3 /* Main.storyboard */,
 				7A6BB3682050281C00A46AB3 /* Assets.xcassets */,
@@ -296,6 +299,7 @@
 			files = (
 				7A6BB3612050281C00A46AB3 /* ViewController.swift in Sources */,
 				7A6BB3672050281C00A46AB3 /* Mon_Pk___Moi.xcdatamodeld in Sources */,
+				7A2C29FF205429CA000EC45C /* miseAJourViewController.swift in Sources */,
 				7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,6 +545,7 @@
 				7A6BB3882050281C00A46AB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A6BB3892050281C00A46AB3 /* Build configuration list for PBXNativeTarget "Mon Pk & MoiTests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +554,7 @@
 				7A6BB38B2050281C00A46AB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A6BB38C2050281C00A46AB3 /* Build configuration list for PBXNativeTarget "Mon Pk & MoiUITests" */ = {
 			isa = XCConfigurationList;
@@ -557,6 +563,7 @@
 				7A6BB38E2050281C00A46AB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
