@@ -22,6 +22,8 @@
 		7A6BB3962050285300A46AB3 /* bouton_traceur.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A6BB3922050285300A46AB3 /* bouton_traceur.png */; };
 		7A6BB39920502B4900A46AB3 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A6BB39820502B4900A46AB3 /* logo.png */; };
 		7A6BB39B20502C8A00A46AB3 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A6BB39A20502C8A00A46AB3 /* user.png */; };
+		7AA533FE2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA533FD2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift */; };
+		7AA534022057C9FF00A2A443 /* pilulierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA534012057C9FF00A2A443 /* pilulierViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		7A6BB3922050285300A46AB3 /* bouton_traceur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bouton_traceur.png; sourceTree = "<group>"; };
 		7A6BB39820502B4900A46AB3 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		7A6BB39A20502C8A00A46AB3 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		7AA533FD2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriseMedicamentTableViewCell.swift; sourceTree = "<group>"; };
+		7AA534012057C9FF00A2A443 /* pilulierViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = pilulierViewController.swift; path = ../pilulierViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +119,11 @@
 			children = (
 				7A6BB3972050285B00A46AB3 /* images */,
 				7A6BB35E2050281C00A46AB3 /* AppDelegate.swift */,
+				7AA534012057C9FF00A2A443 /* pilulierViewController.swift */,
 				7A2C29FE205429CA000EC45C /* miseAJourViewController.swift */,
 				7A6BB3602050281C00A46AB3 /* ViewController.swift */,
 				7A6BB3622050281C00A46AB3 /* Main.storyboard */,
+				7AA533FD2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift */,
 				7A6BB3682050281C00A46AB3 /* Assets.xcassets */,
 				7A6BB36A2050281C00A46AB3 /* LaunchScreen.storyboard */,
 				7A6BB36D2050281C00A46AB3 /* Info.plist */,
@@ -297,7 +303,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA533FE2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift in Sources */,
 				7A6BB3612050281C00A46AB3 /* ViewController.swift in Sources */,
+				7AA534022057C9FF00A2A443 /* pilulierViewController.swift in Sources */,
 				7A6BB3672050281C00A46AB3 /* Mon_Pk___Moi.xcdatamodeld in Sources */,
 				7A2C29FF205429CA000EC45C /* miseAJourViewController.swift in Sources */,
 				7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */,
