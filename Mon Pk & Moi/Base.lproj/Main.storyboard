@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -193,7 +194,7 @@
         <!--Pilulier-->
         <scene sceneID="aWd-nH-QnD">
             <objects>
-                <viewController title="Pilulier" id="uRC-I7-Dbu" sceneMemberID="viewController">
+                <viewController title="Pilulier" id="uRC-I7-Dbu" customClass="pilulierViewController" customModule="Mon_Pk___Moi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GTF-00-Esm"/>
                         <viewControllerLayoutGuide type="bottom" id="j0f-ND-obo"/>
@@ -254,19 +255,68 @@
                                     <segue destination="26g-hp-E6H" kind="show" id="Dah-nI-96e"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AE5-NU-410">
+                                <rect key="frame" x="16" y="232" width="343" height="415"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="left" semanticContentAttribute="forceLeftToRight" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="priseMedicamentCell" id="Lzl-yd-tis" customClass="PriseMedicamentTableViewCell" customModule="Mon_Pk___Moi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lzl-yd-tis" id="KlN-mJ-v19">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPB-at-3r0">
+                                                    <rect key="frame" x="8" y="8" width="42" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvK-KO-HUL">
+                                                    <rect key="frame" x="75" y="8" width="42" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CPB-at-3r0" firstAttribute="top" secondItem="KlN-mJ-v19" secondAttribute="topMargin" id="26B-pd-o23"/>
+                                                <constraint firstItem="tvK-KO-HUL" firstAttribute="top" secondItem="KlN-mJ-v19" secondAttribute="topMargin" id="9iD-no-X48"/>
+                                                <constraint firstItem="tvK-KO-HUL" firstAttribute="bottom" secondItem="KlN-mJ-v19" secondAttribute="bottomMargin" id="FBM-g0-gx9"/>
+                                                <constraint firstItem="tvK-KO-HUL" firstAttribute="leading" secondItem="CPB-at-3r0" secondAttribute="trailing" constant="25" id="Vos-n9-rVs"/>
+                                                <constraint firstItem="CPB-at-3r0" firstAttribute="bottom" secondItem="KlN-mJ-v19" secondAttribute="bottomMargin" id="YoD-qU-POP"/>
+                                                <constraint firstItem="CPB-at-3r0" firstAttribute="leading" secondItem="KlN-mJ-v19" secondAttribute="leadingMargin" id="l1G-89-zA6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="doseLabel" destination="tvK-KO-HUL" id="Q2A-PD-mcX"/>
+                                            <outlet property="medicamentNameLabel" destination="CPB-at-3r0" id="ZJl-Ry-QO9"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="uRC-I7-Dbu" id="fDL-WR-TPX"/>
+                                    <outlet property="delegate" destination="uRC-I7-Dbu" id="Pwb-aI-3MP"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FJf-EA-Qkg" firstAttribute="top" secondItem="ksT-xw-mJl" secondAttribute="bottom" constant="50" id="1yr-ln-QTf"/>
                             <constraint firstItem="pon-WG-8Vs" firstAttribute="top" secondItem="ksT-xw-mJl" secondAttribute="bottom" constant="25" id="7cx-z4-SzL"/>
+                            <constraint firstItem="AE5-NU-410" firstAttribute="leading" secondItem="DUs-3S-irg" secondAttribute="leading" constant="16" id="HEs-mD-xcA"/>
                             <constraint firstAttribute="trailing" secondItem="FJf-EA-Qkg" secondAttribute="trailing" constant="35" id="OSk-Zu-4rB"/>
                             <constraint firstAttribute="trailing" secondItem="ksT-xw-mJl" secondAttribute="trailing" id="VKy-TI-tQE"/>
                             <constraint firstItem="pon-WG-8Vs" firstAttribute="centerX" secondItem="DUs-3S-irg" secondAttribute="centerX" id="XAh-di-2N9"/>
+                            <constraint firstItem="AE5-NU-410" firstAttribute="top" secondItem="FJf-EA-Qkg" secondAttribute="bottom" constant="8" id="gOe-Xb-brK"/>
+                            <constraint firstItem="j0f-ND-obo" firstAttribute="top" secondItem="AE5-NU-410" secondAttribute="bottom" constant="20" id="gaH-cw-YHa"/>
+                            <constraint firstAttribute="trailing" secondItem="AE5-NU-410" secondAttribute="trailing" constant="16" id="k6q-To-4vV"/>
                             <constraint firstItem="ksT-xw-mJl" firstAttribute="top" secondItem="GTF-00-Esm" secondAttribute="bottom" id="tVp-vx-2Vj"/>
                             <constraint firstItem="ksT-xw-mJl" firstAttribute="leading" secondItem="DUs-3S-irg" secondAttribute="leading" id="waA-1z-KdD"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="priseMedicamentTable" destination="AE5-NU-410" id="9Kq-cj-k4I"/>
                         <segue destination="26g-hp-E6H" kind="show" id="YEN-2J-ptm"/>
                     </connections>
                 </viewController>
