@@ -1,32 +1,111 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D47" minimumToolsVersion="Xcode 8.0" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Xcode 8.0" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Activite" representedClassName="Activite" parentEntity="Evenement" syncable="YES" codeGenerationType="class">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="duree" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Avis" representedClassName="Avis" syncable="YES" codeGenerationType="class">
+        <attribute name="choix" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="commentaire" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongs_to" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Traceur" inverseName="has" inverseEntity="Traceur" syncable="YES"/>
+        <relationship name="is_a" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TypeAvis" inverseName="has" inverseEntity="TypeAvis" syncable="YES"/>
+    </entity>
+    <entity name="Contact" representedClassName="Contact" syncable="YES" codeGenerationType="class">
+        <attribute name="adresse" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prenom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="telephone" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RDV" inverseName="is_with" inverseEntity="RDV" syncable="YES"/>
+        <relationship name="is_a" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TypeContact" inverseName="has" inverseEntity="TypeContact" syncable="YES"/>
+        <relationship name="is_connected_to" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="possess" inverseEntity="Patient" syncable="YES"/>
+    </entity>
+    <entity name="Dose" representedClassName="Dose" syncable="YES" codeGenerationType="class">
+        <attribute name="dose" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="belongs_to" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medicament" inverseName="possess" inverseEntity="Medicament" syncable="YES"/>
+    </entity>
+    <entity name="Evaluation" representedClassName="Evaluation" syncable="YES" codeGenerationType="class">
+        <attribute name="etat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="heureDebut" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="heureFin" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="is_linked" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Traceur" inverseName="composed_by" inverseEntity="Traceur" syncable="YES"/>
+    </entity>
     <entity name="Evenement" representedClassName="Evenement" isAbstract="YES" syncable="YES" codeGenerationType="class">
         <attribute name="dateEffective" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="dateTheorique" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="estEffectue" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="schedule_by" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="linked_to" inverseEntity="Patient" syncable="YES"/>
     </entity>
     <entity name="Medicament" representedClassName="Medicament" syncable="YES" codeGenerationType="class">
-        <attribute name="dose" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PriseMedicamenteuse" inverseName="belongs_to" inverseEntity="PriseMedicamenteuse" syncable="YES"/>
         <relationship name="is_a" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TypeMedicament" inverseName="has" inverseEntity="TypeMedicament" syncable="YES"/>
+        <relationship name="possess" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dose" inverseName="belongs_to" inverseEntity="Dose" syncable="YES"/>
+    </entity>
+    <entity name="Ordonnance" representedClassName="Ordonnance" syncable="YES" codeGenerationType="class">
+        <attribute name="commentaire" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateCreation" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PriseMedicamenteuse" inverseName="linked_to" inverseEntity="PriseMedicamenteuse" syncable="YES"/>
+        <relationship name="is_created_by" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RDV" inverseName="create" inverseEntity="RDV" syncable="YES"/>
+        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="has" inverseEntity="Patient" syncable="YES"/>
+    </entity>
+    <entity name="Patient" representedClassName="Patient" syncable="YES" codeGenerationType="class">
+        <attribute name="adresse" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateNaissance" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prenom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tempsPreparation" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ordonnance" inverseName="newRelationship" inverseEntity="Ordonnance" syncable="YES"/>
+        <relationship name="linked_to" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evenement" inverseName="schedule_by" inverseEntity="Evenement" syncable="YES"/>
+        <relationship name="possess" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contact" inverseName="is_connected_to" inverseEntity="Contact" syncable="YES"/>
     </entity>
     <entity name="PriseMedicamenteuse" representedClassName="PriseMedicamenteuse" parentEntity="Evenement" syncable="YES" codeGenerationType="class">
-        <attribute name="datePriseEffective" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="dateTheorique" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="dose" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="estEffectue" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="medicament" optional="YES" syncable="YES"/>
         <relationship name="belongs_to" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medicament" inverseName="has" inverseEntity="Medicament" syncable="YES"/>
+        <relationship name="linked_to" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ordonnance" inverseName="has" inverseEntity="Ordonnance" syncable="YES"/>
+    </entity>
+    <entity name="RDV" representedClassName="RDV" parentEntity="Evenement" syncable="YES" codeGenerationType="class">
+        <attribute name="duree" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lieu" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tempsPourAllerALEvenement" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="create" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ordonnance" inverseName="is_created_by" inverseEntity="Ordonnance" syncable="YES"/>
+        <relationship name="has" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Traceur" inverseName="belongs_to" inverseEntity="Traceur" syncable="YES"/>
+        <relationship name="is_with" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="has" inverseEntity="Contact" syncable="YES"/>
+    </entity>
+    <entity name="Traceur" representedClassName="Traceur" syncable="YES" codeGenerationType="class">
+        <attribute name="heureDebutJournee" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="heureFinJournee" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="belongs_to" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RDV" inverseName="has" inverseEntity="RDV" syncable="YES"/>
+        <relationship name="composed_by" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evaluation" inverseName="is_linked" inverseEntity="Evaluation" syncable="YES"/>
+        <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Avis" inverseName="belongs_to" inverseEntity="Avis" syncable="YES"/>
+    </entity>
+    <entity name="TypeAvis" representedClassName="TypeAvis" syncable="YES" codeGenerationType="class">
+        <attribute name="libelle" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Avis" inverseName="is_a" inverseEntity="Avis" syncable="YES"/>
+    </entity>
+    <entity name="TypeContact" representedClassName="TypeContact" syncable="YES" codeGenerationType="class">
+        <attribute name="libelle" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contact" inverseName="is_a" inverseEntity="Contact" syncable="YES"/>
     </entity>
     <entity name="TypeMedicament" representedClassName="TypeMedicament" syncable="YES" codeGenerationType="class">
         <attribute name="libelle" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medicament" inverseName="is_a" inverseEntity="Medicament" syncable="YES"/>
     </entity>
     <elements>
-        <element name="TypeMedicament" positionX="-288" positionY="-9" width="128" height="73"/>
-        <element name="Medicament" positionX="-54" positionY="-9" width="128" height="103"/>
-        <element name="PriseMedicamenteuse" positionX="189" positionY="-27" width="128" height="133"/>
-        <element name="Evenement" positionX="-27" positionY="54" width="128" height="90"/>
+        <element name="Activite" positionX="-254" positionY="-252" width="128" height="88"/>
+        <element name="Avis" positionX="223" positionY="374" width="128" height="103"/>
+        <element name="Contact" positionX="349" positionY="-346" width="128" height="148"/>
+        <element name="Dose" positionX="-351" positionY="224" width="128" height="73"/>
+        <element name="Evaluation" positionX="-27" positionY="401" width="128" height="103"/>
+        <element name="Evenement" positionX="-92" positionY="-394" width="128" height="103"/>
+        <element name="Medicament" positionX="-173" positionY="149" width="128" height="103"/>
+        <element name="Ordonnance" positionX="-540" positionY="-190" width="128" height="118"/>
+        <element name="Patient" positionX="-270" positionY="-702" width="128" height="163"/>
+        <element name="PriseMedicamenteuse" positionX="-63" positionY="-216" width="128" height="88"/>
+        <element name="RDV" positionX="153" positionY="-127" width="128" height="133"/>
+        <element name="Traceur" positionX="205" positionY="152" width="128" height="118"/>
+        <element name="TypeAvis" positionX="214" positionY="530" width="128" height="73"/>
+        <element name="TypeContact" positionX="684" positionY="-360" width="128" height="73"/>
+        <element name="TypeMedicament" positionX="-513" positionY="44" width="128" height="73"/>
     </elements>
 </model>
