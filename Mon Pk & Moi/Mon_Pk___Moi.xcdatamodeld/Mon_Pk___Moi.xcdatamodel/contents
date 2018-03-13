@@ -1,4 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D47" minimumToolsVersion="Xcode 8.0" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Evenement" representedClassName="Evenement" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <attribute name="dateEffective" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dateTheorique" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="estEffectue" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Medicament" representedClassName="Medicament" syncable="YES" codeGenerationType="class">
+        <attribute name="dose" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PriseMedicamenteuse" inverseName="belongs_to" inverseEntity="PriseMedicamenteuse" syncable="YES"/>
+        <relationship name="is_a" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TypeMedicament" inverseName="has" inverseEntity="TypeMedicament" syncable="YES"/>
+    </entity>
+    <entity name="PriseMedicamenteuse" representedClassName="PriseMedicamenteuse" parentEntity="Evenement" syncable="YES" codeGenerationType="class">
+        <attribute name="datePriseEffective" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dateTheorique" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dose" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="estEffectue" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="medicament" optional="YES" syncable="YES"/>
+        <relationship name="belongs_to" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medicament" inverseName="has" inverseEntity="Medicament" syncable="YES"/>
+    </entity>
+    <entity name="TypeMedicament" representedClassName="TypeMedicament" syncable="YES" codeGenerationType="class">
+        <attribute name="libelle" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medicament" inverseName="is_a" inverseEntity="Medicament" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="TypeMedicament" positionX="-288" positionY="-9" width="128" height="73"/>
+        <element name="Medicament" positionX="-54" positionY="-9" width="128" height="103"/>
+        <element name="PriseMedicamenteuse" positionX="189" positionY="-27" width="128" height="133"/>
+        <element name="Evenement" positionX="-27" positionY="54" width="128" height="90"/>
+    </elements>
 </model>
