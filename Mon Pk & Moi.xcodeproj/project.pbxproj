@@ -24,7 +24,7 @@
 		7A6BB39B20502C8A00A46AB3 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A6BB39A20502C8A00A46AB3 /* user.png */; };
 		BC0E8AAB2059904C0086859A /* MedicamentCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E8AAA2059904C0086859A /* MedicamentCoreDataDAO.swift */; };
 		BC330327205C374700D5C42F /* MedicamentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC330326205C374700D5C42F /* MedicamentDAO.swift */; };
-		BCCB4122205C565300AB47CA /* ErrorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB4121205C565300AB47CA /* ErrorHelper.swift */; };
+		BCCB4122205C565300AB47CA /* DialogBoxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB4121205C565300AB47CA /* DialogBoxHelper.swift */; };
 		BCCB4124205C5E3B00AB47CA /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB4123205C5E3B00AB47CA /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +69,7 @@
 		7A6BB39A20502C8A00A46AB3 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		BC0E8AAA2059904C0086859A /* MedicamentCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentCoreDataDAO.swift; sourceTree = "<group>"; };
 		BC330326205C374700D5C42F /* MedicamentDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentDAO.swift; sourceTree = "<group>"; };
-		BCCB4121205C565300AB47CA /* ErrorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHelper.swift; sourceTree = "<group>"; };
+		BCCB4121205C565300AB47CA /* DialogBoxHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogBoxHelper.swift; sourceTree = "<group>"; };
 		BCCB4123205C5E3B00AB47CA /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,7 +187,7 @@
 		BCCB4120205C557600AB47CA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				BCCB4121205C565300AB47CA /* ErrorHelper.swift */,
+				BCCB4121205C565300AB47CA /* DialogBoxHelper.swift */,
 				BCCB4123205C5E3B00AB47CA /* CoreDataManager.swift */,
 			);
 			name = Helpers;
@@ -338,7 +338,7 @@
 				BCCB4124205C5E3B00AB47CA /* CoreDataManager.swift in Sources */,
 				7A6BB3672050281C00A46AB3 /* Mon_Pk___Moi.xcdatamodeld in Sources */,
 				7A2C29FF205429CA000EC45C /* miseAJourViewController.swift in Sources */,
-				BCCB4122205C565300AB47CA /* ErrorHelper.swift in Sources */,
+				BCCB4122205C565300AB47CA /* DialogBoxHelper.swift in Sources */,
 				7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */,
 				BC330327205C374700D5C42F /* MedicamentDAO.swift in Sources */,
 			);

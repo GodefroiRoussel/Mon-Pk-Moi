@@ -9,11 +9,11 @@
 import UIKit
 
 /**
- ErrorHelper type
+ DialogBoxHelper type
  
  **alertError(String, String) => show an alert dialog box with two message
  */
-class ErrorHelper{
+class DialogBoxHelper{
     
     /// Show an alert dialog box with two message
     ///
