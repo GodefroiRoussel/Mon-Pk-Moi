@@ -22,6 +22,8 @@
 		7A6BB3962050285300A46AB3 /* bouton_traceur.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A6BB3922050285300A46AB3 /* bouton_traceur.png */; };
 		7A6BB39920502B4900A46AB3 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A6BB39820502B4900A46AB3 /* logo.png */; };
 		7A6BB39B20502C8A00A46AB3 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A6BB39A20502C8A00A46AB3 /* user.png */; };
+		BC0E8AAB2059904C0086859A /* MedicamentCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E8AAA2059904C0086859A /* MedicamentCoreDataDAO.swift */; };
+		BC330327205C374700D5C42F /* MedicamentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC330326205C374700D5C42F /* MedicamentDAO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		7A6BB3922050285300A46AB3 /* bouton_traceur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bouton_traceur.png; sourceTree = "<group>"; };
 		7A6BB39820502B4900A46AB3 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		7A6BB39A20502C8A00A46AB3 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		BC0E8AAA2059904C0086859A /* MedicamentCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentCoreDataDAO.swift; sourceTree = "<group>"; };
+		BC330326205C374700D5C42F /* MedicamentDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentDAO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,12 +117,14 @@
 		7A6BB35D2050281C00A46AB3 /* Mon Pk & Moi */ = {
 			isa = PBXGroup;
 			children = (
+				BC0E8AA920598FC30086859A /* Models */,
 				7A6BB3972050285B00A46AB3 /* images */,
 				7A6BB35E2050281C00A46AB3 /* AppDelegate.swift */,
 				7A2C29FE205429CA000EC45C /* miseAJourViewController.swift */,
 				7A6BB3602050281C00A46AB3 /* ViewController.swift */,
 				7A6BB3622050281C00A46AB3 /* Main.storyboard */,
 				7A6BB3682050281C00A46AB3 /* Assets.xcassets */,
+				BC330325205C372A00D5C42F /* DAO */,
 				7A6BB36A2050281C00A46AB3 /* LaunchScreen.storyboard */,
 				7A6BB36D2050281C00A46AB3 /* Info.plist */,
 				7A6BB3652050281C00A46AB3 /* Mon_Pk___Moi.xcdatamodeld */,
@@ -155,6 +161,22 @@
 				7A6BB3922050285300A46AB3 /* bouton_traceur.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		BC0E8AA920598FC30086859A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BC0E8AAA2059904C0086859A /* MedicamentCoreDataDAO.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		BC330325205C372A00D5C42F /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				BC330326205C374700D5C42F /* MedicamentDAO.swift */,
+			);
+			name = DAO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,10 +319,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC0E8AAB2059904C0086859A /* MedicamentCoreDataDAO.swift in Sources */,
 				7A6BB3612050281C00A46AB3 /* ViewController.swift in Sources */,
 				7A6BB3672050281C00A46AB3 /* Mon_Pk___Moi.xcdatamodeld in Sources */,
 				7A2C29FF205429CA000EC45C /* miseAJourViewController.swift in Sources */,
 				7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */,
+				BC330327205C374700D5C42F /* MedicamentDAO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
