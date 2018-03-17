@@ -1,8 +1,8 @@
 //
-//  ErrorHelper.swift
+//  DialogBoxHelper.swift
 //  Mon Pk & Moi
 //
-//  Created by Melvil Donnart on 16/03/2018.
+//  Created by Godefroi Roussel on 16/03/2018.
 //  Copyright © 2018 romain. All rights reserved.
 //
 
@@ -11,7 +11,9 @@ import UIKit
 /**
  DialogBoxHelper type
  
- **alertError(String, String) => show an alert dialog box with two message
+ Functions :
+    - alert(String, String, UIViewController) => show an alert dialog box with two message on a view.
+    - alert(NSError, UIViewController) => show an alert dialog box with two error message on a view.
  */
 class DialogBoxHelper{
     
@@ -20,6 +22,7 @@ class DialogBoxHelper{
     /// - Parameters:
     ///   - title: Title of the error
     ///   - msg: Message of the error
+    ///   - view: The UIViewController where to present the alert
     static func alert(withTitle title: String, andMessage msg: String = "", onView view: UIViewController){
         let alert = UIAlertController(title: title,
                                       message: msg,
@@ -33,7 +36,9 @@ class DialogBoxHelper{
     
     /// Shows an alert to inform about an error
     ///
-    /// - Parameter error: error we want information about
+    /// - Parameters:
+    ///   - error: error we want information about
+    ///   - view: The UIViewController where to present the alert
     static func alert(onError error: NSError, onView view: UIViewController){
         self.alert(withTitle: "\(error)", andMessage: "\(error.userInfo)", onView: view)
     }
