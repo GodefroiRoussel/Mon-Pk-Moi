@@ -26,6 +26,7 @@
 		BC330327205C374700D5C42F /* MedicamentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC330326205C374700D5C42F /* MedicamentDAO.swift */; };
 		BCCB4122205C565300AB47CA /* DialogBoxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB4121205C565300AB47CA /* DialogBoxHelper.swift */; };
 		BCCB4124205C5E3B00AB47CA /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB4123205C5E3B00AB47CA /* CoreDataManager.swift */; };
+		BCEDEBBC205D2CBF00B4A349 /* MedicamentSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDEBBB205D2CBF00B4A349 /* MedicamentSeeder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		BC330326205C374700D5C42F /* MedicamentDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentDAO.swift; sourceTree = "<group>"; };
 		BCCB4121205C565300AB47CA /* DialogBoxHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogBoxHelper.swift; sourceTree = "<group>"; };
 		BCCB4123205C5E3B00AB47CA /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		BCEDEBBB205D2CBF00B4A349 /* MedicamentSeeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentSeeder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		7A6BB35D2050281C00A46AB3 /* Mon Pk & Moi */ = {
 			isa = PBXGroup;
 			children = (
+				BCEDEBBA205D2C7800B4A349 /* Seeders */,
 				BCCB4120205C557600AB47CA /* Helpers */,
 				BC0E8AA920598FC30086859A /* Models */,
 				7A6BB3972050285B00A46AB3 /* images */,
@@ -191,6 +194,14 @@
 				BCCB4123205C5E3B00AB47CA /* CoreDataManager.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		BCEDEBBA205D2C7800B4A349 /* Seeders */ = {
+			isa = PBXGroup;
+			children = (
+				BCEDEBBB205D2CBF00B4A349 /* MedicamentSeeder.swift */,
+			);
+			name = Seeders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCEDEBBC205D2CBF00B4A349 /* MedicamentSeeder.swift in Sources */,
 				BC0E8AAB2059904C0086859A /* MedicamentCoreDataDAO.swift in Sources */,
 				7A6BB3612050281C00A46AB3 /* ViewController.swift in Sources */,
 				BCCB4124205C5E3B00AB47CA /* CoreDataManager.swift in Sources */,
