@@ -17,6 +17,9 @@ import CoreData
  */
 class MedicamentCoreDataDAO: MedicamentDAO{
     
+    typealias A = Int
+    typealias T = Medicament
+    
     /// initialize a `MedicamentModel`
     ///
     /// - Parameters:
@@ -25,7 +28,22 @@ class MedicamentCoreDataDAO: MedicamentDAO{
     init(){
     }
     
+    func create(an object: Medicament) -> Medicament{
+        return object
+    }
     
+    //TO DO: voir quoi passer en paramètre
+    func find(a: Int) -> Medicament{
+        return Medicament()
+    }
+    
+    func update(an object: Medicament) -> Medicament{
+        return object
+    }
+    
+    func delete(an object: Medicament){
+        return
+    }
     
     func getAllMedicaments() throws -> [Medicament] {
         

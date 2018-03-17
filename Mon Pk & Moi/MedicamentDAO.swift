@@ -9,7 +9,15 @@
 import UIKit
 import CoreData
 
-protocol MedicamentDAO {
+protocol MedicamentDAO: AbstractDAO {
     func getAllMedicaments() throws -> [Medicament]
 
+    func create(an object: Medicament) -> Medicament
+    
+    //TO DO: voir quoi passer en paramètre
+    func find(a reference: A) -> Medicament
+    
+    func update(an object: Medicament) -> Medicament
+    
+    func delete(an object: Medicament)
 }
