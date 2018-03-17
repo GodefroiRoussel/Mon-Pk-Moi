@@ -6,11 +6,10 @@
 //  Copyright © 2018 romain. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import CoreData
 
 protocol MedicamentDAO {
-    var nom: String { get }
-    var doses: [Float?] { get set }
+    func getAllMedicaments() throws -> [Medicament]
 
-    
 }

@@ -33,7 +33,7 @@
         <relationship name="schedule_by" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="linked_to" inverseEntity="Patient" syncable="YES"/>
     </entity>
     <entity name="Medicament" representedClassName="Medicament" syncable="YES" codeGenerationType="class">
-        <attribute name="doses" optional="YES" attributeType="Transformable" customClassName="[Float]" syncable="YES"/>
+        <attribute name="doses" optional="YES" attributeType="Transformable" customClassName="[Any]" syncable="YES"/>
         <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PriseMedicamenteuse" inverseName="belongs_to" inverseEntity="PriseMedicamenteuse" syncable="YES"/>
     </entity>
@@ -88,7 +88,7 @@
         <element name="Contact" positionX="349" positionY="-346" width="128" height="148"/>
         <element name="Evaluation" positionX="-27" positionY="401" width="128" height="103"/>
         <element name="Evenement" positionX="-92" positionY="-394" width="128" height="103"/>
-        <element name="Medicament" positionX="-173" positionY="149" width="128" height="88"/>
+        <element name="Medicament" positionX="-173" positionY="149" width="128" height="90"/>
         <element name="Ordonnance" positionX="-540" positionY="-190" width="128" height="118"/>
         <element name="Patient" positionX="-270" positionY="-702" width="128" height="163"/>
         <element name="PriseMedicamenteuse" positionX="-63" positionY="-216" width="128" height="88"/>

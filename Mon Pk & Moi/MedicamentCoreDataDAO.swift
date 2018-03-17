@@ -17,21 +17,25 @@ import CoreData
  */
 class MedicamentCoreDataDAO: MedicamentDAO{
     
-    var nom : String
-    var doses  : [Float?]
-    
     /// initialize a `MedicamentModel`
     ///
     /// - Parameters:
     ///   - nom: `String` c'est le nom du `Medicament`
     ///   - doses:  `[Float]` représente les différentes doses applicables à ce médicament.
-    init(nom: String, doses: [Float]){
-        self.nom = nom
-        self.doses  = doses
+    init(){
     }
     
-    func ajouterDose(dose: Float) -> [Float?]{
-        self.doses = self.doses + [dose]
-        return self.doses
+    
+    
+    func getAllMedicaments() throws -> [Medicament] {
+        
+        
+        let request: NSFetchRequest<Medicament> = Medicament.fetchRequest()
+        do {
+            let medicaments: [Medicament] = try CoreDataManager.context.fetch(request)
+            return medicaments
+        } catch let error as NSError {
+            throw error
+        }
     }
 }
