@@ -18,7 +18,7 @@ class CoreDataManager: NSObject{
     
     static var context : NSManagedObjectContext {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            exit(EXIT_FAILURE)
+            fatalError("Application crashed !")
         }
         let context = appDelegate.persistentContainer.viewContext
         return context
