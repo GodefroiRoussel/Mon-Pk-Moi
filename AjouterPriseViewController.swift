@@ -9,11 +9,12 @@
 import UIKit
 
 
-class miseAJourViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var medicamentField: UITextField!
     @IBOutlet weak var doseField: UITextField!
     @IBOutlet weak var dateField: UITextField!
+    @IBOutlet weak var timeField: UITextField!
     
     let medicaments = ["Doliprane","Modopar","Sinemet","Stalevo"]
     let doses = ["125","250","300"]
@@ -23,10 +24,14 @@ class miseAJourViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     let picker = UIDatePicker()
     
+    let pickerTime = UIDatePicker()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         createDatePicker()
+        
+        createTimePicker()
         
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -44,6 +49,9 @@ class miseAJourViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         
         dateField.textAlignment = .center
         dateField.placeholder = "Choisir une date"
+        
+        timeField.textAlignment = .center
+        timeField.placeholder = "Choisir une heure"
 
         // Do any additional setup after loading the view.
     }
@@ -91,6 +99,8 @@ class miseAJourViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             
         dateField.inputAccessoryView = toolbar
         dateField.inputView = picker
+        
+        picker.datePickerMode = .date
     
     }
     
@@ -99,8 +109,37 @@ class miseAJourViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .none
+        let dateString = dateFormatter.string(from: picker.date)
         
-        dateField.text = "\(picker.date)"
+        dateField.text = "\(dateString)"
+        self.view.endEditing(true)
+        
+    }
+    
+    func createTimePicker() {
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressedTime))
+        toolbar.setItems([doneButton], animated: false)
+        
+        timeField.inputAccessoryView = toolbar
+        timeField.inputView = pickerTime
+        
+        pickerTime.datePickerMode = .time
+        
+    }
+    
+    func donePressedTime() {
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateStyle = .none
+        timeFormatter.timeStyle = .medium
+        let timeString = timeFormatter.string(from: pickerTime.date)
+        
+        
+        timeField.text = "\(timeString)"
         self.view.endEditing(true)
         
     }
