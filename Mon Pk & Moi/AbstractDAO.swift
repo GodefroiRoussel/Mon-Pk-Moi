@@ -7,13 +7,12 @@
 //
 
 import Foundation
-import UIKit
 
 protocol AbstractDAO {
     
     associatedtype T
     associatedtype A
-    
+    			
     func create(an object: T) throws -> T
     
     //TO DO: voir quoi passer en paramètre

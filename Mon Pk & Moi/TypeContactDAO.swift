@@ -6,7 +6,7 @@
 //  Copyright © 2018 romain. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 protocol TypeContactDAO: AbstractDAO {
     func getAllTypeContacts() throws -> [TypeContact]

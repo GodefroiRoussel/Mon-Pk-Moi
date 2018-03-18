@@ -6,9 +6,10 @@
 //  Copyright © 2018 romain. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 protocol MedicamentDAO: AbstractDAO {
+    
     func getAllMedicaments() throws -> [Medicament]
 
     func create(an object: Medicament) throws -> Medicament

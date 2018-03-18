@@ -27,6 +27,18 @@
 		BC7B2638205E759A009BFE67 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B2637205E7599009BFE67 /* DataHelper.swift */; };
 		BC7B263A205E7E25009BFE67 /* TypeContactCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B2639205E7E25009BFE67 /* TypeContactCoreDataDAO.swift */; };
 		BC7B263C205E7EF1009BFE67 /* TypeContactDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B263B205E7EF1009BFE67 /* TypeContactDAO.swift */; };
+		BC7DAA56205EF57A00E53AA2 /* EvenementDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DAA55205EF57A00E53AA2 /* EvenementDAO.swift */; };
+		BC7DAA58205EF70600E53AA2 /* TraceurDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DAA57205EF70600E53AA2 /* TraceurDAO.swift */; };
+		BC7DAA5A205EF78D00E53AA2 /* EvaluationDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DAA59205EF78D00E53AA2 /* EvaluationDAO.swift */; };
+		BC7DAA5C205EF7AE00E53AA2 /* AvisDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DAA5B205EF7AE00E53AA2 /* AvisDAO.swift */; };
+		BC7DAA5E205EF7D000E53AA2 /* TypeAvisDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DAA5D205EF7D000E53AA2 /* TypeAvisDAO.swift */; };
+		BC7DAA60205EF7F600E53AA2 /* ActiviteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DAA5F205EF7F600E53AA2 /* ActiviteDAO.swift */; };
+		BC7DAA62205EF85100E53AA2 /* PriseMedicamenteuseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DAA61205EF85100E53AA2 /* PriseMedicamenteuseDAO.swift */; };
+		BC7DAA64205EF87200E53AA2 /* RDVDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DAA63205EF87200E53AA2 /* RDVDAO.swift */; };
+		BC7DAA66205EF89200E53AA2 /* ContactDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DAA65205EF89200E53AA2 /* ContactDAO.swift */; };
+		BC7DAA68205EF8BD00E53AA2 /* OrdonnanceDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DAA67205EF8BD00E53AA2 /* OrdonnanceDAO.swift */; };
+		BC7DAA6A205EF93200E53AA2 /* PatientDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DAA69205EF93200E53AA2 /* PatientDAO.swift */; };
+		BC7DAA6C205F1E7700E53AA2 /* SymptomeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DAA6B205F1E7700E53AA2 /* SymptomeDAO.swift */; };
 		BCCB4122205C565300AB47CA /* DialogBoxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB4121205C565300AB47CA /* DialogBoxHelper.swift */; };
 		BCCB4124205C5E3B00AB47CA /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB4123205C5E3B00AB47CA /* CoreDataManager.swift */; };
 		BCEDEBBC205D2CBF00B4A349 /* MedicamentSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDEBBB205D2CBF00B4A349 /* MedicamentSeeder.swift */; };
@@ -80,6 +92,18 @@
 		BC7B2637205E7599009BFE67 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
 		BC7B2639205E7E25009BFE67 /* TypeContactCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeContactCoreDataDAO.swift; sourceTree = "<group>"; };
 		BC7B263B205E7EF1009BFE67 /* TypeContactDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeContactDAO.swift; sourceTree = "<group>"; };
+		BC7DAA55205EF57A00E53AA2 /* EvenementDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvenementDAO.swift; sourceTree = "<group>"; };
+		BC7DAA57205EF70600E53AA2 /* TraceurDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceurDAO.swift; sourceTree = "<group>"; };
+		BC7DAA59205EF78D00E53AA2 /* EvaluationDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluationDAO.swift; sourceTree = "<group>"; };
+		BC7DAA5B205EF7AE00E53AA2 /* AvisDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvisDAO.swift; sourceTree = "<group>"; };
+		BC7DAA5D205EF7D000E53AA2 /* TypeAvisDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAvisDAO.swift; sourceTree = "<group>"; };
+		BC7DAA5F205EF7F600E53AA2 /* ActiviteDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiviteDAO.swift; sourceTree = "<group>"; };
+		BC7DAA61205EF85100E53AA2 /* PriseMedicamenteuseDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriseMedicamenteuseDAO.swift; sourceTree = "<group>"; };
+		BC7DAA63205EF87200E53AA2 /* RDVDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RDVDAO.swift; sourceTree = "<group>"; };
+		BC7DAA65205EF89200E53AA2 /* ContactDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDAO.swift; sourceTree = "<group>"; };
+		BC7DAA67205EF8BD00E53AA2 /* OrdonnanceDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdonnanceDAO.swift; sourceTree = "<group>"; };
+		BC7DAA69205EF93200E53AA2 /* PatientDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientDAO.swift; sourceTree = "<group>"; };
+		BC7DAA6B205F1E7700E53AA2 /* SymptomeDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomeDAO.swift; sourceTree = "<group>"; };
 		BCCB4121205C565300AB47CA /* DialogBoxHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogBoxHelper.swift; sourceTree = "<group>"; };
 		BCCB4123205C5E3B00AB47CA /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		BCEDEBBB205D2CBF00B4A349 /* MedicamentSeeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentSeeder.swift; sourceTree = "<group>"; };
@@ -189,9 +213,21 @@
 			isa = PBXGroup;
 			children = (
 				BCEDEBC7205DCE0500B4A349 /* CoreDataDAO */,
-				BC330326205C374700D5C42F /* MedicamentDAO.swift */,
 				BCEDEBBE205DB33800B4A349 /* AbstractDAO.swift */,
+				BC7DAA5F205EF7F600E53AA2 /* ActiviteDAO.swift */,
+				BC7DAA5B205EF7AE00E53AA2 /* AvisDAO.swift */,
+				BC7DAA65205EF89200E53AA2 /* ContactDAO.swift */,
+				BC7DAA59205EF78D00E53AA2 /* EvaluationDAO.swift */,
+				BC7DAA55205EF57A00E53AA2 /* EvenementDAO.swift */,
+				BC330326205C374700D5C42F /* MedicamentDAO.swift */,
+				BC7DAA67205EF8BD00E53AA2 /* OrdonnanceDAO.swift */,
+				BC7DAA69205EF93200E53AA2 /* PatientDAO.swift */,
+				BC7DAA61205EF85100E53AA2 /* PriseMedicamenteuseDAO.swift */,
+				BC7DAA63205EF87200E53AA2 /* RDVDAO.swift */,
+				BC7DAA57205EF70600E53AA2 /* TraceurDAO.swift */,
+				BC7DAA5D205EF7D000E53AA2 /* TypeAvisDAO.swift */,
 				BC7B263B205E7EF1009BFE67 /* TypeContactDAO.swift */,
+				BC7DAA6B205F1E7700E53AA2 /* SymptomeDAO.swift */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -381,22 +417,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC7DAA66205EF89200E53AA2 /* ContactDAO.swift in Sources */,
+				BC7DAA56205EF57A00E53AA2 /* EvenementDAO.swift in Sources */,
 				BCEDEBBF205DB33800B4A349 /* AbstractDAO.swift in Sources */,
+				BC7DAA6A205EF93200E53AA2 /* PatientDAO.swift in Sources */,
 				BC7B263C205E7EF1009BFE67 /* TypeContactDAO.swift in Sources */,
 				BCEDEBBC205D2CBF00B4A349 /* MedicamentSeeder.swift in Sources */,
+				BC7DAA5C205EF7AE00E53AA2 /* AvisDAO.swift in Sources */,
 				BC0E8AAB2059904C0086859A /* MedicamentCoreDataDAO.swift in Sources */,
 				BC7B2638205E759A009BFE67 /* DataHelper.swift in Sources */,
+				BC7DAA64205EF87200E53AA2 /* RDVDAO.swift in Sources */,
+				BC7DAA68205EF8BD00E53AA2 /* OrdonnanceDAO.swift in Sources */,
+				BC7DAA60205EF7F600E53AA2 /* ActiviteDAO.swift in Sources */,
 				BC7B263A205E7E25009BFE67 /* TypeContactCoreDataDAO.swift in Sources */,
 				7A6BB3612050281C00A46AB3 /* ViewController.swift in Sources */,
 				BCEDEBC6205DCC9100B4A349 /* CoreDataDAOFactory.swift in Sources */,
 				BCCB4124205C5E3B00AB47CA /* CoreDataManager.swift in Sources */,
 				7A6BB3672050281C00A46AB3 /* Mon_Pk___Moi.xcdatamodeld in Sources */,
 				BCEDEBC9205DE26A00B4A349 /* TypeContactSeeder.swift in Sources */,
+				BC7DAA6C205F1E7700E53AA2 /* SymptomeDAO.swift in Sources */,
 				7A2C29FF205429CA000EC45C /* miseAJourViewController.swift in Sources */,
 				BCEDEBC3205DCC3500B4A349 /* AbstractDAOFactory.swift in Sources */,
 				BCCB4122205C565300AB47CA /* DialogBoxHelper.swift in Sources */,
+				BC7DAA5E205EF7D000E53AA2 /* TypeAvisDAO.swift in Sources */,
+				BC7DAA62205EF85100E53AA2 /* PriseMedicamenteuseDAO.swift in Sources */,
+				BC7DAA58205EF70600E53AA2 /* TraceurDAO.swift in Sources */,
 				7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */,
 				BC330327205C374700D5C42F /* MedicamentDAO.swift in Sources */,
+				BC7DAA5A205EF78D00E53AA2 /* EvaluationDAO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
