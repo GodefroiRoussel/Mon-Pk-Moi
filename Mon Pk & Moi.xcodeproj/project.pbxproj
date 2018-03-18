@@ -24,12 +24,16 @@
 		7A6BB39B20502C8A00A46AB3 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A6BB39A20502C8A00A46AB3 /* user.png */; };
 		BC0E8AAB2059904C0086859A /* MedicamentCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E8AAA2059904C0086859A /* MedicamentCoreDataDAO.swift */; };
 		BC330327205C374700D5C42F /* MedicamentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC330326205C374700D5C42F /* MedicamentDAO.swift */; };
+		BC7B2638205E759A009BFE67 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B2637205E7599009BFE67 /* DataHelper.swift */; };
+		BC7B263A205E7E25009BFE67 /* TypeContactCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B2639205E7E25009BFE67 /* TypeContactCoreDataDAO.swift */; };
+		BC7B263C205E7EF1009BFE67 /* TypeContactDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B263B205E7EF1009BFE67 /* TypeContactDAO.swift */; };
 		BCCB4122205C565300AB47CA /* DialogBoxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB4121205C565300AB47CA /* DialogBoxHelper.swift */; };
 		BCCB4124205C5E3B00AB47CA /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB4123205C5E3B00AB47CA /* CoreDataManager.swift */; };
 		BCEDEBBC205D2CBF00B4A349 /* MedicamentSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDEBBB205D2CBF00B4A349 /* MedicamentSeeder.swift */; };
 		BCEDEBBF205DB33800B4A349 /* AbstractDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDEBBE205DB33800B4A349 /* AbstractDAO.swift */; };
 		BCEDEBC3205DCC3500B4A349 /* AbstractDAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDEBC2205DCC3500B4A349 /* AbstractDAOFactory.swift */; };
 		BCEDEBC6205DCC9100B4A349 /* CoreDataDAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDEBC5205DCC9100B4A349 /* CoreDataDAOFactory.swift */; };
+		BCEDEBC9205DE26A00B4A349 /* TypeContactSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDEBC8205DE26A00B4A349 /* TypeContactSeeder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,12 +77,16 @@
 		7A6BB39A20502C8A00A46AB3 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		BC0E8AAA2059904C0086859A /* MedicamentCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentCoreDataDAO.swift; sourceTree = "<group>"; };
 		BC330326205C374700D5C42F /* MedicamentDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentDAO.swift; sourceTree = "<group>"; };
+		BC7B2637205E7599009BFE67 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
+		BC7B2639205E7E25009BFE67 /* TypeContactCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeContactCoreDataDAO.swift; sourceTree = "<group>"; };
+		BC7B263B205E7EF1009BFE67 /* TypeContactDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeContactDAO.swift; sourceTree = "<group>"; };
 		BCCB4121205C565300AB47CA /* DialogBoxHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogBoxHelper.swift; sourceTree = "<group>"; };
 		BCCB4123205C5E3B00AB47CA /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		BCEDEBBB205D2CBF00B4A349 /* MedicamentSeeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentSeeder.swift; sourceTree = "<group>"; };
 		BCEDEBBE205DB33800B4A349 /* AbstractDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractDAO.swift; sourceTree = "<group>"; };
 		BCEDEBC2205DCC3500B4A349 /* AbstractDAOFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractDAOFactory.swift; sourceTree = "<group>"; };
 		BCEDEBC5205DCC9100B4A349 /* CoreDataDAOFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDAOFactory.swift; sourceTree = "<group>"; };
+		BCEDEBC8205DE26A00B4A349 /* TypeContactSeeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeContactSeeder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +191,7 @@
 				BCEDEBC7205DCE0500B4A349 /* CoreDataDAO */,
 				BC330326205C374700D5C42F /* MedicamentDAO.swift */,
 				BCEDEBBE205DB33800B4A349 /* AbstractDAO.swift */,
+				BC7B263B205E7EF1009BFE67 /* TypeContactDAO.swift */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -192,6 +201,7 @@
 			children = (
 				BCCB4121205C565300AB47CA /* DialogBoxHelper.swift */,
 				BCCB4123205C5E3B00AB47CA /* CoreDataManager.swift */,
+				BC7B2637205E7599009BFE67 /* DataHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -200,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				BCEDEBBB205D2CBF00B4A349 /* MedicamentSeeder.swift */,
+				BCEDEBC8205DE26A00B4A349 /* TypeContactSeeder.swift */,
 			);
 			name = Seeders;
 			sourceTree = "<group>";
@@ -225,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				BC0E8AAA2059904C0086859A /* MedicamentCoreDataDAO.swift */,
+				BC7B2639205E7E25009BFE67 /* TypeContactCoreDataDAO.swift */,
 			);
 			name = CoreDataDAO;
 			sourceTree = "<group>";
@@ -370,12 +382,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCEDEBBF205DB33800B4A349 /* AbstractDAO.swift in Sources */,
+				BC7B263C205E7EF1009BFE67 /* TypeContactDAO.swift in Sources */,
 				BCEDEBBC205D2CBF00B4A349 /* MedicamentSeeder.swift in Sources */,
 				BC0E8AAB2059904C0086859A /* MedicamentCoreDataDAO.swift in Sources */,
+				BC7B2638205E759A009BFE67 /* DataHelper.swift in Sources */,
+				BC7B263A205E7E25009BFE67 /* TypeContactCoreDataDAO.swift in Sources */,
 				7A6BB3612050281C00A46AB3 /* ViewController.swift in Sources */,
 				BCEDEBC6205DCC9100B4A349 /* CoreDataDAOFactory.swift in Sources */,
 				BCCB4124205C5E3B00AB47CA /* CoreDataManager.swift in Sources */,
 				7A6BB3672050281C00A46AB3 /* Mon_Pk___Moi.xcdatamodeld in Sources */,
+				BCEDEBC9205DE26A00B4A349 /* TypeContactSeeder.swift in Sources */,
 				7A2C29FF205429CA000EC45C /* miseAJourViewController.swift in Sources */,
 				BCEDEBC3205DCC3500B4A349 /* AbstractDAOFactory.swift in Sources */,
 				BCCB4122205C565300AB47CA /* DialogBoxHelper.swift in Sources */,
