@@ -17,25 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        self.initCoreData()
         
         return true
     }
     
-    /// Initialize data if necessary
-    func initCoreData() {
-        
-        let medicamentDAO = MedicamentCoreDataDAO()
-        
-        //Initialisation of 'medicament'
-        do { let medicaments = try medicamentDAO.getAllMedicaments()
-            if medicaments.count == 0 {
-                let medicamentSeeder = MedicamentSeeder(context: CoreDataManager.context)
-                medicamentSeeder.seedDataStore()
-            }
-        } catch {}
-        
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool {
+        // If it's the first launch of the application, we create the data in the database
+        //UserDefaults.standard.set(false, forKey: "wasLaunched")
+        if(!UserDefaults.standard.bool(forKey: "wasLaunched")){
+            DataHelper.seedDataStore()
+            UserDefaults.standard.set(true, forKey: "wasLaunched")
         }
+        
+        return true
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -9,18 +9,7 @@
 import Foundation
 import CoreData
 
-public class MedicamentSeeder {
-    let context: NSManagedObjectContext
-    
-    init(context: NSManagedObjectContext) {
-        self.context = context
-    }
-    
-    public func seedDataStore() {
-        seedMedicaments()
-    }
-    
-    fileprivate func seedMedicaments() {
+struct MedicamentSeeder {
         let medicaments = [
             (nom: "MODOPAR", doses: [62.5,125,250]),
             (nom: "MODOPAR LP", doses: [125]),
@@ -47,15 +36,5 @@ public class MedicamentSeeder {
             (nom: "EXELON (PATCH)", doses: [4.6,9.5])
             
         ]
-        
-        for medicament in medicaments {
-            let newMedicament = Medicament(context: CoreDataManager.context)
-            
-            newMedicament.nom = medicament.nom
-            newMedicament.doses = medicament.doses
-        }
-        
-        CoreDataManager.save()
 
-    }
 }
