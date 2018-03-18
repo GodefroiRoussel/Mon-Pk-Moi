@@ -42,12 +42,14 @@ class MedicamentCoreDataDAO: MedicamentDAO{
         return Medicament()
     }
     
-    func update(an object: Medicament) throws -> Medicament{
-        return object
+    func update(an medicament: Medicament) throws -> Medicament{
+        CoreDataManager.save()
+        return medicament
     }
     
     func delete(an object: Medicament) throws{
-        return
+        CoreDataManager.context.delete(object)
+        CoreDataManager.save()
     }
     
     func getAllMedicaments() throws -> [Medicament] {
