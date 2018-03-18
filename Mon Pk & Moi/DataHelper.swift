@@ -20,11 +20,11 @@ public class DataHelper {
         let medicamentDAO = CoreDataDAOFactory.getInstance().getMedicamentDAO()
         
         for medicament in medicaments {
-            let newMedicament: Medicament = Medicament()
+            let newMedicament: Medicament = Medicament(context: CoreDataManager.context)
             newMedicament.nom = medicament.nom
             newMedicament.doses = medicament.doses
             do{
-                try medicamentDAO.create(an: newMedicament)
+                let med = try medicamentDAO.create(an: newMedicament)
             }catch {
                 fatalError("Error cannot populate DB")
             }
@@ -37,7 +37,7 @@ public class DataHelper {
         let typeContactDAO = CoreDataDAOFactory.getInstance().getTypeContactDAO()
         
         for type in types {
-            let newType: TypeContact = TypeContact()
+            let newType: TypeContact = TypeContact(context: CoreDataManager.context)
             newType.libelle = type
             do{
                 try typeContactDAO.create(an: newType)

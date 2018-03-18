@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             DataHelper.seedDataStore()
             UserDefaults.standard.set(true, forKey: "wasLaunched")
         }
-        
         return true
     }
 
