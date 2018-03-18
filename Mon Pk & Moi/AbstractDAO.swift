@@ -14,14 +14,14 @@ protocol AbstractDAO {
     associatedtype T
     associatedtype A
     
-    func create(an object: T) -> T
+    func create(an object: T) throws -> T
     
     //TO DO: voir quoi passer en paramètre
-    func find(a reference: A) -> T
+    func find(a reference: A) throws -> T
     
-    func update(an object: T) -> T
+    func update(an object: T) throws -> T
     
-    func delete(an object: T)
+    func delete(an object: T) throws
     
     
 }

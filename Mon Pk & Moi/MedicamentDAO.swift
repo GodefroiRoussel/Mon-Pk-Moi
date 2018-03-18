@@ -12,12 +12,12 @@ import CoreData
 protocol MedicamentDAO: AbstractDAO {
     func getAllMedicaments() throws -> [Medicament]
 
-    func create(an object: Medicament) -> Medicament
+    func create(an object: Medicament) throws -> Medicament
     
     //TO DO: voir quoi passer en paramètre
-    func find(a reference: A) -> Medicament
+    func find(a reference: A) throws -> Medicament
     
-    func update(an object: Medicament) -> Medicament
+    func update(an object: Medicament) throws -> Medicament
     
-    func delete(an object: Medicament)
+    func delete(an object: Medicament) throws
 }

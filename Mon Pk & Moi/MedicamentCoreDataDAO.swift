@@ -20,28 +20,33 @@ class MedicamentCoreDataDAO: MedicamentDAO{
     typealias A = Int
     typealias T = Medicament
     
-    /// initialize a `MedicamentModel`
-    ///
-    /// - Parameters:
-    ///   - nom: `String` c'est le nom du `Medicament`
-    ///   - doses:  `[Float]` représente les différentes doses applicables à ce médicament.
     init(){
     }
     
-    func create(an object: Medicament) -> Medicament{
-        return object
+    func create(an object: Medicament) throws -> Medicament{
+        
+            let newMedicament = Medicament(context: CoreDataManager.context)
+            
+            newMedicament.nom = object.nom
+            newMedicament.doses = object.doses
+        do {
+            try CoreDataManager.save()
+        } catch let error as NSError{
+            throw error
+        }
+        return newMedicament
     }
     
     //TO DO: voir quoi passer en paramètre
-    func find(a: Int) -> Medicament{
+    func find(a: Int) throws -> Medicament{
         return Medicament()
     }
     
-    func update(an object: Medicament) -> Medicament{
+    func update(an object: Medicament) throws -> Medicament{
         return object
     }
     
-    func delete(an object: Medicament){
+    func delete(an object: Medicament) throws{
         return
     }
     
