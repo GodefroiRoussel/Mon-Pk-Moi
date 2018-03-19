@@ -12,6 +12,7 @@ class PriseMedicamentTableViewCell: UITableViewCell {
 
     @IBOutlet weak var medicamentNameLabel: UILabel!
     @IBOutlet weak var doseLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

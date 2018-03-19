@@ -10,8 +10,10 @@ import UIKit
 
 class pilulierViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var medicaments : [String] = ["MODOPAR","SINEMET"]
-    var doses : [String] = ["125","250"]
+    var medicaments : [String] = []
+    var doses : [Double] = []
+    var times : [String] = []
+
     
     @IBOutlet weak var priseMedicamentTable: UITableView!
     
@@ -34,8 +36,34 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = self.priseMedicamentTable.dequeueReusableCell(withIdentifier: "priseMedicamentCell", for: indexPath)
             as! PriseMedicamentTableViewCell
         cell.medicamentNameLabel.text = self.medicaments[indexPath.row]
-        cell.doseLabel.text = self.doses[indexPath.row]
+        cell.doseLabel.text = "\(doses[indexPath.row])"
+        cell.timeLabel.text = "\(times[indexPath.row])"
         return cell
+    }
+    
+   // func SaveNewPrise(withMedicament medicament: String, andDose dose: Double, andTime time: Date){
+     //   guard let context = self.getContext(errorMsg: "Save failed") else { return }
+       // let priseMedicameuteuse = PriseMedicamenteuse(context: context)
+        //priseMedicameuteuse.dose
+   // }
+    
+    @IBAction func unwindToPriseListAfterSavingNewPrise(segue: UIStoryboardSegue){
+        let ajouterPriseController = segue.source as! AjouterPriseViewController
+        let medicament = ajouterPriseController.medicamentField.text ?? ""
+        let dose = ajouterPriseController.doseField.text
+        let time = ajouterPriseController.timeField.text ?? ""
+        //let dateFormatter = DateFormatter()
+        //dateFormatter.dateStyle = .none
+        //dateFormatter.timeStyle = .short
+        //dateFormatter.locale = Locale(identifier: "FR-fr")
+        //let serverTime = dateFormatter.date(from: time)!
+
+        
+        
+        self.medicaments.append(medicament)
+        self.doses.append(Double(dose!)!)
+        self.times.append(time)
+        self.priseMedicamentTable.reloadData()
     }
     
     

@@ -17,7 +17,7 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var timeField: UITextField!
     
     let medicaments = ["Doliprane","Modopar","Sinemet","Stalevo"]
-    let doses = ["125","250","300"]
+    let doses = [125.0,250.0,300.0]
     
     var pickerView = UIPickerView()
     var pickerView1 = UIPickerView()
@@ -34,10 +34,7 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
         createTimePicker()
         
         pickerView.delegate = self
-        pickerView.dataSource = self
-        
         pickerView1.delegate = self
-        pickerView1.dataSource = self
         
         medicamentField.inputView = pickerView
         medicamentField.textAlignment = .center
@@ -71,16 +68,15 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == pickerView1 {
-            return doses[row]
-        }
-        else{
-            return medicaments[row]
+            return "\(doses[row])"
+        } else {
+        return medicaments[row]
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == pickerView1 {
-            doseField.text = doses[row]
+            doseField.text = "\(doses[row])"
             doseField.resignFirstResponder()
         }
         else{
@@ -88,6 +84,8 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
             medicamentField.resignFirstResponder()
         }
     }
+    
+    
         
     func createDatePicker() {
             
@@ -101,6 +99,7 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
         dateField.inputView = picker
         
         picker.datePickerMode = .date
+        picker.locale = Locale(identifier: "FR-fr")
     
     }
     
@@ -109,6 +108,7 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .none
+        dateFormatter.locale = Locale(identifier: "FR-fr")
         let dateString = dateFormatter.string(from: picker.date)
         
         dateField.text = "\(dateString)"
@@ -128,6 +128,7 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
         timeField.inputView = pickerTime
         
         pickerTime.datePickerMode = .time
+        pickerTime.locale = Locale(identifier: "FR-fr")
         
     }
     
@@ -135,7 +136,8 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
         
         let timeFormatter = DateFormatter()
         timeFormatter.dateStyle = .none
-        timeFormatter.timeStyle = .medium
+        timeFormatter.timeStyle = .short
+        timeFormatter.locale = Locale(identifier: "FR-fr")
         let timeString = timeFormatter.string(from: pickerTime.date)
         
         
@@ -144,7 +146,9 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
         
     }
     
-
+    @IBAction func cancelAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     
 
