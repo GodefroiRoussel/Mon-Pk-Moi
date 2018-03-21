@@ -17,7 +17,7 @@ import CoreData
  */
 class MedicamentCoreDataDAO: MedicamentDAO{
     
-    typealias A = Int
+    typealias A = String
     typealias T = Medicament
     
     init(){
@@ -38,7 +38,7 @@ class MedicamentCoreDataDAO: MedicamentDAO{
     }
     
     //TO DO: voir quoi passer en paramètre
-    func find(a: Int) throws -> Medicament{
+    func find(a: String) throws -> Medicament{
         return Medicament()
     }
     
@@ -53,7 +53,6 @@ class MedicamentCoreDataDAO: MedicamentDAO{
     }
     
     func getAllMedicaments() throws -> [Medicament] {
-        
         
         let request: NSFetchRequest<Medicament> = Medicament.fetchRequest()
         do {
