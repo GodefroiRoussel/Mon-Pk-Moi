@@ -90,6 +90,16 @@
                                     <constraint firstItem="ruZ-mZ-4Qf" firstAttribute="top" secondItem="z5R-Ir-jps" secondAttribute="top" constant="23" id="rYP-kO-Ufs"/>
                                 </constraints>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="51w-4Y-Kfe">
+                                <rect key="frame" x="16" y="171" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Général"/>
+                                    <segment title="Médicament"/>
+                                    <segment title="Suivi"/>
+                                    <segment title="Activité Sportives"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -101,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AaD-ay-xWW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2260" y="890"/>
+            <point key="canvasLocation" x="-2260" y="889.20539730134942"/>
         </scene>
         <!--Table de synthèses-->
         <scene sceneID="ttr-2G-3ld">
