@@ -37,7 +37,7 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
             as! PriseMedicamentTableViewCell
         cell.medicamentNameLabel.text = self.medicaments[indexPath.row]
         cell.doseLabel.text = "\(doses[indexPath.row])"
-        cell.timeLabel.text = "\(times[indexPath.row])"
+        cell.timeLabel.text = times[indexPath.row]
         return cell
     }
     

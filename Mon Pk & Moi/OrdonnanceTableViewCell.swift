@@ -10,6 +10,10 @@ import UIKit
 
 class OrdonnanceTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nomMedicamentLabel: UILabel!
+    @IBOutlet weak var doseLabel: UILabel!
+    @IBOutlet weak var heureLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

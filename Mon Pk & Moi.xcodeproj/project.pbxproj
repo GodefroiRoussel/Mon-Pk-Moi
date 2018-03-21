@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7A2C29FF205429CA000EC45C /* AjouterPriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2C29FE205429CA000EC45C /* AjouterPriseViewController.swift */; };
+		7A4D13B72062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D13B62062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift */; };
+		7A4D13B920630AF4005E8D6D /* fleche.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4D13B820630AF4005E8D6D /* fleche.png */; };
+		7A4D13BB20630C02005E8D6D /* fleche_droit.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4D13BA20630C02005E8D6D /* fleche_droit.png */; };
 		7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BB35E2050281C00A46AB3 /* AppDelegate.swift */; };
 		7A6BB3612050281C00A46AB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BB3602050281C00A46AB3 /* ViewController.swift */; };
 		7A6BB3642050281C00A46AB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A6BB3622050281C00A46AB3 /* Main.storyboard */; };
@@ -46,6 +49,9 @@
 
 /* Begin PBXFileReference section */
 		7A2C29FE205429CA000EC45C /* AjouterPriseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AjouterPriseViewController.swift; path = ../AjouterPriseViewController.swift; sourceTree = "<group>"; };
+		7A4D13B62062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjouterOrdonnanceViewController.swift; sourceTree = "<group>"; };
+		7A4D13B820630AF4005E8D6D /* fleche.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fleche.png; sourceTree = "<group>"; };
+		7A4D13BA20630C02005E8D6D /* fleche_droit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fleche_droit.png; sourceTree = "<group>"; };
 		7A6BB35B2050281C00A46AB3 /* Mon Pk & Moi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mon Pk & Moi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A6BB35E2050281C00A46AB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A6BB3602050281C00A46AB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 				7A6BB36D2050281C00A46AB3 /* Info.plist */,
 				7A6BB3652050281C00A46AB3 /* Mon_Pk___Moi.xcdatamodeld */,
 				7B8828F1206250BA002649B5 /* OrdonnanceTableViewCell.swift */,
+				7A4D13B62062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift */,
 			);
 			path = "Mon Pk & Moi";
 			sourceTree = "<group>";
@@ -156,6 +163,8 @@
 		7A6BB3972050285B00A46AB3 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				7A4D13BA20630C02005E8D6D /* fleche_droit.png */,
+				7A4D13B820630AF4005E8D6D /* fleche.png */,
 				7A6BB39A20502C8A00A46AB3 /* user.png */,
 				7A6BB39820502B4900A46AB3 /* logo.png */,
 				7A6BB38F2050285300A46AB3 /* bouton_agenda.png */,
@@ -280,7 +289,9 @@
 				7A6BB3942050285300A46AB3 /* bouton_information.png in Resources */,
 				7A6BB39920502B4900A46AB3 /* logo.png in Resources */,
 				7A6BB3932050285300A46AB3 /* bouton_agenda.png in Resources */,
+				7A4D13BB20630C02005E8D6D /* fleche_droit.png in Resources */,
 				7A6BB3962050285300A46AB3 /* bouton_traceur.png in Resources */,
+				7A4D13B920630AF4005E8D6D /* fleche.png in Resources */,
 				7A6BB3642050281C00A46AB3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A4D13B72062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift in Sources */,
 				7B8828F2206250BA002649B5 /* OrdonnanceTableViewCell.swift in Sources */,
 				7AA533FE2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift in Sources */,
 				7A6BB3612050281C00A46AB3 /* ViewController.swift in Sources */,
