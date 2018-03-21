@@ -33,7 +33,7 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
         medecinField.placeholder = "Choisir un médecin"
         
         prochainRDVField.textAlignment = .center
-        prochainRDVField.placeholder = "Choisir une date"
+        prochainRDVField.placeholder = "Choisir la date du prochain RDV"
 
         // Do any additional setup after loading the view.
     }
