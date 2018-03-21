@@ -24,6 +24,7 @@
 		7A6BB39B20502C8A00A46AB3 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A6BB39A20502C8A00A46AB3 /* user.png */; };
 		7AA533FE2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA533FD2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift */; };
 		7AA534022057C9FF00A2A443 /* pilulierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA534012057C9FF00A2A443 /* pilulierViewController.swift */; };
+		7B8828F2206250BA002649B5 /* OrdonnanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8828F1206250BA002649B5 /* OrdonnanceTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		7A6BB39A20502C8A00A46AB3 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		7AA533FD2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriseMedicamentTableViewCell.swift; sourceTree = "<group>"; };
 		7AA534012057C9FF00A2A443 /* pilulierViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = pilulierViewController.swift; path = ../pilulierViewController.swift; sourceTree = "<group>"; };
+		7B8828F1206250BA002649B5 /* OrdonnanceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdonnanceTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				7A6BB36A2050281C00A46AB3 /* LaunchScreen.storyboard */,
 				7A6BB36D2050281C00A46AB3 /* Info.plist */,
 				7A6BB3652050281C00A46AB3 /* Mon_Pk___Moi.xcdatamodeld */,
+				7B8828F1206250BA002649B5 /* OrdonnanceTableViewCell.swift */,
 			);
 			path = "Mon Pk & Moi";
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B8828F2206250BA002649B5 /* OrdonnanceTableViewCell.swift in Sources */,
 				7AA533FE2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift in Sources */,
 				7A6BB3612050281C00A46AB3 /* ViewController.swift in Sources */,
 				7AA534022057C9FF00A2A443 /* pilulierViewController.swift in Sources */,
