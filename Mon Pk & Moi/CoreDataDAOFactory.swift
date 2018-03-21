@@ -13,15 +13,12 @@ class CoreDataDAOFactory: AbstractDAOFactory{
     typealias A = MedicamentCoreDataDAO
     typealias B = TypeContactCoreDataDAO
     
-    private static var instance: CoreDataDAOFactory?
+    private static var instance: CoreDataDAOFactory = CoreDataDAOFactory()
     
     private init(){}
     
     static func getInstance() -> CoreDataDAOFactory{
-        guard let instanceFactory = CoreDataDAOFactory.instance else {
-            return CoreDataDAOFactory()
-        }
-        return instanceFactory
+        return self.instance
     }
 
     func getMedicamentDAO() -> MedicamentCoreDataDAO {
