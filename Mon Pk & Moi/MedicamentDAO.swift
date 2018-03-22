@@ -8,11 +8,12 @@
 
 import Foundation
 
-protocol MedicamentDAO: AbstractDAO {
+protocol MedicamentDAO {
+    associatedtype A
     
     func getAllMedicaments() throws -> [Medicament]
 
-    func create(an object: Medicament) throws -> Medicament
+    func create(withName : String, withDoses : [Any]) throws -> Medicament
     
     //TO DO: voir quoi passer en paramètre
     func find(a reference: A) throws -> Medicament

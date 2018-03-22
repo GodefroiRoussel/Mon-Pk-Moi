@@ -8,7 +8,8 @@
 
 import Foundation
 
-protocol OrdonnanceDAO: AbstractDAO {
+protocol OrdonnanceDAO {
+    associatedtype A
     
     func getAllOrdonnances() throws -> [Ordonnance]
     

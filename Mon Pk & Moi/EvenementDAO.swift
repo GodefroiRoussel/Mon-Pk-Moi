@@ -8,7 +8,8 @@
 
 import Foundation
 
-protocol EvenementDAO: AbstractDAO {
+protocol EvenementDAO {
+    associatedtype A
 
     func getAllEvenements() throws -> [Evenement]
     

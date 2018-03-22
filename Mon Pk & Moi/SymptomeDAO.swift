@@ -8,7 +8,8 @@
 
 import Foundation
 
-protocol SymptomeDAO: AbstractDAO {
+protocol SymptomeDAO {
+    associatedtype A
 
     func getAllSymptomes() throws -> [Symptome]
 

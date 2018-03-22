@@ -8,7 +8,9 @@
 
 import Foundation
 
-protocol TraceurDAO: AbstractDAO {
+protocol TraceurDAO {
+    associatedtype A
+    
     func getAllTraceurs() throws -> [Traceur]
     
     func create(an object: Traceur) throws -> Traceur

@@ -8,7 +8,9 @@
 
 import Foundation
 
-protocol PatientDAO: AbstractDAO {
+protocol PatientDAO {
+    associatedtype A
+    
     func getAllPatients() throws -> [Patient]
     
     func create(an object: Patient) throws -> Patient

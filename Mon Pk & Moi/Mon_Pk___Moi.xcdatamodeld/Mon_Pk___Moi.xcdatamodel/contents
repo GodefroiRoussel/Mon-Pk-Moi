@@ -34,8 +34,8 @@
         <relationship name="schedule_by" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="linked_to" inverseEntity="Patient" syncable="YES"/>
     </entity>
     <entity name="Medicament" representedClassName="Medicament" syncable="YES" codeGenerationType="class">
-        <attribute name="doses" optional="YES" attributeType="Transformable" customClassName="[Any]" syncable="YES"/>
-        <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pdoses" optional="YES" attributeType="Transformable" customClassName="[Any]" syncable="YES"/>
+        <attribute name="pnom" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PriseMedicamenteuse" inverseName="belongs_to" inverseEntity="PriseMedicamenteuse" syncable="YES"/>
     </entity>
     <entity name="Ordonnance" representedClassName="Ordonnance" syncable="YES" codeGenerationType="class">

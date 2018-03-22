@@ -8,7 +8,9 @@
 
 import Foundation
 
-protocol TypeAvisDAO: AbstractDAO {
+protocol TypeAvisDAO {
+    associatedtype A
+    
     func getAllTypeAviss() throws -> [TypeAvis]
     
     func create(an object: TypeAvis) throws -> TypeAvis

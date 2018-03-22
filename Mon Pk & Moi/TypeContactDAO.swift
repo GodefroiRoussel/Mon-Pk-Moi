@@ -8,7 +8,9 @@
 
 import Foundation
 
-protocol TypeContactDAO: AbstractDAO {
+protocol TypeContactDAO {
+    associatedtype A
+    
     func getAllTypeContacts() throws -> [TypeContact]
     
     func create(an object: TypeContact) throws -> TypeContact

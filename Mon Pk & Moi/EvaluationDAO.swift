@@ -8,7 +8,8 @@
 
 import Foundation
 
-protocol EvaluationDAO: AbstractDAO {
+protocol EvaluationDAO {
+    associatedtype A
     
     func getAllEvaluations() throws -> [Evaluation]
     

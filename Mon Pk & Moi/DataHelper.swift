@@ -20,11 +20,8 @@ public class DataHelper {
         let medicamentDAO = CoreDataDAOFactory.getInstance().getMedicamentDAO()
         
         for medicament in medicaments {
-            let newMedicament: Medicament = Medicament(context: CoreDataManager.context)
-            newMedicament.nom = medicament.nom
-            newMedicament.doses = medicament.doses
             do{
-                let med = try medicamentDAO.create(an: newMedicament)
+                let med = try medicamentDAO.create(withName: medicament.nom, withDoses: medicament.doses)
             }catch {
                 fatalError("Error cannot populate DB")
             }

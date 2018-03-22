@@ -39,10 +39,10 @@
 		BC7DAA68205EF8BD00E53AA2 /* OrdonnanceDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DAA67205EF8BD00E53AA2 /* OrdonnanceDAO.swift */; };
 		BC7DAA6A205EF93200E53AA2 /* PatientDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DAA69205EF93200E53AA2 /* PatientDAO.swift */; };
 		BC7DAA6C205F1E7700E53AA2 /* SymptomeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DAA6B205F1E7700E53AA2 /* SymptomeDAO.swift */; };
+		BC8E5A3C2064693100DE0AD7 /* MedicamentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E5A3B2064693100DE0AD7 /* MedicamentExtension.swift */; };
 		BCCB4122205C565300AB47CA /* DialogBoxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB4121205C565300AB47CA /* DialogBoxHelper.swift */; };
 		BCCB4124205C5E3B00AB47CA /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB4123205C5E3B00AB47CA /* CoreDataManager.swift */; };
 		BCEDEBBC205D2CBF00B4A349 /* MedicamentSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDEBBB205D2CBF00B4A349 /* MedicamentSeeder.swift */; };
-		BCEDEBBF205DB33800B4A349 /* AbstractDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDEBBE205DB33800B4A349 /* AbstractDAO.swift */; };
 		BCEDEBC3205DCC3500B4A349 /* AbstractDAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDEBC2205DCC3500B4A349 /* AbstractDAOFactory.swift */; };
 		BCEDEBC6205DCC9100B4A349 /* CoreDataDAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDEBC5205DCC9100B4A349 /* CoreDataDAOFactory.swift */; };
 		BCEDEBC9205DE26A00B4A349 /* TypeContactSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDEBC8205DE26A00B4A349 /* TypeContactSeeder.swift */; };
@@ -104,10 +104,10 @@
 		BC7DAA67205EF8BD00E53AA2 /* OrdonnanceDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdonnanceDAO.swift; sourceTree = "<group>"; };
 		BC7DAA69205EF93200E53AA2 /* PatientDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientDAO.swift; sourceTree = "<group>"; };
 		BC7DAA6B205F1E7700E53AA2 /* SymptomeDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomeDAO.swift; sourceTree = "<group>"; };
+		BC8E5A3B2064693100DE0AD7 /* MedicamentExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentExtension.swift; sourceTree = "<group>"; };
 		BCCB4121205C565300AB47CA /* DialogBoxHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogBoxHelper.swift; sourceTree = "<group>"; };
 		BCCB4123205C5E3B00AB47CA /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		BCEDEBBB205D2CBF00B4A349 /* MedicamentSeeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentSeeder.swift; sourceTree = "<group>"; };
-		BCEDEBBE205DB33800B4A349 /* AbstractDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractDAO.swift; sourceTree = "<group>"; };
 		BCEDEBC2205DCC3500B4A349 /* AbstractDAOFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractDAOFactory.swift; sourceTree = "<group>"; };
 		BCEDEBC5205DCC9100B4A349 /* CoreDataDAOFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDAOFactory.swift; sourceTree = "<group>"; };
 		BCEDEBC8205DE26A00B4A349 /* TypeContactSeeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeContactSeeder.swift; sourceTree = "<group>"; };
@@ -161,16 +161,15 @@
 		7A6BB35D2050281C00A46AB3 /* Mon Pk & Moi */ = {
 			isa = PBXGroup;
 			children = (
+				BC8E5A3A2064689D00DE0AD7 /* Model */,
 				BCEDEBBD205D7DA100B4A349 /* Factory */,
 				BCEDEBBA205D2C7800B4A349 /* Seeders */,
 				BCCB4120205C557600AB47CA /* Helpers */,
 				7A6BB3972050285B00A46AB3 /* images */,
 				7A6BB35E2050281C00A46AB3 /* AppDelegate.swift */,
-				7AA534012057C9FF00A2A443 /* pilulierViewController.swift */,
 				7A2C29FE205429CA000EC45C /* miseAJourViewController.swift */,
 				7A6BB3602050281C00A46AB3 /* ViewController.swift */,
 				7A6BB3622050281C00A46AB3 /* Main.storyboard */,
-				7AA533FD2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift */,
 				7A6BB3682050281C00A46AB3 /* Assets.xcassets */,
 				BC330325205C372A00D5C42F /* DAO */,
 				7A6BB36A2050281C00A46AB3 /* LaunchScreen.storyboard */,
@@ -215,7 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				BCEDEBC7205DCE0500B4A349 /* CoreDataDAO */,
-				BCEDEBBE205DB33800B4A349 /* AbstractDAO.swift */,
 				BC7DAA5F205EF7F600E53AA2 /* ActiviteDAO.swift */,
 				BC7DAA5B205EF7AE00E53AA2 /* AvisDAO.swift */,
 				BC7DAA65205EF89200E53AA2 /* ContactDAO.swift */,
@@ -232,6 +230,14 @@
 				BC7DAA6B205F1E7700E53AA2 /* SymptomeDAO.swift */,
 			);
 			name = DAO;
+			sourceTree = "<group>";
+		};
+		BC8E5A3A2064689D00DE0AD7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC8E5A3B2064693100DE0AD7 /* MedicamentExtension.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		BCCB4120205C557600AB47CA /* Helpers */ = {
@@ -421,7 +427,6 @@
 			files = (
 				BC7DAA66205EF89200E53AA2 /* ContactDAO.swift in Sources */,
 				BC7DAA56205EF57A00E53AA2 /* EvenementDAO.swift in Sources */,
-				BCEDEBBF205DB33800B4A349 /* AbstractDAO.swift in Sources */,
 				BC7DAA6A205EF93200E53AA2 /* PatientDAO.swift in Sources */,
 				BC7B263C205E7EF1009BFE67 /* TypeContactDAO.swift in Sources */,
 				BCEDEBBC205D2CBF00B4A349 /* MedicamentSeeder.swift in Sources */,
@@ -436,6 +441,7 @@
 				BCEDEBC6205DCC9100B4A349 /* CoreDataDAOFactory.swift in Sources */,
 				BCCB4124205C5E3B00AB47CA /* CoreDataManager.swift in Sources */,
 				7A6BB3672050281C00A46AB3 /* Mon_Pk___Moi.xcdatamodeld in Sources */,
+				BC8E5A3C2064693100DE0AD7 /* MedicamentExtension.swift in Sources */,
 				BCEDEBC9205DE26A00B4A349 /* TypeContactSeeder.swift in Sources */,
 				BC7DAA6C205F1E7700E53AA2 /* SymptomeDAO.swift in Sources */,
 				7A2C29FF205429CA000EC45C /* miseAJourViewController.swift in Sources */,

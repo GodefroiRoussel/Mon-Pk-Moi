@@ -23,12 +23,9 @@ class MedicamentCoreDataDAO: MedicamentDAO{
     init(){
     }
     
-    func create(an object: Medicament) throws -> Medicament{
+    func create(withName nom: String, withDoses doses: [Any] ) throws -> Medicament{
         
-            let newMedicament = Medicament(context: CoreDataManager.context)
-            
-            newMedicament.nom = object.nom
-            newMedicament.doses = object.doses
+        let newMedicament = Medicament(withName: nom, withDoses : doses)
         do {
             try CoreDataManager.save()
         } catch let error as NSError{
