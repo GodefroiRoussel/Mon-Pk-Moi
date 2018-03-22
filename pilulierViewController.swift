@@ -47,25 +47,6 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
         //priseMedicameuteuse.dose
    // }
     
-    @IBAction func unwindToPriseListAfterSavingNewPrise(segue: UIStoryboardSegue){
-        let ajouterPriseController = segue.source as! AjouterPriseViewController
-        let medicament = ajouterPriseController.medicamentField.text ?? ""
-        let dose = ajouterPriseController.doseField.text
-        let time = ajouterPriseController.timeField.text ?? ""
-        //let dateFormatter = DateFormatter()
-        //dateFormatter.dateStyle = .none
-        //dateFormatter.timeStyle = .short
-        //dateFormatter.locale = Locale(identifier: "FR-fr")
-        //let serverTime = dateFormatter.date(from: time)!
-
-        
-        
-        self.medicaments.append(medicament)
-        self.doses.append(Double(dose!)!)
-        self.times.append(time)
-        self.priseMedicamentTable.reloadData()
-    }
-    
     
 
     /*

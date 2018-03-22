@@ -13,7 +13,6 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     @IBOutlet weak var medicamentField: UITextField!
     @IBOutlet weak var doseField: UITextField!
-    @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var timeField: UITextField!
     
     let medicaments = ["Doliprane","Modopar","Sinemet","Stalevo"]
@@ -22,14 +21,10 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
     var pickerView = UIPickerView()
     var pickerView1 = UIPickerView()
     
-    let picker = UIDatePicker()
-    
     let pickerTime = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        createDatePicker()
         
         createTimePicker()
         
@@ -43,9 +38,6 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
         doseField.inputView = pickerView1
         doseField.textAlignment = .center
         doseField.placeholder = "Choisir une dose"
-        
-        dateField.textAlignment = .center
-        dateField.placeholder = "Choisir une date"
         
         timeField.textAlignment = .center
         timeField.placeholder = "Choisir une heure"
@@ -83,37 +75,6 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
             medicamentField.text = medicaments[row]
             medicamentField.resignFirstResponder()
         }
-    }
-    
-    
-        
-    func createDatePicker() {
-            
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-            
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
-        toolbar.setItems([doneButton], animated: false)
-            
-        dateField.inputAccessoryView = toolbar
-        dateField.inputView = picker
-        
-        picker.datePickerMode = .date
-        picker.locale = Locale(identifier: "FR-fr")
-    
-    }
-    
-    func donePressed() {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .none
-        dateFormatter.locale = Locale(identifier: "FR-fr")
-        let dateString = dateFormatter.string(from: picker.date)
-        
-        dateField.text = "\(dateString)"
-        self.view.endEditing(true)
-        
     }
     
     func createTimePicker() {

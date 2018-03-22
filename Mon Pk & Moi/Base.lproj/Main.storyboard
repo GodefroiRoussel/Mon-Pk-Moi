@@ -156,7 +156,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="chO-vz-eev">
-                                <rect key="frame" x="70" y="250" width="180" height="30"/>
+                                <rect key="frame" x="70" y="270" width="180" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="sFP-gn-Mun"/>
                                 </constraints>
@@ -167,20 +167,8 @@
                                     <outlet property="delegate" destination="26g-hp-E6H" id="U2n-An-iIk"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xGW-FO-NxN">
-                                <rect key="frame" x="70" y="310" width="180" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="52I-sn-zCX"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="26g-hp-E6H" id="lN8-aA-I9d"/>
-                                </connections>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HJn-va-Qie">
-                                <rect key="frame" x="70.5" y="370" width="180" height="30"/>
+                                <rect key="frame" x="70.5" y="350" width="180" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="kZp-cv-QP6"/>
                                 </constraints>
@@ -214,20 +202,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="chO-vz-eev" firstAttribute="centerX" secondItem="Vot-KY-Xfb" secondAttribute="centerX" id="0B1-cq-JnP"/>
-                            <constraint firstItem="xGW-FO-NxN" firstAttribute="centerX" secondItem="Vot-KY-Xfb" secondAttribute="centerX" id="0u3-5p-5rb"/>
                             <constraint firstItem="gkE-vr-3tR" firstAttribute="top" secondItem="OAB-cb-t6g" secondAttribute="bottom" constant="50" id="11N-gh-Vby"/>
-                            <constraint firstItem="HJn-va-Qie" firstAttribute="top" secondItem="xGW-FO-NxN" secondAttribute="bottom" constant="30" id="CQ1-Zx-TgM"/>
-                            <constraint firstItem="chO-vz-eev" firstAttribute="top" secondItem="gkE-vr-3tR" secondAttribute="bottom" constant="30" id="Fab-Yz-Iq1"/>
-                            <constraint firstItem="xGW-FO-NxN" firstAttribute="top" secondItem="chO-vz-eev" secondAttribute="bottom" constant="30" id="OYJ-0F-DJu"/>
+                            <constraint firstItem="chO-vz-eev" firstAttribute="top" secondItem="gkE-vr-3tR" secondAttribute="bottom" constant="50" id="Fab-Yz-Iq1"/>
                             <constraint firstItem="HJn-va-Qie" firstAttribute="centerX" secondItem="Vot-KY-Xfb" secondAttribute="centerX" id="Okw-Xv-djX"/>
                             <constraint firstItem="OAB-cb-t6g" firstAttribute="leading" secondItem="Vot-KY-Xfb" secondAttribute="leading" id="tuQ-5l-EnK"/>
+                            <constraint firstItem="HJn-va-Qie" firstAttribute="top" secondItem="chO-vz-eev" secondAttribute="bottom" constant="50" id="vRF-1U-RLp"/>
                             <constraint firstItem="OAB-cb-t6g" firstAttribute="top" secondItem="5BY-gC-2DN" secondAttribute="bottom" id="w9k-Of-mZF"/>
                             <constraint firstItem="gkE-vr-3tR" firstAttribute="centerX" secondItem="Vot-KY-Xfb" secondAttribute="centerX" id="ycv-Ab-xQi"/>
                             <constraint firstAttribute="trailing" secondItem="OAB-cb-t6g" secondAttribute="trailing" id="za4-6f-UXF"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="dateField" destination="xGW-FO-NxN" id="eGx-Oz-pch"/>
                         <outlet property="doseField" destination="chO-vz-eev" id="bhx-Od-xzD"/>
                         <outlet property="medicamentField" destination="gkE-vr-3tR" id="roL-ck-tXT"/>
                         <outlet property="timeField" destination="HJn-va-Qie" id="ybF-a3-i2f"/>
@@ -316,9 +301,17 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Wwe-po-WTU"/>
-                                    <barButtonItem title="Annuler" id="BCW-ls-KZc"/>
+                                    <barButtonItem title="Annuler" id="BCW-ls-KZc">
+                                        <connections>
+                                            <action selector="cancelAction:" destination="xa7-2G-8Pe" id="BV3-b0-sAt"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="2Ad-Yo-lO5"/>
-                                    <barButtonItem title="Ajouter" id="AGz-HO-eSY"/>
+                                    <barButtonItem title="Ajouter" id="AGz-HO-eSY">
+                                        <connections>
+                                            <segue destination="uRC-I7-Dbu" kind="show" id="Ztb-Rw-F9n"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="sFJ-ZN-PlD"/>
                                 </items>
                             </toolbar>
@@ -326,7 +319,7 @@
                                 <rect key="frame" x="112" y="360" width="96" height="30"/>
                                 <state key="normal" title="Voir les prises"/>
                                 <connections>
-                                    <segue destination="p9K-Ee-1Cq" kind="show" id="jiE-O5-dhT"/>
+                                    <segue destination="p9K-Ee-1Cq" kind="show" id="FHE-g2-SN6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -355,10 +348,10 @@
             </objects>
             <point key="canvasLocation" x="-249" y="-1419"/>
         </scene>
-        <!--View Controller-->
+        <!--Prise Medicament Ordonnance-->
         <scene sceneID="RGX-wB-N8W">
             <objects>
-                <viewController id="p9K-Ee-1Cq" sceneMemberID="viewController">
+                <viewController title="Prise Medicament Ordonnance" id="p9K-Ee-1Cq" customClass="PriseMedicamentOrdonnanceViewController" customModule="Mon_Pk___Moi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gzh-Hg-oOs"/>
                         <viewControllerLayoutGuide type="bottom" id="wgp-j7-UDi"/>
@@ -373,7 +366,13 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="yra-aA-Su6"/>
                                     <barButtonItem title="Ajouter une prise" id="Duo-S4-jJZ">
                                         <connections>
-                                            <segue destination="26g-hp-E6H" kind="show" id="NGs-lc-F1G"/>
+                                            <segue destination="26g-hp-E6H" kind="presentation" id="zCR-D5-Sjd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="jGq-Mf-sYD"/>
+                                    <barButtonItem title="OK" id="FsM-wq-teJ">
+                                        <connections>
+                                            <segue destination="xa7-2G-8Pe" kind="show" id="ELX-wW-Bfn"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="A2f-6a-1C7"/>
@@ -421,26 +420,26 @@
                                 <rect key="frame" x="20" y="165" width="280" height="334"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aAQ-Yg-yfc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="left" semanticContentAttribute="forceLeftToRight" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PriseMedicamentCell" id="aAQ-Yg-yfc" customClass="PriseOrdonnanceTableViewCell" customModule="Mon_Pk___Moi" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aAQ-Yg-yfc" id="LwQ-zO-y9O">
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bA-Be-Zzq">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bA-Be-Zzq">
                                                     <rect key="frame" x="8" y="11" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEv-6E-6bp">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEv-6E-6bp">
                                                     <rect key="frame" x="119" y="11" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfV-4u-Ncy">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfV-4u-Ncy">
                                                     <rect key="frame" x="230" y="11" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -459,8 +458,17 @@
                                                 <constraint firstItem="UEv-6E-6bp" firstAttribute="top" secondItem="LwQ-zO-y9O" secondAttribute="top" id="vnf-ta-53n"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="doseLabel" destination="UEv-6E-6bp" id="4al-h8-3xh"/>
+                                            <outlet property="heureLabel" destination="bfV-4u-Ncy" id="XPS-Tb-17d"/>
+                                            <outlet property="nomMedicamentLabel" destination="2bA-Be-Zzq" id="W4w-qz-OlK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="p9K-Ee-1Cq" id="EyQ-E5-rK4"/>
+                                    <outlet property="delegate" destination="p9K-Ee-1Cq" id="NgY-Dz-D7H"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -477,6 +485,9 @@
                             <constraint firstItem="iO4-Tr-jQm" firstAttribute="leading" secondItem="yl5-EZ-8qL" secondAttribute="leading" id="hmf-iX-flb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="prisesTable" destination="JUb-pn-gJJ" id="nb6-nR-WbR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbi-HN-SDz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -599,7 +610,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="f47-qm-emc"/>
                                     <barButtonItem title="Ajouter une ordonnance" id="Raa-uq-nL8">
                                         <connections>
-                                            <segue destination="xa7-2G-8Pe" kind="show" id="kbr-jt-a2e"/>
+                                            <segue destination="xa7-2G-8Pe" kind="presentation" id="f9T-Pc-W97"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="I8x-7p-JnZ"/>
@@ -1227,7 +1238,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="8Ec-Hm-Ldp"/>
-        <segue reference="9wV-Hr-QX6"/>
+        <segue reference="Ztb-Rw-F9n"/>
+        <segue reference="ELX-wW-Bfn"/>
         <segue reference="vrs-xg-WVI"/>
         <segue reference="wIy-2e-ZcD"/>
         <segue reference="yR1-uu-Jgj"/>

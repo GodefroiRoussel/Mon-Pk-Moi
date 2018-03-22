@@ -90,6 +90,14 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
     
     
 
+    @IBAction func cancelAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    
+
     /*
     // MARK: - Navigation
 
