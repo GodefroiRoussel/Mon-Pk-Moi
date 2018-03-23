@@ -12,6 +12,9 @@ import CoreData
 class CoreDataDAOFactory: AbstractDAOFactory{
     typealias A = MedicamentCoreDataDAO
     typealias B = TypeContactCoreDataDAO
+    typealias C = ContactCoreDataDAO
+    typealias D = PatientCoreDataDAO
+
     
     private static var instance: CoreDataDAOFactory = CoreDataDAOFactory()
     
@@ -31,6 +34,10 @@ class CoreDataDAOFactory: AbstractDAOFactory{
     
     func getContactDAO() -> ContactCoreDataDAO {
         return ContactCoreDataDAO()
+    }
+    
+    func getPatientDAO() -> PatientCoreDataDAO {
+        return PatientCoreDataDAO()
     }
 
 }

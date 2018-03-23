@@ -26,6 +26,8 @@
 		BC330327205C374700D5C42F /* MedicamentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC330326205C374700D5C42F /* MedicamentDAO.swift */; };
 		BC6AC2632065A3B900BC533D /* ContactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6AC2622065A3B900BC533D /* ContactExtension.swift */; };
 		BC6AC2652065AC1800BC533D /* ContactCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6AC2642065AC1800BC533D /* ContactCoreDataDAO.swift */; };
+		BC6AC2672065C01600BC533D /* PatientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6AC2662065C01600BC533D /* PatientExtension.swift */; };
+		BC6AC2692065C31D00BC533D /* PatientCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6AC2682065C31D00BC533D /* PatientCoreDataDAO.swift */; };
 		BC7B2638205E759A009BFE67 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B2637205E7599009BFE67 /* DataHelper.swift */; };
 		BC7B263A205E7E25009BFE67 /* TypeContactCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B2639205E7E25009BFE67 /* TypeContactCoreDataDAO.swift */; };
 		BC7B263C205E7EF1009BFE67 /* TypeContactDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B263B205E7EF1009BFE67 /* TypeContactDAO.swift */; };
@@ -94,6 +96,8 @@
 		BC330326205C374700D5C42F /* MedicamentDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentDAO.swift; sourceTree = "<group>"; };
 		BC6AC2622065A3B900BC533D /* ContactExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactExtension.swift; sourceTree = "<group>"; };
 		BC6AC2642065AC1800BC533D /* ContactCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCoreDataDAO.swift; sourceTree = "<group>"; };
+		BC6AC2662065C01600BC533D /* PatientExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientExtension.swift; sourceTree = "<group>"; };
+		BC6AC2682065C31D00BC533D /* PatientCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientCoreDataDAO.swift; sourceTree = "<group>"; };
 		BC7B2637205E7599009BFE67 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
 		BC7B2639205E7E25009BFE67 /* TypeContactCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeContactCoreDataDAO.swift; sourceTree = "<group>"; };
 		BC7B263B205E7EF1009BFE67 /* TypeContactDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeContactDAO.swift; sourceTree = "<group>"; };
@@ -244,6 +248,7 @@
 				BC8E5A3B2064693100DE0AD7 /* MedicamentExtension.swift */,
 				BC8E5A3D206481DA00DE0AD7 /* TypeContactExtension.swift */,
 				BC6AC2622065A3B900BC533D /* ContactExtension.swift */,
+				BC6AC2662065C01600BC533D /* PatientExtension.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 				BC0E8AAA2059904C0086859A /* MedicamentCoreDataDAO.swift */,
 				BC7B2639205E7E25009BFE67 /* TypeContactCoreDataDAO.swift */,
 				BC6AC2642065AC1800BC533D /* ContactCoreDataDAO.swift */,
+				BC6AC2682065C31D00BC533D /* PatientCoreDataDAO.swift */,
 			);
 			name = CoreDataDAO;
 			sourceTree = "<group>";
@@ -437,7 +443,9 @@
 				BC7DAA66205EF89200E53AA2 /* ContactDAO.swift in Sources */,
 				BC6AC2652065AC1800BC533D /* ContactCoreDataDAO.swift in Sources */,
 				BC7DAA56205EF57A00E53AA2 /* EvenementDAO.swift in Sources */,
+				BC6AC2672065C01600BC533D /* PatientExtension.swift in Sources */,
 				BC7DAA6A205EF93200E53AA2 /* PatientDAO.swift in Sources */,
+				BC6AC2692065C31D00BC533D /* PatientCoreDataDAO.swift in Sources */,
 				BC7B263C205E7EF1009BFE67 /* TypeContactDAO.swift in Sources */,
 				BCEDEBBC205D2CBF00B4A349 /* MedicamentSeeder.swift in Sources */,
 				BC7DAA5C205EF7AE00E53AA2 /* AvisDAO.swift in Sources */,

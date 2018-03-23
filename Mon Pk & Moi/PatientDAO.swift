@@ -9,16 +9,14 @@
 import Foundation
 
 protocol PatientDAO {
-    associatedtype A
     
     func getAllPatients() throws -> [Patient]
     
-    func create(an object: Patient) throws -> Patient
+    func create(withName nom: String, withPrenom prenom: String, withDateNaissance dateNaissance: Date, withAdresse adresse : String, withTempsPreparation tempsPreparation : Int16) throws -> Patient
     
-    //TO DO: voir quoi passer en paramètre
-    func find(a reference: A) throws -> Patient
+    func find(withName: String) throws -> Patient?
     
     func update(an object: Patient) throws -> Patient
     
-    func delete(an object: Patient) throws
+    func delete(aPatient: Patient) throws
 }

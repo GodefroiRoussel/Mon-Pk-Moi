@@ -46,11 +46,11 @@
         <relationship name="is_created_by" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RDV" inverseName="create" inverseEntity="RDV" syncable="YES"/>
     </entity>
     <entity name="Patient" representedClassName="Patient" syncable="YES" codeGenerationType="class">
-        <attribute name="adresse" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="dateNaissance" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="prenom" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="tempsPreparation" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="padresse" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pdateNaissance" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pnom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pprenom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ptempsPreparation" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ordonnance" inverseName="concern" inverseEntity="Ordonnance" syncable="YES"/>
         <relationship name="linked_to" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evenement" inverseName="schedule_by" inverseEntity="Evenement" syncable="YES"/>
         <relationship name="possess" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contact" inverseName="is_connected_to" inverseEntity="Contact" syncable="YES"/>
