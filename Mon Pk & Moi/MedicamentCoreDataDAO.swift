@@ -17,43 +17,38 @@ import CoreData
  */
 class MedicamentCoreDataDAO: MedicamentDAO{
     
-    typealias A = String
-    typealias T = Medicament
+    let request : NSFetchRequest<Medicament> = Medicament.fetchRequest()
     
     init(){
     }
     
     func create(withName nom: String, withDoses doses: [Any] ) throws -> Medicament{
-        
         let newMedicament = Medicament(withName: nom, withDoses : doses)
-        do {
-            try CoreDataManager.save()
-        } catch let error as NSError{
-            throw error
-        }
+        CoreDataManager.save()
         return newMedicament
     }
-    
-    //TO DO: voir quoi passer en paramètre
-    func find(a: String) throws -> Medicament{
-        return Medicament()
+
+    func find(withName nom: String) throws -> Medicament?{
+        self.request.predicate = NSPredicate(format: "pnom == %@", nom)
+        do{
+            let result = try CoreDataManager.context.fetch(request) as [Medicament]
+            guard result.count != 0 else { return nil }
+            return result[0]
+        }
+        catch{
+            return nil
+        }
     }
     
-    func update(an medicament: Medicament) throws -> Medicament{
-        CoreDataManager.save()
-        return medicament
-    }
-    
-    func delete(an object: Medicament) throws{
-        CoreDataManager.context.delete(object)
+    func delete( aMedicament medicament: Medicament) throws{
+        CoreDataManager.context.delete(medicament)
         CoreDataManager.save()
     }
     
     func getAllMedicaments() throws -> [Medicament] {
         
-        let request: NSFetchRequest<Medicament> = Medicament.fetchRequest()
         do {
-            let medicaments: [Medicament] = try CoreDataManager.context.fetch(request)
+            let medicaments: [Medicament] = try CoreDataManager.context.fetch(self.request)
             return medicaments
         } catch let error as NSError {
             throw error

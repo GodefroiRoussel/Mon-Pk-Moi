@@ -9,16 +9,12 @@
 import Foundation
 
 protocol MedicamentDAO {
-    associatedtype A
     
     func getAllMedicaments() throws -> [Medicament]
 
     func create(withName : String, withDoses : [Any]) throws -> Medicament
     
-    //TO DO: voir quoi passer en paramètre
-    func find(a reference: A) throws -> Medicament
+    func find(withName nom: String) throws -> Medicament?
     
-    func update(an object: Medicament) throws -> Medicament
-    
-    func delete(an object: Medicament) throws
+    func delete(aMedicament medicament: Medicament) throws
 }
