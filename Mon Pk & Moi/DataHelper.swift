@@ -14,6 +14,14 @@ public class DataHelper {
         seedMedicament()
     }
     
+    static func deleteSeeder(){
+        do {
+            try deleteMedicaments()
+        } catch {
+            
+        }
+    }
+    
     fileprivate static func seedMedicament(){
         let medicaments = MedicamentSeeder().medicaments
         
@@ -21,7 +29,7 @@ public class DataHelper {
         
         for medicament in medicaments {
             do{
-                let med = try medicamentDAO.create(withName: medicament.nom, withDoses: medicament.doses)
+                let med = try medicamentDAO.create(withName: medicament.pnom, withDoses: medicament.pdoses)
             }catch {
                 fatalError("Error cannot populate DB")
             }
@@ -44,5 +52,17 @@ public class DataHelper {
         }
     }
     
-    
+    fileprivate static func deleteMedicaments() throws{
+        let medicamentDAO = CoreDataDAOFactory.getInstance().getMedicamentDAO()
+        do {
+            let medicaments : [Medicament] = try medicamentDAO.getAllMedicaments()
+            for medicament in medicaments {
+                CoreDataManager.context.delete(medicament)
+                print("Supprimé")
+            }
+            CoreDataManager.save()
+        } catch let error as NSError{
+            throw error
+        }
+    }
 }

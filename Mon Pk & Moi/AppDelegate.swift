@@ -25,9 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If it's the first launch of the application, we create the data in the database
         //UserDefaults.standard.set(false, forKey: "wasLaunched")
         if(!UserDefaults.standard.bool(forKey: "wasLaunched")){
+            //DataHelper.deleteSeeder()
             DataHelper.seedDataStore()
             UserDefaults.standard.set(true, forKey: "wasLaunched")
         }
+        
         return true
     }
 
