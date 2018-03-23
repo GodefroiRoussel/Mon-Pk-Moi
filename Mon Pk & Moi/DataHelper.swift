@@ -10,6 +10,8 @@ import Foundation
 
 public class DataHelper {
     
+    //MARK - General Functions -
+    
     static func seedDataStore() {
         seedMedicament()
     }
@@ -22,6 +24,8 @@ public class DataHelper {
         }
     }
     
+    //MARK - Medicament functions
+    
     fileprivate static func seedMedicament(){
         let medicaments = MedicamentSeeder().medicaments
         
@@ -30,22 +34,6 @@ public class DataHelper {
         for medicament in medicaments {
             do{
                 let med = try medicamentDAO.create(withName: medicament.pnom, withDoses: medicament.pdoses)
-            }catch {
-                fatalError("Error cannot populate DB")
-            }
-        }
-    }
-    
-    fileprivate static func seedTypeContact(){
-        let types = TypeContactSeeder().types
-        
-        let typeContactDAO = CoreDataDAOFactory.getInstance().getTypeContactDAO()
-        
-        for type in types {
-            let newType: TypeContact = TypeContact(context: CoreDataManager.context)
-            newType.libelle = type
-            do{
-                try typeContactDAO.create(an: newType)
             }catch {
                 fatalError("Error cannot populate DB")
             }
@@ -65,4 +53,22 @@ public class DataHelper {
             throw error
         }
     }
+    
+    
+    // MARK - TypeContact functions
+    
+    fileprivate static func seedTypeContact(){
+        let types = TypeContactSeeder().types
+        
+        let typeContactDAO = CoreDataDAOFactory.getInstance().getTypeContactDAO()
+        
+        for libelle in types {
+            do{
+                try typeContactDAO.create(withLibelle: libelle)
+            }catch {
+                fatalError("Error cannot populate DB")
+            }
+        }
+    }
+    
 }

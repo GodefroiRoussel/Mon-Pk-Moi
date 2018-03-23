@@ -10,44 +10,41 @@ import Foundation
 import CoreData
 
 class TypeContactCoreDataDAO: TypeContactDAO{
-    
-    typealias A = Int
-    typealias T = TypeContact
-    
 
+    let request : NSFetchRequest<TypeContact> = TypeContact.fetchRequest()
+    
     init(){
     }
     
-    func create(an object: TypeContact) throws -> TypeContact{
+    func create(withLibelle libelle: String) throws -> TypeContact?{
         
         let newTypeContact = TypeContact(context: CoreDataManager.context)
         
-        newTypeContact.libelle = object.libelle
-        do {
-            try CoreDataManager.save()
-        } catch let error as NSError{
-            throw error
-        }
+        newTypeContact.plibelle = libelle
+        CoreDataManager.save()
         return newTypeContact
     }
     
     //TO DO: voir quoi passer en paramètre
-    func find(a: Int) throws -> TypeContact{
-        return TypeContact()
+    func find(withLibelle libelle: String) throws -> TypeContact?{
+        self.request.predicate = NSPredicate(format: "plibelle == %@", libelle)
+        do{
+            let result = try CoreDataManager.context.fetch(request) as [TypeContact]
+            guard result.count != 0 else { return nil }
+            return result[0]
+        }
+        catch{
+            return nil
+        }
     }
     
-    func update(an object: TypeContact) throws -> TypeContact{
-        return object
+    //TODO
+    func update(aTypeContact typeContact: TypeContact) throws -> TypeContact{
+        return typeContact
     }
     
-    func delete(an object: TypeContact) throws{
-        return
-    }
     
     func getAllTypeContacts() throws -> [TypeContact] {
-        
-        
-        let request: NSFetchRequest<TypeContact> = TypeContact.fetchRequest()
         do {
             let medicaments: [TypeContact] = try CoreDataManager.context.fetch(request)
             return medicaments

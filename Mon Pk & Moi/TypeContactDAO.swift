@@ -9,16 +9,12 @@
 import Foundation
 
 protocol TypeContactDAO {
-    associatedtype A
     
     func getAllTypeContacts() throws -> [TypeContact]
     
-    func create(an object: TypeContact) throws -> TypeContact
+    func create(withLibelle libelle: String) throws -> TypeContact?
     
-    //TO DO: voir quoi passer en paramètre
-    func find(a reference: A) throws -> TypeContact
+    func find(withLibelle libelle: String) throws -> TypeContact?
     
-    func update(an object: TypeContact) throws -> TypeContact
-    
-    func delete(an object: TypeContact) throws
+    func update(aTypeContact typeContact: TypeContact) throws -> TypeContact
 }

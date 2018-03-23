@@ -40,6 +40,7 @@
 		BC7DAA6A205EF93200E53AA2 /* PatientDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DAA69205EF93200E53AA2 /* PatientDAO.swift */; };
 		BC7DAA6C205F1E7700E53AA2 /* SymptomeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DAA6B205F1E7700E53AA2 /* SymptomeDAO.swift */; };
 		BC8E5A3C2064693100DE0AD7 /* MedicamentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E5A3B2064693100DE0AD7 /* MedicamentExtension.swift */; };
+		BC8E5A3E206481DA00DE0AD7 /* TypeContactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E5A3D206481DA00DE0AD7 /* TypeContactExtension.swift */; };
 		BCCB4122205C565300AB47CA /* DialogBoxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB4121205C565300AB47CA /* DialogBoxHelper.swift */; };
 		BCCB4124205C5E3B00AB47CA /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB4123205C5E3B00AB47CA /* CoreDataManager.swift */; };
 		BCEDEBBC205D2CBF00B4A349 /* MedicamentSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDEBBB205D2CBF00B4A349 /* MedicamentSeeder.swift */; };
@@ -105,6 +106,7 @@
 		BC7DAA69205EF93200E53AA2 /* PatientDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientDAO.swift; sourceTree = "<group>"; };
 		BC7DAA6B205F1E7700E53AA2 /* SymptomeDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomeDAO.swift; sourceTree = "<group>"; };
 		BC8E5A3B2064693100DE0AD7 /* MedicamentExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentExtension.swift; sourceTree = "<group>"; };
+		BC8E5A3D206481DA00DE0AD7 /* TypeContactExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeContactExtension.swift; sourceTree = "<group>"; };
 		BCCB4121205C565300AB47CA /* DialogBoxHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogBoxHelper.swift; sourceTree = "<group>"; };
 		BCCB4123205C5E3B00AB47CA /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		BCEDEBBB205D2CBF00B4A349 /* MedicamentSeeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentSeeder.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				BC8E5A3B2064693100DE0AD7 /* MedicamentExtension.swift */,
+				BC8E5A3D206481DA00DE0AD7 /* TypeContactExtension.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				7A6BB3612050281C00A46AB3 /* ViewController.swift in Sources */,
 				BCEDEBC6205DCC9100B4A349 /* CoreDataDAOFactory.swift in Sources */,
 				BCCB4124205C5E3B00AB47CA /* CoreDataManager.swift in Sources */,
+				BC8E5A3E206481DA00DE0AD7 /* TypeContactExtension.swift in Sources */,
 				7A6BB3672050281C00A46AB3 /* Mon_Pk___Moi.xcdatamodeld in Sources */,
 				BC8E5A3C2064693100DE0AD7 /* MedicamentExtension.swift in Sources */,
 				BCEDEBC9205DE26A00B4A349 /* TypeContactSeeder.swift in Sources */,
