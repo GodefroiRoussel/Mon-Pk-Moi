@@ -9,16 +9,13 @@
 import Foundation
 
 protocol ContactDAO {
-    associatedtype A
-    
     func getAllContacts() throws -> [Contact]
     
-    func create(an object: Contact) throws -> Contact
+    func create(withName: String, withPrenom: String?, withTelephone: String?, withAdresse: String?, is_a : TypeContact ) throws -> Contact
     
-    //TO DO: voir quoi passer en paramètre
-    func find(a reference: A) throws -> Contact
+    func find(withName: String) throws -> Contact?
     
     func update(an object: Contact) throws -> Contact
     
-    func delete(an object: Contact) throws
+    func delete(aContact: Contact) throws
 }

@@ -28,5 +28,9 @@ class CoreDataDAOFactory: AbstractDAOFactory{
     func getTypeContactDAO() -> TypeContactCoreDataDAO {
         return TypeContactCoreDataDAO()
     }
+    
+    func getContactDAO() -> ContactCoreDataDAO {
+        return ContactCoreDataDAO()
+    }
 
 }

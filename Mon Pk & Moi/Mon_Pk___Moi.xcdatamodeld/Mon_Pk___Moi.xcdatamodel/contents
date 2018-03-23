@@ -12,10 +12,10 @@
         <relationship name="is_a" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TypeAvis" inverseName="has" inverseEntity="TypeAvis" syncable="YES"/>
     </entity>
     <entity name="Contact" representedClassName="Contact" syncable="YES" codeGenerationType="class">
-        <attribute name="adresse" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="prenom" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="telephone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="padresse" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pnom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pprenom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ptelephone" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RDV" inverseName="is_with" inverseEntity="RDV" syncable="YES"/>
         <relationship name="is_a" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TypeContact" inverseName="has" inverseEntity="TypeContact" syncable="YES"/>
         <relationship name="is_connected_to" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="possess" inverseEntity="Patient" syncable="YES"/>
@@ -90,7 +90,7 @@
     <elements>
         <element name="Activite" positionX="-254" positionY="-252" width="128" height="88"/>
         <element name="Avis" positionX="223" positionY="374" width="128" height="103"/>
-        <element name="Contact" positionX="349" positionY="-346" width="128" height="148"/>
+        <element name="Contact" positionX="349" positionY="-346" width="128" height="150"/>
         <element name="Evaluation" positionX="-27" positionY="401" width="128" height="118"/>
         <element name="Evenement" positionX="-92" positionY="-394" width="128" height="103"/>
         <element name="Medicament" positionX="-173" positionY="149" width="128" height="90"/>

@@ -16,5 +16,5 @@ protocol TypeContactDAO {
     
     func find(withLibelle libelle: String) throws -> TypeContact?
     
-    func update(aTypeContact typeContact: TypeContact) throws -> TypeContact
+    //func update(aTypeContact typeContact: TypeContact) throws -> TypeContact
 }

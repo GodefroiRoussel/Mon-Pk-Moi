@@ -11,8 +11,10 @@ import Foundation
 protocol AbstractDAOFactory {
     associatedtype A
     associatedtype B
+    associatedtype C
     
     
     func getMedicamentDAO() -> A
     func getTypeContactDAO() -> B
+    func getContactDAO() -> C
 }

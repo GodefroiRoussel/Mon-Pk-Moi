@@ -24,6 +24,8 @@
 		7A6BB39B20502C8A00A46AB3 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A6BB39A20502C8A00A46AB3 /* user.png */; };
 		BC0E8AAB2059904C0086859A /* MedicamentCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E8AAA2059904C0086859A /* MedicamentCoreDataDAO.swift */; };
 		BC330327205C374700D5C42F /* MedicamentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC330326205C374700D5C42F /* MedicamentDAO.swift */; };
+		BC6AC2632065A3B900BC533D /* ContactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6AC2622065A3B900BC533D /* ContactExtension.swift */; };
+		BC6AC2652065AC1800BC533D /* ContactCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6AC2642065AC1800BC533D /* ContactCoreDataDAO.swift */; };
 		BC7B2638205E759A009BFE67 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B2637205E7599009BFE67 /* DataHelper.swift */; };
 		BC7B263A205E7E25009BFE67 /* TypeContactCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B2639205E7E25009BFE67 /* TypeContactCoreDataDAO.swift */; };
 		BC7B263C205E7EF1009BFE67 /* TypeContactDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B263B205E7EF1009BFE67 /* TypeContactDAO.swift */; };
@@ -90,6 +92,8 @@
 		7A6BB39A20502C8A00A46AB3 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		BC0E8AAA2059904C0086859A /* MedicamentCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentCoreDataDAO.swift; sourceTree = "<group>"; };
 		BC330326205C374700D5C42F /* MedicamentDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentDAO.swift; sourceTree = "<group>"; };
+		BC6AC2622065A3B900BC533D /* ContactExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactExtension.swift; sourceTree = "<group>"; };
+		BC6AC2642065AC1800BC533D /* ContactCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCoreDataDAO.swift; sourceTree = "<group>"; };
 		BC7B2637205E7599009BFE67 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
 		BC7B2639205E7E25009BFE67 /* TypeContactCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeContactCoreDataDAO.swift; sourceTree = "<group>"; };
 		BC7B263B205E7EF1009BFE67 /* TypeContactDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeContactDAO.swift; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 			children = (
 				BC8E5A3B2064693100DE0AD7 /* MedicamentExtension.swift */,
 				BC8E5A3D206481DA00DE0AD7 /* TypeContactExtension.swift */,
+				BC6AC2622065A3B900BC533D /* ContactExtension.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 			children = (
 				BC0E8AAA2059904C0086859A /* MedicamentCoreDataDAO.swift */,
 				BC7B2639205E7E25009BFE67 /* TypeContactCoreDataDAO.swift */,
+				BC6AC2642065AC1800BC533D /* ContactCoreDataDAO.swift */,
 			);
 			name = CoreDataDAO;
 			sourceTree = "<group>";
@@ -429,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC7DAA66205EF89200E53AA2 /* ContactDAO.swift in Sources */,
+				BC6AC2652065AC1800BC533D /* ContactCoreDataDAO.swift in Sources */,
 				BC7DAA56205EF57A00E53AA2 /* EvenementDAO.swift in Sources */,
 				BC7DAA6A205EF93200E53AA2 /* PatientDAO.swift in Sources */,
 				BC7B263C205E7EF1009BFE67 /* TypeContactDAO.swift in Sources */,
@@ -448,6 +455,7 @@
 				BC8E5A3C2064693100DE0AD7 /* MedicamentExtension.swift in Sources */,
 				BCEDEBC9205DE26A00B4A349 /* TypeContactSeeder.swift in Sources */,
 				BC7DAA6C205F1E7700E53AA2 /* SymptomeDAO.swift in Sources */,
+				BC6AC2632065A3B900BC533D /* ContactExtension.swift in Sources */,
 				7A2C29FF205429CA000EC45C /* miseAJourViewController.swift in Sources */,
 				BCEDEBC3205DCC3500B4A349 /* AbstractDAOFactory.swift in Sources */,
 				BCCB4122205C565300AB47CA /* DialogBoxHelper.swift in Sources */,
