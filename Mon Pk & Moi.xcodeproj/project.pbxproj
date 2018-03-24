@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2BA3DEE9206661A000DE1A9B /* EvenementCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3DEE8206661A000DE1A9B /* EvenementCoreDataDAO.swift */; };
+		2BA3DEEB2066682100DE1A9B /* OrdonnanceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3DEEA2066682100DE1A9B /* OrdonnanceExtension.swift */; };
+		2BA3DEED20666FAF00DE1A9B /* OrdonnanceCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3DEEC20666FAF00DE1A9B /* OrdonnanceCoreDataDAO.swift */; };
 		2BB96A382066504800828A73 /* EvenementExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB96A372066504800828A73 /* EvenementExtension.swift */; };
 		7A2C29FF205429CA000EC45C /* miseAJourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2C29FE205429CA000EC45C /* miseAJourViewController.swift */; };
 		7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BB35E2050281C00A46AB3 /* AppDelegate.swift */; };
@@ -74,6 +76,8 @@
 
 /* Begin PBXFileReference section */
 		2BA3DEE8206661A000DE1A9B /* EvenementCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvenementCoreDataDAO.swift; sourceTree = "<group>"; };
+		2BA3DEEA2066682100DE1A9B /* OrdonnanceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdonnanceExtension.swift; sourceTree = "<group>"; };
+		2BA3DEEC20666FAF00DE1A9B /* OrdonnanceCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdonnanceCoreDataDAO.swift; sourceTree = "<group>"; };
 		2BB96A372066504800828A73 /* EvenementExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvenementExtension.swift; sourceTree = "<group>"; };
 		7A2C29FE205429CA000EC45C /* miseAJourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = miseAJourViewController.swift; path = ../miseAJourViewController.swift; sourceTree = "<group>"; };
 		7A6BB35B2050281C00A46AB3 /* Mon Pk & Moi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mon Pk & Moi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,6 +258,7 @@
 				BC6AC2622065A3B900BC533D /* ContactExtension.swift */,
 				BC6AC2662065C01600BC533D /* PatientExtension.swift */,
 				2BB96A372066504800828A73 /* EvenementExtension.swift */,
+				2BA3DEEA2066682100DE1A9B /* OrdonnanceExtension.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				BC6AC2642065AC1800BC533D /* ContactCoreDataDAO.swift */,
 				BC6AC2682065C31D00BC533D /* PatientCoreDataDAO.swift */,
 				2BA3DEE8206661A000DE1A9B /* EvenementCoreDataDAO.swift */,
+				2BA3DEEC20666FAF00DE1A9B /* OrdonnanceCoreDataDAO.swift */,
 			);
 			name = CoreDataDAO;
 			sourceTree = "<group>";
@@ -454,10 +460,12 @@
 				BC6AC2692065C31D00BC533D /* PatientCoreDataDAO.swift in Sources */,
 				BC7B263C205E7EF1009BFE67 /* TypeContactDAO.swift in Sources */,
 				BCEDEBBC205D2CBF00B4A349 /* MedicamentSeeder.swift in Sources */,
+				2BA3DEED20666FAF00DE1A9B /* OrdonnanceCoreDataDAO.swift in Sources */,
 				BC7DAA5C205EF7AE00E53AA2 /* AvisDAO.swift in Sources */,
 				BC0E8AAB2059904C0086859A /* MedicamentCoreDataDAO.swift in Sources */,
 				BC7B2638205E759A009BFE67 /* DataHelper.swift in Sources */,
 				BC7DAA64205EF87200E53AA2 /* RDVDAO.swift in Sources */,
+				2BA3DEEB2066682100DE1A9B /* OrdonnanceExtension.swift in Sources */,
 				BC7DAA68205EF8BD00E53AA2 /* OrdonnanceDAO.swift in Sources */,
 				BC7DAA60205EF7F600E53AA2 /* ActiviteDAO.swift in Sources */,
 				BC7B263A205E7E25009BFE67 /* TypeContactCoreDataDAO.swift in Sources */,

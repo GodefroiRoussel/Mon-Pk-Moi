@@ -9,18 +9,14 @@
 import Foundation
 
 protocol OrdonnanceDAO {
-    associatedtype A
     
     func getAllOrdonnances() throws -> [Ordonnance]
     
-    func getMedicamentsNonPris(ordonnance : Ordonnance) -> [PriseMedicamenteuse?]
+    func create(withCommentaire commentaire: String, concern patient: Patient, created_by contact: Contact, untill rdv : RDV) throws -> Ordonnance
     
-    func create(an object: Ordonnance) throws -> Ordonnance
+    func find(atDate dateCreation: NSDate) throws -> Ordonnance?
     
-    //TO DO: voir quoi passer en paramètre
-    func find(a reference: A) throws -> Ordonnance
+    func update(anOrdonnance: Ordonnance) throws -> Ordonnance
     
-    func update(an object: Ordonnance) throws -> Ordonnance
-    
-    func delete(an object: Ordonnance) throws
+    func delete(anOrdonnance: Ordonnance) throws
 }
