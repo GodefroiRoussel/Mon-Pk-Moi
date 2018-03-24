@@ -30,6 +30,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(true, forKey: "wasLaunched")
         }
         
+        let factory : CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
+        
+        //Create a type contact
+        let typeContactDAO: TypeContactDAO = factory.getTypeContactDAO()
+        let contactDAO : ContactDAO = factory.getContactDAO()
+        let patientDAO : PatientDAO = factory.getPatientDAO()
+        
+        do{
+            let patient : Patient = try patientDAO.create(withName: "Thevenon", withPrenom: "Romain", withDateNaissance: 24-03-1995, withAdresse: "Polytech", withTempsPreparation: 90)
+            print(patient)
+            let typeContact : TypeContact = try typeContactDAO.create(withLibelle: "Famille")!
+            print(typeContact)
+            let contact : Contact = try contactDAO.create(withName: "Roussel", withPrenom: "Godefroi", withTelephone: "0606060606", withAdresse: "Polytech", is_a: typeContact, is_connected_to : patient)
+            print(contact)
+        } catch let error as NSError {
+                print(error)
+                return false
+        }
+    
+    
         return true
     }
 
