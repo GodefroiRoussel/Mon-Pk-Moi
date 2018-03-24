@@ -15,7 +15,7 @@ protocol PriseMedicamenteuseDAO: EvenementDAO {
     func create(an object: PriseMedicamenteuse) throws -> PriseMedicamenteuse
     
     //TO DO: voir quoi passer en paramètre
-    func find(a reference: A) throws -> PriseMedicamenteuse
+    func find(withName nom : String) throws -> PriseMedicamenteuse
     
     func update(an object: PriseMedicamenteuse) throws -> PriseMedicamenteuse
     

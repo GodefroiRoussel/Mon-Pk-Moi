@@ -13,10 +13,12 @@ protocol AbstractDAOFactory {
     associatedtype B
     associatedtype C
     associatedtype D
+    associatedtype E
     
     
     func getMedicamentDAO() -> A
     func getTypeContactDAO() -> B
     func getContactDAO() -> C
     func getPatientDAO() -> D
+    func getEvenementDAO() -> E
 }

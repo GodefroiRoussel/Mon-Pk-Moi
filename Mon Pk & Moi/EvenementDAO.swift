@@ -17,4 +17,6 @@ protocol EvenementDAO {
     func update(anEvenement evenement: Evenement) throws -> Evenement
     
     func delete(anEvenement evenement: Evenement) throws
+    
+    func find(withName nom: String) throws -> Activite
 }

@@ -39,5 +39,9 @@ class CoreDataDAOFactory: AbstractDAOFactory{
     func getPatientDAO() -> PatientCoreDataDAO {
         return PatientCoreDataDAO()
     }
+    
+    func getEvenementDAO() -> EvenementCoreDataDAO {
+        return EvenementCoreDataDAO()
+    }
 
 }

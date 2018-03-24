@@ -14,8 +14,7 @@ protocol ActiviteDAO: EvenementDAO {
     
     func create(an object: Activite) throws -> Activite
     
-    //TO DO: voir quoi passer en paramètre
-    func find(a reference: A) throws -> Activite
+    func find(withName nom: String) throws -> Activite
     
     func update(an object: Activite) throws -> Activite
     

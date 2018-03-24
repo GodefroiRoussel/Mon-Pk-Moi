@@ -31,6 +31,7 @@
         <attribute name="pdateEffective" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="pdateTheorique" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="pestEffectue" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pnom" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="schedule_by" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="linked_to" inverseEntity="Patient" syncable="YES"/>
     </entity>
     <entity name="Medicament" representedClassName="Medicament" syncable="YES" codeGenerationType="class">
@@ -92,7 +93,7 @@
         <element name="Avis" positionX="223" positionY="374" width="128" height="103"/>
         <element name="Contact" positionX="349" positionY="-346" width="128" height="150"/>
         <element name="Evaluation" positionX="-27" positionY="401" width="128" height="118"/>
-        <element name="Evenement" positionX="-92" positionY="-394" width="128" height="103"/>
+        <element name="Evenement" positionX="-92" positionY="-394" width="128" height="118"/>
         <element name="Medicament" positionX="-173" positionY="149" width="128" height="90"/>
         <element name="Ordonnance" positionX="-540" positionY="-190" width="128" height="118"/>
         <element name="Patient" positionX="-270" positionY="-702" width="128" height="163"/>

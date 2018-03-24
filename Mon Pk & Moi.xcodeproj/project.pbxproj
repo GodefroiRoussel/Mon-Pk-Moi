@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BA3DEE9206661A000DE1A9B /* EvenementCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3DEE8206661A000DE1A9B /* EvenementCoreDataDAO.swift */; };
 		2BB96A382066504800828A73 /* EvenementExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB96A372066504800828A73 /* EvenementExtension.swift */; };
 		7A2C29FF205429CA000EC45C /* miseAJourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2C29FE205429CA000EC45C /* miseAJourViewController.swift */; };
 		7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BB35E2050281C00A46AB3 /* AppDelegate.swift */; };
@@ -72,6 +73,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2BA3DEE8206661A000DE1A9B /* EvenementCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvenementCoreDataDAO.swift; sourceTree = "<group>"; };
 		2BB96A372066504800828A73 /* EvenementExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvenementExtension.swift; sourceTree = "<group>"; };
 		7A2C29FE205429CA000EC45C /* miseAJourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = miseAJourViewController.swift; path = ../miseAJourViewController.swift; sourceTree = "<group>"; };
 		7A6BB35B2050281C00A46AB3 /* Mon Pk & Moi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mon Pk & Moi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -299,6 +301,7 @@
 				BC7B2639205E7E25009BFE67 /* TypeContactCoreDataDAO.swift */,
 				BC6AC2642065AC1800BC533D /* ContactCoreDataDAO.swift */,
 				BC6AC2682065C31D00BC533D /* PatientCoreDataDAO.swift */,
+				2BA3DEE8206661A000DE1A9B /* EvenementCoreDataDAO.swift */,
 			);
 			name = CoreDataDAO;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				BC7DAA62205EF85100E53AA2 /* PriseMedicamenteuseDAO.swift in Sources */,
 				BC7DAA58205EF70600E53AA2 /* TraceurDAO.swift in Sources */,
 				7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */,
+				2BA3DEE9206661A000DE1A9B /* EvenementCoreDataDAO.swift in Sources */,
 				BC330327205C374700D5C42F /* MedicamentDAO.swift in Sources */,
 				BC7DAA5A205EF78D00E53AA2 /* EvaluationDAO.swift in Sources */,
 			);

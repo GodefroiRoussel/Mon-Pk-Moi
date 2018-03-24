@@ -15,7 +15,7 @@ protocol RDVDAO: EvenementDAO {
     func create(an object: RDV) throws -> RDV
     
     //TO DO: voir quoi passer en paramètre
-    func find(a reference: A) throws -> RDV
+    func find(withName nom : String) throws -> RDV
     
     func update(an object: RDV) throws -> RDV
     
