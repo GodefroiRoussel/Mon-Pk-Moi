@@ -16,7 +16,6 @@ extension PriseMedicamenteuse {
         }
     }
     
-    //TODO : Gérer ici la création des prises médicamenteuses.
     convenience init(withName nom: String, withDateTheorique dateTheorique: NSDate, withDose dose: Double, schedule_by patient : Patient, belongs_to medicament :Medicament, linked_to ordonnance : Ordonnance){
         self.init(context: CoreDataManager.context)
         self.pnom = nom
