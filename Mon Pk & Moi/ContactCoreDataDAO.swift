@@ -26,7 +26,7 @@ class ContactCoreDataDAO : ContactDAO {
     }
     
     func create(withName nom: String, withPrenom prenom: String?, withTelephone telephone: String?, withAdresse adresse: String?, is_a typeContact: TypeContact, is_connected_to patient: Patient ) throws -> Contact {
-        let newContact = Contact(withName: nom, withPrenom: prenom, withTelephone: telephone, withAdresse: adresse, is_a: typeContact)
+        let newContact = Contact(withName: nom, withPrenom: prenom, withTelephone: telephone, withAdresse: adresse, is_a: typeContact, is_connected_to: patient)
         CoreDataManager.save()
         return newContact
     }

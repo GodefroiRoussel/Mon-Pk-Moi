@@ -37,13 +37,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let contactDAO : ContactDAO = factory.getContactDAO()
         let patientDAO : PatientDAO = factory.getPatientDAO()
         
+        let date : Date = Date()
         do{
-            let patient : Patient = try patientDAO.create(withName: "Thevenon", withPrenom: "Romain", withDateNaissance: 24-03-1995, withAdresse: "Polytech", withTempsPreparation: 90)
+            let patient : Patient = try patientDAO.create(withName: "Thevenon", withPrenom: "Romain", withDateNaissance: date, withAdresse: "Polytech", withTempsPreparation: 90)
             print(patient)
             let typeContact : TypeContact = try typeContactDAO.create(withLibelle: "Famille")!
             print(typeContact)
             let contact : Contact = try contactDAO.create(withName: "Roussel", withPrenom: "Godefroi", withTelephone: "0606060606", withAdresse: "Polytech", is_a: typeContact, is_connected_to : patient)
             print(contact)
+            
+            let patients : [Patient] = try patientDAO.getAllPatients()
+            print("On regarde tous les patients de la BD")
+            for patient in patients {
+                print("Patient")
+                print(patient)
+            }
         } catch let error as NSError {
                 print(error)
                 return false
