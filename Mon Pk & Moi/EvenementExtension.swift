@@ -19,7 +19,7 @@ extension Evenement {
         }
     }
     /// lastname of Person
-    public var dateTheorique  : NSDate{
+    public var dateTheorique : NSDate{
         get{
             return self.pdateTheorique!
         }
@@ -28,7 +28,7 @@ extension Evenement {
         }
     }
     
-    public var estEffectue  : Bool{
+    public var estEffectue : Bool{
         get{
             return self.pestEffectue
         }
@@ -38,11 +38,13 @@ extension Evenement {
     }
     
     func valider(anEvenement evenement: Evenement) -> Evenement {
-        fatalError("This method must be implemented")
+        evenement.estEffectue = true
+        return evenement
     }
     
     func refuser(anEvenement evenement: Evenement) -> Evenement {
-        fatalError("This method must be implemented")
+        evenement.estEffectue = false
+        return evenement
     }
     
 }

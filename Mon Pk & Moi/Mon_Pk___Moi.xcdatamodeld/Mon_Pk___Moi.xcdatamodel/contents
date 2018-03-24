@@ -59,7 +59,7 @@
         <relationship name="possess" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contact" inverseName="is_connected_to" inverseEntity="Contact" syncable="YES"/>
     </entity>
     <entity name="PriseMedicamenteuse" representedClassName="PriseMedicamenteuse" parentEntity="Evenement" syncable="YES" codeGenerationType="class">
-        <attribute name="dose" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pdose" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="belongs_to" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medicament" inverseName="has" inverseEntity="Medicament" syncable="YES"/>
         <relationship name="linked_to" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ordonnance" inverseName="has" inverseEntity="Ordonnance" syncable="YES"/>
     </entity>

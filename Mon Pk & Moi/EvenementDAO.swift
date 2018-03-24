@@ -12,11 +12,4 @@ protocol EvenementDAO {
 
     func getAllEvenements() throws -> [Evenement]
     
-    func create(anEvenement evenement: Evenement) throws -> Evenement
-    
-    func update(anEvenement evenement: Evenement) throws -> Evenement
-    
-    func delete(anEvenement evenement: Evenement) throws
-    
-    func find(withName nom: String) throws -> Activite
 }

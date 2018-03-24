@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ActiviteDAO: EvenementDAO {
+protocol ActiviteDAO {
     
     func getAllActivites() throws -> [Activite]
     

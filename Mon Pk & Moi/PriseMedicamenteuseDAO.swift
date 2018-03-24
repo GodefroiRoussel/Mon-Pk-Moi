@@ -8,16 +8,15 @@
 
 import Foundation
 
-protocol PriseMedicamenteuseDAO: EvenementDAO {
+protocol PriseMedicamenteuseDAO {
     
     func getAllPriseMedicamenteuses() throws -> [PriseMedicamenteuse]
     
-    func create(an object: PriseMedicamenteuse) throws -> PriseMedicamenteuse
+    func create(withName nom: String, withDateTheorique dateTheorique: NSDate, withDose dose: Double, schedule_by patient : Patient, belongs_to medicament :Medicament, linked_to ordonnance : Ordonnance) throws -> PriseMedicamenteuse
     
-    //TO DO: voir quoi passer en paramètre
-    func find(withName nom : String) throws -> PriseMedicamenteuse
+    func find(withName nom : String) throws -> PriseMedicamenteuse?
     
-    func update(an object: PriseMedicamenteuse) throws -> PriseMedicamenteuse
+    func update(aPriseMedicamenteuse: PriseMedicamenteuse) throws -> PriseMedicamenteuse
     
-    func delete(an object: PriseMedicamenteuse) throws
+    func delete(aPriseMedicamenteuse: PriseMedicamenteuse) throws
 }

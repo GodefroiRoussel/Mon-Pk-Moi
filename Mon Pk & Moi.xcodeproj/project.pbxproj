@@ -10,6 +10,8 @@
 		2BA3DEE9206661A000DE1A9B /* EvenementCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3DEE8206661A000DE1A9B /* EvenementCoreDataDAO.swift */; };
 		2BA3DEEB2066682100DE1A9B /* OrdonnanceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3DEEA2066682100DE1A9B /* OrdonnanceExtension.swift */; };
 		2BA3DEED20666FAF00DE1A9B /* OrdonnanceCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3DEEC20666FAF00DE1A9B /* OrdonnanceCoreDataDAO.swift */; };
+		2BA3DEEF2066762700DE1A9B /* PriseMedicamenteuseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3DEEE2066762700DE1A9B /* PriseMedicamenteuseExtension.swift */; };
+		2BA3DEF120667E8B00DE1A9B /* PriseMedicamenteuseCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3DEF020667E8B00DE1A9B /* PriseMedicamenteuseCoreDataDAO.swift */; };
 		2BB96A382066504800828A73 /* EvenementExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB96A372066504800828A73 /* EvenementExtension.swift */; };
 		7A2C29FF205429CA000EC45C /* miseAJourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2C29FE205429CA000EC45C /* miseAJourViewController.swift */; };
 		7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BB35E2050281C00A46AB3 /* AppDelegate.swift */; };
@@ -78,6 +80,8 @@
 		2BA3DEE8206661A000DE1A9B /* EvenementCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvenementCoreDataDAO.swift; sourceTree = "<group>"; };
 		2BA3DEEA2066682100DE1A9B /* OrdonnanceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdonnanceExtension.swift; sourceTree = "<group>"; };
 		2BA3DEEC20666FAF00DE1A9B /* OrdonnanceCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdonnanceCoreDataDAO.swift; sourceTree = "<group>"; };
+		2BA3DEEE2066762700DE1A9B /* PriseMedicamenteuseExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriseMedicamenteuseExtension.swift; sourceTree = "<group>"; };
+		2BA3DEF020667E8B00DE1A9B /* PriseMedicamenteuseCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriseMedicamenteuseCoreDataDAO.swift; sourceTree = "<group>"; };
 		2BB96A372066504800828A73 /* EvenementExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvenementExtension.swift; sourceTree = "<group>"; };
 		7A2C29FE205429CA000EC45C /* miseAJourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = miseAJourViewController.swift; path = ../miseAJourViewController.swift; sourceTree = "<group>"; };
 		7A6BB35B2050281C00A46AB3 /* Mon Pk & Moi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mon Pk & Moi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,6 +263,7 @@
 				BC6AC2662065C01600BC533D /* PatientExtension.swift */,
 				2BB96A372066504800828A73 /* EvenementExtension.swift */,
 				2BA3DEEA2066682100DE1A9B /* OrdonnanceExtension.swift */,
+				2BA3DEEE2066762700DE1A9B /* PriseMedicamenteuseExtension.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -308,6 +313,7 @@
 				BC6AC2682065C31D00BC533D /* PatientCoreDataDAO.swift */,
 				2BA3DEE8206661A000DE1A9B /* EvenementCoreDataDAO.swift */,
 				2BA3DEEC20666FAF00DE1A9B /* OrdonnanceCoreDataDAO.swift */,
+				2BA3DEF020667E8B00DE1A9B /* PriseMedicamenteuseCoreDataDAO.swift */,
 			);
 			name = CoreDataDAO;
 			sourceTree = "<group>";
@@ -478,12 +484,14 @@
 				BC8E5A3C2064693100DE0AD7 /* MedicamentExtension.swift in Sources */,
 				BCEDEBC9205DE26A00B4A349 /* TypeContactSeeder.swift in Sources */,
 				BC7DAA6C205F1E7700E53AA2 /* SymptomeDAO.swift in Sources */,
+				2BA3DEF120667E8B00DE1A9B /* PriseMedicamenteuseCoreDataDAO.swift in Sources */,
 				BC6AC2632065A3B900BC533D /* ContactExtension.swift in Sources */,
 				7A2C29FF205429CA000EC45C /* miseAJourViewController.swift in Sources */,
 				BCEDEBC3205DCC3500B4A349 /* AbstractDAOFactory.swift in Sources */,
 				BCCB4122205C565300AB47CA /* DialogBoxHelper.swift in Sources */,
 				BC7DAA5E205EF7D000E53AA2 /* TypeAvisDAO.swift in Sources */,
 				BC7DAA62205EF85100E53AA2 /* PriseMedicamenteuseDAO.swift in Sources */,
+				2BA3DEEF2066762700DE1A9B /* PriseMedicamenteuseExtension.swift in Sources */,
 				BC7DAA58205EF70600E53AA2 /* TraceurDAO.swift in Sources */,
 				7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */,
 				2BA3DEE9206661A000DE1A9B /* EvenementCoreDataDAO.swift in Sources */,

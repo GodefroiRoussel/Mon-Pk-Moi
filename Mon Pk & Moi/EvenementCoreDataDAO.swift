@@ -31,20 +31,5 @@ class EvenementCoreDataDAO : EvenementDAO {
             throw error
         }
     }
-    
-    func create(anEvenement evenement: Evenement) throws -> Evenement{
-        fatalError("You can not use this functionnality")
-    }
-    
-    func find(withName nom: String) throws -> Activite {
-        fatalError("You can not use this functionnality")
-    }
-    
-    func update(anEvenement evenement: Evenement) throws -> Evenement{
-        fatalError("You can not use this functionnality")
-    }
-    
-    func delete(anEvenement evenement: Evenement) throws{
-        fatalError("You can not use this functionnality")
-    }
+
 }

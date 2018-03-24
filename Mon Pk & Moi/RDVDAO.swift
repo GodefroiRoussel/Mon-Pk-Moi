@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol RDVDAO: EvenementDAO {
+protocol RDVDAO {
 
     func getAllRDVs() throws -> [RDV]
     
