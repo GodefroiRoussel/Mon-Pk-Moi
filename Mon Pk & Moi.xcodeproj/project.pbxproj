@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BB96A382066504800828A73 /* EvenementExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB96A372066504800828A73 /* EvenementExtension.swift */; };
 		7A2C29FF205429CA000EC45C /* miseAJourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2C29FE205429CA000EC45C /* miseAJourViewController.swift */; };
 		7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BB35E2050281C00A46AB3 /* AppDelegate.swift */; };
 		7A6BB3612050281C00A46AB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BB3602050281C00A46AB3 /* ViewController.swift */; };
@@ -71,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2BB96A372066504800828A73 /* EvenementExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvenementExtension.swift; sourceTree = "<group>"; };
 		7A2C29FE205429CA000EC45C /* miseAJourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = miseAJourViewController.swift; path = ../miseAJourViewController.swift; sourceTree = "<group>"; };
 		7A6BB35B2050281C00A46AB3 /* Mon Pk & Moi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mon Pk & Moi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A6BB35E2050281C00A46AB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				BC8E5A3D206481DA00DE0AD7 /* TypeContactExtension.swift */,
 				BC6AC2622065A3B900BC533D /* ContactExtension.swift */,
 				BC6AC2662065C01600BC533D /* PatientExtension.swift */,
+				2BB96A372066504800828A73 /* EvenementExtension.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				BC7DAA68205EF8BD00E53AA2 /* OrdonnanceDAO.swift in Sources */,
 				BC7DAA60205EF7F600E53AA2 /* ActiviteDAO.swift in Sources */,
 				BC7B263A205E7E25009BFE67 /* TypeContactCoreDataDAO.swift in Sources */,
+				2BB96A382066504800828A73 /* EvenementExtension.swift in Sources */,
 				7A6BB3612050281C00A46AB3 /* ViewController.swift in Sources */,
 				BCEDEBC6205DCC9100B4A349 /* CoreDataDAOFactory.swift in Sources */,
 				BCCB4124205C5E3B00AB47CA /* CoreDataManager.swift in Sources */,

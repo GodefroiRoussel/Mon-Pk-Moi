@@ -9,20 +9,12 @@
 import Foundation
 
 protocol EvenementDAO {
-    associatedtype A
 
     func getAllEvenements() throws -> [Evenement]
     
-    func create(an object: Evenement) throws -> Evenement
+    func create(anEvenement evenement: Evenement) throws -> Evenement
     
-    //TO DO: voir quoi passer en paramètre
-    func find(a reference: A) throws -> Evenement
+    func update(anEvenement evenement: Evenement) throws -> Evenement
     
-    func update(an object: Evenement) throws -> Evenement
-    
-    func delete(an object: Evenement) throws
-    
-    func valider(an event : Evenement) -> Evenement
-    
-    func refuser(event : Evenement) -> Evenement
+    func delete(anEvenement evenement: Evenement) throws
 }
