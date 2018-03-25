@@ -37,13 +37,12 @@ extension RDV {
         }
     }
     
-    //TODO: change Date()
     convenience init(withName nom: String, withDateTheorique dateTheorique: NSDate,withLieu lieu: String?, withTempsPourAllerALEvenement temps: Int16, withDuree duree: Int16, schedule_by patient : Patient){
         self.init(context: CoreDataManager.context)
         self.pnom = nom
-        self.pdateTheorique = Date() as NSDate
+        self.pdateTheorique = dateTheorique
         self.pdateEffective = nil
-        self.pestEffectue = false // A vérifier mais je préfère mettre nil
+        self.pestEffectue = false
         self.plieu = lieu
         self.ptempsPourAllerALEvenement = temps
         self.pduree = duree

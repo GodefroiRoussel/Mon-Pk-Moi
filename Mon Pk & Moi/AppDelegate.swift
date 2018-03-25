@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let contactDAO : ContactDAO = factory.getContactDAO()
         let patientDAO : PatientDAO = factory.getPatientDAO()
         
-        let date : Date = Date()
+        let date : NSDate = Date() as NSDate
         do{
             let patient : Patient = try patientDAO.create(withName: "Thevenon", withPrenom: "Romain", withDateNaissance: date, withAdresse: "Polytech", withTempsPreparation: 90)
             print(patient)

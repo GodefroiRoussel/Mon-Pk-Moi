@@ -9,6 +9,7 @@
 import Foundation
 
 protocol ContactDAO {
+    
     func getAllContacts() throws -> [Contact]
     
     func create(withName: String, withPrenom: String?, withTelephone: String?, withAdresse: String?, is_a : TypeContact, is_connected_to : Patient ) throws -> Contact

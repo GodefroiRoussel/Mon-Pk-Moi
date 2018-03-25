@@ -12,7 +12,7 @@ protocol PatientDAO {
     
     func getAllPatients() throws -> [Patient]
     
-    func create(withName nom: String, withPrenom prenom: String, withDateNaissance dateNaissance: Date, withAdresse adresse : String, withTempsPreparation tempsPreparation : Int16) throws -> Patient
+    func create(withName nom: String, withPrenom prenom: String, withDateNaissance dateNaissance: NSDate, withAdresse adresse : String, withTempsPreparation tempsPreparation : Int16) throws -> Patient
     
     func find(withName: String) throws -> Patient?
     

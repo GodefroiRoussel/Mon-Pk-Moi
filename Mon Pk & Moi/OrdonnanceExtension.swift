@@ -27,11 +27,10 @@ extension Ordonnance {
     }
     
     //TODO
-    func voirCollectionMedicamentNonPris(withOrdonnance ordonnance: Ordonnance) -> [PriseMedicamenteuse] {
+    func voirCollectionMedicamentNonPris(withOrdonnance ordonnance: Ordonnance) -> [PriseMedicamenteuse?] {
         return [PriseMedicamenteuse()]
     }
     
-    //TODO : Gérer ici la création des prises médicamenteuses.
     convenience init(withCommentaire commentaire: String, concern patient: Patient, created_by contact: Contact, untill rdv : RDV){
         self.init(context: CoreDataManager.context)
         self.pcommentaire = commentaire

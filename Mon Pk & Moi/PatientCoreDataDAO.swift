@@ -25,7 +25,7 @@ class PatientCoreDataDAO : PatientDAO {
         }
     }
     
-    func create(withName nom: String, withPrenom prenom: String, withDateNaissance dateNaissance: Date, withAdresse adresse : String, withTempsPreparation tempsPreparation : Int16) throws -> Patient {
+    func create(withName nom: String, withPrenom prenom: String, withDateNaissance dateNaissance: NSDate, withAdresse adresse : String, withTempsPreparation tempsPreparation : Int16) throws -> Patient {
         let newPatient = Patient(withName: nom, withPrenom: prenom, withDateNaissance: dateNaissance, withAdresse: adresse, withTempsPreparation: tempsPreparation)
         CoreDataManager.save()
         return newPatient

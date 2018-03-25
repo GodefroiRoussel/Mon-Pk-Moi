@@ -28,12 +28,12 @@ extension Patient {
         }
     }
     
-    public var dateNaissance  : Date{
+    public var dateNaissance  : NSDate{
         get{
-            return self.pdateNaissance! as Date
+            return self.pdateNaissance!
         }
         set{
-            self.pdateNaissance = newValue as NSDate
+            self.pdateNaissance = newValue
         }
     }
     
@@ -60,13 +60,16 @@ extension Patient {
     /// - Parameters:
     ///   - firstname: `String` first name of `Person`
     ///   - lastname:  `String` last name of `Person`
-    convenience init(withName nom: String, withPrenom prenom: String, withDateNaissance dateNaissance: Date, withAdresse adresse : String, withTempsPreparation tempsPreparation : Int16){
+    convenience init(withName nom: String, withPrenom prenom: String, withDateNaissance dateNaissance: NSDate, withAdresse adresse : String, withTempsPreparation tempsPreparation : Int16){
         self.init(context: CoreDataManager.context)
         self.pnom = nom
         self.pprenom = prenom
-        self.pdateNaissance = dateNaissance as NSDate
+        self.pdateNaissance = dateNaissance
         self.padresse = adresse
         self.ptempsPreparation = tempsPreparation
+        self.has = []
+        self.linked_to = []
+        self.possess = []
     }
     
 }
