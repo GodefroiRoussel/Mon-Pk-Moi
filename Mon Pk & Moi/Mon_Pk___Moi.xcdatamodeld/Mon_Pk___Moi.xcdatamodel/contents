@@ -63,9 +63,9 @@
         <relationship name="linked_to" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ordonnance" inverseName="has" inverseEntity="Ordonnance" syncable="YES"/>
     </entity>
     <entity name="RDV" representedClassName="RDV" parentEntity="Evenement" syncable="YES" codeGenerationType="class">
-        <attribute name="duree" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="lieu" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="tempsPourAllerALEvenement" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pduree" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="plieu" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ptempsPourAllerALEvenement" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="create" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ordonnance" inverseName="untill" inverseEntity="Ordonnance" syncable="YES"/>
         <relationship name="has" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Traceur" inverseName="belongs_to" inverseEntity="Traceur" syncable="YES"/>
         <relationship name="is_with" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="has" inverseEntity="Contact" syncable="YES"/>

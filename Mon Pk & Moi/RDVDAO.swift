@@ -12,12 +12,12 @@ protocol RDVDAO {
 
     func getAllRDVs() throws -> [RDV]
     
-    func create(an object: RDV) throws -> RDV
+    func create(withName nom: String, withDateTheorique dateTheorique: NSDate,withLieu lieu: String?, withTempsPourAllerALEvenement temps: Int16, withDuree duree: Int16, schedule_by patient : Patient) throws -> RDV
     
     //TO DO: voir quoi passer en paramètre
-    func find(withName nom : String) throws -> RDV
+    func find(withName nom : String) throws -> RDV?
     
-    func update(an object: RDV) throws -> RDV
+    func update(aRDV rdv: RDV) throws -> RDV
     
-    func delete(an object: RDV) throws
+    func delete(aRDV rdv: RDV) throws
 }
