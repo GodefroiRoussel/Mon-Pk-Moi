@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Xcode 8.0" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="17D47" minimumToolsVersion="Xcode 8.0" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Activite" representedClassName="Activite" parentEntity="Evenement" syncable="YES" codeGenerationType="class">
-        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="duree" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pdesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pduree" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="Avis" representedClassName="Avis" syncable="YES" codeGenerationType="class">
         <attribute name="choix" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -91,7 +90,7 @@
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contact" inverseName="is_a" inverseEntity="Contact" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Activite" positionX="-261" positionY="-369" width="128" height="88"/>
+        <element name="Activite" positionX="-261" positionY="-369" width="128" height="73"/>
         <element name="Avis" positionX="223" positionY="374" width="128" height="103"/>
         <element name="Contact" positionX="349" positionY="-346" width="128" height="165"/>
         <element name="Evaluation" positionX="-27" positionY="401" width="128" height="118"/>

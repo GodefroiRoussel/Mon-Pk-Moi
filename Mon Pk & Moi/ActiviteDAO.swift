@@ -12,11 +12,11 @@ protocol ActiviteDAO {
     
     func getAllActivites() throws -> [Activite]
     
-    func create(an object: Activite) throws -> Activite
+    func create(withName nom: String, withDateTheorique dateTheorique: NSDate, withDuree duree: Int16, withDescription desc: String, schedule_by patient : Patient) throws -> Activite
     
-    func find(withName nom: String) throws -> Activite
+    func find(withName nom: String) throws -> Activite?
     
-    func update(an object: Activite) throws -> Activite
+    func update(anActivite: Activite) throws -> Activite
     
-    func delete(an object: Activite) throws
+    func delete(anActivite: Activite) throws
 }

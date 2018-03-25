@@ -17,6 +17,7 @@ class CoreDataDAOFactory: AbstractDAOFactory{
     typealias E = EvenementCoreDataDAO
     typealias F = OrdonnanceCoreDataDAO
     typealias G = PriseMedicamenteuseCoreDataDAO
+    typealias H = ActiviteCoreDataDAO
 
     
     private static var instance: CoreDataDAOFactory = CoreDataDAOFactory()
@@ -55,4 +56,7 @@ class CoreDataDAOFactory: AbstractDAOFactory{
         return PriseMedicamenteuseCoreDataDAO()
     }
 
+    func getActiviteDAO() -> ActiviteCoreDataDAO {
+        return ActiviteCoreDataDAO()
+    }
 }
