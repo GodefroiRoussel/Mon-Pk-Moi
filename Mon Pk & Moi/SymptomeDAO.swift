@@ -9,17 +9,15 @@
 import Foundation
 
 protocol SymptomeDAO {
-    associatedtype A
 
     func getAllSymptomes() throws -> [Symptome]
 
-    func create(an object: Symptome) throws -> Symptome
+    func create(withLibelle libelle: String) throws -> Symptome
 
-    //TO DO: voir quoi passer en paramètre
-    func find(a reference: A) throws -> Symptome
+    func find(withLibelle libelle: String) throws -> Symptome?
 
-    func update(an object: Symptome) throws -> Symptome
+    func update(aSymptome: Symptome) throws -> Symptome
 
-    func delete(an object: Symptome) throws
+    func delete(aSymptome: Symptome) throws
 
 }
