@@ -9,16 +9,14 @@
 import Foundation
 
 protocol TypeAvisDAO {
-    associatedtype A
+
+    func getAllTypeAvis() throws -> [TypeAvis]
     
-    func getAllTypeAviss() throws -> [TypeAvis]
+    func create(withLibelle libelle: String) throws -> TypeAvis
+
+    func find(withLibelle libelle: String) throws -> TypeAvis?
     
-    func create(an object: TypeAvis) throws -> TypeAvis
+    func update(aTypeAvis typeAvis: TypeAvis) throws -> TypeAvis
     
-    //TO DO: voir quoi passer en paramètre
-    func find(a reference: A) throws -> TypeAvis
-    
-    func update(an object: TypeAvis) throws -> TypeAvis
-    
-    func delete(an object: TypeAvis) throws
+    func delete(aTypeAvis typeAvis: TypeAvis) throws
 }

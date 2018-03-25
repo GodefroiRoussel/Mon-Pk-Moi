@@ -82,7 +82,7 @@
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Avis" inverseName="belongs_to" inverseEntity="Avis" syncable="YES"/>
     </entity>
     <entity name="TypeAvis" representedClassName="TypeAvis" syncable="YES" codeGenerationType="class">
-        <attribute name="libelle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plibelle" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Avis" inverseName="is_a" inverseEntity="Avis" syncable="YES"/>
     </entity>
     <entity name="TypeContact" representedClassName="TypeContact" syncable="YES" codeGenerationType="class">
