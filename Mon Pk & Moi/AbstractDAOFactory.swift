@@ -21,6 +21,7 @@ protocol AbstractDAOFactory {
     associatedtype J
     associatedtype K
     associatedtype L
+    associatedtype M
     
     func getMedicamentDAO() -> A
     func getTypeContactDAO() -> B
@@ -34,4 +35,5 @@ protocol AbstractDAOFactory {
     func getTraceurDAO() -> J
     func getEvaluationDAO() -> K
     func getSymptomeDAO() -> L
+    func getAvisDAO() -> M
 }

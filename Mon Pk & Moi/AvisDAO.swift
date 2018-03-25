@@ -10,16 +10,11 @@ import Foundation
 
 protocol AvisDAO {
     
-    associatedtype A
+    func getAllAvis() throws -> [Avis]
     
-    func getAllAviss() throws -> [Avis]
+    func create(withChoix choix: Bool, withCommentaire commentaire: String?, belongs_to traceur: Traceur, is_a typeAvis: TypeAvis) throws -> Avis
     
-    func create(an object: Avis) throws -> Avis
+    func update(anAvis avis: Avis) throws -> Avis
     
-    //TO DO: voir quoi passer en paramètre
-    func find(a reference: A) throws -> Avis
-    
-    func update(an object: Avis) throws -> Avis
-    
-    func delete(an object: Avis) throws
+    func delete(anAvis avis: Avis) throws
 }

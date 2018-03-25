@@ -5,8 +5,8 @@
         <attribute name="pduree" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="Avis" representedClassName="Avis" syncable="YES" codeGenerationType="class">
-        <attribute name="choix" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="commentaire" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pchoix" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pcommentaire" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="belongs_to" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Traceur" inverseName="has" inverseEntity="Traceur" syncable="YES"/>
         <relationship name="is_a" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TypeAvis" inverseName="has" inverseEntity="TypeAvis" syncable="YES"/>
     </entity>

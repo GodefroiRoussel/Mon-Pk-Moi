@@ -39,6 +39,8 @@
 		BC1A7E8920680CD2002DE72B /* EvaluationCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1A7E8820680CD2002DE72B /* EvaluationCoreDataDAO.swift */; };
 		BC1A7E8B20680EC2002DE72B /* SymptomeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1A7E8A20680EC2002DE72B /* SymptomeExtension.swift */; };
 		BC1A7E8D20680F8A002DE72B /* SymptomeCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1A7E8C20680F8A002DE72B /* SymptomeCoreDataDAO.swift */; };
+		BC1A7E8F206810F3002DE72B /* AvisExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1A7E8E206810F3002DE72B /* AvisExtension.swift */; };
+		BC1A7E912068128D002DE72B /* AvisCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1A7E902068128D002DE72B /* AvisCoreDataDAO.swift */; };
 		BC330327205C374700D5C42F /* MedicamentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC330326205C374700D5C42F /* MedicamentDAO.swift */; };
 		BC6AC2632065A3B900BC533D /* ContactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6AC2622065A3B900BC533D /* ContactExtension.swift */; };
 		BC6AC2652065AC1800BC533D /* ContactCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6AC2642065AC1800BC533D /* ContactCoreDataDAO.swift */; };
@@ -125,6 +127,8 @@
 		BC1A7E8820680CD2002DE72B /* EvaluationCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluationCoreDataDAO.swift; sourceTree = "<group>"; };
 		BC1A7E8A20680EC2002DE72B /* SymptomeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomeExtension.swift; sourceTree = "<group>"; };
 		BC1A7E8C20680F8A002DE72B /* SymptomeCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomeCoreDataDAO.swift; sourceTree = "<group>"; };
+		BC1A7E8E206810F3002DE72B /* AvisExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvisExtension.swift; sourceTree = "<group>"; };
+		BC1A7E902068128D002DE72B /* AvisCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvisCoreDataDAO.swift; sourceTree = "<group>"; };
 		BC330326205C374700D5C42F /* MedicamentDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentDAO.swift; sourceTree = "<group>"; };
 		BC6AC2622065A3B900BC533D /* ContactExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactExtension.swift; sourceTree = "<group>"; };
 		BC6AC2642065AC1800BC533D /* ContactCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCoreDataDAO.swift; sourceTree = "<group>"; };
@@ -289,6 +293,7 @@
 				BC1A7E82206804A8002DE72B /* TraceurExtension.swift */,
 				BC1A7E8620680A04002DE72B /* EvaluationExtension.swift */,
 				BC1A7E8A20680EC2002DE72B /* SymptomeExtension.swift */,
+				BC1A7E8E206810F3002DE72B /* AvisExtension.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -344,6 +349,7 @@
 				BC1A7E8420680853002DE72B /* TraceurCoreDataDAO.swift */,
 				BC1A7E8820680CD2002DE72B /* EvaluationCoreDataDAO.swift */,
 				BC1A7E8C20680F8A002DE72B /* SymptomeCoreDataDAO.swift */,
+				BC1A7E902068128D002DE72B /* AvisCoreDataDAO.swift */,
 			);
 			name = CoreDataDAO;
 			sourceTree = "<group>";
@@ -496,6 +502,7 @@
 				BC1A7E812067D7AC002DE72B /* RDVCoreDataDAO.swift in Sources */,
 				BC6AC2692065C31D00BC533D /* PatientCoreDataDAO.swift in Sources */,
 				BC7B263C205E7EF1009BFE67 /* TypeContactDAO.swift in Sources */,
+				BC1A7E912068128D002DE72B /* AvisCoreDataDAO.swift in Sources */,
 				BCEDEBBC205D2CBF00B4A349 /* MedicamentSeeder.swift in Sources */,
 				BC1A7E7F2067D3AF002DE72B /* RDVExtension.swift in Sources */,
 				2BA3DEED20666FAF00DE1A9B /* OrdonnanceCoreDataDAO.swift in Sources */,
@@ -504,6 +511,7 @@
 				BC7B2638205E759A009BFE67 /* DataHelper.swift in Sources */,
 				BC7DAA64205EF87200E53AA2 /* RDVDAO.swift in Sources */,
 				2BA3DEEB2066682100DE1A9B /* OrdonnanceExtension.swift in Sources */,
+				BC1A7E8F206810F3002DE72B /* AvisExtension.swift in Sources */,
 				BC7DAA68205EF8BD00E53AA2 /* OrdonnanceDAO.swift in Sources */,
 				BC7DAA60205EF7F600E53AA2 /* ActiviteDAO.swift in Sources */,
 				BC7B263A205E7E25009BFE67 /* TypeContactCoreDataDAO.swift in Sources */,
