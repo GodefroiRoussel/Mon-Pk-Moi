@@ -9,16 +9,14 @@
 import Foundation
 
 protocol EvaluationDAO {
-    associatedtype A
-    
+
     func getAllEvaluations() throws -> [Evaluation]
     
-    func create(an object: Evaluation) throws -> Evaluation
+    func create(withHeureDebut heureDebut: NSDate, withHeureFin heureFin: NSDate, is_linked traceur :Traceur) throws -> Evaluation
+
+    func find(atHeureDebut heureDebut: NSDate) throws -> Evaluation?
     
-    //TO DO: voir quoi passer en paramètre
-    func find(a reference: A) throws -> Evaluation
+    func update(anEvaluation evaluation: Evaluation) throws -> Evaluation
     
-    func update(an object: Evaluation) throws -> Evaluation
-    
-    func delete(an object: Evaluation) throws
+    func delete(anEvaluation evaluation: Evaluation) throws
 }

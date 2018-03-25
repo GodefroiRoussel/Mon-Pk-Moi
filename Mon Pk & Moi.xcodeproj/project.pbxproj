@@ -35,6 +35,8 @@
 		BC1A7E812067D7AC002DE72B /* RDVCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1A7E802067D7AC002DE72B /* RDVCoreDataDAO.swift */; };
 		BC1A7E83206804A8002DE72B /* TraceurExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1A7E82206804A8002DE72B /* TraceurExtension.swift */; };
 		BC1A7E8520680853002DE72B /* TraceurCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1A7E8420680853002DE72B /* TraceurCoreDataDAO.swift */; };
+		BC1A7E8720680A04002DE72B /* EvaluationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1A7E8620680A04002DE72B /* EvaluationExtension.swift */; };
+		BC1A7E8920680CD2002DE72B /* EvaluationCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1A7E8820680CD2002DE72B /* EvaluationCoreDataDAO.swift */; };
 		BC330327205C374700D5C42F /* MedicamentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC330326205C374700D5C42F /* MedicamentDAO.swift */; };
 		BC6AC2632065A3B900BC533D /* ContactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6AC2622065A3B900BC533D /* ContactExtension.swift */; };
 		BC6AC2652065AC1800BC533D /* ContactCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6AC2642065AC1800BC533D /* ContactCoreDataDAO.swift */; };
@@ -117,6 +119,8 @@
 		BC1A7E802067D7AC002DE72B /* RDVCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RDVCoreDataDAO.swift; sourceTree = "<group>"; };
 		BC1A7E82206804A8002DE72B /* TraceurExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceurExtension.swift; sourceTree = "<group>"; };
 		BC1A7E8420680853002DE72B /* TraceurCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceurCoreDataDAO.swift; sourceTree = "<group>"; };
+		BC1A7E8620680A04002DE72B /* EvaluationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluationExtension.swift; sourceTree = "<group>"; };
+		BC1A7E8820680CD2002DE72B /* EvaluationCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluationCoreDataDAO.swift; sourceTree = "<group>"; };
 		BC330326205C374700D5C42F /* MedicamentDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentDAO.swift; sourceTree = "<group>"; };
 		BC6AC2622065A3B900BC533D /* ContactExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactExtension.swift; sourceTree = "<group>"; };
 		BC6AC2642065AC1800BC533D /* ContactCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCoreDataDAO.swift; sourceTree = "<group>"; };
@@ -279,6 +283,7 @@
 				BC1A7E7A2067CE2B002DE72B /* ActiviteExtension.swift */,
 				BC1A7E7E2067D3AF002DE72B /* RDVExtension.swift */,
 				BC1A7E82206804A8002DE72B /* TraceurExtension.swift */,
+				BC1A7E8620680A04002DE72B /* EvaluationExtension.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				BC1A7E7C2067D102002DE72B /* ActiviteCoreDataDAO.swift */,
 				BC1A7E802067D7AC002DE72B /* RDVCoreDataDAO.swift */,
 				BC1A7E8420680853002DE72B /* TraceurCoreDataDAO.swift */,
+				BC1A7E8820680CD2002DE72B /* EvaluationCoreDataDAO.swift */,
 			);
 			name = CoreDataDAO;
 			sourceTree = "<group>";
@@ -499,6 +505,7 @@
 				BC1A7E83206804A8002DE72B /* TraceurExtension.swift in Sources */,
 				7A6BB3612050281C00A46AB3 /* ViewController.swift in Sources */,
 				BCEDEBC6205DCC9100B4A349 /* CoreDataDAOFactory.swift in Sources */,
+				BC1A7E8720680A04002DE72B /* EvaluationExtension.swift in Sources */,
 				BCCB4124205C5E3B00AB47CA /* CoreDataManager.swift in Sources */,
 				BC1A7E7D2067D102002DE72B /* ActiviteCoreDataDAO.swift in Sources */,
 				BC8E5A3E206481DA00DE0AD7 /* TypeContactExtension.swift in Sources */,
@@ -509,6 +516,7 @@
 				BC1A7E8520680853002DE72B /* TraceurCoreDataDAO.swift in Sources */,
 				BC7DAA6C205F1E7700E53AA2 /* SymptomeDAO.swift in Sources */,
 				2BA3DEF120667E8B00DE1A9B /* PriseMedicamenteuseCoreDataDAO.swift in Sources */,
+				BC1A7E8920680CD2002DE72B /* EvaluationCoreDataDAO.swift in Sources */,
 				BC6AC2632065A3B900BC533D /* ContactExtension.swift in Sources */,
 				7A2C29FF205429CA000EC45C /* miseAJourViewController.swift in Sources */,
 				BCEDEBC3205DCC3500B4A349 /* AbstractDAOFactory.swift in Sources */,

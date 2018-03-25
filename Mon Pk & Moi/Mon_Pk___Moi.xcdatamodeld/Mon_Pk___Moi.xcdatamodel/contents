@@ -21,9 +21,9 @@
         <relationship name="is_connected_to" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="possess" inverseEntity="Patient" syncable="YES"/>
     </entity>
     <entity name="Evaluation" representedClassName="Evaluation" syncable="YES" codeGenerationType="class">
-        <attribute name="etat" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="heureDebut" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="heureFin" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="petat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pheureDebut" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pheureFin" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="can_have" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Symptome" inverseName="can_be" inverseEntity="Symptome" syncable="YES"/>
         <relationship name="is_linked" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Traceur" inverseName="composed_by" inverseEntity="Traceur" syncable="YES"/>
     </entity>
@@ -100,7 +100,7 @@
         <element name="Patient" positionX="-270" positionY="-702" width="128" height="163"/>
         <element name="PriseMedicamenteuse" positionX="-72" positionY="-342" width="128" height="88"/>
         <element name="RDV" positionX="144" positionY="-169" width="128" height="133"/>
-        <element name="Symptome" positionX="-234" positionY="467" width="128" height="75"/>
+        <element name="Symptome" positionX="-279" positionY="467" width="128" height="75"/>
         <element name="Traceur" positionX="205" positionY="152" width="128" height="118"/>
         <element name="TypeAvis" positionX="214" positionY="530" width="128" height="73"/>
         <element name="TypeContact" positionX="684" positionY="-360" width="128" height="73"/>
