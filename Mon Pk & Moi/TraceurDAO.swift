@@ -9,16 +9,12 @@
 import Foundation
 
 protocol TraceurDAO {
-    associatedtype A
     
     func getAllTraceurs() throws -> [Traceur]
     
-    func create(an object: Traceur) throws -> Traceur
+    func create(withHeureDebut heureDebut: NSDate, withHeureFin heureFin: NSDate, belongs_to rdv :RDV) throws -> Traceur
     
-    //TO DO: voir quoi passer en paramètre
-    func find(a reference: A) throws -> Traceur
+    func update(aTraceur traceur: Traceur) throws -> Traceur
     
-    func update(an object: Traceur) throws -> Traceur
-    
-    func delete(an object: Traceur) throws
+    func delete(aTraceur traceur: Traceur) throws
 }

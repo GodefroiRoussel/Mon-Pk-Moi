@@ -75,8 +75,8 @@
         <relationship name="can_be" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evaluation" inverseName="can_have" inverseEntity="Evaluation" syncable="YES"/>
     </entity>
     <entity name="Traceur" representedClassName="Traceur" syncable="YES" codeGenerationType="class">
-        <attribute name="heureDebutJournee" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="heureFinJournee" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pheureDebutJournee" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pheureFinJournee" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="belongs_to" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RDV" inverseName="has" inverseEntity="RDV" syncable="YES"/>
         <relationship name="composed_by" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evaluation" inverseName="is_linked" inverseEntity="Evaluation" syncable="YES"/>
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Avis" inverseName="belongs_to" inverseEntity="Avis" syncable="YES"/>

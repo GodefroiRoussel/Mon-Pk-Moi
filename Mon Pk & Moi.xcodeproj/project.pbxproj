@@ -33,6 +33,8 @@
 		BC1A7E7D2067D102002DE72B /* ActiviteCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1A7E7C2067D102002DE72B /* ActiviteCoreDataDAO.swift */; };
 		BC1A7E7F2067D3AF002DE72B /* RDVExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1A7E7E2067D3AF002DE72B /* RDVExtension.swift */; };
 		BC1A7E812067D7AC002DE72B /* RDVCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1A7E802067D7AC002DE72B /* RDVCoreDataDAO.swift */; };
+		BC1A7E83206804A8002DE72B /* TraceurExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1A7E82206804A8002DE72B /* TraceurExtension.swift */; };
+		BC1A7E8520680853002DE72B /* TraceurCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1A7E8420680853002DE72B /* TraceurCoreDataDAO.swift */; };
 		BC330327205C374700D5C42F /* MedicamentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC330326205C374700D5C42F /* MedicamentDAO.swift */; };
 		BC6AC2632065A3B900BC533D /* ContactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6AC2622065A3B900BC533D /* ContactExtension.swift */; };
 		BC6AC2652065AC1800BC533D /* ContactCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6AC2642065AC1800BC533D /* ContactCoreDataDAO.swift */; };
@@ -113,6 +115,8 @@
 		BC1A7E7C2067D102002DE72B /* ActiviteCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiviteCoreDataDAO.swift; sourceTree = "<group>"; };
 		BC1A7E7E2067D3AF002DE72B /* RDVExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RDVExtension.swift; sourceTree = "<group>"; };
 		BC1A7E802067D7AC002DE72B /* RDVCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RDVCoreDataDAO.swift; sourceTree = "<group>"; };
+		BC1A7E82206804A8002DE72B /* TraceurExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceurExtension.swift; sourceTree = "<group>"; };
+		BC1A7E8420680853002DE72B /* TraceurCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceurCoreDataDAO.swift; sourceTree = "<group>"; };
 		BC330326205C374700D5C42F /* MedicamentDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentDAO.swift; sourceTree = "<group>"; };
 		BC6AC2622065A3B900BC533D /* ContactExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactExtension.swift; sourceTree = "<group>"; };
 		BC6AC2642065AC1800BC533D /* ContactCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCoreDataDAO.swift; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 				2BA3DEEE2066762700DE1A9B /* PriseMedicamenteuseExtension.swift */,
 				BC1A7E7A2067CE2B002DE72B /* ActiviteExtension.swift */,
 				BC1A7E7E2067D3AF002DE72B /* RDVExtension.swift */,
+				BC1A7E82206804A8002DE72B /* TraceurExtension.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 				2BA3DEF020667E8B00DE1A9B /* PriseMedicamenteuseCoreDataDAO.swift */,
 				BC1A7E7C2067D102002DE72B /* ActiviteCoreDataDAO.swift */,
 				BC1A7E802067D7AC002DE72B /* RDVCoreDataDAO.swift */,
+				BC1A7E8420680853002DE72B /* TraceurCoreDataDAO.swift */,
 			);
 			name = CoreDataDAO;
 			sourceTree = "<group>";
@@ -490,6 +496,7 @@
 				BC7DAA60205EF7F600E53AA2 /* ActiviteDAO.swift in Sources */,
 				BC7B263A205E7E25009BFE67 /* TypeContactCoreDataDAO.swift in Sources */,
 				2BB96A382066504800828A73 /* EvenementExtension.swift in Sources */,
+				BC1A7E83206804A8002DE72B /* TraceurExtension.swift in Sources */,
 				7A6BB3612050281C00A46AB3 /* ViewController.swift in Sources */,
 				BCEDEBC6205DCC9100B4A349 /* CoreDataDAOFactory.swift in Sources */,
 				BCCB4124205C5E3B00AB47CA /* CoreDataManager.swift in Sources */,
@@ -499,6 +506,7 @@
 				BC8E5A3C2064693100DE0AD7 /* MedicamentExtension.swift in Sources */,
 				BC1A7E7B2067CE2B002DE72B /* ActiviteExtension.swift in Sources */,
 				BCEDEBC9205DE26A00B4A349 /* TypeContactSeeder.swift in Sources */,
+				BC1A7E8520680853002DE72B /* TraceurCoreDataDAO.swift in Sources */,
 				BC7DAA6C205F1E7700E53AA2 /* SymptomeDAO.swift in Sources */,
 				2BA3DEF120667E8B00DE1A9B /* PriseMedicamenteuseCoreDataDAO.swift in Sources */,
 				BC6AC2632065A3B900BC533D /* ContactExtension.swift in Sources */,
