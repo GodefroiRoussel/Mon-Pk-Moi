@@ -90,16 +90,16 @@
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contact" inverseName="is_a" inverseEntity="Contact" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Activite" positionX="-261" positionY="-369" width="128" height="73"/>
+        <element name="Activite" positionX="-261" positionY="-298" width="128" height="73"/>
         <element name="Avis" positionX="223" positionY="374" width="128" height="103"/>
-        <element name="Contact" positionX="349" positionY="-346" width="128" height="165"/>
+        <element name="Contact" positionX="349" positionY="-291" width="128" height="165"/>
         <element name="Evaluation" positionX="-27" positionY="401" width="128" height="118"/>
         <element name="Evenement" positionX="-92" positionY="-504" width="128" height="118"/>
         <element name="Medicament" positionX="-173" positionY="149" width="128" height="90"/>
         <element name="Ordonnance" positionX="-540" positionY="-190" width="128" height="133"/>
         <element name="Patient" positionX="-270" positionY="-702" width="128" height="163"/>
-        <element name="PriseMedicamenteuse" positionX="-72" positionY="-342" width="128" height="88"/>
-        <element name="RDV" positionX="144" positionY="-169" width="128" height="133"/>
+        <element name="PriseMedicamenteuse" positionX="-117" positionY="-268" width="128" height="88"/>
+        <element name="RDV" positionX="63" positionY="-88" width="128" height="133"/>
         <element name="Symptome" positionX="-279" positionY="467" width="128" height="73"/>
         <element name="Traceur" positionX="205" positionY="152" width="128" height="118"/>
         <element name="TypeAvis" positionX="214" positionY="530" width="128" height="73"/>
