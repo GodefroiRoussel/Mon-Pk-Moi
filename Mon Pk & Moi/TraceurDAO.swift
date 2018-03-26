@@ -12,7 +12,7 @@ protocol TraceurDAO {
     
     func getAllTraceurs() throws -> [Traceur]
     
-    func create(withHeureDebut heureDebut: NSDate, withHeureFin heureFin: NSDate, belongs_to rdv :RDV) throws -> Traceur
+    func create(withHeureDebut heureDebut: NSDate, withHeureFin heureFin: NSDate) throws -> Traceur
     
     func update(aTraceur traceur: Traceur) throws -> Traceur
     

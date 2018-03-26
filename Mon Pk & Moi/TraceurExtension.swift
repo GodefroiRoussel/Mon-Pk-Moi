@@ -28,13 +28,9 @@ extension Traceur {
         }
     }
     
-    //TODO: change Date()
-    convenience init(withHeureDebut heureDebut: NSDate, withHeureFin heureFin: NSDate, belongs_to rdv :RDV){
+    convenience init(withHeureDebut heureDebut: NSDate, withHeureFin heureFin: NSDate){
         self.init(context: CoreDataManager.context)
         self.pheureDebutJournee = heureDebut
         self.pheureFinJournee = heureFin
-        self.belongs_to = rdv
-        self.composed_by = nil
-        self.has = nil
     }
 }

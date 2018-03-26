@@ -26,8 +26,8 @@ class TraceurCoreDataDAO: TraceurDAO {
         }
     }
     
-    func create(withHeureDebut heureDebut: NSDate, withHeureFin heureFin: NSDate, belongs_to rdv :RDV) throws -> Traceur {
-        let newTraceur = Traceur(withHeureDebut: heureDebut, withHeureFin: heureFin, belongs_to: rdv)
+    func create(withHeureDebut heureDebut: NSDate, withHeureFin heureFin: NSDate) throws -> Traceur {
+        let newTraceur = Traceur(withHeureDebut: heureDebut, withHeureFin: heureFin)
         CoreDataManager.save()
         return newTraceur
     }
