@@ -37,14 +37,23 @@ extension Evenement {
         }
     }
     
-    func valider(anEvenement evenement: Evenement) -> Evenement {
-        evenement.estEffectue = true
-        return evenement
+    public var nom : String{
+        get{
+            return self.pnom!
+        }
+        set{
+            self.pnom = newValue
+        }
     }
     
-    func refuser(anEvenement evenement: Evenement) -> Evenement {
-        evenement.estEffectue = false
-        return evenement
+    func valider() -> Evenement {
+        self.estEffectue = true
+        return self
+    }
+    
+    func refuser() -> Evenement {
+        self.estEffectue = false
+        return self
     }
     
 }
