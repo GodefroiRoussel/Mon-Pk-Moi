@@ -26,8 +26,8 @@ class RDVCoreDataDAO: RDVDAO {
         }
     }
     
-    func create(withName nom: String, withDateTheorique dateTheorique: NSDate,withLieu lieu: String?, withTempsPourAllerALEvenement temps: Int16, withDuree duree: Int16, schedule_by patient : Patient) throws -> RDV {
-        let newRDV = RDV(withName: nom, withDateTheorique: dateTheorique,withLieu: lieu, withTempsPourAllerALEvenement: temps, withDuree: duree, schedule_by: patient)
+    func create(withName nom: String, withDateTheorique dateTheorique: NSDate,withLieu lieu: String?, withTempsPourAllerALEvenement temps: Int16, withDuree duree: Int16, schedule_by patient : Patient, has traceur: Traceur, is_with contact: Contact) throws -> RDV {
+        let newRDV = RDV(withName: nom, withDateTheorique: dateTheorique,withLieu: lieu, withTempsPourAllerALEvenement: temps, withDuree: duree, schedule_by: patient, has: traceur, is_with: contact)
         CoreDataManager.save()
         return newRDV
     }

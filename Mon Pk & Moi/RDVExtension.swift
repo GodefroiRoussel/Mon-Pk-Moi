@@ -37,7 +37,7 @@ extension RDV {
         }
     }
     
-    convenience init(withName nom: String, withDateTheorique dateTheorique: NSDate,withLieu lieu: String?, withTempsPourAllerALEvenement temps: Int16, withDuree duree: Int16, schedule_by patient : Patient){
+    convenience init(withName nom: String, withDateTheorique dateTheorique: NSDate,withLieu lieu: String?, withTempsPourAllerALEvenement temps: Int16, withDuree duree: Int16, schedule_by patient : Patient, has traceur: Traceur, is_with contact: Contact){
         self.init(context: CoreDataManager.context)
         self.pnom = nom
         self.pdateTheorique = dateTheorique
@@ -47,5 +47,7 @@ extension RDV {
         self.ptempsPourAllerALEvenement = temps
         self.pduree = duree
         self.schedule_by = patient
+        self.has = traceur
+        self.is_with = contact
     }
 }
