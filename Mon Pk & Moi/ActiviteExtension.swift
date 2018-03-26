@@ -28,11 +28,10 @@ extension Activite {
         }
     }
     
-    //TODO: change Date()
     convenience init(withName nom: String, withDateTheorique dateTheorique: NSDate, withDuree duree: Int16, withDescription desc: String, schedule_by patient : Patient){
         self.init(context: CoreDataManager.context)
         self.pnom = nom
-        self.pdateTheorique = Date() as NSDate
+        self.pdateTheorique = dateTheorique
         self.pdateEffective = nil
         self.pestEffectue = false // A vérifier mais je préfère mettre nil
         self.pduree = duree
