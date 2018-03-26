@@ -19,6 +19,5 @@ extension Symptome {
     convenience init(withLibelle libelle: String){
         self.init(context: CoreDataManager.context)
         self.plibelle = libelle
-        self.can_be = nil
     }
 }
