@@ -25,8 +25,8 @@ class OrdonnanceCoreDataDAO : OrdonnanceDAO {
         }
     }
     
-    func create(withCommentaire commentaire: String, concern patient: Patient, created_by contact: Contact, untill rdv : RDV) throws -> Ordonnance {
-        let newOrdonnance = Ordonnance(withCommentaire: commentaire, concern: patient, created_by:  contact, untill: rdv)
+    func create(withDateDebutTraitement dateDebut: NSDate, concern patient: Patient, created_by contact: Contact, untillDate dateFin: NSDate) throws -> Ordonnance {
+        let newOrdonnance = Ordonnance(withDateDebutTraitement: dateDebut, concern: patient, created_by:  contact, untillDate: dateFin)
         CoreDataManager.save()
         return newOrdonnance
     }

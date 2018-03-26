@@ -12,7 +12,7 @@ protocol OrdonnanceDAO {
     
     func getAllOrdonnances() throws -> [Ordonnance]
     
-    func create(withCommentaire commentaire: String, concern patient: Patient, created_by contact: Contact, untill rdv : RDV) throws -> Ordonnance
+    func create(withDateDebutTraitement dateDebut: NSDate, concern patient: Patient, created_by contact: Contact, untillDate dateFin : NSDate) throws -> Ordonnance
     
     func find(atDate dateCreation: NSDate) throws -> Ordonnance?
     

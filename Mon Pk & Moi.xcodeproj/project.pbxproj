@@ -43,6 +43,7 @@
 		BC1A7E912068128D002DE72B /* AvisCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1A7E902068128D002DE72B /* AvisCoreDataDAO.swift */; };
 		BC1A7E9320683109002DE72B /* TypeAvis.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1A7E9220683109002DE72B /* TypeAvis.swift */; };
 		BC1A7E9520683208002DE72B /* TypeAvisCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1A7E9420683208002DE72B /* TypeAvisCoreDataDAO.swift */; };
+		BC28D72120699D1B006A7648 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28D72020699D1B006A7648 /* DateHelper.swift */; };
 		BC330327205C374700D5C42F /* MedicamentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC330326205C374700D5C42F /* MedicamentDAO.swift */; };
 		BC6AC2632065A3B900BC533D /* ContactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6AC2622065A3B900BC533D /* ContactExtension.swift */; };
 		BC6AC2652065AC1800BC533D /* ContactCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6AC2642065AC1800BC533D /* ContactCoreDataDAO.swift */; };
@@ -133,6 +134,7 @@
 		BC1A7E902068128D002DE72B /* AvisCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvisCoreDataDAO.swift; sourceTree = "<group>"; };
 		BC1A7E9220683109002DE72B /* TypeAvis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAvis.swift; sourceTree = "<group>"; };
 		BC1A7E9420683208002DE72B /* TypeAvisCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAvisCoreDataDAO.swift; sourceTree = "<group>"; };
+		BC28D72020699D1B006A7648 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		BC330326205C374700D5C42F /* MedicamentDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentDAO.swift; sourceTree = "<group>"; };
 		BC6AC2622065A3B900BC533D /* ContactExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactExtension.swift; sourceTree = "<group>"; };
 		BC6AC2642065AC1800BC533D /* ContactCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCoreDataDAO.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				BCCB4121205C565300AB47CA /* DialogBoxHelper.swift */,
 				BCCB4123205C5E3B00AB47CA /* CoreDataManager.swift */,
 				BC7B2637205E7599009BFE67 /* DataHelper.swift */,
+				BC28D72020699D1B006A7648 /* DateHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */,
 				2BA3DEE9206661A000DE1A9B /* EvenementCoreDataDAO.swift in Sources */,
 				BC1A7E8B20680EC2002DE72B /* SymptomeExtension.swift in Sources */,
+				BC28D72120699D1B006A7648 /* DateHelper.swift in Sources */,
 				BC330327205C374700D5C42F /* MedicamentDAO.swift in Sources */,
 				BC7DAA5A205EF78D00E53AA2 /* EvaluationDAO.swift in Sources */,
 			);

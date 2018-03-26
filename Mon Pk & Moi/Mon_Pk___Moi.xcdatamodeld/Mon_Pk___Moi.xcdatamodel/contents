@@ -42,10 +42,11 @@
     <entity name="Ordonnance" representedClassName="Ordonnance" syncable="YES" codeGenerationType="class">
         <attribute name="pcommentaire" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pdateCreation" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pdebutTraitement" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pfinTraitement" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="concern" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="has" inverseEntity="Patient" syncable="YES"/>
         <relationship name="created_by" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="has_created" inverseEntity="Contact" syncable="YES"/>
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PriseMedicamenteuse" inverseName="linked_to" inverseEntity="PriseMedicamenteuse" syncable="YES"/>
-        <relationship name="untill" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RDV" inverseName="create" inverseEntity="RDV" syncable="YES"/>
     </entity>
     <entity name="Patient" representedClassName="Patient" syncable="YES" codeGenerationType="class">
         <attribute name="padresse" optional="YES" attributeType="String" syncable="YES"/>
@@ -66,7 +67,6 @@
         <attribute name="pduree" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="plieu" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="ptempsPourAllerALEvenement" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="create" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ordonnance" inverseName="untill" inverseEntity="Ordonnance" syncable="YES"/>
         <relationship name="has" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Traceur" inverseName="belongs_to" inverseEntity="Traceur" syncable="YES"/>
         <relationship name="is_with" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="has" inverseEntity="Contact" syncable="YES"/>
     </entity>
@@ -96,10 +96,10 @@
         <element name="Evaluation" positionX="-27" positionY="401" width="128" height="118"/>
         <element name="Evenement" positionX="-92" positionY="-504" width="128" height="118"/>
         <element name="Medicament" positionX="-173" positionY="149" width="128" height="90"/>
-        <element name="Ordonnance" positionX="-540" positionY="-190" width="128" height="133"/>
+        <element name="Ordonnance" positionX="-540" positionY="-190" width="128" height="148"/>
         <element name="Patient" positionX="-270" positionY="-702" width="128" height="163"/>
         <element name="PriseMedicamenteuse" positionX="-117" positionY="-268" width="128" height="88"/>
-        <element name="RDV" positionX="63" positionY="-88" width="128" height="133"/>
+        <element name="RDV" positionX="63" positionY="-88" width="128" height="118"/>
         <element name="Symptome" positionX="-279" positionY="467" width="128" height="73"/>
         <element name="Traceur" positionX="205" positionY="152" width="128" height="118"/>
         <element name="TypeAvis" positionX="214" positionY="530" width="128" height="73"/>
