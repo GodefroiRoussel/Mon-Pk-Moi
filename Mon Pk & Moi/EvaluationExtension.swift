@@ -37,11 +37,15 @@ extension Evaluation {
         }
     }
     
+    func ajouterSymptome(withSymptome symptome: Symptome) -> Evaluation {
+        self.addToCan_have(symptome)
+        return self
+    }
+    
     convenience init(withHeureDebut heureDebut: NSDate, withHeureFin heureFin: NSDate, is_linked traceur :Traceur){
         self.init(context: CoreDataManager.context)
         self.pheureDebut = heureDebut
         self.pheureFin = heureFin
         self.is_linked = traceur
-        self.can_have = nil
     }
 }
