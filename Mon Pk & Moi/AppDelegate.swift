@@ -42,14 +42,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(patient)
             let typeContact : TypeContact = try typeContactDAO.create(withLibelle: "Famille")!
             print(typeContact)
+            print("\n")
+            print("\n")
+            print("\n")
             let contact : Contact = try contactDAO.create(withName: "Roussel", withPrenom: "Godefroi", withTelephone: "0606060606", withAdresse: "Polytech", is_a: typeContact, is_connected_to : patient)
             print(contact)
+            
+            /*let contact : Contact = try contactDAO.create(withName: "Rouquier", withPrenom: "Clément", withTelephone: "0606060606", withAdresse: "Polytech", is_a: typeContact, is_connected_to : patient)
+            
             
             let patients : [Patient] = try patientDAO.getAllPatients()
             print("On regarde tous les patients de la BD")
             for patient in patients {
                 print("Patient")
                 print(patient)
+            }*/
+            
+            print("On regarde tous les contacts de la BD")
+            print("\n")
+            let contacts : [Contact] = try contactDAO.getAllContacts()
+            for contact in contacts {
+                print("Contact : ")
+                print(contact)
+            }
+            
+            print("\n")
+            print("\n")
+            print("\n")
+            
+            let famille = try typeContactDAO.find(withLibelle: "Famille")
+            print(famille!)
+            print("\n")
+            print("\n")
+            print("\n")
+            
+            print("On regarde si on obtient que les médecins")
+            print("\n")
+            let medecins : [Contact] = try contactDAO.getAllMedecins()
+            for medecin in medecins {
+                print("Medecin : ")
+                print(medecin.is_a?.libelle)
             }
         } catch let error as NSError {
             print(error)

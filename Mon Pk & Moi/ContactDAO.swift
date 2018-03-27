@@ -19,4 +19,6 @@ protocol ContactDAO {
     func update(an object: Contact) throws -> Contact
     
     func delete(aContact: Contact) throws
+    
+    func getAllMedecins() throws -> [Contact]
 }

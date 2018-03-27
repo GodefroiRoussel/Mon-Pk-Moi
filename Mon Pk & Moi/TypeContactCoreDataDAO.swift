@@ -52,4 +52,5 @@ class TypeContactCoreDataDAO: TypeContactDAO{
             throw error
         }
     }
+    
 }

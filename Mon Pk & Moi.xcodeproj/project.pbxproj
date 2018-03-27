@@ -205,20 +205,20 @@
 		2BEDF751206A41A40099FCD2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2BEDF752206A41BE0099FCD2 /* MedicamentExtension.swift */,
-				2BEDF754206A41DA0099FCD2 /* TypeContactExtension.swift */,
-				2BEDF756206A41F10099FCD2 /* ContactExtension.swift */,
-				2BEDF758206A42030099FCD2 /* PatientExtension.swift */,
-				2BEDF75A206A42130099FCD2 /* EvenementExtension.swift */,
-				2BEDF75C206A42260099FCD2 /* OrdonnanceExtension.swift */,
-				2BEDF75E206A423D0099FCD2 /* PriseMedicamenteuseExtension.swift */,
 				2BEDF760206A424E0099FCD2 /* ActiviteExtension.swift */,
-				2BEDF762206A42600099FCD2 /* RDVExtension.swift */,
-				2BEDF764206A42710099FCD2 /* TraceurExtension.swift */,
-				2BEDF766206A42810099FCD2 /* EvaluationExtension.swift */,
-				2BEDF768206A42960099FCD2 /* SymptomeExtension.swift */,
 				2BEDF76A206A42A70099FCD2 /* AvisExtension.swift */,
+				2BEDF756206A41F10099FCD2 /* ContactExtension.swift */,
+				2BEDF766206A42810099FCD2 /* EvaluationExtension.swift */,
+				2BEDF75A206A42130099FCD2 /* EvenementExtension.swift */,
+				2BEDF752206A41BE0099FCD2 /* MedicamentExtension.swift */,
+				2BEDF75C206A42260099FCD2 /* OrdonnanceExtension.swift */,
+				2BEDF758206A42030099FCD2 /* PatientExtension.swift */,
+				2BEDF75E206A423D0099FCD2 /* PriseMedicamenteuseExtension.swift */,
+				2BEDF762206A42600099FCD2 /* RDVExtension.swift */,
+				2BEDF768206A42960099FCD2 /* SymptomeExtension.swift */,
+				2BEDF764206A42710099FCD2 /* TraceurExtension.swift */,
 				2BEDF76C206A42B50099FCD2 /* TypeAvisExtension.swift */,
+				2BEDF754206A41DA0099FCD2 /* TypeContactExtension.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -274,10 +274,10 @@
 				2BEDF791206A44170099FCD2 /* PatientDAO.swift */,
 				2BEDF793206A44290099FCD2 /* PriseMedicamenteuseDAO.swift */,
 				2BEDF795206A44370099FCD2 /* RDVDAO.swift */,
+				2BEDF79D206A447B0099FCD2 /* SymptomeDAO.swift */,
 				2BEDF797206A44470099FCD2 /* TraceurDAO.swift */,
 				2BEDF799206A44570099FCD2 /* TypeAvisDAO.swift */,
 				2BEDF79B206A44680099FCD2 /* TypeContactDAO.swift */,
-				2BEDF79D206A447B0099FCD2 /* SymptomeDAO.swift */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -285,20 +285,20 @@
 		2BEDF79F206A448A0099FCD2 /* CoreDataDAO */ = {
 			isa = PBXGroup;
 			children = (
-				2BEDF7A0206A44A10099FCD2 /* MedicamentCoreDataDAO.swift */,
-				2BEDF7A2206A44BF0099FCD2 /* TypeContactCoreDataDAO.swift */,
-				2BEDF7A4206A44D00099FCD2 /* ContactCoreDataDAO.swift */,
-				2BEDF7A6206A44E20099FCD2 /* PatientCoreDataDAO.swift */,
-				2BEDF7A8206A44F30099FCD2 /* EvenementCoreDataDAO.swift */,
-				2BEDF7AA206A45000099FCD2 /* OrdonnanceCoreDataDAO.swift */,
-				2BEDF7AC206A451A0099FCD2 /* PriseMedicamenteuseCoreDataDAO.swift */,
 				2BEDF7AE206A45300099FCD2 /* ActiviteCoreDataDAO.swift */,
-				2BEDF7B0206A45410099FCD2 /* RDVCoreDataDAO.swift */,
-				2BEDF7B2206A455B0099FCD2 /* TraceurCoreDataDAO.swift */,
-				2BEDF7B4206A456E0099FCD2 /* EvaluationCoreDataDAO.swift */,
-				2BEDF7B6206A45810099FCD2 /* SymptomeCoreDataDAO.swift */,
 				2BEDF7B8206A45960099FCD2 /* AvisCoreDataDAO.swift */,
+				2BEDF7A4206A44D00099FCD2 /* ContactCoreDataDAO.swift */,
+				2BEDF7B4206A456E0099FCD2 /* EvaluationCoreDataDAO.swift */,
+				2BEDF7A8206A44F30099FCD2 /* EvenementCoreDataDAO.swift */,
+				2BEDF7A0206A44A10099FCD2 /* MedicamentCoreDataDAO.swift */,
+				2BEDF7AA206A45000099FCD2 /* OrdonnanceCoreDataDAO.swift */,
+				2BEDF7A6206A44E20099FCD2 /* PatientCoreDataDAO.swift */,
+				2BEDF7AC206A451A0099FCD2 /* PriseMedicamenteuseCoreDataDAO.swift */,
+				2BEDF7B0206A45410099FCD2 /* RDVCoreDataDAO.swift */,
+				2BEDF7B6206A45810099FCD2 /* SymptomeCoreDataDAO.swift */,
+				2BEDF7B2206A455B0099FCD2 /* TraceurCoreDataDAO.swift */,
 				2BEDF7BA206A45AE0099FCD2 /* TypeAvisCoreDataDAO.swift */,
+				2BEDF7A2206A44BF0099FCD2 /* TypeContactCoreDataDAO.swift */,
 			);
 			name = CoreDataDAO;
 			sourceTree = "<group>";
@@ -581,7 +581,6 @@
 				2BEDF769206A42960099FCD2 /* SymptomeExtension.swift in Sources */,
 				2BEDF788206A43BD0099FCD2 /* ContactDAO.swift in Sources */,
 				2BEDF75F206A423D0099FCD2 /* PriseMedicamenteuseExtension.swift in Sources */,
-				7A4D13BF2063263A005E8D6D /* PriseMedicamentOrdonnanceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

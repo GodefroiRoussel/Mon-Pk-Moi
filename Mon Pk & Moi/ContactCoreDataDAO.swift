@@ -51,4 +51,17 @@ class ContactCoreDataDAO : ContactDAO {
         CoreDataManager.context.delete(contact)
         CoreDataManager.save()
     }
+    
+    func getAllMedecins() throws -> [Contact] {
+        
+        let typeContactDAO: TypeContactDAO = CoreDataDAOFactory.getInstance().getTypeContactDAO()
+        do {
+            let famille = try typeContactDAO.find(withLibelle: "Famille")
+            self.request.predicate = NSPredicate(format: "is_a != %@", famille!)
+            let contacts: [Contact] = try CoreDataManager.context.fetch(self.request)
+            return contacts
+        } catch let error as NSError {
+            throw error
+        }
+    }
 }
