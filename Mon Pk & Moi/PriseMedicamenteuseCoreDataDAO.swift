@@ -55,7 +55,7 @@ class PriseMedicamenteuseCoreDataDAO : PriseMedicamenteuseDAO {
         CoreDataManager.save()
     }
     
-    //TODO : vérifier le format des dates
+    //TODO : vérifier le format des dates ne fonctionne pas actuellement
     func getAllPriseMedicamenteuseForADay(forDay day: NSDate) throws -> [PriseMedicamenteuse] {
         do {
             self.request.predicate = NSPredicate(format: " pdateTheorique == %@", day)
