@@ -17,7 +17,7 @@ extension Medicament{
         return self.pnom!
     }
     /// lastname of Person
-    public var doses  : [Any]{
+    public var doses  : [Double]{
         return self.pdoses!
     }
     
@@ -26,7 +26,7 @@ extension Medicament{
     /// - Parameters:
     ///   - firstname: `String` first name of `Person`
     ///   - lastname:  `String` last name of `Person`
-    convenience init(withName nom: String,withDoses doses: [Any]){
+    convenience init(withName nom: String,withDoses doses: [Double]){
         self.init(context: CoreDataManager.context)
         self.pnom = nom
         self.pdoses  = doses

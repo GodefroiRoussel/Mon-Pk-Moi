@@ -22,7 +22,7 @@ class MedicamentCoreDataDAO: MedicamentDAO{
     init(){
     }
     
-    func create(withName nom: String, withDoses doses: [Any] ) throws -> Medicament{
+    func create(withName nom: String, withDoses doses: [Double] ) throws -> Medicament{
         let newMedicament = Medicament(withName: nom, withDoses : doses)
         CoreDataManager.save()
         return newMedicament

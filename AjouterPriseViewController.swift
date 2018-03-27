@@ -15,8 +15,8 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var doseField: UITextField!
     @IBOutlet weak var timeField: UITextField!
     
-    let medicaments = ["Doliprane","Modopar","Sinemet","Stalevo"]
-    let doses = [125.0,250.0,300.0]
+    var nomMedicaments : [String] = []
+    var doses : [Double] = []
     
     var pickerView = UIPickerView()
     var pickerView1 = UIPickerView()
@@ -25,6 +25,21 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
+        let medicamentDAO : MedicamentDAO = factory.getMedicamentDAO()
+        do {
+            let medicaments: [Medicament] = try medicamentDAO.getAllMedicaments()
+            for medicament in medicaments {
+                nomMedicaments.append(medicament.nom)
+                for dose in medicament.doses {
+                    doses.append(dose)
+                }
+            }
+            
+        }catch let error as NSError {
+            print("error")
+        }
         
         createTimePicker()
         
@@ -54,7 +69,7 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
             return doses.count
         }
         else{
-            return medicaments.count
+            return nomMedicaments.count
         }
     }
     
@@ -62,7 +77,7 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
         if pickerView == pickerView1 {
             return "\(doses[row])"
         } else {
-        return medicaments[row]
+        return nomMedicaments[row]
         }
     }
     
@@ -72,7 +87,7 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
             doseField.resignFirstResponder()
         }
         else{
-            medicamentField.text = medicaments[row]
+            medicamentField.text = nomMedicaments[row]
             medicamentField.resignFirstResponder()
         }
     }

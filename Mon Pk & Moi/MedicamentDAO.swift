@@ -12,7 +12,7 @@ protocol MedicamentDAO {
     
     func getAllMedicaments() throws -> [Medicament]
     
-    func create(withName : String, withDoses : [Any]) throws -> Medicament
+    func create(withName : String, withDoses : [Double]) throws -> Medicament
     
     func find(withName nom: String) throws -> Medicament?
     

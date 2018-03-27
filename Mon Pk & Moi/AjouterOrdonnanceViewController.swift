@@ -26,6 +26,7 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         createDatePicker()
         
         pickerView.delegate = self
