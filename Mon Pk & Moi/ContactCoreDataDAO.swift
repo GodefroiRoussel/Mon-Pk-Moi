@@ -56,8 +56,7 @@ class ContactCoreDataDAO : ContactDAO {
         
         let typeContactDAO: TypeContactDAO = CoreDataDAOFactory.getInstance().getTypeContactDAO()
         do {
-            let famille = try typeContactDAO.find(withLibelle: "Famille")
-            self.request.predicate = NSPredicate(format: "ANY test.libelle == %@", "Famille")
+            self.request.predicate = NSPredicate(format: "%K != %@",#keyPath(Contact.is_a.plibelle) ,"Famille")
             let contacts: [Contact] = try CoreDataManager.context.fetch(self.request)
             return contacts
         } catch let error as NSError {
