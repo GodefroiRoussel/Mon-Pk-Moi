@@ -22,6 +22,20 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
+        let priseMedicamenteuseDAO : PriseMedicamenteuseDAO = factory.getPriseMedicamenteuseDAO()
+        do {
+            let priseMedicamenteuses: [PriseMedicamenteuse] = try priseMedicamenteuseDAO.getAllPriseMedicamenteuses()
+            for medicament in priseMedicamenteuses {
+                medicaments.append(medicament.nom)
+
+            }
+            
+        }catch let error as NSError {
+            print("error")
+        }
+        
+        
         getCurrentDateTime()
 
         // Do any additional setup after loading the view.

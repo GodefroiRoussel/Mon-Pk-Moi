@@ -15,6 +15,8 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var doseField: UITextField!
     @IBOutlet weak var timeField: UITextField!
     
+    var res : Bool = true
+    
     var nomMedicaments : [String] = []
     var doses : [Double] = []
     
@@ -33,7 +35,15 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
             for medicament in medicaments {
                 nomMedicaments.append(medicament.nom)
                 for dose in medicament.doses {
-                    doses.append(dose)
+                    for d in doses {
+                        if dose == d {
+                            res = false
+                        }
+                    }
+                    if res == true {
+                        doses.append(dose)
+                    }
+                    res = true
                 }
             }
             
