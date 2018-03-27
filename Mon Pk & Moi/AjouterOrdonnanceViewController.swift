@@ -8,10 +8,12 @@
 
 import UIKit
 
-class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var medecinField: UITextField!
     @IBOutlet weak var prochainRDVField: UITextField!
+    @IBOutlet weak var prisesTable: UITableView!
+
     
     let medecins = ["Neurologue","Ophtalmologue"]
     var medicaments : [String] = ["Doliprane"]
@@ -94,6 +96,18 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
         self.dismiss(animated: true, completion: nil)
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.medicaments.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.prisesTable.dequeueReusableCell(withIdentifier: "PriseMedicamentCell", for: indexPath)
+            as! PriseOrdonnanceTableViewCell
+        cell.nomMedicamentLabel.text = self.medicaments[indexPath.row]
+        cell.doseLabel.text = "\(doses[indexPath.row])"
+        cell.heureLabel.text = times[indexPath.row]
+        return cell
+    }
     
     
     
