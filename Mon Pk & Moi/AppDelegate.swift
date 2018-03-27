@@ -22,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool {
         // If it's the first launch of the application, we create the data in the database
-        UserDefaults.standard.set(false, forKey: "wasLaunched")
+        //UserDefaults.standard.set(false, forKey: "wasLaunched")
         if(!UserDefaults.standard.bool(forKey: "wasLaunched")){
-            //DataHelper.deleteSeeder()
+            DataHelper.deleteSeeder()
             DataHelper.seedDataStore()
             UserDefaults.standard.set(true, forKey: "wasLaunched")
         }
@@ -36,8 +36,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let contactDAO : ContactDAO = factory.getContactDAO()
         let patientDAO : PatientDAO = factory.getPatientDAO()
         let priseMedicamenteuseDAO : PriseMedicamenteuseDAO = factory.getPriseMedicamenteuseDAO()
+        let medicamentDAO : MedicamentDAO = factory.getMedicamentDAO()
+        let ordonnanceDAO : OrdonnanceDAO = factory.getOrdonnanceDAO()
         
         let date : NSDate = Date() as NSDate
+        
+        
+        /*let dateComponents = NSDateComponents()
+        dateComponents.day = 4
+        dateComponents.month = 5
+        dateComponents.year = 2017
+        
+        if let gregorianCalendar = NSCalendar(calendarIdentifier: .gregorian),
+            let date = gregorianCalendar.date(from: dateComponents as DateComponents) {
+            let weekday = gregorianCalendar.component(.weekday, from: date)
+            print(date) // 5, which corresponds to Thursday in the Gregorian Calendar
+        }
+        */
+        let dateFormatter = DateFormatter()
+        var dateAsString = "24-12-2015 23:59"
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+        var newDate = dateFormatter.date(from: dateAsString)
+        print(newDate)
+        
+        
+        
+        /*let dateComponents = NSDateComponents()
+        let day = dateComponents.day
+        let month = dateComponents.month
+        print(day)
+        print(month)
+        */
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        //print(dateTest)
         do{
             let patient : Patient = try patientDAO.create(withName: "Thevenon", withPrenom: "Romain", withDateNaissance: date, withAdresse: "Polytech", withTempsPreparation: 90)
             print(patient)
@@ -92,6 +137,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Medecin : ")
                 print(medecin)
             }
+            
+            print("\n")
+            print("\n")
+            print("\n")
+            
+            let dateTheorique = NSDate()
+            let ordonnance: Ordonnance = try ordonnanceDAO.create(withDateDebutTraitement: NSDate(), concern: patient, created_by: contactRouquier, untillDate: NSDate())
+            print(ordonnance)
+            let medicament = try medicamentDAO.find(withName: "MODOPAR")
+            print(medicament!)
+            let prise :PriseMedicamenteuse = try priseMedicamenteuseDAO.create(withName: "Prise médicament", withDateTheorique: NSDate(), withDose: 500.0, schedule_by: patient, belongs_to: medicament!, linked_to: ordonnance)
+            print(prise)
+            
+            print("\n")
+            print("\n")
+            print("\n")
+            
+            print("Toutes les prises")
+            let prises : [PriseMedicamenteuse] = try priseMedicamenteuseDAO.getAllPriseMedicamenteuses()
+            for hello in prises {
+                print(hello)
+            }
+            
+            print("\n")
+            print("\n")
+            print("\n")
+            
+            print("Toutes les prises d'aujourd'hui")
+            let test : [PriseMedicamenteuse] = try priseMedicamenteuseDAO.getAllPriseMedicamenteuseForADay(forDay: newDate! as NSDate)
+            for hello in prises {
+                print(hello)
+            }
+            
+            print("\n")
+            print("\n")
+            print("\n")
+            
         } catch let error as NSError {
             print(error)
             return false
