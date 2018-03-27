@@ -52,11 +52,6 @@ extension Ordonnance {
         return self
     }
     
-    //TODO
-    func voirCollectionMedicamentNonPris(withOrdonnance ordonnance: Ordonnance) -> [PriseMedicamenteuse?] {
-        return [PriseMedicamenteuse()]
-    }
-    
     convenience init(withDateDebutTraitement dateDebut: NSDate, concern patient: Patient, created_by contact: Contact, untillDate dateFin : NSDate){
         self.init(context: CoreDataManager.context)
         self.pdateCreation = NSDate()

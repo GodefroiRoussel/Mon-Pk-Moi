@@ -19,4 +19,5 @@ protocol OrdonnanceDAO {
     func update(anOrdonnance: Ordonnance) throws -> Ordonnance
     
     func delete(anOrdonnance: Ordonnance) throws
-}
+    
+    func voirCollectionMedicamentNonPris(withOrdonnance ordonnance: Ordonnance) -> [PriseMedicamenteuse?]}
