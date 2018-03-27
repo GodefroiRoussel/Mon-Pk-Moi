@@ -571,6 +571,17 @@
 				2BEDF761206A424E0099FCD2 /* ActiviteExtension.swift in Sources */,
 				2BEDF76D206A42B50099FCD2 /* TypeAvisExtension.swift in Sources */,
 				7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */,
+				2BEDF784206A43970099FCD2 /* ActiviteDAO.swift in Sources */,
+				2BEDF7A1206A44A10099FCD2 /* MedicamentCoreDataDAO.swift in Sources */,
+				2BEDF770206A42DA0099FCD2 /* AbstractDAOFactory.swift in Sources */,
+				2BEDF7A3206A44BF0099FCD2 /* TypeContactCoreDataDAO.swift in Sources */,
+				2BEDF7AB206A45000099FCD2 /* OrdonnanceCoreDataDAO.swift in Sources */,
+				2BEDF767206A42810099FCD2 /* EvaluationExtension.swift in Sources */,
+				2BEDF77D206A43550099FCD2 /* CoreDataManager.swift in Sources */,
+				2BEDF769206A42960099FCD2 /* SymptomeExtension.swift in Sources */,
+				2BEDF788206A43BD0099FCD2 /* ContactDAO.swift in Sources */,
+				2BEDF75F206A423D0099FCD2 /* PriseMedicamenteuseExtension.swift in Sources */,
+				7A4D13BF2063263A005E8D6D /* PriseMedicamentOrdonnanceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
