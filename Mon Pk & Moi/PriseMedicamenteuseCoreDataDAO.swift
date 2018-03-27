@@ -54,4 +54,15 @@ class PriseMedicamenteuseCoreDataDAO : PriseMedicamenteuseDAO {
         CoreDataManager.context.delete(priseMedicamenteuse)
         CoreDataManager.save()
     }
+    
+    //TODO : vérifier le format des dates
+    func getAllPriseMedicamenteuseForADay(forDay day: NSDate) throws -> [PriseMedicamenteuse] {
+        do {
+            self.request.predicate = NSPredicate(format: " pdateTheorique == %@", day)
+            let priseMedicamenteuses: [PriseMedicamenteuse] = try CoreDataManager.context.fetch(self.request)
+            return priseMedicamenteuses
+        } catch let error as NSError {
+            throw error
+        }
+    }
 }

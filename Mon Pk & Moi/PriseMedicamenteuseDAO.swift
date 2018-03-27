@@ -19,4 +19,6 @@ protocol PriseMedicamenteuseDAO {
     func update(aPriseMedicamenteuse: PriseMedicamenteuse) throws -> PriseMedicamenteuse
     
     func delete(aPriseMedicamenteuse: PriseMedicamenteuse) throws
+    
+    func getAllPriseMedicamenteuseForADay(forDay day: NSDate) throws -> [PriseMedicamenteuse]
 }
