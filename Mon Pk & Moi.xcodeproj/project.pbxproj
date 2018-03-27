@@ -12,7 +12,6 @@
 		7A4D13B72062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D13B62062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift */; };
 		7A4D13B920630AF4005E8D6D /* fleche.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4D13B820630AF4005E8D6D /* fleche.png */; };
 		7A4D13BB20630C02005E8D6D /* fleche_droit.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4D13BA20630C02005E8D6D /* fleche_droit.png */; };
-		7A4D13BF2063263A005E8D6D /* PriseMedicamentOrdonnanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D13BE2063263A005E8D6D /* PriseMedicamentOrdonnanceViewController.swift */; };
 		7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BB35E2050281C00A46AB3 /* AppDelegate.swift */; };
 		7A6BB3612050281C00A46AB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BB3602050281C00A46AB3 /* ViewController.swift */; };
 		7A6BB3642050281C00A46AB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A6BB3622050281C00A46AB3 /* Main.storyboard */; };
@@ -54,7 +53,6 @@
 		7A4D13B62062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjouterOrdonnanceViewController.swift; sourceTree = "<group>"; };
 		7A4D13B820630AF4005E8D6D /* fleche.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fleche.png; sourceTree = "<group>"; };
 		7A4D13BA20630C02005E8D6D /* fleche_droit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fleche_droit.png; sourceTree = "<group>"; };
-		7A4D13BE2063263A005E8D6D /* PriseMedicamentOrdonnanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriseMedicamentOrdonnanceViewController.swift; sourceTree = "<group>"; };
 		7A6BB35B2050281C00A46AB3 /* Mon Pk & Moi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mon Pk & Moi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A6BB35E2050281C00A46AB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A6BB3602050281C00A46AB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 				7A6BB36D2050281C00A46AB3 /* Info.plist */,
 				7A6BB3652050281C00A46AB3 /* Mon_Pk___Moi.xcdatamodeld */,
 				7A4D13B62062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift */,
-				7A4D13BE2063263A005E8D6D /* PriseMedicamentOrdonnanceViewController.swift */,
 				7A4A735D2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift */,
 			);
 			path = "Mon Pk & Moi";
@@ -328,7 +325,6 @@
 				7A6BB3672050281C00A46AB3 /* Mon_Pk___Moi.xcdatamodeld in Sources */,
 				7A2C29FF205429CA000EC45C /* AjouterPriseViewController.swift in Sources */,
 				7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */,
-				7A4D13BF2063263A005E8D6D /* PriseMedicamentOrdonnanceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
