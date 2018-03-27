@@ -109,6 +109,18 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
         return cell
     }
     
+    @IBAction func unwindToPriseListAfterSavingNewPrise(segue: UIStoryboardSegue){
+        let ajouterPriseController = segue.source as! AjouterPriseViewController
+        let medicament = ajouterPriseController.medicamentField.text ?? ""
+        let dose = ajouterPriseController.doseField.text ?? ""
+        let time = ajouterPriseController.timeField.text ?? ""
+        
+        self.medicaments.append(medicament)
+        self.doses.append(Double(dose)!)
+        self.times.append(time)
+        self.prisesTable.reloadData()
+    }
+    
     
     
 

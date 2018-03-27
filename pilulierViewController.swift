@@ -10,6 +10,8 @@ import UIKit
 
 class pilulierViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var dateLabel: UILabel!
+    
     var medicaments : [String] = []
     var doses : [Double] = []
     var times : [String] = []
@@ -19,6 +21,8 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getCurrentDateTime()
 
         // Do any additional setup after loading the view.
     }
@@ -39,6 +43,15 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.doseLabel.text = "\(doses[indexPath.row])"
         cell.timeLabel.text = times[indexPath.row]
         return cell
+    }
+    
+    func getCurrentDateTime(){
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "FR-fr")
+        let str = formatter.string(from: Date())
+        dateLabel.text = str
     }
     
    // func SaveNewPrise(withMedicament medicament: String, andDose dose: Double, andTime time: Date){
