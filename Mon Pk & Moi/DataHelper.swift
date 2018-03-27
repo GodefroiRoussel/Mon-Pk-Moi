@@ -14,6 +14,7 @@ public class DataHelper {
     
     static func seedDataStore() {
         seedMedicament()
+        seedTypeContact()
     }
     
     static func deleteSeeder(){

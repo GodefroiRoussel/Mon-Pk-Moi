@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool {
         // If it's the first launch of the application, we create the data in the database
-        //UserDefaults.standard.set(false, forKey: "wasLaunched")
+        UserDefaults.standard.set(false, forKey: "wasLaunched")
         if(!UserDefaults.standard.bool(forKey: "wasLaunched")){
             //DataHelper.deleteSeeder()
             DataHelper.seedDataStore()
@@ -57,6 +57,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Patient")
                 print(patient)
             }*/
+            
+            let typeMedecin : TypeContact = try typeContactDAO.find(withLibelle:"kinésithérapeute")!
+            let contactRouquier : Contact = try contactDAO.create(withName: "Rouquier", withPrenom: "Clément", withTelephone: "0606060606", withAdresse: "Polytech", is_a: typeMedecin, is_connected_to : patient)
+            
+            print(contactRouquier)
+            print("\n")
+            print("\n")
+            print("\n")
             
             print("On regarde tous les contacts de la BD")
             print("\n")
