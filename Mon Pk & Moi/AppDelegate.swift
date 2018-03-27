@@ -72,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let contacts : [Contact] = try contactDAO.getAllContacts()
             for contact in contacts {
                 print("Contact : \(contact.nom)")
-                print(contact.is_a)
+                print(contact.is_a!.libelle)
             }
             
             print("\n")
