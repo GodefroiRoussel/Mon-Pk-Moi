@@ -35,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let typeContactDAO: TypeContactDAO = factory.getTypeContactDAO()
         let contactDAO : ContactDAO = factory.getContactDAO()
         let patientDAO : PatientDAO = factory.getPatientDAO()
+        let priseMedicamenteuseDAO : PriseMedicamenteuseDAO = factory.getPriseMedicamenteuseDAO()
         
         let date : NSDate = Date() as NSDate
         do{
@@ -46,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("\n")
             print("\n")
             let contact : Contact = try contactDAO.create(withName: "Roussel", withPrenom: "Godefroi", withTelephone: "0606060606", withAdresse: "Polytech", is_a: typeContact, is_connected_to : patient)
-            print(contact)
+            print("J'ai créé \(contact.nom)")
             
             /*let contact : Contact = try contactDAO.create(withName: "Rouquier", withPrenom: "Clément", withTelephone: "0606060606", withAdresse: "Polytech", is_a: typeContact, is_connected_to : patient)
             
@@ -61,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let typeMedecin : TypeContact = try typeContactDAO.find(withLibelle:"kinésithérapeute")!
             let contactRouquier : Contact = try contactDAO.create(withName: "Rouquier", withPrenom: "Clément", withTelephone: "0606060606", withAdresse: "Polytech", is_a: typeMedecin, is_connected_to : patient)
             
-            print(contactRouquier)
+            print("J'ai créé \(contactRouquier.nom)")
             print("\n")
             print("\n")
             print("\n")
@@ -70,8 +71,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("\n")
             let contacts : [Contact] = try contactDAO.getAllContacts()
             for contact in contacts {
-                print("Contact : ")
-                print(contact)
+                print("Contact : \(contact.nom)")
+                print(contact.is_a)
             }
             
             print("\n")
@@ -89,7 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let medecins : [Contact] = try contactDAO.getAllMedecins()
             for medecin in medecins {
                 print("Medecin : ")
-                print(medecin.is_a?.libelle)
+                print(medecin)
             }
         } catch let error as NSError {
             print(error)
