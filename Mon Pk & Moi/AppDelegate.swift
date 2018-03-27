@@ -19,6 +19,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         return true
     }
+    
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool {
+        // If it's the first launch of the application, we create the data in the database
+        //UserDefaults.standard.set(false, forKey: "wasLaunched")
+        if(!UserDefaults.standard.bool(forKey: "wasLaunched")){
+            //DataHelper.deleteSeeder()
+            DataHelper.seedDataStore()
+            UserDefaults.standard.set(true, forKey: "wasLaunched")
+        }
+        
+        let factory : CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
+        
+        //Create a type contact
+        let typeContactDAO: TypeContactDAO = factory.getTypeContactDAO()
+        let contactDAO : ContactDAO = factory.getContactDAO()
+        let patientDAO : PatientDAO = factory.getPatientDAO()
+        
+        let date : NSDate = Date() as NSDate
+        do{
+            let patient : Patient = try patientDAO.create(withName: "Thevenon", withPrenom: "Romain", withDateNaissance: date, withAdresse: "Polytech", withTempsPreparation: 90)
+            print(patient)
+            let typeContact : TypeContact = try typeContactDAO.create(withLibelle: "Famille")!
+            print(typeContact)
+            let contact : Contact = try contactDAO.create(withName: "Roussel", withPrenom: "Godefroi", withTelephone: "0606060606", withAdresse: "Polytech", is_a: typeContact, is_connected_to : patient)
+            print(contact)
+            
+            let patients : [Patient] = try patientDAO.getAllPatients()
+            print("On regarde tous les patients de la BD")
+            for patient in patients {
+                print("Patient")
+                print(patient)
+            }
+        } catch let error as NSError {
+            print(error)
+            return false
+        }
+        
+        
+        return true
+    }
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
