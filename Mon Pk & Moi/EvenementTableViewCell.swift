@@ -12,6 +12,7 @@ class EvenementTableViewCell: UITableViewCell {
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var nomLabel: UILabel!
+    @IBOutlet weak var heureLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
