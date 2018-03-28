@@ -21,6 +21,7 @@ extension PriseMedicamenteuse {
         self.pnom = nom
         self.pdateTheorique = dateTheorique
         self.pdateEffective = nil
+        self.pdose = dose
         self.pestEffectue = false // A vérifier mais je préfère mettre nil
         self.schedule_by = patient
         self.belongs_to = medicament

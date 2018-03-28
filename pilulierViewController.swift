@@ -14,13 +14,28 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
     
     var medicaments : [String] = []
     var doses : [Double] = []
-    var times : [String] = []
+    var times : [Date] = []
 
     
     @IBOutlet weak var priseMedicamentTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
+        let priseMedicamenteuseDAO : PriseMedicamenteuseDAO = factory.getPriseMedicamenteuseDAO()
+        do {
+            let priseMedicamenteuses: [PriseMedicamenteuse] = try priseMedicamenteuseDAO.getAllPriseMedicamenteuses()
+            for priseMedicamenteuse in priseMedicamenteuses {
+                medicaments.append((priseMedicamenteuse.belongs_to?.nom)!)
+                doses.append(priseMedicamenteuse.pdose)
+                //times.append(priseMedicamenteuse.pdateTheorique as! Date)
+            }
+            
+        }catch let error as NSError {
+            print("error")
+        }
+        
         
         getCurrentDateTime()
 
@@ -41,7 +56,7 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
             as! PriseMedicamentTableViewCell
         cell.medicamentNameLabel.text = self.medicaments[indexPath.row]
         cell.doseLabel.text = "\(doses[indexPath.row])"
-        cell.timeLabel.text = times[indexPath.row]
+        //cell.timeLabel.text = times[indexPath.row]
         return cell
     }
     

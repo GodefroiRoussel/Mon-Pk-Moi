@@ -15,10 +15,10 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
     @IBOutlet weak var prisesTable: UITableView!
 
     
-    let medecins = ["Neurologue","Ophtalmologue"]
-    var medicaments : [String] = ["Doliprane"]
-    var doses : [Double] = [125.0]
-    var times : [String] = ["11:15"]
+    var medecins : [String] = []
+    var medicaments : [String] = []
+    var doses : [Double] = []
+    var times : [String] = []
     
         var pickerView = UIPickerView()
         let pickerDate = UIDatePicker()
@@ -26,6 +26,17 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
+        let contactDAO : ContactDAO = factory.getContactDAO()
+        do {
+            let contacts: [Contact] = try contactDAO.getAllMedecins()
+            for contact in contacts {
+                medecins.append(contact.nom)
+            }
+        } catch let error as NSError {
+                print("error")
+        }
+
         
         createDatePicker()
         
