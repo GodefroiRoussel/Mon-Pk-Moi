@@ -11,19 +11,21 @@ import UIKit
 
 class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    @IBOutlet weak var medicamentField: UITextField!
-    @IBOutlet weak var doseField: UITextField!
-    @IBOutlet weak var timeField: UITextField!
     
     var res : Bool = true
     
     var nomMedicaments : [String] = []
     var doses : [Double] = []
     
-    var medicamentPickerView = UIPickerView()
-    var dosePickerView = UIPickerView()
+    //var carlist: Dictionary <String, Dictionary<Double>> = Dictionary()
     
-    let pickerTime = UIDatePicker()
+    @IBOutlet weak var medicamentPickerView: UIPickerView!
+    @IBOutlet weak var dosePickerView: UIPickerView!
+    @IBOutlet weak var heurePickerView: UIDatePicker!
+    
+    var listOfMedicament : [String] = []
+    var listOfDose : [Double] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,22 +52,6 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
         }catch let error as NSError {
             print("error")
         }
-        
-        createTimePicker()
-        
-        medicamentPickerView.delegate = self
-        dosePickerView.delegate = self
-        
-        medicamentField.inputView = medicamentPickerView
-        medicamentField.textAlignment = .center
-        medicamentField.placeholder = "Choisir un medicament"
-        
-        doseField.inputView = dosePickerView
-        doseField.textAlignment = .center
-        doseField.placeholder = "Choisir une dose"
-        
-        timeField.textAlignment = .center
-        timeField.placeholder = "Choisir une heure"
 
         // Do any additional setup after loading the view.
     }
@@ -73,63 +59,18 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == dosePickerView {
-            return doses.count
+        if pickerView == medicamentPickerView {
+            return listOfMedicament.count
+        } else {
+            return listOfDose.count
         }
-        else{
-            return nomMedicaments.count
-        }
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == dosePickerView {
-            return "\(doses[row])"
-        } else {
-        return nomMedicaments[row]
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == dosePickerView {
-            doseField.text = "\(doses[row])"
-            doseField.resignFirstResponder()
-        }
-        else{
-            medicamentField.text = nomMedicaments[row]
-            medicamentField.resignFirstResponder()
-        }
-    }
-    
-    func createTimePicker() {
-        
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressedTime))
-        toolbar.setItems([doneButton], animated: false)
-        
-        timeField.inputAccessoryView = toolbar
-        timeField.inputView = pickerTime
-        
-        pickerTime.datePickerMode = .time
-        pickerTime.locale = Locale(identifier: "FR-fr")
-        
-    }
-    
-    func donePressedTime() {
-        
-        let timeFormatter = DateFormatter()
-        timeFormatter.dateStyle = .none
-        timeFormatter.timeStyle = .short
-        timeFormatter.locale = Locale(identifier: "FR-fr")
-        let timeString = timeFormatter.string(from: pickerTime.date)
-        
-        
-        timeField.text = "\(timeString)"
-        self.view.endEditing(true)
-        
+        return nil
     }
     
     @IBAction func cancelAction(_ sender: Any) {
