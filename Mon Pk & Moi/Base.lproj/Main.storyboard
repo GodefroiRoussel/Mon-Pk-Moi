@@ -659,8 +659,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvK-KO-HUL">
-                                                    <rect key="frame" x="105.5" y="8" width="37.5" height="27"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvK-KO-HUL">
+                                                    <rect key="frame" x="145.5" y="8" width="37.5" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -675,14 +675,14 @@
                                             <constraints>
                                                 <constraint firstItem="CPB-at-3r0" firstAttribute="top" secondItem="KlN-mJ-v19" secondAttribute="topMargin" id="26B-pd-o23"/>
                                                 <constraint firstItem="CPB-at-3r0" firstAttribute="leading" secondItem="KlN-mJ-v19" secondAttribute="leadingMargin" id="2uY-H7-idG"/>
-                                                <constraint firstItem="tvK-KO-HUL" firstAttribute="centerX" secondItem="KlN-mJ-v19" secondAttribute="centerX" id="3xg-UZ-MKx"/>
+                                                <constraint firstItem="tvK-KO-HUL" firstAttribute="centerX" secondItem="KlN-mJ-v19" secondAttribute="centerX" constant="20" id="3xg-UZ-MKx"/>
                                                 <constraint firstItem="tvK-KO-HUL" firstAttribute="top" secondItem="KlN-mJ-v19" secondAttribute="topMargin" id="9iD-no-X48"/>
                                                 <constraint firstItem="tvK-KO-HUL" firstAttribute="bottom" secondItem="KlN-mJ-v19" secondAttribute="bottomMargin" id="FBM-g0-gx9"/>
                                                 <constraint firstItem="CPB-at-3r0" firstAttribute="bottom" secondItem="KlN-mJ-v19" secondAttribute="bottomMargin" id="YoD-qU-POP"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Y3h-qp-Sby" secondAttribute="bottom" id="eKR-Va-4tZ"/>
                                                 <constraint firstItem="CPB-at-3r0" firstAttribute="leading" secondItem="KlN-mJ-v19" secondAttribute="leadingMargin" id="l1G-89-zA6"/>
                                                 <constraint firstItem="Y3h-qp-Sby" firstAttribute="top" secondItem="KlN-mJ-v19" secondAttribute="topMargin" id="lvY-Yo-5kx"/>
-                                                <constraint firstAttribute="trailing" secondItem="Y3h-qp-Sby" secondAttribute="trailing" constant="5" id="xjq-2C-3fB"/>
+                                                <constraint firstAttribute="trailing" secondItem="Y3h-qp-Sby" secondAttribute="trailing" id="xjq-2C-3fB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1379,11 +1379,11 @@
         <image name="user.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fop-H3-g23"/>
-        <segue reference="yR1-uu-Jgj"/>
-        <segue reference="VcH-WC-gyy"/>
-        <segue reference="NF4-pS-3wl"/>
-        <segue reference="wIy-2e-ZcD"/>
+        <segue reference="8Ec-Hm-Ldp"/>
         <segue reference="Ztb-Rw-F9n"/>
+        <segue reference="vrs-xg-WVI"/>
+        <segue reference="NF4-pS-3wl"/>
+        <segue reference="yR1-uu-Jgj"/>
+        <segue reference="wIy-2e-ZcD"/>
     </inferredMetricsTieBreakers>
 </document>
