@@ -21,6 +21,37 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var priseMedicamentTable: UITableView!
     
+    @IBAction func jourAddButton(_ sender: UIButton) {
+        let date = dateLabel.text
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.locale = Locale(identifier: "FR-fr")
+        let test = dateFormatter.date(from: date!)
+        let test2 = Date(timeInterval: 86400, since: test!)
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "FR-fr")
+        let str = formatter.string(from: test2)
+        dateLabel.text = str
+    }
+    @IBAction func jourSubButton(_ sender: UIButton) {
+        let date = dateLabel.text
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.locale = Locale(identifier: "FR-fr")
+        let test = dateFormatter.date(from: date!)
+        let test2 = Date(timeInterval: -86400, since: test!)
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "FR-fr")
+        let str = formatter.string(from: test2)
+        dateLabel.text = str
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

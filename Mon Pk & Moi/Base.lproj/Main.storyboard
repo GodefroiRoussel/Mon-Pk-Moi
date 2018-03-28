@@ -722,6 +722,9 @@
                                     <constraint firstAttribute="height" constant="20" id="Vre-lS-reX"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="fleche_droit.png"/>
+                                <connections>
+                                    <action selector="jourSubButton:" destination="uRC-I7-Dbu" eventType="touchUpInside" id="1oQ-DH-Jf6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEw-bm-Z0G">
                                 <rect key="frame" x="193" y="155" width="20" height="20"/>
@@ -730,6 +733,9 @@
                                     <constraint firstAttribute="width" constant="20" id="xSu-NX-7yN"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="fleche.png"/>
+                                <connections>
+                                    <action selector="jourAddButton:" destination="uRC-I7-Dbu" eventType="touchUpInside" id="9Un-Er-qjC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
