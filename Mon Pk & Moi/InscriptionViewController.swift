@@ -103,6 +103,7 @@ class InscriptionViewController: UIViewController {
         
         do{
             let _ = try CoreDataDAOFactory.getInstance().getPatientDAO().create(withName: lastName, withPrenom: firstName, withDateNaissance: datePicker.date as NSDate, withAdresse: adress, withTempsPreparation: Int16(tempsPrepa))
+            UserDefaults.standard.set(true, forKey: "wasLaunched")
             let storyboard = UIStoryboard.init(name: "Main",bundle: nil)
             let view = storyboard.instantiateViewController(withIdentifier: "NavController") as! UINavigationController
             self.present(view, animated: true, completion: nil)

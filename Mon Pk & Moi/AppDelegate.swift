@@ -29,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
             let nav = storyboard.instantiateViewController(withIdentifier: "Inscription") as! InscriptionViewController
             self.window?.rootViewController = nav
-            UserDefaults.standard.set(true, forKey: "wasLaunched")
         }
         
         
