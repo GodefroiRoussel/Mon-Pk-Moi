@@ -11,13 +11,10 @@ import UIKit
 
 class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    var medicaments: [Medicament] = []
+    var selectedMedicament : Medicament? = nil
+    var selectedDose : Double? = nil
     
-    var res : Bool = true
-    
-    var nomMedicaments : [String] = []
-    var doses : [[Double]] = []
-    
-    //var carlist: Dictionary <String, Dictionary<Double>> = Dictionary()
     
     @IBOutlet weak var medicamentPickerView: UIPickerView!
     @IBOutlet weak var dosePickerView: UIPickerView!
@@ -29,11 +26,7 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
         let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
         let medicamentDAO : MedicamentDAO = factory.getMedicamentDAO()
         do {
-            let medicaments: [Medicament] = try medicamentDAO.getAllMedicaments()
-            for medicament in medicaments {
-                nomMedicaments.append(medicament.nom)
-                doses.append(medicament.doses)
-            }
+            medicaments = try medicamentDAO.getAllMedicaments()
             self.medicamentPickerView.dataSource = self
             self.medicamentPickerView.delegate = self
             
@@ -57,20 +50,22 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == medicamentPickerView {
-            return nomMedicaments.count
+            return medicaments.count
         } else {
             let medicamentSelected = medicamentPickerView.selectedRow(inComponent: 0)
-            return doses[medicamentSelected].count
+            return medicaments[medicamentSelected].doses.count
         }
         
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == medicamentPickerView {
-            return nomMedicaments[row]
+            selectedMedicament = medicaments[row]
+            return selectedMedicament!.nom
         } else {
             let medicamentSelected = medicamentPickerView.selectedRow(inComponent: 0)
-            return String(doses[medicamentSelected][row])
+            selectedDose = medicaments[medicamentSelected].doses[row]
+            return String(describing: selectedDose!)
         }
     }
     
@@ -83,9 +78,7 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBAction func cancelAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-
     
-
     
 
     /*

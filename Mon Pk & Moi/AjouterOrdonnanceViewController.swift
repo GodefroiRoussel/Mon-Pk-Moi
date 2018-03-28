@@ -13,12 +13,11 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
     @IBOutlet weak var medecinField: UITextField!
     @IBOutlet weak var prochainRDVField: UITextField!
     @IBOutlet weak var prisesTable: UITableView!
-
     
     var medecins : [String] = []
-    var medicaments : [String] = []
+    var medicaments : [Medicament] = []
     var doses : [Double] = []
-    var times : [String] = []
+    var times : [Date] = []
     
         var pickerView = UIPickerView()
         let pickerDate = UIDatePicker()
@@ -113,23 +112,29 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "fr_FR")
+        dateFormatter.dateFormat = "HH:mm"
+        
         let cell = self.prisesTable.dequeueReusableCell(withIdentifier: "PriseMedicamentCell", for: indexPath)
             as! PriseOrdonnanceTableViewCell
-        cell.nomMedicamentLabel.text = self.medicaments[indexPath.row]
+        cell.nomMedicamentLabel.text = self.medicaments[indexPath.row].nom
         cell.doseLabel.text = "\(doses[indexPath.row])"
-        cell.heureLabel.text = times[indexPath.row]
+        cell.heureLabel.text = dateFormatter.string(from:times[indexPath.row])
+        
+        
         return cell
     }
     
     @IBAction func unwindToPriseListAfterSavingNewPrise(segue: UIStoryboardSegue){
         let ajouterPriseController = segue.source as! AjouterPriseViewController
-        //let medicament = ajouterPriseController.medicamentField.text ?? ""
-        //let dose = ajouterPriseController.doseField.text ?? ""
-        //let time = ajouterPriseController.timeField.text ?? ""
+        let medicament = ajouterPriseController.selectedMedicament
+        let dose = ajouterPriseController.selectedDose
+        let time = ajouterPriseController.heurePickerView.date
         
-        //self.medicaments.append(medicament)
-        //self.doses.append(Double(dose)!)
-        //self.times.append(time)
+        self.medicaments.append(medicament!)
+        self.doses.append(dose!)
+        self.times.append(time)
         self.prisesTable.reloadData()
     }
     
