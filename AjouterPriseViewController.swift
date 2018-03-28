@@ -15,17 +15,13 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
     var res : Bool = true
     
     var nomMedicaments : [String] = []
-    var doses : [Double] = []
+    var doses : [[Double]] = []
     
     //var carlist: Dictionary <String, Dictionary<Double>> = Dictionary()
     
     @IBOutlet weak var medicamentPickerView: UIPickerView!
     @IBOutlet weak var dosePickerView: UIPickerView!
     @IBOutlet weak var heurePickerView: UIDatePicker!
-    
-    var listOfMedicament : [String] = []
-    var listOfDose : [Double] = []
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,18 +32,17 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
             let medicaments: [Medicament] = try medicamentDAO.getAllMedicaments()
             for medicament in medicaments {
                 nomMedicaments.append(medicament.nom)
-                for dose in medicament.doses {
-                    for d in doses {
-                        if dose == d {
-                            res = false
-                        }
-                    }
-                    if res == true {
-                        doses.append(dose)
-                    }
-                    res = true
-                }
+                doses.append(medicament.doses)
             }
+            self.medicamentPickerView.dataSource = self
+            self.medicamentPickerView.delegate = self
+            
+            
+            self.dosePickerView.dataSource = self
+            self.dosePickerView.delegate = self
+            
+            heurePickerView.locale = Locale(identifier: "FR-fr")
+            heurePickerView.datePickerMode = .time
             
         }catch let error as NSError {
             print("error")
@@ -62,15 +57,27 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == medicamentPickerView {
-            return listOfMedicament.count
+            return nomMedicaments.count
         } else {
-            return listOfDose.count
+            let medicamentSelected = medicamentPickerView.selectedRow(inComponent: 0)
+            return doses[medicamentSelected].count
         }
         
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return nil
+        if pickerView == medicamentPickerView {
+            return nomMedicaments[row]
+        } else {
+            let medicamentSelected = medicamentPickerView.selectedRow(inComponent: 0)
+            return String(doses[medicamentSelected][row])
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == medicamentPickerView {
+            dosePickerView.reloadAllComponents()
+        }
     }
     
     @IBAction func cancelAction(_ sender: Any) {
