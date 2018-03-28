@@ -73,14 +73,58 @@ class AjouterContactViewController: UIViewController, UIPickerViewDelegate, UIPi
         typeContactLabel.resignFirstResponder()
     }
 
-    /*
-    // MARK: - Navigation
+    @IBAction func ajouterContact(_ sender: Any) {
+        guard let _ = typeContactLabel.text, !(typeContactLabel.text?.isEmpty)! else {
+            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez choisir un type de contact.", onView: self)
+            return
+        }
+        
+        guard let _ = nomField.text, !(nomField.text?.isEmpty)! else {
+            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez entrer un nom.", onView: self)
+            return
+        }
+        
+        guard let _ = prenomField.text, !(prenomField.text?.isEmpty)! else {
+            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez entrer un prénom.", onView: self)
+            return
+        }
+        
+        guard let _ = numeroField.text, !(numeroField.text?.isEmpty)! else {
+            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez entrer un numéro de téléphone.", onView: self)
+            return
+        }
+        
+        guard let _ = adresseField.text, !(adresseField.text?.isEmpty)! else {
+            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez entrer une adresse.", onView: self)
+            return
+        }
+        
+        //Start the business logic
+        //A  revoir 
+        
+      /*  let contactDAO: ContactDAO = factory.getContactDAO()
+        let patientDAO: PatientDAO = factory.getPatientDAO()
+        do {
+            let patient: Patient = try patientDAO.getAllPatients()[0] //TODO : SOLUTION TEMPORAIRE A CHANGER
+            let contact: Contact = try ContactDAO.create(withName: nomField.text, withPrenom: prenomField.text, withTelephone: numeroField.text, withAdresse: adresseField.text, is_a: selectedTypeContact, is_connected_to: patient)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        } catch let error as NSError {
+            DialogBoxHelper.alert(onError: error, onView: self)
+            return
+        } */
+        
+        // Envoie vers la page pilulier voir car on envoie pas forcément les informations donc peut-être juste une autre fonction
+        self.performSegue(withIdentifier: "informations", sender: self)
+    
     }
-    */
 
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
 }

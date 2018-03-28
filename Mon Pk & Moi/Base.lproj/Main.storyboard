@@ -1216,7 +1216,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Icx-uq-L7Y"/>
-                                    <barButtonItem title="Ajouter" id="8rp-Ec-Zdm"/>
+                                    <barButtonItem title="Ajouter" id="8rp-Ec-Zdm">
+                                        <connections>
+                                            <action selector="ajouterContact:" destination="Ddd-3Z-aNo" id="wyf-if-zcI"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="841-eD-kLD"/>
                                 </items>
                             </toolbar>
@@ -1585,11 +1589,11 @@
         <image name="user.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yR1-uu-Jgj"/>
-        <segue reference="vrs-xg-WVI"/>
-        <segue reference="lkY-Vq-5Ct"/>
-        <segue reference="8Ec-Hm-Ldp"/>
         <segue reference="wIy-2e-ZcD"/>
+        <segue reference="VcH-WC-gyy"/>
+        <segue reference="yR1-uu-Jgj"/>
+        <segue reference="fop-H3-g23"/>
         <segue reference="NF4-pS-3wl"/>
+        <segue reference="lkY-Vq-5Ct"/>
     </inferredMetricsTieBreakers>
 </document>
