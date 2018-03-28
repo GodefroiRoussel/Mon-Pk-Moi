@@ -80,6 +80,8 @@
 		7AA534022057C9FF00A2A443 /* pilulierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA534012057C9FF00A2A443 /* pilulierViewController.swift */; };
 		7BFCDC6C206B84BE00A3A7CC /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFCDC6B206B84BE00A3A7CC /* InformationViewController.swift */; };
 		7BFCDC6E206B853500A3A7CC /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFCDC6D206B853500A3A7CC /* ContactTableViewCell.swift */; };
+		7BFCDC70206B8D9F00A3A7CC /* AgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFCDC6F206B8D9F00A3A7CC /* AgendaViewController.swift */; };
+		7BFCDC72206B8EBD00A3A7CC /* EvenementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFCDC71206B8EBD00A3A7CC /* EvenementTableViewCell.swift */; };
 		BCFF8260206AFAD6006AE4D6 /* InscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF825F206AFAD6006AE4D6 /* InscriptionViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -180,6 +182,8 @@
 		7AA534012057C9FF00A2A443 /* pilulierViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = pilulierViewController.swift; path = ../pilulierViewController.swift; sourceTree = "<group>"; };
 		7BFCDC6B206B84BE00A3A7CC /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		7BFCDC6D206B853500A3A7CC /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		7BFCDC6F206B8D9F00A3A7CC /* AgendaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaViewController.swift; sourceTree = "<group>"; };
+		7BFCDC71206B8EBD00A3A7CC /* EvenementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvenementTableViewCell.swift; sourceTree = "<group>"; };
 		BCFF825F206AFAD6006AE4D6 /* InscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InscriptionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -394,6 +398,8 @@
 				7A4A735D2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift */,
 				7BFCDC6B206B84BE00A3A7CC /* InformationViewController.swift */,
 				7BFCDC6D206B853500A3A7CC /* ContactTableViewCell.swift */,
+				7BFCDC6F206B8D9F00A3A7CC /* AgendaViewController.swift */,
+				7BFCDC71206B8EBD00A3A7CC /* EvenementTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -552,6 +558,7 @@
 				2BEDF792206A44170099FCD2 /* PatientDAO.swift in Sources */,
 				2BEDF75B206A42130099FCD2 /* EvenementExtension.swift in Sources */,
 				2BEDF796206A44370099FCD2 /* RDVDAO.swift in Sources */,
+				7BFCDC70206B8D9F00A3A7CC /* AgendaViewController.swift in Sources */,
 				7A4A735E2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift in Sources */,
 				2BEDF77B206A433F0099FCD2 /* DialogBoxHelper.swift in Sources */,
 				2BEDF790206A44050099FCD2 /* OrdonnanceDAO.swift in Sources */,
@@ -559,6 +566,7 @@
 				2BEDF76B206A42A70099FCD2 /* AvisExtension.swift in Sources */,
 				2BEDF759206A42030099FCD2 /* PatientExtension.swift in Sources */,
 				2BEDF7A9206A44F30099FCD2 /* EvenementCoreDataDAO.swift in Sources */,
+				7BFCDC72206B8EBD00A3A7CC /* EvenementTableViewCell.swift in Sources */,
 				2BEDF77F206A43640099FCD2 /* DataHelper.swift in Sources */,
 				2BEDF7B3206A455B0099FCD2 /* TraceurCoreDataDAO.swift in Sources */,
 				7A6BB3612050281C00A46AB3 /* ViewController.swift in Sources */,
