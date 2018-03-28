@@ -19,6 +19,7 @@ class InscriptionViewController: UIViewController {
     let datePicker = UIDatePicker()
     
     func createDatePicker(){
+        
         // format for picker
         datePicker.datePickerMode = .date
         
@@ -29,12 +30,12 @@ class InscriptionViewController: UIViewController {
         //barButton item
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
         toolbar.setItems([doneButton], animated: false)
-        
         dateNaissance.inputAccessoryView = toolbar
+        
         // assigning date picker to text field
         dateNaissance.inputView = datePicker
         
-        datePicker.datePickerMode = .time
+        datePicker.datePickerMode = .date
         datePicker.locale = Locale(identifier: "FR-fr")
     }
     
@@ -47,54 +48,6 @@ class InscriptionViewController: UIViewController {
         
         dateNaissance.text = dateFormatter.string(from: datePicker.date)
         self.view.endEditing(true)
-    }
-    
-    @IBAction func submit(_ sender: Any) {
-        guard let lastName = nom.text, !(nom.text?.isEmpty)! else {
-            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez entrer votre nom.", onView: self)
-            return
-        }
-        
-        guard let firstName = prenom.text, !(prenom.text?.isEmpty)! else {
-            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez entrer votre prenom.", onView: self)
-            return
-        }
-        
-        
-        let dateString = "Thu, 22 Oct 2015 07:45:17 +0000"
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEE, dd MMM yyyy hh:mm:ss +zzzz"
-        dateFormatter.locale = Locale.init(identifier: "en_GB")
-        
-        let dateObj = dateFormatter.date(from: dateString)
-        
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        print("Dateobj: \(dateFormatter.string(from: dateObj!))")
-        
-        
-        
-        guard let birthdate = dateNaissance.text, !(dateNaissance.text?.isEmpty)! else {
-            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez entrer votre date de naissance.", onView: self)
-            return
-        }
-        
-        guard let adress = adresse.text, !(adresse.text?.isEmpty)! else {
-            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez entrer votre adresse.", onView: self)
-            return
-        }
-        
-        guard let tempsPrepa = Int(tempsPreparation.text!), !(tempsPreparation.text?.isEmpty)! else {
-            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez entrer votre temps de preparation nécessaire avant de devir partir à un rendez-vous.", onView: self)
-            return
-        }
-        
-        print(birthdate)
-        //let test = dateFormatter.string(from: birthdate)
-        let date = dateFormatter.date(from: birthdate)
-        print(date)
-        
-        //let _ = CoreDataDAOFactory.getInstance().getPatientDAO().create(withName: lastName, withPrenom: firstName, withDateNaissance: , withAdresse: adress, withTempsPreparation: tempsPrepa)
     }
     
     override func viewDidLoad() {
@@ -119,4 +72,44 @@ class InscriptionViewController: UIViewController {
     }
     */
 
+
+    
+    
+    @IBAction func creer(_ sender: Any) {
+        guard let lastName = nom.text, !(nom.text?.isEmpty)! else {
+            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez entrer votre nom.", onView: self)
+            return
+        }
+        
+        guard let firstName = prenom.text, !(prenom.text?.isEmpty)! else {
+            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez entrer votre prenom.", onView: self)
+            return
+        }
+        
+        guard let birthdate = dateNaissance.text, !(dateNaissance.text?.isEmpty)! else {
+            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez entrer votre date de naissance.", onView: self)
+            return
+        }
+        
+        guard let adress = adresse.text, !(adresse.text?.isEmpty)! else {
+            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez entrer votre adresse.", onView: self)
+            return
+        }
+        
+        guard let tempsPrepa = Int(tempsPreparation.text!), !(tempsPreparation.text?.isEmpty)! else {
+            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez entrer votre temps de preparation nécessaire avant de devir partir à un rendez-vous.", onView: self)
+            return
+        }
+        
+        do{
+            let hello = try CoreDataDAOFactory.getInstance().getPatientDAO().create(withName: lastName, withPrenom: firstName, withDateNaissance: datePicker.date as NSDate, withAdresse: adress, withTempsPreparation: Int16(tempsPrepa))
+            print(hello)
+        } catch let error as NSError {
+            DialogBoxHelper.alert(onError: error, onView: self)
+        }
+
+    }
+    
+    
+    
 }
