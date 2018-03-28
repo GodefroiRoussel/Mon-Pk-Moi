@@ -22,12 +22,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool {
         // If it's the first launch of the application, we create the data in the database
-        //UserDefaults.standard.set(false, forKey: "wasLaunched")
+        UserDefaults.standard.set(false, forKey: "wasLaunched")
         if(!UserDefaults.standard.bool(forKey: "wasLaunched")){
             DataHelper.deleteSeeder()
             DataHelper.seedDataStore()
+            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let nav = storyboard.instantiateViewController(withIdentifier: "Inscription") as! InscriptionViewController
+            self.window?.rootViewController = nav
             UserDefaults.standard.set(true, forKey: "wasLaunched")
         }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         let factory : CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
         
