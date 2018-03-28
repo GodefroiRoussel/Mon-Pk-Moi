@@ -52,8 +52,8 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
         if pickerView == medicamentPickerView {
             return medicaments.count
         } else {
-            let medicamentSelected = medicamentPickerView.selectedRow(inComponent: 0)
-            return medicaments[medicamentSelected].doses.count
+            let selection = medicamentPickerView.selectedRow(inComponent: 0)
+            return medicaments[selection].doses.count
         }
         
     }
@@ -63,8 +63,8 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
             selectedMedicament = medicaments[row]
             return selectedMedicament!.nom
         } else {
-            let medicamentSelected = medicamentPickerView.selectedRow(inComponent: 0)
-            selectedDose = medicaments[medicamentSelected].doses[row]
+            let selection = medicamentPickerView.selectedRow(inComponent: 0)
+            selectedDose = medicaments[selection].doses[row]
             return String(describing: selectedDose!)
         }
     }

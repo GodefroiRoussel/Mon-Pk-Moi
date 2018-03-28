@@ -1,16 +1,16 @@
 //
 //  DateHelper.swift
-//  Mon Pk & Moi
+//  monPkEtMoi
 //
-//  Created by Kevin Hassan on 24/03/2018.
-//  Copyright © 2018 Kevin Hassan. All rights reserved.
+//  Created by Kevin HASSAN on 24/03/2018.
+//  Copyright © 2018 CHU-polytech. All rights reserved.
 //
-
 import Foundation
+import UIKit
 
 class DateHelper{
-    static var days = NSDateComponents() // Day and month
-    static var cal = NSCalendar.current // Calendar used
+    static var cal = NSCalendar.current
+    static var days = NSDateComponents()
     
     static func getDates(dateD: NSDate, dateF: NSDate) -> [NSDate]{
         
@@ -26,5 +26,66 @@ class DateHelper{
             dates.append(date)
         }
         return dates
+    }
+    static func getDays(dateD: NSDate, dateF: NSDate) -> [[NSDate]?]{
+        var week:[[NSDate]] = [[],[],[],[],[],[],[]]
+        let dates:[NSDate] = DateHelper.getDates(dateD: dateD, dateF: dateF)
+        var numJour: Int? = nil
+        for date in dates{
+            // Numéroté de 1 à 7
+            numJour = cal.component(.weekday, from: date as Date)
+            week[Jour().getJourIndex(jour:numJour!)].append(date)
+        }
+        return week
+    }
+    /// Changer une date en lui affectant une nouvelle heure et de nouvelle minute
+    static func changeHour(date: NSDate, heureMin: NSDate) -> NSDate{
+        var component1 = cal.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date as Date)
+        var component2 = cal.dateComponents([.hour, .minute, .second], from: heureMin as Date)
+        component1.hour = component2.hour
+        component1.minute = component2.minute
+        component1.second = component2.second
+        let date = cal.date(from: component1)!
+        return date as NSDate
+    }
+    
+    static func startOfDay(day: NSDate) -> NSDate {
+        let gregorian = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
+        let unitFlags: NSCalendar.Unit = [.minute, .hour, .day, .month, .year]
+        var todayComponents = gregorian!.components(unitFlags, from: day as Date)
+        todayComponents.hour = 0
+        todayComponents.minute = 0
+        return (gregorian?.date(from: todayComponents))! as NSDate
+    }
+    
+    static func endOfDay(day: NSDate) -> NSDate {
+        let gregorian = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
+        let unitFlags: NSCalendar.Unit = [.minute, .hour, .day, .month, .year]
+        var todayComponents = gregorian!.components(unitFlags, from: day as Date)
+        todayComponents.hour = 23
+        todayComponents.minute = 59
+        return (gregorian?.date(from: todayComponents))! as NSDate
+    }
+    static func checkInterval(heureDebut: NSDate, heureFin: NSDate, intervalle: Int){
+        
+    }
+    static func substractDateInSeconds(heure1: NSDate, heure2: NSDate) -> Double{
+        let date = changeHour(date: heure1, heureMin: heure2)
+        return date.timeIntervalSince(NSDate() as Date)
+    }
+}
+
+/// Correspondance entre jours et chiffre
+///
+/// Dimanche correspond au jour 1 d'après le calendrier grégorien
+struct Jour{
+    var jours: [(String,Int)] = [("Lundi",2),("Mardi",3),("Mercredi",4),("Jeudi",5),("Vendredi",6),("Samedi",7),("Dimanche",1)]
+    
+    func getJourIndex(jour: Int) -> Int{
+        var i = 0
+        while (jours[i].1 != jour && i<jours.count) {
+            i = i+1
+        }
+        return i
     }
 }

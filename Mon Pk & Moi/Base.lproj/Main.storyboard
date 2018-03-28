@@ -452,9 +452,9 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D4s-9w-zbh">
-                                <rect key="frame" x="70.5" y="200" width="180" height="30"/>
+                                <rect key="frame" x="70" y="177" width="180" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="Q72-k0-zec"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="gyg-07-dbz"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -464,9 +464,9 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XUX-J4-WgU">
-                                <rect key="frame" x="70.5" y="250" width="180" height="30"/>
+                                <rect key="frame" x="70" y="244" width="180" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="0Ul-i5-3Nr"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="wnG-Zu-Q4O"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -487,14 +487,14 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="2Ad-Yo-lO5"/>
                                     <barButtonItem title="Ajouter" id="AGz-HO-eSY">
                                         <connections>
-                                            <segue destination="uRC-I7-Dbu" kind="show" id="Ztb-Rw-F9n"/>
+                                            <action selector="ajouterOrdonnance:" destination="xa7-2G-8Pe" id="Ah4-xd-v9C"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="sFJ-ZN-PlD"/>
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vug-mq-pMJ">
-                                <rect key="frame" x="40" y="300" width="240" height="174"/>
+                                <rect key="frame" x="40" y="294" width="240" height="180"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="y1j-XC-Q2W"/>
@@ -557,19 +557,33 @@
                                     <segue destination="26g-hp-E6H" kind="presentation" id="d5y-pe-3jw"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisir le médecin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iei-79-HX6">
+                                <rect key="frame" x="90" y="148" width="141" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisir la date de fin du traitement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wum-hL-uP2">
+                                <rect key="frame" x="28" y="215" width="264" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BAw-ng-8nH" firstAttribute="top" secondItem="Vug-mq-pMJ" secondAttribute="bottom" constant="50" id="0Lj-Wj-ZR0"/>
-                            <constraint firstItem="XUX-J4-WgU" firstAttribute="top" secondItem="D4s-9w-zbh" secondAttribute="bottom" constant="20" id="4rq-io-rrc"/>
+                            <constraint firstItem="D4s-9w-zbh" firstAttribute="top" secondItem="Iei-79-HX6" secondAttribute="bottom" constant="8" id="48b-Oo-zQQ"/>
                             <constraint firstItem="wxj-ZH-YA0" firstAttribute="top" secondItem="ZNq-0e-qtW" secondAttribute="bottom" id="6N8-al-mQn"/>
                             <constraint firstItem="BAw-ng-8nH" firstAttribute="leading" secondItem="9Xr-tv-jxS" secondAttribute="leading" id="9hf-Nz-WIO"/>
+                            <constraint firstItem="D4s-9w-zbh" firstAttribute="centerX" secondItem="9Xr-tv-jxS" secondAttribute="centerX" id="F59-bU-Ssi"/>
                             <constraint firstItem="d7d-79-9mF" firstAttribute="centerX" secondItem="9Xr-tv-jxS" secondAttribute="centerX" id="Gb8-fn-PR4"/>
                             <constraint firstItem="d7d-79-9mF" firstAttribute="top" secondItem="Vug-mq-pMJ" secondAttribute="bottom" constant="8" id="HuZ-lB-kfc"/>
-                            <constraint firstItem="D4s-9w-zbh" firstAttribute="top" secondItem="wxj-ZH-YA0" secondAttribute="bottom" constant="60" id="KDX-bL-e6v"/>
                             <constraint firstAttribute="trailing" secondItem="BAw-ng-8nH" secondAttribute="trailing" id="MkV-QS-kNu"/>
                             <constraint firstItem="XUX-J4-WgU" firstAttribute="centerX" secondItem="9Xr-tv-jxS" secondAttribute="centerX" id="Sog-5Q-XbA"/>
+                            <constraint firstItem="Iei-79-HX6" firstAttribute="centerX" secondItem="9Xr-tv-jxS" secondAttribute="centerX" id="T9v-FX-4c4"/>
                             <constraint firstItem="BAw-ng-8nH" firstAttribute="leading" secondItem="9Xr-tv-jxS" secondAttribute="leading" id="VFH-uz-lfy"/>
+                            <constraint firstItem="XUX-J4-WgU" firstAttribute="top" secondItem="Wum-hL-uP2" secondAttribute="bottom" constant="8" id="WXo-S6-xgR"/>
                             <constraint firstItem="Vug-mq-pMJ" firstAttribute="centerX" secondItem="9Xr-tv-jxS" secondAttribute="centerX" id="WZl-oa-w2F"/>
                             <constraint firstItem="Vug-mq-pMJ" firstAttribute="top" secondItem="XUX-J4-WgU" secondAttribute="bottom" constant="20" id="cSs-MU-GSQ"/>
                             <constraint firstItem="VaY-jp-quN" firstAttribute="top" secondItem="BAw-ng-8nH" secondAttribute="bottom" id="fjB-m8-7uy"/>
@@ -577,18 +591,22 @@
                             <constraint firstAttribute="trailing" secondItem="BAw-ng-8nH" secondAttribute="trailing" id="gpU-mE-2RS"/>
                             <constraint firstItem="VaY-jp-quN" firstAttribute="top" secondItem="BAw-ng-8nH" secondAttribute="bottom" id="jbI-dT-ExT"/>
                             <constraint firstAttribute="trailing" secondItem="wxj-ZH-YA0" secondAttribute="trailing" id="nCa-CR-NzO"/>
-                            <constraint firstItem="D4s-9w-zbh" firstAttribute="centerX" secondItem="9Xr-tv-jxS" secondAttribute="centerX" id="pg6-4t-KgR"/>
+                            <constraint firstItem="Wum-hL-uP2" firstAttribute="top" secondItem="D4s-9w-zbh" secondAttribute="bottom" constant="8" id="tDL-qz-nla"/>
+                            <constraint firstItem="Iei-79-HX6" firstAttribute="top" secondItem="wxj-ZH-YA0" secondAttribute="bottom" constant="8" id="zaM-aB-G7t"/>
+                            <constraint firstItem="Wum-hL-uP2" firstAttribute="centerX" secondItem="9Xr-tv-jxS" secondAttribute="centerX" id="zcb-rV-WCg"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="medecinField" destination="D4s-9w-zbh" id="vWx-pi-Gab"/>
                         <outlet property="prisesTable" destination="Vug-mq-pMJ" id="KL6-Fx-vLI"/>
                         <outlet property="prochainRDVField" destination="XUX-J4-WgU" id="X3w-wn-2F0"/>
+                        <segue destination="w1U-O2-xVe" kind="unwind" identifier="pilulier" unwindAction="unwindToPilulierAfterSavingNewOrdonnanceWithSegue:" id="dVB-CB-UIZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIR-oE-TSs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="w1U-O2-xVe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-249" y="-1419"/>
+            <point key="canvasLocation" x="-249.375" y="-1419.7183098591549"/>
         </scene>
         <!--Pilulier-->
         <scene sceneID="aWd-nH-QnD">
@@ -1555,11 +1573,11 @@
         <image name="user.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ztb-Rw-F9n"/>
         <segue reference="yR1-uu-Jgj"/>
-        <segue reference="VcH-WC-gyy"/>
+        <segue reference="vrs-xg-WVI"/>
+        <segue reference="lkY-Vq-5Ct"/>
+        <segue reference="8Ec-Hm-Ldp"/>
         <segue reference="wIy-2e-ZcD"/>
         <segue reference="NF4-pS-3wl"/>
-        <segue reference="fop-H3-g23"/>
     </inferredMetricsTieBreakers>
 </document>

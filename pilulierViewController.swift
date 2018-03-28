@@ -55,21 +55,7 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
-        let priseMedicamenteuseDAO : PriseMedicamenteuseDAO = factory.getPriseMedicamenteuseDAO()
-        do {
-            let priseMedicamenteuses: [PriseMedicamenteuse] = try priseMedicamenteuseDAO.getAllPriseMedicamenteuses()
-            for priseMedicamenteuse in priseMedicamenteuses {
-                medicaments.append((priseMedicamenteuse.belongs_to?.nom)!)
-                doses.append(priseMedicamenteuse.pdose)
-                dates.append(priseMedicamenteuse.pdateTheorique! as Date)
-            }
-            
-        }catch let error as NSError {
-            print("error")
-        }
-        
-        
+        self.loadData()
         getCurrentDateTime()
 
         // Do any additional setup after loading the view.
@@ -107,6 +93,31 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
         formatter.locale = Locale(identifier: "FR-fr")
         let str = formatter.string(from: Date())
         dateLabel.text = str
+    }
+    
+    @IBAction func unwindToPilulierAfterSavingNewOrdonnance(segue: UIStoryboardSegue){
+        self.priseMedicamentTable.reloadData()
+    }
+    
+    func loadData(){
+        //Solution temporaire
+        self.medicaments = []
+        self.doses = []
+        self.times = []
+        
+        self.dates = []
+        let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
+        let priseMedicamenteuseDAO : PriseMedicamenteuseDAO = factory.getPriseMedicamenteuseDAO()
+        do {
+            let priseMedicamenteuses: [PriseMedicamenteuse] = try priseMedicamenteuseDAO.getAllPriseMedicamenteuses()
+            for priseMedicamenteuse in priseMedicamenteuses {
+                medicaments.append((priseMedicamenteuse.belongs_to?.nom)!)
+                doses.append(priseMedicamenteuse.pdose)
+                dates.append(priseMedicamenteuse.pdateTheorique! as Date)
+            }
+        } catch let error as NSError {
+                print("error")
+        }
     }
     
    // func SaveNewPrise(withMedicament medicament: String, andDose dose: Double, andTime time: Date){

@@ -14,23 +14,26 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
     @IBOutlet weak var prochainRDVField: UITextField!
     @IBOutlet weak var prisesTable: UITableView!
     
-    var medecins : [String] = []
+    var medecins : [Contact] = []
     var medicaments : [Medicament] = []
     var doses : [Double] = []
     var times : [Date] = []
+    let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
     
-        var pickerView = UIPickerView()
-        let pickerDate = UIDatePicker()
+    var selectedMedecin : Contact? = nil
+    
+    var pickerView = UIPickerView()
+    let pickerDate = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
+        
         let contactDAO : ContactDAO = factory.getContactDAO()
         do {
             let contacts: [Contact] = try contactDAO.getAllMedecins()
             for contact in contacts {
-                medecins.append(contact.nom)
+                medecins.append(contact)
             }
         } catch let error as NSError {
                 print("error")
@@ -65,11 +68,12 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-            return medecins[row]
+            return medecins[row].nom
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        medecinField.text = medecins[row]
+        selectedMedecin = medecins[row]
+        medecinField.text = selectedMedecin!.nom
         medecinField.resignFirstResponder()
     }
     
@@ -138,7 +142,48 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
         self.prisesTable.reloadData()
     }
     
-    
+    @IBAction func ajouterOrdonnance(_ sender: Any) {
+        guard let _ = medecinField.text, !(medecinField.text?.isEmpty)! else {
+            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez choisir un médecin.", onView: self)
+            return
+        }
+        
+        guard let _ = prochainRDVField.text, !(prochainRDVField.text?.isEmpty)! else {
+            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez choisir la date de fin de votre traitement. Nous vous conseillons de mettre la date à dans 6 mois si cette ordonnance est délivrée par un neurologue.", onView: self)
+            return
+        }
+        
+        if (medicaments.count == 0 || doses.count == 0 || times.count == 0){
+            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez ajouter une prise avant d'ajouter une ordonnance.", onView: self)
+            return
+        }else {
+            // Start the business logic
+            let ordonnanceDAO: OrdonnanceDAO = factory.getOrdonnanceDAO()
+            let patientDAO: PatientDAO = factory.getPatientDAO()
+            let priseDAO: PriseMedicamenteuseDAO = factory.getPriseMedicamenteuseDAO()
+            do {
+                let patient: Patient = try patientDAO.getAllPatients()[0] //TODO : SOLUTION TEMPORAIRE A CHANGER
+                let ordonnance: Ordonnance = try ordonnanceDAO.create(withDateDebutTraitement: NSDate(), concern: patient, created_by: selectedMedecin!, untillDate: pickerDate.date as NSDate)
+                
+                let dates = DateHelper.getDates(dateD: NSDate(), dateF: pickerDate.date as NSDate)
+                for date in dates {
+                    for i in 0..<medicaments.count {
+                        let dateMAJ: NSDate = DateHelper.changeHour(date: date, heureMin: times[i] as NSDate)
+                        let _ :PriseMedicamenteuse = try priseDAO.create(withName: "Prise Médicamenteuse", withDateTheorique: dateMAJ, withDose: doses[i], schedule_by: patient, belongs_to: medicaments[i], linked_to: ordonnance)
+                    }
+                }
+            } catch let error as NSError {
+                DialogBoxHelper.alert(onError: error, onView: self)
+                return
+            }
+
+            
+            
+            // Envoie vers la page pilulier voir car on envoie pas forcément les informations donc peut-être juste une autre fonction
+            self.performSegue(withIdentifier: "pilulier", sender: self)
+        }
+        
+    }
     
 
     /*
@@ -148,6 +193,7 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let dest = segue.destination
     }
     */
 
