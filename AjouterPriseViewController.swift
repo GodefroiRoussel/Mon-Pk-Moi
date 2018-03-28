@@ -20,8 +20,8 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
     var nomMedicaments : [String] = []
     var doses : [Double] = []
     
-    var pickerView = UIPickerView()
-    var pickerView1 = UIPickerView()
+    var medicamentPickerView = UIPickerView()
+    var dosePickerView = UIPickerView()
     
     let pickerTime = UIDatePicker()
     
@@ -53,14 +53,14 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
         
         createTimePicker()
         
-        pickerView.delegate = self
-        pickerView1.delegate = self
+        medicamentPickerView.delegate = self
+        dosePickerView.delegate = self
         
-        medicamentField.inputView = pickerView
+        medicamentField.inputView = medicamentPickerView
         medicamentField.textAlignment = .center
         medicamentField.placeholder = "Choisir un medicament"
         
-        doseField.inputView = pickerView1
+        doseField.inputView = dosePickerView
         doseField.textAlignment = .center
         doseField.placeholder = "Choisir une dose"
         
@@ -75,7 +75,7 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == pickerView1 {
+        if pickerView == dosePickerView {
             return doses.count
         }
         else{
@@ -84,7 +84,7 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == pickerView1 {
+        if pickerView == dosePickerView {
             return "\(doses[row])"
         } else {
         return nomMedicaments[row]
@@ -92,7 +92,7 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == pickerView1 {
+        if pickerView == dosePickerView {
             doseField.text = "\(doses[row])"
             doseField.resignFirstResponder()
         }
