@@ -14,10 +14,43 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
     
     var medicaments : [String] = []
     var doses : [Double] = []
-    var times : [Date] = []
+    var times : [String] = []
+    
+    var dates : [Date] = []
 
     
     @IBOutlet weak var priseMedicamentTable: UITableView!
+    
+    @IBAction func jourAddButton(_ sender: UIButton) {
+        let date = dateLabel.text
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.locale = Locale(identifier: "FR-fr")
+        let test = dateFormatter.date(from: date!)
+        let test2 = Date(timeInterval: 86400, since: test!)
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "FR-fr")
+        let str = formatter.string(from: test2)
+        dateLabel.text = str
+    }
+    @IBAction func jourSubButton(_ sender: UIButton) {
+        let date = dateLabel.text
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.locale = Locale(identifier: "FR-fr")
+        let test = dateFormatter.date(from: date!)
+        let test2 = Date(timeInterval: -86400, since: test!)
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "FR-fr")
+        let str = formatter.string(from: test2)
+        dateLabel.text = str
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +62,7 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
             for priseMedicamenteuse in priseMedicamenteuses {
                 medicaments.append((priseMedicamenteuse.belongs_to?.nom)!)
                 doses.append(priseMedicamenteuse.pdose)
-                //times.append(priseMedicamenteuse.pdateTheorique as! Date)
+                dates.append(priseMedicamenteuse.pdateTheorique! as Date)
             }
             
         }catch let error as NSError {
@@ -56,7 +89,14 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
             as! PriseMedicamentTableViewCell
         cell.medicamentNameLabel.text = self.medicaments[indexPath.row]
         cell.doseLabel.text = "\(doses[indexPath.row])"
-        //cell.timeLabel.text = times[indexPath.row]
+        
+        let dateFormatter : DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        for date in dates {
+            let heure = dateFormatter.string(from: date)
+            times.append(heure)
+        }
+        cell.timeLabel.text = "\(times[indexPath.row])"
         return cell
     }
     
