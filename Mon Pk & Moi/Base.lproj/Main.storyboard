@@ -331,34 +331,38 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="qhC-rz-OTU"/>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisir le médicament ainsi que la dose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ey-k9-HHk">
-                                <rect key="frame" x="9" y="148" width="302" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisir le médicament" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ey-k9-HHk">
+                                <rect key="frame" x="74.5" y="148" width="171" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisir l'heure de la prise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSO-xk-9qY">
-                                <rect key="frame" x="64" y="344" width="193" height="21"/>
+                                <rect key="frame" x="64" y="375" width="193" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOG-Pk-X7J">
-                                <rect key="frame" x="0.0" y="177" width="141" height="159"/>
+                                <rect key="frame" x="0.0" y="177" width="320" height="85"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="141" id="ToF-Gl-7i7"/>
-                                    <constraint firstAttribute="height" constant="159" id="iHV-MO-sMP"/>
+                                    <constraint firstAttribute="height" constant="85" id="PBM-bS-FNz"/>
                                 </constraints>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xr6-PA-kgI">
-                                <rect key="frame" x="149" y="177" width="171" height="159"/>
+                                <rect key="frame" x="0.0" y="299" width="320" height="68"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="171" id="FPH-yb-ZeA"/>
-                                    <constraint firstAttribute="height" constant="159" id="fLq-F1-1Rj"/>
+                                    <constraint firstAttribute="height" constant="68" id="g3M-f4-Wcm"/>
                                 </constraints>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisir la dose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEz-OA-Y0a">
+                                <rect key="frame" x="104" y="270" width="113" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Jou-7Z-L7n">
-                                <rect key="frame" x="0.0" y="373" width="320" height="103"/>
+                                <rect key="frame" x="0.0" y="404" width="320" height="103"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="103" id="S45-kZ-5o2"/>
                                 </constraints>
@@ -369,20 +373,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eOG-Pk-X7J" firstAttribute="top" secondItem="4Ey-k9-HHk" secondAttribute="bottom" constant="8" id="1bF-yt-1Tk"/>
-                            <constraint firstItem="4Ey-k9-HHk" firstAttribute="top" secondItem="OAB-cb-t6g" secondAttribute="bottom" constant="8" id="HPm-cJ-pVf"/>
-                            <constraint firstItem="4Ey-k9-HHk" firstAttribute="centerX" secondItem="Vot-KY-Xfb" secondAttribute="centerX" id="Hxa-vt-gLQ"/>
-                            <constraint firstItem="Jou-7Z-L7n" firstAttribute="top" secondItem="VSO-xk-9qY" secondAttribute="bottom" constant="8" id="Jpf-SR-9eL"/>
-                            <constraint firstAttribute="trailing" secondItem="Xr6-PA-kgI" secondAttribute="trailing" id="RiX-om-zAo"/>
-                            <constraint firstItem="eOG-Pk-X7J" firstAttribute="top" secondItem="4Ey-k9-HHk" secondAttribute="bottom" constant="8" id="VyL-8e-9AZ"/>
-                            <constraint firstItem="VSO-xk-9qY" firstAttribute="centerX" secondItem="Vot-KY-Xfb" secondAttribute="centerX" id="bxH-Qs-g8e"/>
-                            <constraint firstItem="eOG-Pk-X7J" firstAttribute="leading" secondItem="Vot-KY-Xfb" secondAttribute="leading" id="gWc-ta-id2"/>
+                            <constraint firstItem="VEz-OA-Y0a" firstAttribute="top" secondItem="eOG-Pk-X7J" secondAttribute="bottom" constant="8" id="2a4-Di-SPL"/>
+                            <constraint firstItem="Xr6-PA-kgI" firstAttribute="top" secondItem="VEz-OA-Y0a" secondAttribute="bottom" constant="8" id="98d-d6-YDe"/>
+                            <constraint firstItem="VEz-OA-Y0a" firstAttribute="centerX" secondItem="Vot-KY-Xfb" secondAttribute="centerX" id="CRn-IB-YdI"/>
+                            <constraint firstItem="4Ey-k9-HHk" firstAttribute="centerX" secondItem="Vot-KY-Xfb" secondAttribute="centerX" id="Llx-Lc-GhX"/>
+                            <constraint firstItem="eOG-Pk-X7J" firstAttribute="top" secondItem="4Ey-k9-HHk" secondAttribute="bottom" constant="8" id="M3W-wf-f6m"/>
+                            <constraint firstItem="VSO-xk-9qY" firstAttribute="top" secondItem="Xr6-PA-kgI" secondAttribute="bottom" constant="8" id="Oca-ZO-Qet"/>
+                            <constraint firstItem="eOG-Pk-X7J" firstAttribute="centerX" secondItem="Vot-KY-Xfb" secondAttribute="centerX" id="TD9-Za-uSZ"/>
+                            <constraint firstItem="Jou-7Z-L7n" firstAttribute="top" secondItem="VSO-xk-9qY" secondAttribute="bottom" constant="8" id="be1-5X-L3y"/>
+                            <constraint firstItem="VSO-xk-9qY" firstAttribute="centerX" secondItem="Vot-KY-Xfb" secondAttribute="centerX" id="cU7-X0-S5y"/>
                             <constraint firstItem="Jou-7Z-L7n" firstAttribute="centerX" secondItem="Vot-KY-Xfb" secondAttribute="centerX" id="kRj-pJ-XRU"/>
-                            <constraint firstItem="eOG-Pk-X7J" firstAttribute="leading" secondItem="Vot-KY-Xfb" secondAttribute="leading" id="lC7-Xe-mFa"/>
-                            <constraint firstItem="VSO-xk-9qY" firstAttribute="top" secondItem="Xr6-PA-kgI" secondAttribute="bottom" constant="8" id="q1U-8D-1KY"/>
-                            <constraint firstItem="Xr6-PA-kgI" firstAttribute="top" secondItem="4Ey-k9-HHk" secondAttribute="bottom" constant="8" id="seW-4n-COi"/>
+                            <constraint firstItem="Xr6-PA-kgI" firstAttribute="centerX" secondItem="Vot-KY-Xfb" secondAttribute="centerX" id="l07-xL-Zdx"/>
                             <constraint firstItem="OAB-cb-t6g" firstAttribute="leading" secondItem="Vot-KY-Xfb" secondAttribute="leading" id="tuQ-5l-EnK"/>
                             <constraint firstItem="OAB-cb-t6g" firstAttribute="top" secondItem="5BY-gC-2DN" secondAttribute="bottom" id="w9k-Of-mZF"/>
+                            <constraint firstItem="4Ey-k9-HHk" firstAttribute="top" secondItem="OAB-cb-t6g" secondAttribute="bottom" constant="8" id="x3O-P2-Ef8"/>
                             <constraint firstAttribute="trailing" secondItem="OAB-cb-t6g" secondAttribute="trailing" id="za4-6f-UXF"/>
                         </constraints>
                     </view>
@@ -500,7 +504,7 @@
                                         <rect key="frame" x="0.0" y="28" width="240" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gOH-IY-Vfu" id="0Nb-L1-kLf">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKk-ed-kgv">
