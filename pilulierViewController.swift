@@ -14,7 +14,9 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
     
     var medicaments : [String] = []
     var doses : [Double] = []
-    var times : [Date] = []
+    var times : [String] = []
+    
+    var dates : [Date] = []
 
     
     @IBOutlet weak var priseMedicamentTable: UITableView!
@@ -29,7 +31,7 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
             for priseMedicamenteuse in priseMedicamenteuses {
                 medicaments.append((priseMedicamenteuse.belongs_to?.nom)!)
                 doses.append(priseMedicamenteuse.pdose)
-                //times.append(priseMedicamenteuse.pdateTheorique as! Date)
+                dates.append(priseMedicamenteuse.pdateTheorique! as Date)
             }
             
         }catch let error as NSError {
@@ -56,7 +58,14 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
             as! PriseMedicamentTableViewCell
         cell.medicamentNameLabel.text = self.medicaments[indexPath.row]
         cell.doseLabel.text = "\(doses[indexPath.row])"
-        //cell.timeLabel.text = times[indexPath.row]
+        
+        let dateFormatter : DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        for date in dates {
+            let heure = dateFormatter.string(from: date)
+            times.append(heure)
+        }
+        cell.timeLabel.text = "\(times[indexPath.row])"
         return cell
     }
     
