@@ -123,13 +123,13 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
     
     @IBAction func unwindToPriseListAfterSavingNewPrise(segue: UIStoryboardSegue){
         let ajouterPriseController = segue.source as! AjouterPriseViewController
-        let medicament = ajouterPriseController.medicamentField.text ?? ""
-        let dose = ajouterPriseController.doseField.text ?? ""
-        let time = ajouterPriseController.timeField.text ?? ""
+        //let medicament = ajouterPriseController.medicamentField.text ?? ""
+        //let dose = ajouterPriseController.doseField.text ?? ""
+        //let time = ajouterPriseController.timeField.text ?? ""
         
-        self.medicaments.append(medicament)
-        self.doses.append(Double(dose)!)
-        self.times.append(time)
+        //self.medicaments.append(medicament)
+        //self.doses.append(Double(dose)!)
+        //self.times.append(time)
         self.prisesTable.reloadData()
     }
     
