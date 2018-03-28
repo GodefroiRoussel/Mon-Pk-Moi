@@ -102,8 +102,9 @@ class InscriptionViewController: UIViewController {
         }
         
         do{
-            let hello = try CoreDataDAOFactory.getInstance().getPatientDAO().create(withName: lastName, withPrenom: firstName, withDateNaissance: datePicker.date as NSDate, withAdresse: adress, withTempsPreparation: Int16(tempsPrepa))
-            print(hello)
+            let _ = try CoreDataDAOFactory.getInstance().getPatientDAO().create(withName: lastName, withPrenom: firstName, withDateNaissance: datePicker.date as NSDate, withAdresse: adress, withTempsPreparation: Int16(tempsPrepa))
+            let storyboard = UIStoryboard.init(name: "Main",bundle: nil)
+            let view = storyboard.instantiateViewController(withIdentifier: "NavController") as! UINavigationController
         } catch let error as NSError {
             DialogBoxHelper.alert(onError: error, onView: self)
         }
