@@ -78,6 +78,8 @@
 		7A6BB39B20502C8A00A46AB3 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A6BB39A20502C8A00A46AB3 /* user.png */; };
 		7AA533FE2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA533FD2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift */; };
 		7AA534022057C9FF00A2A443 /* pilulierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA534012057C9FF00A2A443 /* pilulierViewController.swift */; };
+		7BFCDC6C206B84BE00A3A7CC /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFCDC6B206B84BE00A3A7CC /* InformationViewController.swift */; };
+		7BFCDC6E206B853500A3A7CC /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFCDC6D206B853500A3A7CC /* ContactTableViewCell.swift */; };
 		BCFF8260206AFAD6006AE4D6 /* InscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF825F206AFAD6006AE4D6 /* InscriptionViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -176,6 +178,8 @@
 		7A6BB39A20502C8A00A46AB3 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		7AA533FD2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriseMedicamentTableViewCell.swift; sourceTree = "<group>"; };
 		7AA534012057C9FF00A2A443 /* pilulierViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = pilulierViewController.swift; path = ../pilulierViewController.swift; sourceTree = "<group>"; };
+		7BFCDC6B206B84BE00A3A7CC /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		7BFCDC6D206B853500A3A7CC /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		BCFF825F206AFAD6006AE4D6 /* InscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InscriptionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -328,6 +332,7 @@
 		7A6BB35D2050281C00A46AB3 /* Mon Pk & Moi */ = {
 			isa = PBXGroup;
 			children = (
+				7BFCDC6A206B847700A3A7CC /* Controller */,
 				2BEDF782206A43890099FCD2 /* DAO */,
 				2BEDF779206A43310099FCD2 /* Helpers */,
 				2BEDF774206A43070099FCD2 /* Seeders */,
@@ -335,18 +340,11 @@
 				2BEDF751206A41A40099FCD2 /* Model */,
 				7A6BB3972050285B00A46AB3 /* images */,
 				7A6BB35E2050281C00A46AB3 /* AppDelegate.swift */,
-				BCFF825F206AFAD6006AE4D6 /* InscriptionViewController.swift */,
-				7AA534012057C9FF00A2A443 /* pilulierViewController.swift */,
-				7A2C29FE205429CA000EC45C /* AjouterPriseViewController.swift */,
-				7A6BB3602050281C00A46AB3 /* ViewController.swift */,
 				7A6BB3622050281C00A46AB3 /* Main.storyboard */,
-				7AA533FD2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift */,
 				7A6BB3682050281C00A46AB3 /* Assets.xcassets */,
 				7A6BB36A2050281C00A46AB3 /* LaunchScreen.storyboard */,
 				7A6BB36D2050281C00A46AB3 /* Info.plist */,
 				7A6BB3652050281C00A46AB3 /* Mon_Pk___Moi.xcdatamodeld */,
-				7A4D13B62062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift */,
-				7A4A735D2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift */,
 			);
 			path = "Mon Pk & Moi";
 			sourceTree = "<group>";
@@ -382,6 +380,22 @@
 				7A6BB3922050285300A46AB3 /* bouton_traceur.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		7BFCDC6A206B847700A3A7CC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BCFF825F206AFAD6006AE4D6 /* InscriptionViewController.swift */,
+				7AA534012057C9FF00A2A443 /* pilulierViewController.swift */,
+				7A6BB3602050281C00A46AB3 /* ViewController.swift */,
+				7A2C29FE205429CA000EC45C /* AjouterPriseViewController.swift */,
+				7AA533FD2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift */,
+				7A4D13B62062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift */,
+				7A4A735D2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift */,
+				7BFCDC6B206B84BE00A3A7CC /* InformationViewController.swift */,
+				7BFCDC6D206B853500A3A7CC /* ContactTableViewCell.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -559,6 +573,7 @@
 				2BEDF79C206A44680099FCD2 /* TypeContactDAO.swift in Sources */,
 				2BEDF7AD206A451A0099FCD2 /* PriseMedicamenteuseCoreDataDAO.swift in Sources */,
 				2BEDF7B5206A456F0099FCD2 /* EvaluationCoreDataDAO.swift in Sources */,
+				7BFCDC6E206B853500A3A7CC /* ContactTableViewCell.swift in Sources */,
 				2BEDF753206A41BE0099FCD2 /* MedicamentExtension.swift in Sources */,
 				2BEDF763206A42600099FCD2 /* RDVExtension.swift in Sources */,
 				2BEDF781206A437A0099FCD2 /* DateHelper.swift in Sources */,
@@ -585,6 +600,7 @@
 				2BEDF769206A42960099FCD2 /* SymptomeExtension.swift in Sources */,
 				2BEDF788206A43BD0099FCD2 /* ContactDAO.swift in Sources */,
 				2BEDF75F206A423D0099FCD2 /* PriseMedicamenteuseExtension.swift in Sources */,
+				7BFCDC6C206B84BE00A3A7CC /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
