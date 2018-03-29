@@ -15,7 +15,7 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
     var noms : [String] = []
     var prenoms : [String] = []
     var numeros : [String] = []
-    
+    var contacts: [Contact] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,12 +23,6 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
         let contactDAO : ContactDAO = factory.getContactDAO()
         do {
             let contacts: [Contact] = try contactDAO.getAllContacts()
-            for contact in contacts {
-                noms.append(contact.pnom!)
-                prenoms.append(contact.pprenom!)
-                numeros.append(contact.ptelephone!)
-            }
-            
         }catch let error as NSError {
             print("error")
         }
@@ -42,16 +36,20 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.noms.count
+        return self.contacts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.contactsTable.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
             as! ContactTableViewCell
-        cell.nomLabel.text = self.noms[indexPath.row]
-        cell.prenomLabel.text = self.prenoms[indexPath.row]
-        cell.numeroLabel.text = self.numeros[indexPath.row]
+        cell.nomLabel.text = self.contacts[indexPath.row].nom
+        cell.prenomLabel.text = self.contacts[indexPath.row].prenom
+        cell.numeroLabel.text = self.contacts[indexPath.row].telephone
         return cell
+    }
+    
+    @IBAction func unwindToInformationAfterSavingContact(segue: UIStoryboardSegue){
+        self.contactsTable.reloadData()
     }
     
 

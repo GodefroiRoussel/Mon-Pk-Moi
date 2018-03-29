@@ -24,6 +24,8 @@ class AjouterContactViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     var selectedTypeContact : TypeContact? = nil
     
+    var contact: Contact? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -102,22 +104,26 @@ class AjouterContactViewController: UIViewController, UIPickerViewDelegate, UIPi
         //Start the business logic
         //A  revoir 
         
-      /*  let contactDAO: ContactDAO = factory.getContactDAO()
+        let contactDAO: ContactDAO = factory.getContactDAO()
         let patientDAO: PatientDAO = factory.getPatientDAO()
         do {
             let patient: Patient = try patientDAO.getAllPatients()[0] //TODO : SOLUTION TEMPORAIRE A CHANGER
-            let contact: Contact = try ContactDAO.create(withName: nomField.text, withPrenom: prenomField.text, withTelephone: numeroField.text, withAdresse: adresseField.text, is_a: selectedTypeContact, is_connected_to: patient)
+            contact = try contactDAO.create(withName: nomField.text!, withPrenom: prenomField.text, withTelephone: numeroField.text, withAdresse: adresseField.text, is_a: selectedTypeContact!, is_connected_to: patient)
 
         } catch let error as NSError {
             DialogBoxHelper.alert(onError: error, onView: self)
             return
-        } */
+        } 
         
         // Envoie vers la page pilulier voir car on envoie pas forcément les informations donc peut-être juste une autre fonction
         self.performSegue(withIdentifier: "informations", sender: self)
     
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! InformationViewController
+        dest.contacts.append(contact!)
+    }
     /*
      // MARK: - Navigation
      
