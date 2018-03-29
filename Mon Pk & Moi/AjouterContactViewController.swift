@@ -42,8 +42,6 @@ class AjouterContactViewController: UIViewController, UIPickerViewDelegate, UIPi
         pickerView.delegate = self
         
         typeContactLabel.inputView = pickerView
-        typeContactLabel.textAlignment = .center
-        typeContactLabel.placeholder = "Choisir un type de contact"
 
         // Do any additional setup after loading the view.
     }
