@@ -11,10 +11,7 @@ import UIKit
 class InformationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var contactsTable: UITableView!
-    
-    var noms : [String] = []
-    var prenoms : [String] = []
-    var numeros : [String] = []
+
     var contacts: [Contact] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +19,7 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
         let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
         let contactDAO : ContactDAO = factory.getContactDAO()
         do {
-            let contacts: [Contact] = try contactDAO.getAllContacts()
+            contacts = try contactDAO.getAllContacts()
         }catch let error as NSError {
             print("error")
         }
