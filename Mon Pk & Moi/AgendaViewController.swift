@@ -15,6 +15,7 @@ class AgendaViewController: UIViewController {
     var jours : [String] = []
     var noms : [String] = []
     var heures : [String] = []
+    var evenements: [Evenement] = []
     
     var dates : [Date] = []
     
@@ -24,12 +25,7 @@ class AgendaViewController: UIViewController {
         let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
         let evenementDAO : EvenementDAO = factory.getEvenementDAO()
         do {
-            let evenements: [Evenement] = try evenementDAO.getAllEvenements()
-            for evenement in evenements {
-                noms.append(evenement.pnom!)
-                dates.append(evenement.dateTheorique as Date)
-            }
-            
+            evenements = try evenementDAO.getAllEvenements()
         }catch let error as NSError {
             print("error")
         }
@@ -44,30 +40,30 @@ class AgendaViewController: UIViewController {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.noms.count
+        return self.evenements.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.evenementsTable.dequeueReusableCell(withIdentifier: "evenementCell", for: indexPath)
             as! EvenementTableViewCell
-        cell.nomLabel.text = self.noms[indexPath.row]
+        cell.nomLabel.text = self.evenements[indexPath.row].nom
+        
+        let dateTheorique = self.evenements[indexPath.row].dateTheorique
         
         let dateFormatter : DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
-        for date in dates {
-            let heure = dateFormatter.string(from: date)
-            jours.append(heure)
-        }
-        cell.dateLabel.text = jours[indexPath.row]
+        let date = dateFormatter.string(from: dateTheorique as Date)
+        cell.dateLabel.text = date
         
         dateFormatter.dateFormat = "HH:mm"
-        for date in dates {
-            let heure = dateFormatter.string(from: date)
-            heures.append(heure)
-        }
-        cell.dateLabel.text = heures[indexPath.row]
+        let heure = dateFormatter.string(from: dateTheorique as Date)
+        cell.heureLabel.text = heure
         
         return cell
+    }
+    
+    @IBAction func unwindToAgendaAfterSavingRDV(segue: UIStoryboardSegue){
+        self.evenementsTable.reloadData()
     }
     
 

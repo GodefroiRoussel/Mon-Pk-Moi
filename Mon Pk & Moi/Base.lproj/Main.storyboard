@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Inscription View Controller-->
+        <!--Inscription-->
         <scene sceneID="55c-dv-dv8">
             <objects>
-                <viewController storyboardIdentifier="Inscription" id="nKS-Tr-X5y" customClass="InscriptionViewController" customModule="Mon_Pk___Moi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Inscription" title="Inscription" id="nKS-Tr-X5y" customClass="InscriptionViewController" customModule="Mon_Pk___Moi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YSL-Ol-Vgq"/>
                         <viewControllerLayoutGuide type="bottom" id="fRS-4I-IA9"/>
@@ -1096,10 +1096,10 @@
             </objects>
             <point key="canvasLocation" x="1085.625" y="745.77464788732391"/>
         </scene>
-        <!--Ajouter Contact View Controller-->
+        <!--Ajouter Contact-->
         <scene sceneID="ifa-Ys-ZUB">
             <objects>
-                <viewController id="Ddd-3Z-aNo" customClass="AjouterContactViewController" customModule="Mon_Pk___Moi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Ajouter Contact" id="Ddd-3Z-aNo" customClass="AjouterContactViewController" customModule="Mon_Pk___Moi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pKx-J8-5Ck"/>
                         <viewControllerLayoutGuide type="bottom" id="PD3-Wy-xAf"/>
@@ -1427,10 +1427,10 @@
             </objects>
             <point key="canvasLocation" x="1074" y="-653"/>
         </scene>
-        <!--View Controller-->
+        <!--Ajouter RDV-->
         <scene sceneID="Q1q-mJ-N63">
             <objects>
-                <viewController id="Nhn-EJ-E0f" sceneMemberID="viewController">
+                <viewController title="Ajouter RDV" id="Nhn-EJ-E0f" customClass="AjouterRDVViewController" customModule="Mon_Pk___Moi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XDJ-na-D9J"/>
                         <viewControllerLayoutGuide type="bottom" id="emi-gm-OyR"/>
@@ -1481,20 +1481,29 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Nmx-gk-HPe"/>
-                                    <barButtonItem title="Annuler" id="OhW-QV-Qzc"/>
+                                    <barButtonItem title="Annuler" id="OhW-QV-Qzc">
+                                        <connections>
+                                            <action selector="cancelAction:" destination="Nhn-EJ-E0f" id="DTF-Vb-Qtt"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="nSG-Db-TCg"/>
-                                    <barButtonItem title="Ajouter" id="SWu-P4-u8a"/>
+                                    <barButtonItem title="Ajouter" id="SWu-P4-u8a">
+                                        <connections>
+                                            <action selector="ajouterRDV:" destination="Nhn-EJ-E0f" id="JiE-HI-EYP"/>
+                                            <segue destination="wUe-JV-4G5" kind="unwind" unwindAction="unwindToAgendaAfterSavingRDVWithSegue:" id="m4Z-ob-axg"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="0u4-nC-tu1"/>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nom du RDV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGD-wE-ZAZ">
-                                <rect key="frame" x="139" y="148" width="99" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom du RDV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGD-wE-ZAZ">
+                                <rect key="frame" x="110.5" y="150" width="99" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y0C-Nv-JWW">
-                                <rect key="frame" x="112" y="177" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y0C-Nv-JWW">
+                                <rect key="frame" x="70.5" y="179" width="180" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="tFA-mq-bXf"/>
                                 </constraints>
@@ -1502,14 +1511,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Choisir une date et une heure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLU-NH-Ot5">
-                                <rect key="frame" x="139" y="215" width="225" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisir une date et une heure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLU-NH-Ot5">
+                                <rect key="frame" x="47.5" y="217" width="225" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e1a-VP-wCI">
-                                <rect key="frame" x="112" y="244" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e1a-VP-wCI">
+                                <rect key="frame" x="70.5" y="246" width="180" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="9tX-or-pFh"/>
                                 </constraints>
@@ -1517,14 +1526,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Choisir un lieu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDa-DG-jOC">
-                                <rect key="frame" x="139" y="282" width="108" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisir un lieu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDa-DG-jOC">
+                                <rect key="frame" x="106" y="284" width="108" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rcp-kJ-uFJ">
-                                <rect key="frame" x="112" y="311" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rcp-kJ-uFJ">
+                                <rect key="frame" x="70.5" y="313" width="180" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="Ey8-OA-SFC"/>
                                 </constraints>
@@ -1532,14 +1541,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Choisir un médecin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O15-C4-ccO">
-                                <rect key="frame" x="136" y="416" width="147" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisir un médecin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O15-C4-ccO">
+                                <rect key="frame" x="86.5" y="418" width="147" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yid-7r-p4E">
-                                <rect key="frame" x="109" y="445" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yid-7r-p4E">
+                                <rect key="frame" x="70" y="447" width="180" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="tXV-zN-hlg"/>
                                 </constraints>
@@ -1547,14 +1556,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Durée du RDV (en minutes)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRG-Y2-Rcx">
-                                <rect key="frame" x="139" y="349" width="208" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Durée du RDV (en minutes)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRG-Y2-Rcx">
+                                <rect key="frame" x="56" y="351" width="208" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="58G-A8-kxS">
-                                <rect key="frame" x="112" y="378" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="58G-A8-kxS">
+                                <rect key="frame" x="70.5" y="380" width="180" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="8cS-Qa-2fy"/>
                                 </constraints>
@@ -1593,8 +1602,16 @@
                             <constraint firstItem="Yid-7r-p4E" firstAttribute="centerX" secondItem="usG-An-aud" secondAttribute="centerX" id="qfc-UW-Nhj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateField" destination="e1a-VP-wCI" id="WOl-4U-XQx"/>
+                        <outlet property="dureeField" destination="58G-A8-kxS" id="qvV-Sj-hKa"/>
+                        <outlet property="lieuField" destination="Rcp-kJ-uFJ" id="uZb-ya-2Zg"/>
+                        <outlet property="medecinField" destination="Yid-7r-p4E" id="tMS-ve-VDU"/>
+                        <outlet property="nomField" destination="Y0C-Nv-JWW" id="xn5-n9-Qfg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rai-F1-yUX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wUe-JV-4G5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2222" y="-672"/>
         </scene>
