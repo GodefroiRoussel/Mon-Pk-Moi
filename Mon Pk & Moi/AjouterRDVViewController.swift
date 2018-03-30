@@ -150,6 +150,13 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination as! AgendaViewController
         dest.evenements.append(rdv!)
+        dest.evenements.sort(by: { (element0, element1) -> Bool in
+            if element0.dateTheorique as Date > element1.dateTheorique as Date {
+                return false
+            }
+            
+            return true
+        })
     }
     /*
     // MARK: - Navigation

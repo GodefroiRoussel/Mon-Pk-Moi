@@ -26,6 +26,13 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
                     evenements.append(eve)
                 }
             }
+            evenements.sort(by: { (element0, element1) -> Bool in
+                if element0.dateTheorique as Date > element1.dateTheorique as Date {
+                    return false
+                }
+                
+                return true
+            })
         }catch let error as NSError {
             print("error")
         }
