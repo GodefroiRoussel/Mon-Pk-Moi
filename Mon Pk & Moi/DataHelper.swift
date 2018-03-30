@@ -20,6 +20,9 @@ public class DataHelper {
     static func deleteSeeder(){
         do {
             try deleteMedicaments()
+            try deleteContacts()
+            try deletePatients()
+            try deletePrisesMedicamenteuse()
         } catch {
             
         }
@@ -47,7 +50,7 @@ public class DataHelper {
             let medicaments : [Medicament] = try medicamentDAO.getAllMedicaments()
             for medicament in medicaments {
                 CoreDataManager.context.delete(medicament)
-                print("Supprimé")
+                print("Médicament Supprimé")
             }
             CoreDataManager.save()
         } catch let error as NSError{
@@ -55,6 +58,54 @@ public class DataHelper {
         }
     }
     
+    // MARK - Contact functions
+    
+    fileprivate static func deleteContacts() throws{
+        let contactDAO = CoreDataDAOFactory.getInstance().getContactDAO()
+        do {
+            let contacts : [Contact] = try contactDAO.getAllContacts()
+            for contact in contacts {
+                CoreDataManager.context.delete(contact)
+                print("Contact Supprimé")
+            }
+            CoreDataManager.save()
+        } catch let error as NSError{
+            throw error
+        }
+    }
+    
+    // MARK - Patient functions
+    
+    fileprivate static func deletePatients() throws{
+        let patientDAO = CoreDataDAOFactory.getInstance().getPatientDAO()
+        do {
+            let patients : [Patient] = try patientDAO.getAllPatients()
+            for patient in patients {
+                CoreDataManager.context.delete(patient)
+                print("Patient Supprimé")
+            }
+            CoreDataManager.save()
+        } catch let error as NSError{
+            throw error
+        }
+    }
+    
+    
+    // MARK - Patient functions
+    
+    fileprivate static func deletePrisesMedicamenteuse() throws{
+        let priseMedicamenteuseDAO = CoreDataDAOFactory.getInstance().getPriseMedicamenteuseDAO()
+        do {
+            let prises : [PriseMedicamenteuse] = try priseMedicamenteuseDAO.getAllPriseMedicamenteuses()
+            for prise in prises {
+                CoreDataManager.context.delete(prise)
+                print("Prise Supprimé")
+            }
+            CoreDataManager.save()
+        } catch let error as NSError{
+            throw error
+        }
+    }
     
     // MARK - TypeContact functions
     
