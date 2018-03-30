@@ -35,10 +35,7 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
         
         let contactDAO : ContactDAO = factory.getContactDAO()
         do {
-            let contacts: [Contact] = try contactDAO.getAllMedecins()
-            for contact in contacts {
-                medecins.append(contact)
-            }
+            medecins = try contactDAO.getAllMedecins()
         } catch let error as NSError {
             print("error")
         }
@@ -69,7 +66,7 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedMedecin = medecins[row]
-        medecinField.text = selectedMedecin!.nom
+        medecinField.text = selectedMedecin?.nom
         medecinField.resignFirstResponder()
     }
     
@@ -129,7 +126,7 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
         let traceurDAO: TraceurDAO = factory.getTraceurDAO()
         let patientDAO: PatientDAO = factory.getPatientDAO()
         do {
-            let patient: Patient = try patientDAO.getAllPatients()[0]
+            let patient: Patient = try patientDAO.getAllPatients()[0] // TODO: Changer cette solution temporaire en faisant passer le patient dans une variable globale
             
             let date = dateField.text
             let dateFormatter = DateFormatter()
@@ -139,9 +136,10 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
             let test2 = Date(timeInterval: -432000, since: test!)
             let test3 = Date(timeInterval: 432000, since: test2)
             
-            traceur = try traceurDAO.create(withHeureDebut: test2 as NSDate, withHeureFin: test3 as NSDate)
+            // TODO seulement si c'est un rendez-vous chez un Neurologue
+            //traceur = try traceurDAO.create(withHeureDebut: test2 as NSDate, withHeureFin: test3 as NSDate)
+            rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: test3 as NSDate, withLieu: lieuField.text, withTempsPourAllerALEvenement: 120, withDuree: Int16(dureeField.text!)!, schedule_by: patient, is_with: selectedMedecin!)
             
-            rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: test3 as NSDate, withLieu: lieuField.text, withTempsPourAllerALEvenement: 120, withDuree: Int16(dureeField.text!)!, schedule_by: patient, has: traceur!, is_with: selectedMedecin!)
         } catch let error as NSError {
             DialogBoxHelper.alert(onError: error, onView: self)
             return

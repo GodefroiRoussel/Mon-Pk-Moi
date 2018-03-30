@@ -50,4 +50,17 @@ extension RDV {
         self.has = traceur
         self.is_with = contact
     }
+    
+    convenience init(withName nom: String, withDateTheorique dateTheorique: NSDate,withLieu lieu: String?, withTempsPourAllerALEvenement temps: Int16, withDuree duree: Int16, schedule_by patient : Patient, is_with contact: Contact){
+        self.init(context: CoreDataManager.context)
+        self.pnom = nom
+        self.pdateTheorique = dateTheorique
+        self.pdateEffective = nil
+        self.pestEffectue = false
+        self.plieu = lieu
+        self.ptempsPourAllerALEvenement = temps
+        self.pduree = duree
+        self.schedule_by = patient
+        self.is_with = contact
+    }
 }

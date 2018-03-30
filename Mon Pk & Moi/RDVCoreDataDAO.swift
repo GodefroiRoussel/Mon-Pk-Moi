@@ -32,6 +32,13 @@ class RDVCoreDataDAO: RDVDAO {
         return newRDV
     }
     
+    //Solution de secours sans le traceur
+    func create(withName nom: String, withDateTheorique dateTheorique: NSDate,withLieu lieu: String?, withTempsPourAllerALEvenement temps: Int16, withDuree duree: Int16, schedule_by patient : Patient, is_with contact: Contact) throws -> RDV {
+        let newRDV = RDV(withName: nom, withDateTheorique: dateTheorique,withLieu: lieu, withTempsPourAllerALEvenement: temps, withDuree: duree, schedule_by: patient, is_with: contact)
+        CoreDataManager.save()
+        return newRDV
+    }
+    
     func find(withName nom: String) throws -> RDV? {
         self.request.predicate = NSPredicate(format: "pnom == %@", nom)
         do{
