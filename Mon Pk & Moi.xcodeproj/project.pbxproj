@@ -62,6 +62,7 @@
 		7A4D13B72062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D13B62062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift */; };
 		7A4D13B920630AF4005E8D6D /* fleche.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4D13B820630AF4005E8D6D /* fleche.png */; };
 		7A4D13BB20630C02005E8D6D /* fleche_droit.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4D13BA20630C02005E8D6D /* fleche_droit.png */; };
+		7A596601206EBCD5007F2ECA /* AjouterActiviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A596600206EBCD5007F2ECA /* AjouterActiviteViewController.swift */; };
 		7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BB35E2050281C00A46AB3 /* AppDelegate.swift */; };
 		7A6BB3612050281C00A46AB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BB3602050281C00A46AB3 /* ViewController.swift */; };
 		7A6BB3642050281C00A46AB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A6BB3622050281C00A46AB3 /* Main.storyboard */; };
@@ -161,6 +162,7 @@
 		7A4D13B62062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjouterOrdonnanceViewController.swift; sourceTree = "<group>"; };
 		7A4D13B820630AF4005E8D6D /* fleche.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fleche.png; sourceTree = "<group>"; };
 		7A4D13BA20630C02005E8D6D /* fleche_droit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fleche_droit.png; sourceTree = "<group>"; };
+		7A596600206EBCD5007F2ECA /* AjouterActiviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjouterActiviteViewController.swift; sourceTree = "<group>"; };
 		7A6BB35B2050281C00A46AB3 /* Mon Pk & Moi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mon Pk & Moi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A6BB35E2050281C00A46AB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A6BB3602050281C00A46AB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 				7BFCDC73206BA2E600A3A7CC /* MonProfilViewController.swift */,
 				7BFCDC75206BBD3600A3A7CC /* AjouterContactViewController.swift */,
 				7A6CB975206D9BBA00601DF5 /* AjouterRDVViewController.swift */,
+				7A596600206EBCD5007F2ECA /* AjouterActiviteViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				2BEDF765206A42710099FCD2 /* TraceurExtension.swift in Sources */,
 				2BEDF76B206A42A70099FCD2 /* AvisExtension.swift in Sources */,
 				2BEDF759206A42030099FCD2 /* PatientExtension.swift in Sources */,
+				7A596601206EBCD5007F2ECA /* AjouterActiviteViewController.swift in Sources */,
 				2BEDF7A9206A44F30099FCD2 /* EvenementCoreDataDAO.swift in Sources */,
 				7BFCDC72206B8EBD00A3A7CC /* EvenementTableViewCell.swift in Sources */,
 				2BEDF77F206A43640099FCD2 /* DataHelper.swift in Sources */,

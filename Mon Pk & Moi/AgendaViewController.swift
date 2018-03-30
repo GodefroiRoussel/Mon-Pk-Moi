@@ -62,6 +62,10 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
         self.evenementsTable.reloadData()
     }
     
+    @IBAction func unwindToAgendaAfterSavingActivite(segue: UIStoryboardSegue){
+        self.evenementsTable.reloadData()
+    }
+    
 
     /*
     // MARK: - Navigation
