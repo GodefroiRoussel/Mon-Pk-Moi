@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool {
         // If it's the first launch of the application, we create the data in the database
-        //UserDefaults.standard.set(false, forKey: "wasLaunched")
+        UserDefaults.standard.set(false, forKey: "wasLaunched")
         if(!UserDefaults.standard.bool(forKey: "wasLaunched")){
             DataHelper.deleteSeeder()
             DataHelper.seedDataStore()
@@ -30,167 +30,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let nav = storyboard.instantiateViewController(withIdentifier: "Inscription") as! InscriptionViewController
             self.window?.rootViewController = nav
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         let factory : CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
         
         //Create a type contact
         let typeContactDAO: TypeContactDAO = factory.getTypeContactDAO()
-        let contactDAO : ContactDAO = factory.getContactDAO()
-        let patientDAO : PatientDAO = factory.getPatientDAO()
-        let priseMedicamenteuseDAO : PriseMedicamenteuseDAO = factory.getPriseMedicamenteuseDAO()
-        let medicamentDAO : MedicamentDAO = factory.getMedicamentDAO()
-        let ordonnanceDAO : OrdonnanceDAO = factory.getOrdonnanceDAO()
-        
-        let date : NSDate = Date() as NSDate
-        
-        
-        /*let dateComponents = NSDateComponents()
-        dateComponents.day = 4
-        dateComponents.month = 5
-        dateComponents.year = 2017
-        
-        if let gregorianCalendar = NSCalendar(calendarIdentifier: .gregorian),
-            let date = gregorianCalendar.date(from: dateComponents as DateComponents) {
-            let weekday = gregorianCalendar.component(.weekday, from: date)
-            print(date) // 5, which corresponds to Thursday in the Gregorian Calendar
-        }
-        */
-        let dateFormatter = DateFormatter()
-        var dateAsString = "24-12-2015 23:59"
-        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
-        var newDate = dateFormatter.date(from: dateAsString)
-        print(newDate)
-        
-        
-        
-        /*let dateComponents = NSDateComponents()
-        let day = dateComponents.day
-        let month = dateComponents.month
-        print(day)
-        print(month)
-        */
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-        //print(dateTest)
         do{
-            let patient : Patient = try patientDAO.create(withName: "Thevenon", withPrenom: "Romain", withDateNaissance: date, withAdresse: "Polytech", withTempsPreparation: 90)
-            print(patient)
             let typeContact : TypeContact = try typeContactDAO.create(withLibelle: "Famille")!
-            print(typeContact)
-            print("\n")
-            print("\n")
-            print("\n")
-            let contact : Contact = try contactDAO.create(withName: "Roussel", withPrenom: "Godefroi", withTelephone: "0606060606", withAdresse: "Polytech", is_a: typeContact, is_connected_to : patient)
-            print("J'ai créé \(contact.nom)")
-            
-            /*let contact : Contact = try contactDAO.create(withName: "Rouquier", withPrenom: "Clément", withTelephone: "0606060606", withAdresse: "Polytech", is_a: typeContact, is_connected_to : patient)
-            
-            
-            let patients : [Patient] = try patientDAO.getAllPatients()
-            print("On regarde tous les patients de la BD")
-            for patient in patients {
-                print("Patient")
-                print(patient)
-            }*/
-            
-            let typeMedecin : TypeContact = try typeContactDAO.find(withLibelle:"kinésithérapeute")!
-            let contactRouquier : Contact = try contactDAO.create(withName: "Rouquier", withPrenom: "Clément", withTelephone: "0606060606", withAdresse: "Polytech", is_a: typeMedecin, is_connected_to : patient)
-            
-            print("J'ai créé \(contactRouquier.nom)")
-            print("\n")
-            print("\n")
-            print("\n")
-            
-            print("On regarde tous les contacts de la BD")
-            print("\n")
-            let contacts : [Contact] = try contactDAO.getAllContacts()
-            for contact in contacts {
-                print("Contact : \(contact.nom)")
-                print(contact.is_a!.libelle)
-            }
-            
-            print("\n")
-            print("\n")
-            print("\n")
-            
-            let famille = try typeContactDAO.find(withLibelle: "Famille")
-            print(famille!)
-            print("\n")
-            print("\n")
-            print("\n")
-            
-            print("On regarde si on obtient que les médecins")
-            print("\n")
-            let medecins : [Contact] = try contactDAO.getAllMedecins()
-            for medecin in medecins {
-                print("Medecin : ")
-                print(medecin)
-            }
-            
-            print("\n")
-            print("\n")
-            print("\n")
-            
-            let dateTheorique = NSDate()
-            let ordonnance: Ordonnance = try ordonnanceDAO.create(withDateDebutTraitement: NSDate(), concern: patient, created_by: contactRouquier, untillDate: NSDate())
-            print(ordonnance)
-            let medicament = try medicamentDAO.find(withName: "MODOPAR")
-            print(medicament!)
-            let prise :PriseMedicamenteuse = try priseMedicamenteuseDAO.create(withName: "Prise médicament", withDateTheorique: NSDate(), withDose: 500.0, schedule_by: patient, belongs_to: medicament!, linked_to: ordonnance)
-            print(prise)
-            
-            print("\n")
-            print("\n")
-            print("\n")
-            
-            print("Toutes les prises")
-            let prises : [PriseMedicamenteuse] = try priseMedicamenteuseDAO.getAllPriseMedicamenteuses()
-            for hello in prises {
-                print(hello)
-            }
-            
-            print("\n")
-            print("\n")
-            print("\n")
-            
-            print("Toutes les prises d'aujourd'hui")
-            let test : [PriseMedicamenteuse] = try priseMedicamenteuseDAO.getAllPriseMedicamenteuseForADay(forDay: newDate! as NSDate)
-            for hello in prises {
-                print(hello)
-            }
-            
-            print("\n")
-            print("\n")
-            print("\n")
-            
         } catch let error as NSError {
             print(error)
             return false
         }
-        
         
         return true
     }
