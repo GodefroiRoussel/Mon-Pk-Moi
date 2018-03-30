@@ -139,7 +139,6 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
             // TODO seulement si c'est un rendez-vous chez un Neurologue
             //traceur = try traceurDAO.create(withHeureDebut: test2 as NSDate, withHeureFin: test3 as NSDate)
             rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: test3 as NSDate, withLieu: lieuField.text, withTempsPourAllerALEvenement: 120, withDuree: Int16(dureeField.text!)!, schedule_by: patient, is_with: selectedMedecin!)
-            
         } catch let error as NSError {
             DialogBoxHelper.alert(onError: error, onView: self)
             return
@@ -150,7 +149,6 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination as! AgendaViewController
-        
         dest.evenements.append(rdv!)
     }
     /*

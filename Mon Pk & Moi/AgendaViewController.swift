@@ -8,16 +8,10 @@
 
 import UIKit
 
-class AgendaViewController: UIViewController {
+class AgendaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var evenementsTable: UITableView!
-    
-    var jours : [String] = []
-    var noms : [String] = []
-    var heures : [String] = []
     var evenements: [Evenement] = []
-    
-    var dates : [Date] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,18 +41,14 @@ class AgendaViewController: UIViewController {
         let cell = self.evenementsTable.dequeueReusableCell(withIdentifier: "evenementCell", for: indexPath)
             as! EvenementTableViewCell
         cell.nomLabel.text = self.evenements[indexPath.row].nom
-        
         let dateTheorique = self.evenements[indexPath.row].dateTheorique
-        
         let dateFormatter : DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
         let date = dateFormatter.string(from: dateTheorique as Date)
         cell.dateLabel.text = date
-        
         dateFormatter.dateFormat = "HH:mm"
         let heure = dateFormatter.string(from: dateTheorique as Date)
         cell.heureLabel.text = heure
-        
         return cell
     }
     
