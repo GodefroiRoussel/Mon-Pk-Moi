@@ -11,6 +11,7 @@ import UIKit
 class AgendaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var evenementsTable: UITableView!
+    var allEvenements: [Evenement] = []
     var evenements: [Evenement] = []
     
     override func viewDidLoad() {
@@ -19,7 +20,12 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
         let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
         let evenementDAO : EvenementDAO = factory.getEvenementDAO()
         do {
-            evenements = try evenementDAO.getAllEvenements()
+            allEvenements = try evenementDAO.getAllEvenements()
+            for eve in allEvenements {
+                if Date() <= eve.dateTheorique as Date {
+                    evenements.append(eve)
+                }
+            }
         }catch let error as NSError {
             print("error")
         }
