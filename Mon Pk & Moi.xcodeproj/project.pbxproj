@@ -86,6 +86,7 @@
 		7BFCDC72206B8EBD00A3A7CC /* EvenementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFCDC71206B8EBD00A3A7CC /* EvenementTableViewCell.swift */; };
 		7BFCDC74206BA2E600A3A7CC /* MonProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFCDC73206BA2E600A3A7CC /* MonProfilViewController.swift */; };
 		7BFCDC76206BBD3600A3A7CC /* AjouterContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFCDC75206BBD3600A3A7CC /* AjouterContactViewController.swift */; };
+		BCC265FA206F8A2E008093C4 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC265F9206F8A2E008093C4 /* NSDateExtension.swift */; };
 		BCFF8260206AFAD6006AE4D6 /* InscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF825F206AFAD6006AE4D6 /* InscriptionViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -192,6 +193,7 @@
 		7BFCDC71206B8EBD00A3A7CC /* EvenementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvenementTableViewCell.swift; sourceTree = "<group>"; };
 		7BFCDC73206BA2E600A3A7CC /* MonProfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonProfilViewController.swift; sourceTree = "<group>"; };
 		7BFCDC75206BBD3600A3A7CC /* AjouterContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjouterContactViewController.swift; sourceTree = "<group>"; };
+		BCC265F9206F8A2E008093C4 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		BCFF825F206AFAD6006AE4D6 /* InscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InscriptionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -274,6 +276,7 @@
 				2BEDF77E206A43640099FCD2 /* DataHelper.swift */,
 				2BEDF780206A437A0099FCD2 /* DateHelper.swift */,
 				2BEDF77A206A433F0099FCD2 /* DialogBoxHelper.swift */,
+				BCC265F9206F8A2E008093C4 /* NSDateExtension.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				7BFCDC70206B8D9F00A3A7CC /* AgendaViewController.swift in Sources */,
 				7BFCDC74206BA2E600A3A7CC /* MonProfilViewController.swift in Sources */,
 				7A4A735E2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift in Sources */,
+				BCC265FA206F8A2E008093C4 /* NSDateExtension.swift in Sources */,
 				2BEDF77B206A433F0099FCD2 /* DialogBoxHelper.swift in Sources */,
 				2BEDF790206A44050099FCD2 /* OrdonnanceDAO.swift in Sources */,
 				2BEDF765206A42710099FCD2 /* TraceurExtension.swift in Sources */,

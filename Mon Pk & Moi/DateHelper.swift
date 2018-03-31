@@ -66,13 +66,21 @@ class DateHelper{
         todayComponents.minute = 59
         return (gregorian?.date(from: todayComponents))! as NSDate
     }
-    static func checkInterval(heureDebut: NSDate, heureFin: NSDate, intervalle: Int){
-        
+    
+    
+    //Check if a date is in interval of a certain number of days
+    static func checkInterval(dateRDV: NSDate, interval numberDays: Int) -> Bool{
+            days.day = -numberDays
+            let dateDebutTraitement:NSDate = cal.date(byAdding : days as DateComponents, to: dateRDV as Date)! as NSDate
+        return NSDate().isBetweeen(date: dateDebutTraitement, andDate: dateRDV)
     }
+    
+    
     static func substractDateInSeconds(heure1: NSDate, heure2: NSDate) -> Double{
         let date = changeHour(date: heure1, heureMin: heure2)
         return date.timeIntervalSince(NSDate() as Date)
     }
+    
 }
 
 /// Correspondance entre jours et chiffre
