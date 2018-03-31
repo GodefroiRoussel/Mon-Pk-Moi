@@ -1,5 +1,5 @@
 //
-//  newEtatViewController.swift
+//  NewSymptomeViewController.swift
 //  Mon Pk & Moi
 //
 //  Created by Melvil Donnart on 31/03/2018.
@@ -8,16 +8,22 @@
 
 import UIKit
 
-class newEtatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
+class NewSymptomeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
-    let etats: [String] = ["ON", "OFF", "DYSKYNESIE"]
-    var etatChoisi: String? = nil
-
+    var symptomes: [Symptome] = []
+    var symptomeSelected: Symptome? = nil
+    
     @IBOutlet weak var picker: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        do {
+            let symptomeDAO: SymptomeDAO = try CoreDataDAOFactory.getInstance().getSymptomeDAO()
+            symptomes = try symptomeDAO.getAllSymptomes()
+        } catch let error as NSError {
+            print(error)
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -33,19 +39,21 @@ class newEtatViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return etats.count
+        return symptomes.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        etatChoisi = etats[row]
-        return etatChoisi
+        symptomeSelected = symptomes[row]
+        return symptomeSelected!.libelle
     }
     
     // MARK: - Buttons
     
+   
     @IBAction func cancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     /*
     // MARK: - Navigation
 

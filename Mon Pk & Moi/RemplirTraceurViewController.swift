@@ -8,16 +8,18 @@
 
 import UIKit
 
-class RemplirTraceurViewController: UIViewController {
+class RemplirTraceurViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var traceurEnCours: Traceur? = nil
     var heureDebut: NSDate? = nil
     var heureFin: NSDate? = nil
     var etatChoisi: String? = nil
+    var symptomes: [Symptome] = []
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var plageHoraireLabel: UILabel!
     @IBOutlet weak var etatLabel: UILabel!
+    @IBOutlet weak var symptomeTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,6 +111,32 @@ class RemplirTraceurViewController: UIViewController {
         etatChoisi = newEtatViewController.etatChoisi
         etatLabel.text = etatChoisi!
     }
+    
+    @IBAction func unwindToRemplirTraceurAfterSelectingSymptome(segue: UIStoryboardSegue){
+        let newSymptomeController = segue.source as! NewSymptomeViewController
+        symptomes.append(newSymptomeController.symptomeSelected!)
+        symptomeTableView.reloadData()
+    }
+    
+    
+    @IBAction func cancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    // MARK: - Table View functions
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.symptomes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.symptomeTableView.dequeueReusableCell(withIdentifier: "symptomeCell", for: indexPath)
+            as! SymptomeTableViewCell
+        cell.libelleLabel.text = self.symptomes[indexPath.row].libelle
+        return cell
+    }
+
     /*
     // MARK: - Navigation
 

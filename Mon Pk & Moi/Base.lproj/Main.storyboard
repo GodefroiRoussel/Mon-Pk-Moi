@@ -2275,6 +2275,32 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="3r7-Ju-UxT"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="symptomeCell" id="vdp-jd-0OZ" customClass="SymptomeTableViewCell" customModule="Mon_Pk___Moi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="292" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vdp-jd-0OZ" id="zhf-x3-1QA" customClass="SymptomeTableViewCell" customModule="Mon_Pk___Moi" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="292" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ry0-a7-lhI">
+                                                    <rect key="frame" x="8" y="11" width="276" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="libelleLabel" destination="Ry0-a7-lhI" id="PBL-Ja-3IC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="KT6-Hc-rWv" id="vsN-Ba-Put"/>
+                                    <outlet property="delegate" destination="KT6-Hc-rWv" id="MBC-QG-f3m"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evènement Exceptionnel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YC0-Cy-fDz">
                                 <rect key="frame" x="21" y="316" width="188" height="21"/>
@@ -2286,7 +2312,11 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Annuler" id="YGw-CV-Tj6"/>
+                                    <barButtonItem title="Annuler" id="YGw-CV-Tj6">
+                                        <connections>
+                                            <action selector="cancel:" destination="KT6-Hc-rWv" id="Omb-qM-hNe"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="mci-wK-qQo"/>
                                     <barButtonItem title="Sauvegarder" id="xRe-Hl-oWZ">
                                         <connections>
@@ -2376,16 +2406,17 @@
                         <outlet property="dateLabel" destination="8u9-fq-JHw" id="Pfa-xI-pUm"/>
                         <outlet property="etatLabel" destination="7ga-oY-t7J" id="h2d-Ms-IfF"/>
                         <outlet property="plageHoraireLabel" destination="BVR-Ro-s6h" id="ldf-hz-8DU"/>
+                        <outlet property="symptomeTableView" destination="Hyb-Ye-AmC" id="EQe-qp-D9N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MkJ-dj-lLk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1266" y="1317"/>
+            <point key="canvasLocation" x="-1267.5" y="1316.1971830985915"/>
         </scene>
         <!--Ajouter évènement exceptionnel-->
         <scene sceneID="hCN-bf-hbs">
             <objects>
-                <viewController title="Ajouter évènement exceptionnel" id="yWi-xK-D1b" sceneMemberID="viewController">
+                <viewController title="Ajouter évènement exceptionnel" id="yWi-xK-D1b" customClass="NewSymptomeViewController" customModule="Mon_Pk___Moi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QP7-ew-f3H"/>
                         <viewControllerLayoutGuide type="bottom" id="uNx-x5-F6r"/>
@@ -2434,14 +2465,26 @@
                             </view>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h17-Wp-C2g">
                                 <rect key="frame" x="0.0" y="176" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="yWi-xK-D1b" id="yWE-va-bIb"/>
+                                    <outlet property="delegate" destination="yWi-xK-D1b" id="P6o-fo-1yN"/>
+                                </connections>
                             </pickerView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sNf-kU-PhX">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Annuler" id="MQa-XQ-sTD"/>
+                                    <barButtonItem title="Annuler" id="MQa-XQ-sTD">
+                                        <connections>
+                                            <action selector="cancel:" destination="yWi-xK-D1b" id="OUK-ve-3cE"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="xG8-IA-Qu7"/>
-                                    <barButtonItem title="Ajouter" id="00P-Zp-q9C"/>
+                                    <barButtonItem title="Ajouter" id="00P-Zp-q9C">
+                                        <connections>
+                                            <segue destination="rk1-xP-E01" kind="unwind" unwindAction="unwindToRemplirTraceurAfterSelectingSymptomeWithSegue:" id="yUD-6R-qVo"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -2454,8 +2497,12 @@
                             <constraint firstItem="a6Y-St-VhL" firstAttribute="top" secondItem="QP7-ew-f3H" secondAttribute="bottom" id="gON-40-e5F"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="picker" destination="h17-Wp-C2g" id="5yg-Pg-YEp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdv-Th-InI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="rk1-xP-E01" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-2494" y="2046"/>
         </scene>
@@ -2544,6 +2591,9 @@
                             <constraint firstAttribute="trailing" secondItem="pZg-je-zFD" secondAttribute="trailing" id="wh6-It-AzY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="picker" destination="oAK-6V-6eG" id="ajd-ur-KGA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCl-Vs-2t6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="fRT-iO-T8I" userLabel="Exit" sceneMemberID="exit"/>
