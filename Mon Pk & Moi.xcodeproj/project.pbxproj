@@ -86,6 +86,8 @@
 		7BFCDC72206B8EBD00A3A7CC /* EvenementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFCDC71206B8EBD00A3A7CC /* EvenementTableViewCell.swift */; };
 		7BFCDC74206BA2E600A3A7CC /* MonProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFCDC73206BA2E600A3A7CC /* MonProfilViewController.swift */; };
 		7BFCDC76206BBD3600A3A7CC /* AjouterContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFCDC75206BBD3600A3A7CC /* AjouterContactViewController.swift */; };
+		BC348F12206F6AD100686D9E /* newPlageHoraireController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC348F11206F6AD100686D9E /* newPlageHoraireController.swift */; };
+		BCAE09BB206EF49E0066F9C1 /* RemplirTraceurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE09BA206EF49E0066F9C1 /* RemplirTraceurViewController.swift */; };
 		BCC265FA206F8A2E008093C4 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC265F9206F8A2E008093C4 /* NSDateExtension.swift */; };
 		BCFF8260206AFAD6006AE4D6 /* InscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF825F206AFAD6006AE4D6 /* InscriptionViewController.swift */; };
 /* End PBXBuildFile section */
@@ -193,6 +195,8 @@
 		7BFCDC71206B8EBD00A3A7CC /* EvenementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvenementTableViewCell.swift; sourceTree = "<group>"; };
 		7BFCDC73206BA2E600A3A7CC /* MonProfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonProfilViewController.swift; sourceTree = "<group>"; };
 		7BFCDC75206BBD3600A3A7CC /* AjouterContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjouterContactViewController.swift; sourceTree = "<group>"; };
+		BC348F11206F6AD100686D9E /* newPlageHoraireController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newPlageHoraireController.swift; sourceTree = "<group>"; };
+		BCAE09BA206EF49E0066F9C1 /* RemplirTraceurViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemplirTraceurViewController.swift; sourceTree = "<group>"; };
 		BCC265F9206F8A2E008093C4 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		BCFF825F206AFAD6006AE4D6 /* InscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InscriptionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -400,6 +404,7 @@
 		7BFCDC6A206B847700A3A7CC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BCAE09B9206EF4380066F9C1 /* RemplirTraceur */,
 				BCFF825F206AFAD6006AE4D6 /* InscriptionViewController.swift */,
 				7AA534012057C9FF00A2A443 /* pilulierViewController.swift */,
 				7A6BB3602050281C00A46AB3 /* ViewController.swift */,
@@ -417,6 +422,15 @@
 				7A596600206EBCD5007F2ECA /* AjouterActiviteViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		BCAE09B9206EF4380066F9C1 /* RemplirTraceur */ = {
+			isa = PBXGroup;
+			children = (
+				BCAE09BA206EF49E0066F9C1 /* RemplirTraceurViewController.swift */,
+				BC348F11206F6AD100686D9E /* newPlageHoraireController.swift */,
+			);
+			name = RemplirTraceur;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -611,6 +625,7 @@
 				7AA534022057C9FF00A2A443 /* pilulierViewController.swift in Sources */,
 				2BEDF7AF206A45300099FCD2 /* ActiviteCoreDataDAO.swift in Sources */,
 				2BEDF7BB206A45AE0099FCD2 /* TypeAvisCoreDataDAO.swift in Sources */,
+				BCAE09BB206EF49E0066F9C1 /* RemplirTraceurViewController.swift in Sources */,
 				2BEDF778206A43270099FCD2 /* TypeContactSeeder.swift in Sources */,
 				7A6BB3672050281C00A46AB3 /* Mon_Pk___Moi.xcdatamodeld in Sources */,
 				7A2C29FF205429CA000EC45C /* AjouterPriseViewController.swift in Sources */,
@@ -628,6 +643,7 @@
 				7A6CB976206D9BBA00601DF5 /* AjouterRDVViewController.swift in Sources */,
 				2BEDF788206A43BD0099FCD2 /* ContactDAO.swift in Sources */,
 				2BEDF75F206A423D0099FCD2 /* PriseMedicamenteuseExtension.swift in Sources */,
+				BC348F12206F6AD100686D9E /* newPlageHoraireController.swift in Sources */,
 				7BFCDC6C206B84BE00A3A7CC /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
