@@ -14,10 +14,11 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
     var allEvenements: [Evenement] = []
     var evenements: [Evenement] = []
     
+    let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
         let evenementDAO : EvenementDAO = factory.getEvenementDAO()
         do {
             allEvenements = try evenementDAO.getAllEvenements()
@@ -67,6 +68,19 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
+            
+            let activiteDAO: ActiviteDAO = factory.getActiviteDAO()
+            let rdvDAO: RDVDAO = factory.getRDVDAO()
+            //let test: RDV = RDV(context: evenements[indexPath.row])
+            do {
+                if try rdvDAO.find(withName: evenements[indexPath.row].nom) == nil {
+                    try activiteDAO.delete(anActivite: evenements[indexPath.row] as! Activite)
+                } else {
+                    try rdvDAO.delete(aRDV: evenements[indexPath.row] as! RDV)
+                }
+            } catch let error as NSError {
+                print("error")
+            }
             evenements.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }

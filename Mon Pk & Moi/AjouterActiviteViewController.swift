@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AjouterActiviteViewController: UIViewController {
 
@@ -126,9 +127,20 @@ class AjouterActiviteViewController: UIViewController {
             let patient: Patient = try patientDAO.getAllPatients()[0] // TODO: Changer cette solution temporaire en faisant passer le patient dans une variable globale
             
             let dates = DateHelper.getDates(dateD: NSDate(), dateF: pickerDate.date as NSDate)
-            for date in dates {
-                    activite = try activiteDAO.create(withName: nomField.text!, withDateTheorique: date as NSDate, withDuree: Int16(dureeField.text!)!, withDescription: descriptionField.text!, schedule_by: patient)
-                    activites.append(activite!)
+            for dat in dates {
+                activite = try activiteDAO.create(withName: nomField.text!, withDateTheorique: dat as NSDate, withDuree: Int16(dureeField.text!)!, withDescription: descriptionField.text!, schedule_by: patient)
+                activites.append(activite!)
+                
+                let content = UNMutableNotificationContent()
+                content.title = "Activité"
+                content.body = "Vas y bouge"
+                content.badge = 1
+                
+                //let intervalTime: TimeInterval = pickerDate.date.timeIntervalSince(Date())
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
+                let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
+                
+                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
             }
         } catch let error as NSError {
             DialogBoxHelper.alert(onError: error, onView: self)
