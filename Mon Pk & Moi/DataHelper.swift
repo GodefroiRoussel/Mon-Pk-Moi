@@ -15,6 +15,7 @@ public class DataHelper {
     static func seedDataStore() {
         seedMedicament()
         seedTypeContact()
+        seedSymptome()
     }
     
     static func deleteSeeder(){
@@ -26,6 +27,7 @@ public class DataHelper {
             try deletePrisesMedicamenteuse()
             try deleteRDVs()
             try deleteTraceurs()
+            try deleteSymptomes()
         } catch {
             
         }
@@ -172,4 +174,33 @@ public class DataHelper {
         }
     }
     
+    //MARK - Symptome functions
+    
+    fileprivate static func seedSymptome(){
+        let symptomes = SymptomeSeeder().libelle
+        
+        let symptomeDAO = CoreDataDAOFactory.getInstance().getSymptomeDAO()
+        
+        for libelle in symptomes {
+            do{
+                let sympt = try symptomeDAO.create(withLibelle: libelle)
+            }catch {
+                fatalError("Error cannot populate DB")
+            }
+        }
+    }
+    
+    fileprivate static func deleteSymptomes() throws{
+        let symptomeDAO = CoreDataDAOFactory.getInstance().getSymptomeDAO()
+        do {
+            let symptomes : [Symptome] = try symptomeDAO.getAllSymptomes()
+            for symptome in symptomes {
+                CoreDataManager.context.delete(symptome)
+                print("Symptome Supprimé")
+            }
+            CoreDataManager.save()
+        } catch let error as NSError{
+            throw error
+        }
+    }
 }
