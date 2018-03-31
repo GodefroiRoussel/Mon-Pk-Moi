@@ -10,12 +10,47 @@ import UIKit
 
 class newPlageHoraireController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    var traceur: Traceur? = nil
-
+    var heureDebutPlageHoraire: NSDate? = nil
+    
+    var dates: [NSDate] = []
+    var times: [String] = []
+    
+    @IBOutlet weak var picker: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        do {
+            let traceur: Traceur? = try CoreDataDAOFactory.getInstance().getTraceurDAO().getTraceurEnCours()
+            dates = DateHelper.getHours(hourD: traceur!.heureDebutJournee , hourF: traceur!.heureFinJournee)
+            print(traceur)
+            let dateFormatter : DateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            for i in 0..<dates.count-1 {
+                let heureDeb: String = dateFormatter.string(from: dates[i] as Date)
+                let heureFin: String = dateFormatter.string(from: dates[i+1] as Date)
+                print("Heure début")
+                print(heureDeb)
+                print("Heure fin")
+                print(heureFin)
+                let heure: String = "\(heureDeb) - \(heureFin)"
+                print("Heure concaténée")
+                print(heure)
+                times.append(heure)
+                print("\n")
+                print("\n")
+                print("\n")
+            }
+            
+            for time in times {
+                print(time)
+            }
+
+        } catch {
+            
+        }
 
         //TODO calculer le nombre d'heures entre heure début et heure fin
         //Le rentrer dans un tableau de String
@@ -34,7 +69,12 @@ class newPlageHoraireController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 1
+        return times.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        heureDebutPlageHoraire = dates[row]
+        return times[row]
     }
     
     /*
