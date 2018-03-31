@@ -10,10 +10,14 @@ import UIKit
 
 class RemplirTraceurViewController: UIViewController {
 
-    var traceurEnCours:Traceur? = nil
+    var traceurEnCours: Traceur? = nil
+    var heureDebut: NSDate? = nil
+    var heureFin: NSDate? = nil
+    var etatChoisi: String? = nil
     
     @IBOutlet weak var dateLabel: UILabel!
-    
+    @IBOutlet weak var plageHoraireLabel: UILabel!
+    @IBOutlet weak var etatLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,8 @@ class RemplirTraceurViewController: UIViewController {
         let traceurDAO : TraceurDAO = factory.getTraceurDAO()
         do {
             traceurEnCours = try traceurDAO.getTraceurEnCours()
+            plageHoraireLabel.text = ""
+            etatLabel.text = ""
         } catch {
             
         }
@@ -88,7 +94,20 @@ class RemplirTraceurViewController: UIViewController {
     
     @IBAction func unwindToRemplirTraceurAfterSavingPlageHoraire(segue: UIStoryboardSegue){
         let newPlageHoraireController = segue.source as! newPlageHoraireController
-        
+        heureDebut = newPlageHoraireController.heureDebutPlageHoraire
+        heureFin = DateHelper.addHours(hourD: heureDebut!, nbHoursToAdd: 1)
+        let dateFormatter : DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let strHeureDebut: String = dateFormatter.string(from: heureDebut! as Date)
+        let strHeureFin: String = dateFormatter.string(from: heureFin! as Date)
+        plageHoraireLabel.text = "\(strHeureDebut) - \(strHeureFin)"
+    }
+    
+    
+    @IBAction func unwindToRemplirTraceurAfterSelectingEtat(segue: UIStoryboardSegue){
+        let newEtatViewController = segue.source as! newEtatViewController
+        etatChoisi = newEtatViewController.etatChoisi
+        etatLabel.text = etatChoisi!
     }
     /*
     // MARK: - Navigation
