@@ -81,6 +81,24 @@ class DateHelper{
         return date.timeIntervalSince(NSDate() as Date)
     }
     
+    
+    static func getHours(hourD: NSDate, hourF: NSDate) -> [NSDate]{
+        
+        var hours: [NSDate] = []
+        var hoursCount = 0
+        days.day = 0
+        while true {
+            days.hour = hoursCount
+            let hour:NSDate = cal.date(byAdding : days as DateComponents, to: hourD as Date)! as NSDate
+            if hour.compare(hourF as Date) == .orderedDescending {
+                break
+            }
+            hoursCount += 1
+            hours.append(hour)
+        }
+        return hours
+    }
+    
 }
 
 /// Correspondance entre jours et chiffre
