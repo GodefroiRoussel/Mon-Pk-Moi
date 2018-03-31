@@ -12,6 +12,9 @@ class RemplirTraceurViewController: UIViewController {
 
     var traceurEnCours:Traceur? = nil
     
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +23,7 @@ class RemplirTraceurViewController: UIViewController {
         let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
         let traceurDAO : TraceurDAO = factory.getTraceurDAO()
         //traceurEnCours = traceurDAO.getTraceurEnCours()
+        getCurrentDateTime()
 
     }
 
@@ -28,10 +32,58 @@ class RemplirTraceurViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func getCurrentDateTime(){
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "FR-fr")
+        let str = formatter.string(from: Date())
+        dateLabel.text = str
+    }
+    
+    
+    @IBAction func saveEvaluation(_ sender: Any) {
+    }
+    
+    
+    @IBAction func jourSubButton(_ sender: Any) {
+        let date = dateLabel.text
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.locale = Locale(identifier: "FR-fr")
+        let test = dateFormatter.date(from: date!)
+        let test2 = Date(timeInterval: -86400, since: test!)
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "FR-fr")
+        let str = formatter.string(from: test2)
+        dateLabel.text = str
 
+    }
+    
+    
+    @IBAction func jourAddButton(_ sender: Any) {
+        let date = dateLabel.text
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.locale = Locale(identifier: "FR-fr")
+        let test = dateFormatter.date(from: date!)
+        let test2 = Date(timeInterval: 86400, since: test!)
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "FR-fr")
+        let str = formatter.string(from: test2)
+        dateLabel.text = str
+    }
+    
     
     func unwindToRemplirTraceurAfterSavingPlageHoraire(segue: UIStoryboardSegue){
         let newPlageHoraireController = segue.source as! newPlageHoraireController
+        
     }
     /*
     // MARK: - Navigation
