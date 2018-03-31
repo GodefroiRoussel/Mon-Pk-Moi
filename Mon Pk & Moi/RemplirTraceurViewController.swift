@@ -10,7 +10,6 @@ import UIKit
 
 class RemplirTraceurViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var traceurEnCours: Traceur? = nil
     var heureDebut: NSDate? = nil
     var heureFin: NSDate? = nil
     var etatChoisi: String? = nil
@@ -29,7 +28,6 @@ class RemplirTraceurViewController: UIViewController, UITableViewDelegate, UITab
         let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
         let traceurDAO : TraceurDAO = factory.getTraceurDAO()
         do {
-            traceurEnCours = try traceurDAO.getTraceurEnCours()
             plageHoraireLabel.text = ""
             etatLabel.text = ""
         } catch {
@@ -53,11 +51,6 @@ class RemplirTraceurViewController: UIViewController, UITableViewDelegate, UITab
         let str = formatter.string(from: Date())
         dateLabel.text = str
     }
-    
-    
-    @IBAction func saveEvaluation(_ sender: Any) {
-    }
-    
     
     @IBAction func jourSubButton(_ sender: Any) {
         let date = dateLabel.text
@@ -124,6 +117,44 @@ class RemplirTraceurViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     
+    @IBAction func saveEvaluation(_ sender: Any) {
+        guard let _ = heureDebut else {
+            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez choisir une plage horaire.", onView: self)
+            return
+        }
+        
+        guard let _ = heureFin else {
+            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Une erreur a eu lieu, veuillez réessayer plus tard.", onView: self)
+            return
+        }
+        
+        guard let _ = etatChoisi else {
+            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuilez définir votre état.", onView: self)
+            return
+        }
+
+        //Start the business logic
+        let factory = CoreDataDAOFactory.getInstance()
+        let evaluationDAO: EvaluationDAO = factory.getEvaluationDAO()
+        let traceurDAO: TraceurDAO = factory.getTraceurDAO()
+        do {
+            let traceur: Traceur? = try traceurDAO.getTraceurEnCours()
+            let evaluation: Evaluation = try evaluationDAO.create(withHeureDebut: heureDebut!, withHeureFin: heureFin!, is_linked: traceur!)
+            
+            for symptome in symptomes {
+                evaluation.addToCan_have(symptome)
+            }
+            print(evaluation)
+            
+        } catch let error as NSError {
+            DialogBoxHelper.alert(onError: error, onView: self)
+            return
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     // MARK: - Table View functions
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -137,7 +168,7 @@ class RemplirTraceurViewController: UIViewController, UITableViewDelegate, UITab
         return cell
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -145,6 +176,6 @@ class RemplirTraceurViewController: UIViewController, UITableViewDelegate, UITab
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
