@@ -21,6 +21,7 @@ public class DataHelper {
         do {
             try deleteMedicaments()
             try deleteContacts()
+            try deleteTypeContacts()
             try deletePatients()
             try deletePrisesMedicamenteuse()
             try deleteRDVs()
@@ -154,6 +155,20 @@ public class DataHelper {
             }catch {
                 fatalError("Error cannot populate DB")
             }
+        }
+    }
+    
+    fileprivate static func deleteTypeContacts() throws{
+        let typeContactsDAO = CoreDataDAOFactory.getInstance().getTypeContactDAO()
+        do {
+            let typeContacts : [TypeContact] = try typeContactsDAO.getAllTypeContacts()
+            for typeContact in typeContacts {
+                CoreDataManager.context.delete(typeContact)
+                print("Type de contact Supprimé")
+            }
+            CoreDataManager.save()
+        } catch let error as NSError{
+            throw error
         }
     }
     
