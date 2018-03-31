@@ -22,7 +22,12 @@ class RemplirTraceurViewController: UIViewController {
         
         let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
         let traceurDAO : TraceurDAO = factory.getTraceurDAO()
-        //traceurEnCours = traceurDAO.getTraceurEnCours()
+        do {
+            traceurEnCours = try traceurDAO.getTraceurEnCours()
+        } catch {
+            
+        }
+        
         getCurrentDateTime()
 
     }
@@ -81,7 +86,7 @@ class RemplirTraceurViewController: UIViewController {
     }
     
     
-    func unwindToRemplirTraceurAfterSavingPlageHoraire(segue: UIStoryboardSegue){
+    @IBAction func unwindToRemplirTraceurAfterSavingPlageHoraire(segue: UIStoryboardSegue){
         let newPlageHoraireController = segue.source as! newPlageHoraireController
         
     }

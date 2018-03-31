@@ -25,29 +25,14 @@ class newPlageHoraireController: UIViewController, UIPickerViewDelegate, UIPicke
         do {
             let traceur: Traceur? = try CoreDataDAOFactory.getInstance().getTraceurDAO().getTraceurEnCours()
             dates = DateHelper.getHours(hourD: traceur!.heureDebutJournee , hourF: traceur!.heureFinJournee)
-            print(traceur)
             let dateFormatter : DateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH:mm"
             for i in 0..<dates.count-1 {
                 let heureDeb: String = dateFormatter.string(from: dates[i] as Date)
                 let heureFin: String = dateFormatter.string(from: dates[i+1] as Date)
-                print("Heure début")
-                print(heureDeb)
-                print("Heure fin")
-                print(heureFin)
                 let heure: String = "\(heureDeb) - \(heureFin)"
-                print("Heure concaténée")
-                print(heure)
                 times.append(heure)
-                print("\n")
-                print("\n")
-                print("\n")
             }
-            
-            for time in times {
-                print(time)
-            }
-
         } catch {
             
         }
@@ -72,9 +57,15 @@ class newPlageHoraireController: UIViewController, UIPickerViewDelegate, UIPicke
         return times.count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         heureDebutPlageHoraire = dates[row]
         return times[row]
+    }
+    
+    // MARK: - Buttons
+    
+    @IBAction func cancel(_ sender: Any) {
+        
     }
     
     /*
