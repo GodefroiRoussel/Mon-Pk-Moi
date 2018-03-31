@@ -33,8 +33,8 @@ class newPlageHoraireController: UIViewController, UIPickerViewDelegate, UIPicke
                 let heure: String = "\(heureDeb) - \(heureFin)"
                 times.append(heure)
             }
-        } catch {
-            
+        } catch let error as NSError {
+            print(error)
         }
 
         //TODO calculer le nombre d'heures entre heure début et heure fin
@@ -65,7 +65,7 @@ class newPlageHoraireController: UIViewController, UIPickerViewDelegate, UIPicke
     // MARK: - Buttons
     
     @IBAction func cancel(_ sender: Any) {
-        
+        self.dismiss(animated: true, completion: nil)
     }
     
     /*
