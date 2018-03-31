@@ -17,4 +17,6 @@ protocol TraceurDAO {
     func update(aTraceur traceur: Traceur) throws -> Traceur
     
     func delete(aTraceur traceur: Traceur) throws
+    
+    func getTraceurEnCours() throws -> Traceur?
 }

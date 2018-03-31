@@ -41,4 +41,20 @@ class TraceurCoreDataDAO: TraceurDAO {
         CoreDataManager.context.delete(traceur)
         CoreDataManager.save()
     }
+    
+    func getTraceurEnCours() throws -> Traceur? {
+        do {
+            let traceurs: [Traceur] = try CoreDataManager.context.fetch(self.request)
+            for traceur in traceurs {
+                let dateRDV: NSDate = traceur.belongs_to!.dateTheorique
+                //Si aujourd'hui on est dans les 5 jours avant la date de rendez-vous alors on récupère ce traceur qui est "en cours"
+                if DateHelper.checkInterval(dateRDV: dateRDV, interval: 5){
+                    return traceur
+                }
+            }
+            return nil
+        } catch let error as NSError {
+            throw error
+        }
+    }
 }
