@@ -23,6 +23,8 @@ public class DataHelper {
             try deleteContacts()
             try deletePatients()
             try deletePrisesMedicamenteuse()
+            try deleteRDVs()
+            try deleteTraceurs()
         } catch {
             
         }
@@ -100,6 +102,38 @@ public class DataHelper {
             for prise in prises {
                 CoreDataManager.context.delete(prise)
                 print("Prise Supprimé")
+            }
+            CoreDataManager.save()
+        } catch let error as NSError{
+            throw error
+        }
+    }
+    
+    // MARK - RDV functions
+    
+    fileprivate static func deleteRDVs() throws{
+        let rdvDAO = CoreDataDAOFactory.getInstance().getRDVDAO()
+        do {
+            let rdvs : [RDV] = try rdvDAO.getAllRDVs()
+            for rdv in rdvs {
+                CoreDataManager.context.delete(rdv)
+                print("Rendez-vous Supprimé")
+            }
+            CoreDataManager.save()
+        } catch let error as NSError{
+            throw error
+        }
+    }
+    
+    // MARK - Traceur functions
+    
+    fileprivate static func deleteTraceurs() throws{
+        let traceurDAO = CoreDataDAOFactory.getInstance().getTraceurDAO()
+        do {
+            let traceurs : [Traceur] = try traceurDAO.getAllTraceurs()
+            for traceur in traceurs {
+                CoreDataManager.context.delete(traceur)
+                print("Traceur Supprimé")
             }
             CoreDataManager.save()
         } catch let error as NSError{
