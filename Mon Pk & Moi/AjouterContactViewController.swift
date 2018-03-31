@@ -31,10 +31,8 @@ class AjouterContactViewController: UIViewController, UIPickerViewDelegate, UIPi
         
         let typeContactDAO : TypeContactDAO = factory.getTypeContactDAO()
         do {
-            let typeconts: [TypeContact] = try typeContactDAO.getAllTypeContacts()
-            for typecontact in typeconts {
-                typeContacts.append(typecontact)
-            }
+            typeContacts = try typeContactDAO.getAllTypeContacts()
+            typeContacts.sort(by: { (type1, type2) -> Bool in type1.libelle < type2.libelle } )
         } catch let error as NSError {
             print("error")
         }
