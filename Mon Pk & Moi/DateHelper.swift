@@ -99,6 +99,11 @@ class DateHelper{
         return hours
     }
     
+    static func addHours(hourD: NSDate, nbHoursToAdd nbHours: Int) -> NSDate {
+        days.day = 0
+        days.hour = nbHours
+        return cal.date(byAdding : days as DateComponents, to: hourD as Date)! as NSDate
+    }
 }
 
 /// Correspondance entre jours et chiffre
