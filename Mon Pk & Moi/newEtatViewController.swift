@@ -10,7 +10,7 @@ import UIKit
 
 class newEtatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
 
-    let etats: [String] = ["ON", "OFF", "DYSKYNESIE"]
+    let etats: [String] = ["ON", "OFF", "DYSKINESIE"]
     var etatChoisi: String? = nil
 
     @IBOutlet weak var picker: UIPickerView!
