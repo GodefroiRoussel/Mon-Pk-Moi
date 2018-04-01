@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3tf-50-PKF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17D47" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3tf-50-PKF">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,7 +43,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Création d'un compte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcL-ii-dxk">
-                                <rect key="frame" x="78" y="148" width="165" height="21"/>
+                                <rect key="frame" x="77.5" y="148" width="165" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -73,7 +73,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cCd-rg-ukS">
-                                <rect key="frame" x="100.5" y="187" width="120" height="30"/>
+                                <rect key="frame" x="100" y="187" width="120" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="28u-ow-5WE"/>
                                 </constraints>
@@ -82,7 +82,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tlC-4w-3EY">
-                                <rect key="frame" x="100.5" y="253" width="120" height="30"/>
+                                <rect key="frame" x="100" y="253" width="120" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="wdp-m9-dFx"/>
                                 </constraints>
@@ -91,7 +91,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ccm-ez-dRx">
-                                <rect key="frame" x="100.5" y="368" width="120" height="30"/>
+                                <rect key="frame" x="100" y="368" width="120" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="U32-Sa-l4Q"/>
                                 </constraints>
@@ -106,7 +106,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DAS-BP-uJi">
-                                <rect key="frame" x="100.5" y="313" width="120" height="30"/>
+                                <rect key="frame" x="100" y="313" width="120" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="6UL-IE-zFf"/>
                                 </constraints>
@@ -128,7 +128,7 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Wl-3c-DFB">
-                                <rect key="frame" x="100.5" y="435" width="120" height="30"/>
+                                <rect key="frame" x="100" y="435" width="120" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="gfH-9Y-1ME"/>
                                 </constraints>
@@ -270,7 +270,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisir l'heure de la prise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSO-xk-9qY">
-                                <rect key="frame" x="64" y="375" width="193" height="21"/>
+                                <rect key="frame" x="63.5" y="375" width="193" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -288,7 +288,7 @@
                                 </constraints>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisir la dose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEz-OA-Y0a">
-                                <rect key="frame" x="104" y="270" width="113" height="21"/>
+                                <rect key="frame" x="103.5" y="270" width="113" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -436,7 +436,7 @@
                                         <rect key="frame" x="0.0" y="28" width="240" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gOH-IY-Vfu" id="0Nb-L1-kLf">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKk-ed-kgv">
@@ -604,7 +604,7 @@
                                         <rect key="frame" x="0.0" y="28" width="288" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lzl-yd-tis" id="KlN-mJ-v19">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPB-at-3r0">
@@ -947,7 +947,7 @@
                                         <rect key="frame" x="0.0" y="28" width="264" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gKY-hN-DwP" id="Tfs-gp-Z3q">
-                                            <rect key="frame" x="0.0" y="0.0" width="264" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="264" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjD-kg-V0e">
@@ -1049,6 +1049,9 @@
                                             <constraint firstAttribute="width" constant="120" id="s4E-Gb-im0"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="logo.png"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" id="JsC-gR-F1o"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Flz-Ce-NpQ">
                                         <rect key="frame" x="235" y="23" width="50" height="50"/>
@@ -1057,6 +1060,9 @@
                                             <constraint firstAttribute="width" constant="50" id="X50-43-cua"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="user.png"/>
+                                        <connections>
+                                            <segue destination="cog-UE-aAu" kind="presentation" id="K4C-6u-N2d"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon profil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ez-EV-ISe">
                                         <rect key="frame" x="222" y="81" width="77" height="21"/>
@@ -1282,7 +1288,7 @@
                                         <rect key="frame" x="0.0" y="28" width="268" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C8G-Lv-gWt" id="mWj-Fr-JKX">
-                                            <rect key="frame" x="0.0" y="0.0" width="268" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="268" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5o-Cq-3AY">
@@ -1939,6 +1945,9 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="bJJ-6l-HyA"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="logo.png"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="U3a-n5-doJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdQ-vA-Z3E">
                                         <rect key="frame" x="235" y="23" width="50" height="50"/>
@@ -1949,6 +1958,9 @@
                                             <constraint firstAttribute="width" constant="50" id="siM-k4-LmK"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="user.png"/>
+                                        <connections>
+                                            <segue destination="cog-UE-aAu" kind="show" id="PeD-k7-VyH"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon profil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yT-0x-bbb">
                                         <rect key="frame" x="222" y="81" width="77" height="21"/>
@@ -2044,6 +2056,9 @@
                                             <constraint firstAttribute="width" constant="120" id="BNR-hP-Iyt"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="logo.png"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="J6E-Ti-95r"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3x-zQ-oeL">
                                         <rect key="frame" x="235" y="23" width="50" height="50"/>
@@ -2052,6 +2067,9 @@
                                             <constraint firstAttribute="width" constant="50" id="uSh-Vp-THB"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="user.png"/>
+                                        <connections>
+                                            <segue destination="cog-UE-aAu" kind="show" id="63B-Ek-vpv"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon profil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUU-9l-HL6">
                                         <rect key="frame" x="222" y="81" width="77" height="21"/>
@@ -2082,7 +2100,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mnp-Dr-CaC" id="rGP-Wn-Tzg">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -2133,6 +2151,9 @@
                                             <constraint firstAttribute="width" constant="120" id="rtE-T0-bEz"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="logo.png"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="ygy-gA-OZd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUt-xI-RzE">
                                         <rect key="frame" x="235" y="23" width="50" height="50"/>
@@ -2141,6 +2162,9 @@
                                             <constraint firstAttribute="width" constant="50" id="tsg-DZ-JBh"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="user.png"/>
+                                        <connections>
+                                            <segue destination="cog-UE-aAu" kind="presentation" id="hUg-lN-TUu"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon profil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfl-Ee-XvA">
                                         <rect key="frame" x="222" y="81" width="77" height="21"/>
@@ -2207,6 +2231,9 @@
                                             <constraint firstAttribute="height" constant="120" id="qnT-s4-rdE"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="logo.png"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" id="EKe-9N-e2u"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWL-0w-ODl">
                                         <rect key="frame" x="235" y="23" width="50" height="50"/>
@@ -2215,6 +2242,9 @@
                                             <constraint firstAttribute="width" constant="50" id="rpv-3s-GDJ"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="user.png"/>
+                                        <connections>
+                                            <segue destination="cog-UE-aAu" kind="presentation" id="da1-Zu-eWq"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon profil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgr-h5-pf6">
                                         <rect key="frame" x="222" y="81" width="77" height="21"/>
@@ -2280,7 +2310,7 @@
                                         <rect key="frame" x="0.0" y="28" width="292" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vdp-jd-0OZ" id="zhf-x3-1QA" customClass="SymptomeTableViewCell" customModule="Mon_Pk___Moi" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="292" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="292" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ry0-a7-lhI">
@@ -2435,6 +2465,9 @@
                                             <constraint firstAttribute="width" constant="120" id="OHJ-Xd-M7Z"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="logo.png"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" id="kaq-ma-1aX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ijq-e6-w8z">
                                         <rect key="frame" x="235" y="23" width="50" height="50"/>
@@ -2443,6 +2476,9 @@
                                             <constraint firstAttribute="width" constant="50" id="7Wh-ss-ZCK"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="user.png"/>
+                                        <connections>
+                                            <segue destination="cog-UE-aAu" kind="presentation" id="80w-Tn-Hzk"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon profil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5q-Z3-Y7h">
                                         <rect key="frame" x="222" y="81" width="77" height="21"/>
@@ -2528,6 +2564,9 @@
                                             <constraint firstAttribute="height" constant="120" id="KCa-tl-PX9"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="logo.png"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" id="knJ-Bo-NrP"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NuO-h7-3s7">
                                         <rect key="frame" x="235" y="23" width="50" height="50"/>
@@ -2536,6 +2575,9 @@
                                             <constraint firstAttribute="height" constant="50" id="Rz9-pP-WnN"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="user.png"/>
+                                        <connections>
+                                            <segue destination="cog-UE-aAu" kind="presentation" id="XRf-3J-a3F"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon profil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6N-l7-oYu">
                                         <rect key="frame" x="222" y="81" width="77" height="21"/>
@@ -2622,6 +2664,9 @@
                                             <constraint firstAttribute="width" constant="120" id="tcw-1Q-25U"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="logo.png"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" id="voT-fs-9os"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x01-tN-aQ2">
                                         <rect key="frame" x="235" y="23" width="50" height="50"/>
@@ -2630,6 +2675,9 @@
                                             <constraint firstAttribute="width" constant="50" id="rbe-Eq-ySH"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="user.png"/>
+                                        <connections>
+                                            <segue destination="cog-UE-aAu" kind="presentation" id="Meu-Dd-qc6"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon profil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8d-50-TL5">
                                         <rect key="frame" x="222" y="81" width="77" height="21"/>
@@ -2715,9 +2763,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="9wV-Hr-QX6"/>
-        <segue reference="vrs-xg-WVI"/>
-        <segue reference="yR1-uu-Jgj"/>
+        <segue reference="JsC-gR-F1o"/>
+        <segue reference="87U-Nj-Oh4"/>
+        <segue reference="K4C-6u-N2d"/>
         <segue reference="NF4-pS-3wl"/>
-        <segue reference="8Ec-Hm-Ldp"/>
     </inferredMetricsTieBreakers>
 </document>
