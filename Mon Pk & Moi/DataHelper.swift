@@ -28,6 +28,7 @@ public class DataHelper {
             try deleteRDVs()
             try deleteTraceurs()
             try deleteSymptomes()
+            try deleteEvaluations()
         } catch {
             
         }
@@ -203,4 +204,22 @@ public class DataHelper {
             throw error
         }
     }
+    
+    //MARK - Evaluation functions
+    
+    fileprivate static func deleteEvaluations() throws{
+        let evaluationDAO = CoreDataDAOFactory.getInstance().getEvaluationDAO()
+        do {
+            let evaluations : [Evaluation] = try evaluationDAO.getAllEvaluations()
+            for evaluation in evaluations {
+                CoreDataManager.context.delete(evaluation)
+                print("Evaluation Supprimé")
+            }
+            CoreDataManager.save()
+        } catch let error as NSError{
+            throw error
+        }
+    }
+    
+    
 }
