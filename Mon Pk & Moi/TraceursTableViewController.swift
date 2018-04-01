@@ -103,14 +103,23 @@ class TraceursTableViewController: UIViewController, UITableViewDataSource, UITa
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
+    //Envoyer une donnée vers la prochaine page
+    let segueShowSyntheseId = "showSyntheseSegue"
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == self.segueShowSyntheseId {
+            if let indexPath = self.traceurTableView.indexPathForSelectedRow{
+                let syntheseViewController = segue.destination as! SyntheseViewController
+                syntheseViewController.traceur = self.traceurs[indexPath.row]
+                self.traceurTableView.deselectRow(at: indexPath, animated: true)
+            }
+        }
     }
-    */
+    
 
 }

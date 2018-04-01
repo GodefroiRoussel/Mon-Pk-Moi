@@ -90,6 +90,11 @@
 		BCAE09BB206EF49E0066F9C1 /* RemplirTraceurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE09BA206EF49E0066F9C1 /* RemplirTraceurViewController.swift */; };
 		BCC265FA206F8A2E008093C4 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC265F9206F8A2E008093C4 /* NSDateExtension.swift */; };
 		BCCDB417207123AF00DB87AA /* TraceurTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCDB416207123AF00DB87AA /* TraceurTableViewCell.swift */; };
+		BCCDB4192071375E00DB87AA /* SyntheseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCDB4182071375E00DB87AA /* SyntheseViewController.swift */; };
+		BCCDB41B207154CB00DB87AA /* EvaluationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCDB41A207154CB00DB87AA /* EvaluationTableViewCell.swift */; };
+		BCCDB41D207154DB00DB87AA /* ActiviteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCDB41C207154DB00DB87AA /* ActiviteTableViewCell.swift */; };
+		BCCDB41F207154E800DB87AA /* PriseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCDB41E207154E800DB87AA /* PriseTableViewCell.swift */; };
+		BCCDB421207154F200DB87AA /* AvisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCDB420207154F200DB87AA /* AvisTableViewCell.swift */; };
 		BCE76A1220702A07002580DF /* newEtatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE76A1120702A07002580DF /* newEtatViewController.swift */; };
 		BCE76A1420703303002580DF /* NewSymptomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE76A1320703303002580DF /* NewSymptomeViewController.swift */; };
 		BCE76A16207039B1002580DF /* SymptomeSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE76A15207039B1002580DF /* SymptomeSeeder.swift */; };
@@ -205,6 +210,11 @@
 		BCAE09BA206EF49E0066F9C1 /* RemplirTraceurViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemplirTraceurViewController.swift; sourceTree = "<group>"; };
 		BCC265F9206F8A2E008093C4 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		BCCDB416207123AF00DB87AA /* TraceurTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceurTableViewCell.swift; sourceTree = "<group>"; };
+		BCCDB4182071375E00DB87AA /* SyntheseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntheseViewController.swift; sourceTree = "<group>"; };
+		BCCDB41A207154CB00DB87AA /* EvaluationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluationTableViewCell.swift; sourceTree = "<group>"; };
+		BCCDB41C207154DB00DB87AA /* ActiviteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiviteTableViewCell.swift; sourceTree = "<group>"; };
+		BCCDB41E207154E800DB87AA /* PriseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriseTableViewCell.swift; sourceTree = "<group>"; };
+		BCCDB420207154F200DB87AA /* AvisTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvisTableViewCell.swift; sourceTree = "<group>"; };
 		BCE76A1120702A07002580DF /* newEtatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newEtatViewController.swift; sourceTree = "<group>"; };
 		BCE76A1320703303002580DF /* NewSymptomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSymptomeViewController.swift; sourceTree = "<group>"; };
 		BCE76A15207039B1002580DF /* SymptomeSeeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomeSeeder.swift; sourceTree = "<group>"; };
@@ -455,6 +465,11 @@
 			children = (
 				BCF2FD1F2070DED200A6C8B3 /* TraceursTableViewController.swift */,
 				BCCDB416207123AF00DB87AA /* TraceurTableViewCell.swift */,
+				BCCDB4182071375E00DB87AA /* SyntheseViewController.swift */,
+				BCCDB41A207154CB00DB87AA /* EvaluationTableViewCell.swift */,
+				BCCDB41C207154DB00DB87AA /* ActiviteTableViewCell.swift */,
+				BCCDB41E207154E800DB87AA /* PriseTableViewCell.swift */,
+				BCCDB420207154F200DB87AA /* AvisTableViewCell.swift */,
 			);
 			name = Synthese;
 			sourceTree = "<group>";
@@ -612,6 +627,7 @@
 				2BEDF7A5206A44D00099FCD2 /* ContactCoreDataDAO.swift in Sources */,
 				2BEDF757206A41F10099FCD2 /* ContactExtension.swift in Sources */,
 				2BEDF792206A44170099FCD2 /* PatientDAO.swift in Sources */,
+				BCCDB4192071375E00DB87AA /* SyntheseViewController.swift in Sources */,
 				2BEDF75B206A42130099FCD2 /* EvenementExtension.swift in Sources */,
 				2BEDF796206A44370099FCD2 /* RDVDAO.swift in Sources */,
 				7BFCDC70206B8D9F00A3A7CC /* AgendaViewController.swift in Sources */,
@@ -644,6 +660,7 @@
 				2BEDF7AD206A451A0099FCD2 /* PriseMedicamenteuseCoreDataDAO.swift in Sources */,
 				BCE76A16207039B1002580DF /* SymptomeSeeder.swift in Sources */,
 				2BEDF7B5206A456F0099FCD2 /* EvaluationCoreDataDAO.swift in Sources */,
+				BCCDB421207154F200DB87AA /* AvisTableViewCell.swift in Sources */,
 				7BFCDC6E206B853500A3A7CC /* ContactTableViewCell.swift in Sources */,
 				2BEDF753206A41BE0099FCD2 /* MedicamentExtension.swift in Sources */,
 				2BEDF763206A42600099FCD2 /* RDVExtension.swift in Sources */,
@@ -651,11 +668,13 @@
 				2BEDF79A206A44570099FCD2 /* TypeAvisDAO.swift in Sources */,
 				2BEDF755206A41DA0099FCD2 /* TypeContactExtension.swift in Sources */,
 				2BEDF794206A44290099FCD2 /* PriseMedicamenteuseDAO.swift in Sources */,
+				BCCDB41D207154DB00DB87AA /* ActiviteTableViewCell.swift in Sources */,
 				2BEDF75D206A42260099FCD2 /* OrdonnanceExtension.swift in Sources */,
 				7AA534022057C9FF00A2A443 /* pilulierViewController.swift in Sources */,
 				2BEDF7AF206A45300099FCD2 /* ActiviteCoreDataDAO.swift in Sources */,
 				2BEDF7BB206A45AE0099FCD2 /* TypeAvisCoreDataDAO.swift in Sources */,
 				BCAE09BB206EF49E0066F9C1 /* RemplirTraceurViewController.swift in Sources */,
+				BCCDB41F207154E800DB87AA /* PriseTableViewCell.swift in Sources */,
 				2BEDF778206A43270099FCD2 /* TypeContactSeeder.swift in Sources */,
 				7A6BB3672050281C00A46AB3 /* Mon_Pk___Moi.xcdatamodeld in Sources */,
 				7A2C29FF205429CA000EC45C /* AjouterPriseViewController.swift in Sources */,
@@ -663,6 +682,7 @@
 				2BEDF761206A424E0099FCD2 /* ActiviteExtension.swift in Sources */,
 				2BEDF76D206A42B50099FCD2 /* TypeAvisExtension.swift in Sources */,
 				7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */,
+				BCCDB41B207154CB00DB87AA /* EvaluationTableViewCell.swift in Sources */,
 				2BEDF784206A43970099FCD2 /* ActiviteDAO.swift in Sources */,
 				2BEDF7A1206A44A10099FCD2 /* MedicamentCoreDataDAO.swift in Sources */,
 				2BEDF770206A42DA0099FCD2 /* AbstractDAOFactory.swift in Sources */,
