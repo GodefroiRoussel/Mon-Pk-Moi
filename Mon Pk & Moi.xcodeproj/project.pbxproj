@@ -89,6 +89,7 @@
 		BC348F12206F6AD100686D9E /* newPlageHoraireController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC348F11206F6AD100686D9E /* newPlageHoraireController.swift */; };
 		BCAE09BB206EF49E0066F9C1 /* RemplirTraceurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE09BA206EF49E0066F9C1 /* RemplirTraceurViewController.swift */; };
 		BCC265FA206F8A2E008093C4 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC265F9206F8A2E008093C4 /* NSDateExtension.swift */; };
+		BCCDB417207123AF00DB87AA /* TraceurTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCDB416207123AF00DB87AA /* TraceurTableViewCell.swift */; };
 		BCE76A1220702A07002580DF /* newEtatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE76A1120702A07002580DF /* newEtatViewController.swift */; };
 		BCE76A1420703303002580DF /* NewSymptomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE76A1320703303002580DF /* NewSymptomeViewController.swift */; };
 		BCE76A16207039B1002580DF /* SymptomeSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE76A15207039B1002580DF /* SymptomeSeeder.swift */; };
@@ -203,6 +204,7 @@
 		BC348F11206F6AD100686D9E /* newPlageHoraireController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newPlageHoraireController.swift; sourceTree = "<group>"; };
 		BCAE09BA206EF49E0066F9C1 /* RemplirTraceurViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemplirTraceurViewController.swift; sourceTree = "<group>"; };
 		BCC265F9206F8A2E008093C4 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
+		BCCDB416207123AF00DB87AA /* TraceurTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceurTableViewCell.swift; sourceTree = "<group>"; };
 		BCE76A1120702A07002580DF /* newEtatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newEtatViewController.swift; sourceTree = "<group>"; };
 		BCE76A1320703303002580DF /* NewSymptomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSymptomeViewController.swift; sourceTree = "<group>"; };
 		BCE76A15207039B1002580DF /* SymptomeSeeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomeSeeder.swift; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 			isa = PBXGroup;
 			children = (
 				BCF2FD1F2070DED200A6C8B3 /* TraceursTableViewController.swift */,
+				BCCDB416207123AF00DB87AA /* TraceurTableViewCell.swift */,
 			);
 			name = Synthese;
 			sourceTree = "<group>";
@@ -656,6 +659,7 @@
 				2BEDF778206A43270099FCD2 /* TypeContactSeeder.swift in Sources */,
 				7A6BB3672050281C00A46AB3 /* Mon_Pk___Moi.xcdatamodeld in Sources */,
 				7A2C29FF205429CA000EC45C /* AjouterPriseViewController.swift in Sources */,
+				BCCDB417207123AF00DB87AA /* TraceurTableViewCell.swift in Sources */,
 				2BEDF761206A424E0099FCD2 /* ActiviteExtension.swift in Sources */,
 				2BEDF76D206A42B50099FCD2 /* TypeAvisExtension.swift in Sources */,
 				7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */,

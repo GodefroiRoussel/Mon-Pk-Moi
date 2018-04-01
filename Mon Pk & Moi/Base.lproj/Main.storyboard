@@ -2037,7 +2037,7 @@
         <!--Table de synthèses-->
         <scene sceneID="cwd-8C-did">
             <objects>
-                <viewController title="Table de synthèses" id="OGo-Wf-cij" sceneMemberID="viewController">
+                <viewController title="Table de synthèses" id="OGo-Wf-cij" customClass="TraceursTableViewController" customModule="Mon_Pk___Moi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T3u-UA-mc9"/>
                         <viewControllerLayoutGuide type="bottom" id="b3e-nl-Ye9"/>
@@ -2096,18 +2096,44 @@
                                 <rect key="frame" x="0.0" y="148" width="320" height="420"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mnp-Dr-CaC">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="traceurCell" id="mnp-Dr-CaC" customClass="TraceurTableViewCell" customModule="Mon_Pk___Moi" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mnp-Dr-CaC" id="rGP-Wn-Tzg">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Etat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWg-TP-WjT">
+                                                    <rect key="frame" x="266.5" y="8" width="30.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DateRDV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDC-ht-XDG">
+                                                    <rect key="frame" x="23" y="8" width="69.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fDC-ht-XDG" firstAttribute="top" secondItem="rGP-Wn-Tzg" secondAttribute="topMargin" id="5lX-Zq-sle"/>
+                                                <constraint firstItem="sWg-TP-WjT" firstAttribute="top" secondItem="rGP-Wn-Tzg" secondAttribute="topMargin" id="Aab-As-tib"/>
+                                                <constraint firstItem="fDC-ht-XDG" firstAttribute="leading" secondItem="rGP-Wn-Tzg" secondAttribute="leadingMargin" constant="15" id="K5y-Uu-dgz"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="sWg-TP-WjT" secondAttribute="trailing" constant="15" id="dLL-OM-kcA"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="dateRDVLabel" destination="fDC-ht-XDG" id="Tog-b0-dsp"/>
+                                            <outlet property="etatLabel" destination="sWg-TP-WjT" id="yAl-eH-p84"/>
                                             <segue destination="gj4-6Z-duU" kind="show" id="C44-ux-qqe"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="OGo-Wf-cij" id="GEE-6o-Dbe"/>
+                                    <outlet property="delegate" destination="OGo-Wf-cij" id="Fbb-J3-P8i"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2124,6 +2150,9 @@
                             <constraint firstItem="b3e-nl-Ye9" firstAttribute="top" secondItem="RgC-a4-IKH" secondAttribute="bottom" id="yEu-8f-yI6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="traceurTableView" destination="RgC-a4-IKH" id="iqW-KJ-hLM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cG0-eF-X7N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2762,10 +2791,10 @@
         <image name="user.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9wV-Hr-QX6"/>
-        <segue reference="JsC-gR-F1o"/>
-        <segue reference="87U-Nj-Oh4"/>
-        <segue reference="K4C-6u-N2d"/>
         <segue reference="NF4-pS-3wl"/>
+        <segue reference="J6E-Ti-95r"/>
+        <segue reference="63B-Ek-vpv"/>
+        <segue reference="9wV-Hr-QX6"/>
+        <segue reference="87U-Nj-Oh4"/>
     </inferredMetricsTieBreakers>
 </document>

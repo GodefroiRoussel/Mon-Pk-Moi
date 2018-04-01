@@ -8,11 +8,25 @@
 
 import UIKit
 
-class TraceursTableViewController: UITableViewController {
+class TraceursTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    
+    var traceurs: [Traceur] = []
+    
+    @IBOutlet weak var traceurTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let factory = CoreDataDAOFactory.getInstance()
+        do {
+            let traceurDAO: TraceurDAO = factory.getTraceurDAO()
+            traceurs = try traceurDAO.getAllTraceurs()
+            
+        } catch let error as NSError {
+            DialogBoxHelper.alert(onError: error, onView: self)
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -27,25 +41,32 @@ class TraceursTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.traceurs.count
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.traceurTableView.dequeueReusableCell(withIdentifier: "traceurCell", for: indexPath) as! TraceurTableViewCell
+        let dateTheorique = self.traceurs[indexPath.row].belongs_to!.dateTheorique
+        let dateFormatter : DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        
+        cell.dateRDVLabel.text = dateFormatter.string(from: dateTheorique as Date)
+        
+        if dateTheorique.isGreaterThanDate(dateToCompare: NSDate()) {
+            if DateHelper.checkInterval(dateRDV: dateTheorique, interval: 5) {
+                cell.etatLabel.text = "En cours"
+            } else {
+                cell.etatLabel.text = "Fini"
+            }
+        } else {
+            cell.etatLabel.text = "En attente"
+        }
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
