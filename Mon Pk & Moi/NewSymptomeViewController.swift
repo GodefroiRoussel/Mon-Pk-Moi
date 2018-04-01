@@ -21,6 +21,7 @@ class NewSymptomeViewController: UIViewController, UIPickerViewDelegate, UIPicke
         do {
             let symptomeDAO: SymptomeDAO = try CoreDataDAOFactory.getInstance().getSymptomeDAO()
             symptomes = try symptomeDAO.getAllSymptomes()
+            symptomes.sort(by: { (symptome1, symptome2) -> Bool in symptome1.libelle < symptome2.libelle } )
         } catch let error as NSError {
             print(error)
         }
@@ -43,9 +44,13 @@ class NewSymptomeViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        symptomeSelected = symptomes[row]
-        return symptomeSelected!.libelle
+        return symptomes[row].libelle
     }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        symptomeSelected = symptomes[row]
+    }
+    
     
     // MARK: - Buttons
     

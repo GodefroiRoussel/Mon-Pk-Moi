@@ -58,8 +58,11 @@ class newPlageHoraireController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        heureDebutPlageHoraire = dates[row]
         return times[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        heureDebutPlageHoraire = dates[row]
     }
     
     // MARK: - Buttons

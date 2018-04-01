@@ -37,8 +37,11 @@ class newEtatViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return etats[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         etatChoisi = etats[row]
-        return etatChoisi
     }
     
     // MARK: - Buttons
