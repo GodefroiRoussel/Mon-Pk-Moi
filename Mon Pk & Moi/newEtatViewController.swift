@@ -17,7 +17,7 @@ class newEtatViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        etatChoisi = etats[0]
         // Do any additional setup after loading the view.
     }
 

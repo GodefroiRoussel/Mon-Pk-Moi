@@ -33,6 +33,7 @@ class newPlageHoraireController: UIViewController, UIPickerViewDelegate, UIPicke
                 let heure: String = "\(heureDeb) - \(heureFin)"
                 times.append(heure)
             }
+            heureDebutPlageHoraire = dates[0]
         } catch let error as NSError {
             print(error)
         }

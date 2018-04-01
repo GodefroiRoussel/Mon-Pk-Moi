@@ -139,13 +139,11 @@ class RemplirTraceurViewController: UIViewController, UITableViewDelegate, UITab
         let traceurDAO: TraceurDAO = factory.getTraceurDAO()
         do {
             let traceur: Traceur? = try traceurDAO.getTraceurEnCours()
-            let evaluation: Evaluation = try evaluationDAO.create(withHeureDebut: heureDebut!, withHeureFin: heureFin!, is_linked: traceur!)
+            let evaluation: Evaluation = try evaluationDAO.create(withEtat: etatChoisi!, withHeureDebut: heureDebut!, withHeureFin: heureFin!, is_linked: traceur!)
             
             for symptome in symptomes {
                 evaluation.addToCan_have(symptome)
             }
-            print(evaluation)
-            
         } catch let error as NSError {
             DialogBoxHelper.alert(onError: error, onView: self)
             return

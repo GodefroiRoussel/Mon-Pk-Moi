@@ -22,6 +22,7 @@ class NewSymptomeViewController: UIViewController, UIPickerViewDelegate, UIPicke
             let symptomeDAO: SymptomeDAO = try CoreDataDAOFactory.getInstance().getSymptomeDAO()
             symptomes = try symptomeDAO.getAllSymptomes()
             symptomes.sort(by: { (symptome1, symptome2) -> Bool in symptome1.libelle < symptome2.libelle } )
+            symptomeSelected = symptomes[0]
         } catch let error as NSError {
             print(error)
         }

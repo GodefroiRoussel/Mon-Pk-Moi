@@ -18,8 +18,8 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
     
     let dateFormatter: DateFormatter = DateFormatter()
     
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    @IBOutlet weak var segementedControl: UISegmentedControl!
     @IBOutlet weak var titreLabel: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
@@ -40,6 +40,10 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
             medicamentsNonPris = try priseDAO.getAllPriseMedicamenteuses() //TODO: Changer en toutes les prises non effectuées ou effectuées en retard lors des 5 derniers jours
             avis = try avisDAO.getAllAvis() //TODO: Changer en tous les avis pour ce traceur
             activites = try activiteDAO.getAllActivites() //TODO: Changer en toutes les activités réalisées lors des 5 derniers jours
+            titreLabel.text = "Les évaluations du patient"
+            for evaluation in evaluations {
+                print(evaluation)
+            }
         } catch let error as NSError {
             DialogBoxHelper.alert(onError: error, onView: self)
         }
@@ -51,20 +55,21 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
         // Dispose of any resources that can be recreated.
     }
     
-
-    @IBAction func indexChanged(_ sender: AnyObject) {
-        switch segementedControl.selectedSegmentIndex {
+    
+    
+    @IBAction func indexChanged(_ sender: Any) {
+        tableView.reloadData()
+        switch segmentedControl.selectedSegmentIndex {
         case 0:
             titreLabel.text = "Les évaluations du patient"
         case 1:
-            titreLabel.text = "Liste des médicaments non pris au cours des 5 derniers jours"
+            titreLabel.text = "Médicaments non pris au cours des 5 derniers jours"
         case 2:
-            titreLabel.text = "Avis"
+            titreLabel.text = "Avis du médecin"
         case 3:
             titreLabel.text = "Liste des activités des 5 derniers jours"
         default :
             break
-            
         }
     }
     
@@ -72,7 +77,7 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
     // Mark: - Table View function
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch segementedControl.selectedSegmentIndex {
+        switch segmentedControl.selectedSegmentIndex {
         case 0:
             return self.evaluations.count
         case 1:
@@ -88,7 +93,7 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      
-     switch segementedControl.selectedSegmentIndex {
+     switch segmentedControl.selectedSegmentIndex {
      //We begin with the case 'Medicament'
      case 1:
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "priseCell", for: indexPath)
@@ -116,10 +121,17 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
      default:
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "evaluationCell", for: indexPath)
             as! EvaluationTableViewCell
-        cell.plageLabel.text = ""
+        dateFormatter.dateFormat = "HH:mm"
+        let heureDeb: String = dateFormatter.string(from: evaluations[indexPath.row].heureDebut as Date)
+        let heureFin: String = dateFormatter.string(from: evaluations[indexPath.row].heureFin as Date)
+        dateFormatter.dateFormat = "dd/MM"
+        let date: String = dateFormatter.string(from: evaluations[indexPath.row].heureDebut as Date)
+        let heure: String = "\(date) - \(heureDeb) - \(heureFin)"
+        
+        cell.plageLabel.text = heure
         cell.etatLabel.text = self.evaluations[indexPath.row].etat
         //TODO : rajouter les symptomes
-        cell.symptomesLabel.text = ""
+        cell.symptomesLabel.text = "Test"
         return cell
      }
     }
