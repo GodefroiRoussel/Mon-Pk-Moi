@@ -137,8 +137,12 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
             let test3 = Date(timeInterval: 432000, since: test2)
             
             // TODO seulement si c'est un rendez-vous chez un Neurologue
-            //traceur = try traceurDAO.create(withHeureDebut: test2 as NSDate, withHeureFin: test3 as NSDate)
-            rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: test3 as NSDate, withLieu: lieuField.text, withTempsPourAllerALEvenement: 120, withDuree: Int16(dureeField.text!)!, schedule_by: patient, is_with: selectedMedecin!)
+            if selectedMedecin?.is_a?.libelle == "neurologue" {
+                traceur = try traceurDAO.create(withHeureDebut: test2 as NSDate, withHeureFin: test3 as NSDate)
+                rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: test3 as NSDate, withLieu: lieuField.text, withTempsPourAllerALEvenement: 120, withDuree: Int16(dureeField.text!)!, schedule_by: patient, has: traceur!, is_with: selectedMedecin!)
+            } else {
+                rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: test3 as NSDate, withLieu: lieuField.text, withTempsPourAllerALEvenement: 120, withDuree: Int16(dureeField.text!)!, schedule_by: patient, is_with: selectedMedecin!)
+            }
         } catch let error as NSError {
             DialogBoxHelper.alert(onError: error, onView: self)
             return

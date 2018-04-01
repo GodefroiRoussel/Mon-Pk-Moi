@@ -78,14 +78,13 @@ class AjouterActiviteViewController: UIViewController {
         heureField.inputView = pickerTime
         
         pickerTime.locale = Locale(identifier: "FR-fr")
-        pickerTime.datePickerMode = .time
         
     }
     
     func donePressedTime() {
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .none
+        dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
         dateFormatter.locale = Locale(identifier: "FR-fr")
         let HeureString = dateFormatter.string(from: pickerTime.date)
@@ -126,7 +125,12 @@ class AjouterActiviteViewController: UIViewController {
         do {
             let patient: Patient = try patientDAO.getAllPatients()[0] // TODO: Changer cette solution temporaire en faisant passer le patient dans une variable globale
             
-            let dates = DateHelper.getDates(dateD: NSDate(), dateF: pickerDate.date as NSDate)
+            let interv: TimeInterval = pickerTime.date.timeIntervalSinceNow
+            print(interv)
+            let dateFin = Date(timeInterval: interv, since: pickerDate.date)
+            
+            var dates = DateHelper.getDates(dateD: pickerTime.date as NSDate, dateF: dateFin as NSDate)
+            dates.append(Date(timeInterval: interv, since: pickerDate.date) as NSDate)
             for dat in dates {
                 activite = try activiteDAO.create(withName: nomField.text!, withDateTheorique: dat as NSDate, withDuree: Int16(dureeField.text!)!, withDescription: descriptionField.text!, schedule_by: patient)
                 activites.append(activite!)
