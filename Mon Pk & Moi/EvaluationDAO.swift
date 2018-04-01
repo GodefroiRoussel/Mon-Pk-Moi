@@ -12,7 +12,7 @@ protocol EvaluationDAO {
     
     func getAllEvaluations() throws -> [Evaluation]
     
-    func create(withHeureDebut heureDebut: NSDate, withHeureFin heureFin: NSDate, is_linked traceur :Traceur) throws -> Evaluation
+    func create(withEtat etat: String, withHeureDebut heureDebut: NSDate, withHeureFin heureFin: NSDate, is_linked traceur :Traceur) throws -> Evaluation
     
     func find(atHeureDebut heureDebut: NSDate) throws -> Evaluation?
     

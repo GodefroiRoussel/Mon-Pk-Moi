@@ -26,8 +26,8 @@ class EvaluationCoreDataDAO: EvaluationDAO {
         }
     }
     
-    func create(withHeureDebut heureDebut: NSDate, withHeureFin heureFin: NSDate, is_linked traceur :Traceur) throws -> Evaluation {
-        let newEvaluation = Evaluation(withHeureDebut: heureDebut, withHeureFin: heureFin, is_linked: traceur)
+    func create(withEtat etat: String, withHeureDebut heureDebut: NSDate, withHeureFin heureFin: NSDate, is_linked traceur :Traceur) throws -> Evaluation {
+        let newEvaluation = Evaluation(withEtat: etat, withHeureDebut: heureDebut, withHeureFin: heureFin, is_linked: traceur)
         CoreDataManager.save()
         return newEvaluation
     }

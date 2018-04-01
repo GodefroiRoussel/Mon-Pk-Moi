@@ -28,9 +28,9 @@ extension Evaluation {
         }
     }
     
-    public var etat : String?{
+    public var etat : String{
         get{
-            return self.petat
+            return self.petat!
         }
         set{
             self.petat = newValue
@@ -42,10 +42,11 @@ extension Evaluation {
         return self
     }
     
-    convenience init(withHeureDebut heureDebut: NSDate, withHeureFin heureFin: NSDate, is_linked traceur :Traceur){
+    convenience init(withEtat etat: String, withHeureDebut heureDebut: NSDate, withHeureFin heureFin: NSDate, is_linked traceur :Traceur){
         self.init(context: CoreDataManager.context)
         self.pheureDebut = heureDebut
         self.pheureFin = heureFin
+        self.petat = etat
         self.is_linked = traceur
     }
 }
