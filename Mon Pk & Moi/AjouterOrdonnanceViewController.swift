@@ -18,6 +18,7 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
     var medicaments : [Medicament] = []
     var doses : [Double] = []
     var times : [Date] = []
+    var prises : [PriseMedicamenteuse] = []
     let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
     
     var selectedMedecin : Contact? = nil
@@ -169,7 +170,8 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
                 for date in dates {
                     for i in 0..<medicaments.count {
                         let dateMAJ: NSDate = DateHelper.changeHour(date: date, heureMin: times[i] as NSDate)
-                        let _ :PriseMedicamenteuse = try priseDAO.create(withName: "Prise Médicamenteuse", withDateTheorique: dateMAJ, withDose: doses[i], schedule_by: patient, belongs_to: medicaments[i], linked_to: ordonnance)
+                        let prise :PriseMedicamenteuse = try priseDAO.create(withName: "Prise Médicamenteuse", withDateTheorique: dateMAJ, withDose: doses[i], schedule_by: patient, belongs_to: medicaments[i], linked_to: ordonnance)
+                        prises.append(prise)
                     }
                 }
             } catch let error as NSError {
@@ -183,6 +185,27 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
             self.performSegue(withIdentifier: "pilulier", sender: self)
         }
         
+        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            let dest = segue.destination as! pilulierViewController
+            for pri in prises {
+                let formatter = DateFormatter()
+                formatter.dateStyle = .long
+                formatter.timeStyle = .none
+                formatter.locale = Locale(identifier: "FR-fr")
+                let str = formatter.string(from: pri.dateTheorique as Date)
+                
+                if dest.dateLabel.text == str {
+                    dest.priseMedicamenteuses.append(pri)
+                }
+            }
+            dest.priseMedicamenteuses.sort(by: { (element0, element1) -> Bool in
+                if element0.dateTheorique as Date > element1.dateTheorique as Date {
+                    return false
+                }
+                
+                return true
+            })
+        }
     }
     
 

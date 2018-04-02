@@ -12,11 +12,15 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
 
     @IBOutlet weak var dateLabel: UILabel!
     
-    var medicaments : [String] = []
-    var doses : [Double] = []
-    var times : [String] = []
+    let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
     
-    var dates : [Date] = []
+    var allPriseMedicamenteuses : [PriseMedicamenteuse] = []
+    var priseMedicamenteuses : [PriseMedicamenteuse] = []
+    
+    //var doses : [Double] = []
+//var times : [String] = []
+    
+    //var dates : [Date] = []
 
     
     @IBOutlet weak var priseMedicamentTable: UITableView!
@@ -35,6 +39,9 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
         formatter.locale = Locale(identifier: "FR-fr")
         let str = formatter.string(from: test2)
         dateLabel.text = str
+        
+        self.loadData()
+        priseMedicamentTable.reloadData()
     }
     @IBAction func jourSubButton(_ sender: UIButton) {
         let date = dateLabel.text
@@ -50,14 +57,18 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
         formatter.locale = Locale(identifier: "FR-fr")
         let str = formatter.string(from: test2)
         dateLabel.text = str
+        
+        self.loadData()
+        priseMedicamentTable.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.loadData()
         getCurrentDateTime()
-
+        self.loadData()
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -67,22 +78,20 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.medicaments.count
+        return self.priseMedicamenteuses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.priseMedicamentTable.dequeueReusableCell(withIdentifier: "priseMedicamentCell", for: indexPath)
             as! PriseMedicamentTableViewCell
-        cell.medicamentNameLabel.text = self.medicaments[indexPath.row]
-        cell.doseLabel.text = "\(doses[indexPath.row])"
-        
+        cell.medicamentNameLabel.text = self.priseMedicamenteuses[indexPath.row].belongs_to?.nom
+        cell.doseLabel.text = "\(self.priseMedicamenteuses[indexPath.row].dose)"
+
+        let dateTheorique = self.priseMedicamenteuses[indexPath.row].pdateTheorique
         let dateFormatter : DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
-        for date in dates {
-            let heure = dateFormatter.string(from: date)
-            times.append(heure)
-        }
-        cell.timeLabel.text = "\(times[indexPath.row])"
+        let heure = dateFormatter.string(from: dateTheorique as! Date)
+        cell.timeLabel.text = heure
         return cell
     }
     
@@ -100,7 +109,7 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func loadData(){
-        //Solution temporaire
+        /*Solution temporaire
         self.medicaments = []
         self.doses = []
         self.times = []
@@ -109,15 +118,59 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
         let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
         let priseMedicamenteuseDAO : PriseMedicamenteuseDAO = factory.getPriseMedicamenteuseDAO()
         do {
+            medicaments.removeAll()
+            doses.removeAll()
+            dates.removeAll()
+
             let priseMedicamenteuses: [PriseMedicamenteuse] = try priseMedicamenteuseDAO.getAllPriseMedicamenteuses()
+            
             for priseMedicamenteuse in priseMedicamenteuses {
-                medicaments.append((priseMedicamenteuse.belongs_to?.nom)!)
-                doses.append(priseMedicamenteuse.pdose)
-                dates.append(priseMedicamenteuse.pdateTheorique! as Date)
+                
+                let formatter = DateFormatter()
+                formatter.dateStyle = .long
+                formatter.timeStyle = .none
+                formatter.locale = Locale(identifier: "FR-fr")
+                let str = formatter.string(from: priseMedicamenteuse.pdateTheorique! as Date)
+                print(str)
+                print(dateLabel.text!)
+                
+                if dateLabel.text! == str {
+                    medicaments.append((priseMedicamenteuse.belongs_to?.nom)!)
+                    doses.append(priseMedicamenteuse.pdose)
+                    dates.append(priseMedicamenteuse.pdateTheorique! as Date)
+                }
             }
         } catch let error as NSError {
                 print("error")
+        }*/
+        priseMedicamenteuses.removeAll()
+        allPriseMedicamenteuses.removeAll()
+        let priseMedicamenteuseDAO : PriseMedicamenteuseDAO = factory.getPriseMedicamenteuseDAO()
+        do {
+            allPriseMedicamenteuses = try priseMedicamenteuseDAO.getAllPriseMedicamenteuses()
+            for prise in allPriseMedicamenteuses {
+                
+                let formatter = DateFormatter()
+                formatter.dateStyle = .long
+                formatter.timeStyle = .none
+                formatter.locale = Locale(identifier: "FR-fr")
+                let str = formatter.string(from: prise.dateTheorique as Date)
+                
+                if dateLabel.text! == str {
+                    priseMedicamenteuses.append(prise)
+                }
+                priseMedicamenteuses.sort(by: { (element0, element1) -> Bool in
+                    if element0.dateTheorique as Date > element1.dateTheorique as Date {
+                        return false
+                    }
+                    
+                    return true
+                })
+            }
+        } catch let error as NSError {
+            print("error")
         }
+
     }
     
    // func SaveNewPrise(withMedicament medicament: String, andDose dose: Double, andTime time: Date){
