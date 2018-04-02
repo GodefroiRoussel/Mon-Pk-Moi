@@ -179,9 +179,7 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
                 return
             }
 
-            
-            
-            // Envoie vers la page pilulier voir car on envoie pas forcément les informations donc peut-être juste une autre fonction
+            // Envoie vers la page pilulier
             self.performSegue(withIdentifier: "pilulier", sender: self)
         }
         
@@ -209,15 +207,21 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
     }
     
 
-    /*
+    
     // MARK: - Navigation
+    
+    let seguePriseViewController = "ajouterPrise"
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let dest = segue.destination
+        if segue.identifier == self.seguePriseViewController {
+            let dest = segue.destination as! AjouterPriseViewController
+        } else {
+            let dest = segue.destination as! pilulierViewController
+        }
     }
-    */
+    
 
 }

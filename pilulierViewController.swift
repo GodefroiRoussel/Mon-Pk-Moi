@@ -17,12 +17,6 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
     var allPriseMedicamenteuses : [PriseMedicamenteuse] = []
     var priseMedicamenteuses : [PriseMedicamenteuse] = []
     
-    //var doses : [Double] = []
-//var times : [String] = []
-    
-    //var dates : [Date] = []
-
-    
     @IBOutlet weak var priseMedicamentTable: UITableView!
     
     @IBAction func jourAddButton(_ sender: UIButton) {
@@ -105,44 +99,11 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     @IBAction func unwindToPilulierAfterSavingNewOrdonnance(segue: UIStoryboardSegue){
+        self.loadData()
         self.priseMedicamentTable.reloadData()
     }
     
     func loadData(){
-        /*Solution temporaire
-        self.medicaments = []
-        self.doses = []
-        self.times = []
-        
-        self.dates = []
-        let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
-        let priseMedicamenteuseDAO : PriseMedicamenteuseDAO = factory.getPriseMedicamenteuseDAO()
-        do {
-            medicaments.removeAll()
-            doses.removeAll()
-            dates.removeAll()
-
-            let priseMedicamenteuses: [PriseMedicamenteuse] = try priseMedicamenteuseDAO.getAllPriseMedicamenteuses()
-            
-            for priseMedicamenteuse in priseMedicamenteuses {
-                
-                let formatter = DateFormatter()
-                formatter.dateStyle = .long
-                formatter.timeStyle = .none
-                formatter.locale = Locale(identifier: "FR-fr")
-                let str = formatter.string(from: priseMedicamenteuse.pdateTheorique! as Date)
-                print(str)
-                print(dateLabel.text!)
-                
-                if dateLabel.text! == str {
-                    medicaments.append((priseMedicamenteuse.belongs_to?.nom)!)
-                    doses.append(priseMedicamenteuse.pdose)
-                    dates.append(priseMedicamenteuse.pdateTheorique! as Date)
-                }
-            }
-        } catch let error as NSError {
-                print("error")
-        }*/
         priseMedicamenteuses.removeAll()
         allPriseMedicamenteuses.removeAll()
         let priseMedicamenteuseDAO : PriseMedicamenteuseDAO = factory.getPriseMedicamenteuseDAO()
@@ -172,14 +133,6 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
         }
 
     }
-    
-   // func SaveNewPrise(withMedicament medicament: String, andDose dose: Double, andTime time: Date){
-     //   guard let context = self.getContext(errorMsg: "Save failed") else { return }
-       // let priseMedicameuteuse = PriseMedicamenteuse(context: context)
-        //priseMedicameuteuse.dose
-   // }
-    
-    
 
     /*
     // MARK: - Navigation

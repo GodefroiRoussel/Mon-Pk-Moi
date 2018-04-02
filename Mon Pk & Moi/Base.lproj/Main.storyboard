@@ -486,7 +486,7 @@
                                 <rect key="frame" x="102" y="482" width="117" height="30"/>
                                 <state key="normal" title="Ajouter une prise"/>
                                 <connections>
-                                    <segue destination="26g-hp-E6H" kind="presentation" id="d5y-pe-3jw"/>
+                                    <segue destination="26g-hp-E6H" kind="presentation" identifier="ajouterPrise" id="d5y-pe-3jw"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisir le médecin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iei-79-HX6">
@@ -657,7 +657,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="f47-qm-emc"/>
                                     <barButtonItem title="Ajouter une ordonnance" id="Raa-uq-nL8">
                                         <connections>
-                                            <segue destination="xa7-2G-8Pe" kind="presentation" id="f9T-Pc-W97"/>
+                                            <segue destination="xa7-2G-8Pe" kind="presentation" identifier="ajouterOrdonnance" id="f9T-Pc-W97"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="I8x-7p-JnZ"/>
