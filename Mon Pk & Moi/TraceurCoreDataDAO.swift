@@ -48,9 +48,7 @@ class TraceurCoreDataDAO: TraceurDAO {
             for traceur in traceurs {
                 let dateRDV: NSDate = traceur.belongs_to!.dateTheorique
                 //Si aujourd'hui on est dans les 5 jours avant la date de rendez-vous alors on récupère ce traceur qui est "en cours"
-                print(dateRDV)
-                print(DateHelper.checkInterval(dateRDV: dateRDV, interval: 5))
-                if DateHelper.checkInterval(dateRDV: dateRDV, interval: 5){
+                if DateHelper.checkInterval(dateRDV: dateRDV, interval: 6){
                     return traceur
                 }
             }
