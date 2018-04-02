@@ -14,6 +14,7 @@ class RemplirTraceurViewController: UIViewController, UITableViewDelegate, UITab
     var heureFin: NSDate? = nil
     var etatChoisi: String? = nil
     var symptomes: [Symptome] = []
+    var date: NSDate = NSDate()
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var plageHoraireLabel: UILabel!
@@ -48,41 +49,41 @@ class RemplirTraceurViewController: UIViewController, UITableViewDelegate, UITab
         formatter.dateStyle = .long
         formatter.timeStyle = .none
         formatter.locale = Locale(identifier: "FR-fr")
-        let str = formatter.string(from: Date())
+        let str = formatter.string(from: date as Date)
         dateLabel.text = str
     }
     
     @IBAction func jourSubButton(_ sender: Any) {
-        let date = dateLabel.text
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        dateFormatter.locale = Locale(identifier: "FR-fr")
-        let test = dateFormatter.date(from: date!)
-        let test2 = Date(timeInterval: -86400, since: test!)
+        //let dateFormatter = DateFormatter()
+        //dateFormatter.dateFormat = "dd/MM/yyyy"
+        //dateFormatter.locale = Locale(identifier: "FR-fr")
+        date = DateHelper.addDays(dayD: date, nbDaysToAdd: -1)
         
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         formatter.timeStyle = .none
         formatter.locale = Locale(identifier: "FR-fr")
-        let str = formatter.string(from: test2)
+        let str = formatter.string(from: date as Date)
         dateLabel.text = str
 
     }
     
     
     @IBAction func jourAddButton(_ sender: Any) {
-        let date = dateLabel.text
+        /* let date = dateLabel.text
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
         dateFormatter.locale = Locale(identifier: "FR-fr")
         let test = dateFormatter.date(from: date!)
         let test2 = Date(timeInterval: 86400, since: test!)
+        */
+        date = DateHelper.addDays(dayD: date, nbDaysToAdd: 1)
         
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         formatter.timeStyle = .none
         formatter.locale = Locale(identifier: "FR-fr")
-        let str = formatter.string(from: test2)
+        let str = formatter.string(from: date as Date)
         dateLabel.text = str
     }
     
@@ -137,9 +138,12 @@ class RemplirTraceurViewController: UIViewController, UITableViewDelegate, UITab
         let factory = CoreDataDAOFactory.getInstance()
         let evaluationDAO: EvaluationDAO = factory.getEvaluationDAO()
         let traceurDAO: TraceurDAO = factory.getTraceurDAO()
+        let dateEtHeureDebut: NSDate = DateHelper.changeHour(date: date, heureMin: heureDebut!)
+        let dateEtHeureFin: NSDate = DateHelper.changeHour(date: date, heureMin: heureFin!)
+        
         do {
             let traceur: Traceur? = try traceurDAO.getTraceurEnCours()
-            let evaluation: Evaluation = try evaluationDAO.create(withEtat: etatChoisi!, withHeureDebut: heureDebut!, withHeureFin: heureFin!, is_linked: traceur!)
+            let evaluation: Evaluation = try evaluationDAO.create(withEtat: etatChoisi!, withHeureDebut: dateEtHeureDebut, withHeureFin: dateEtHeureFin, is_linked: traceur!)
             
             for symptome in symptomes {
                 evaluation.addToCan_have(symptome)
