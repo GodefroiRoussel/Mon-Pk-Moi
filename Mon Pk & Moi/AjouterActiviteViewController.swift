@@ -137,15 +137,11 @@ class AjouterActiviteViewController: UIViewController {
                 activites.append(activite!)
                 
                 //Notififcation
-                //var intervaleHeure = DateHelper.substractDateInSeconds(heure1: Date() as NSDate, heure2: dat)
                 var intervaleHeure1 = dat.timeIntervalSinceNow
-                print(dat)
                 print(intervaleHeure1)
                 intervaleHeure1 = intervaleHeure1-3600
                 let intervaleHeure2 = intervaleHeure1+1800
-                
-                print((activite?.nom)!+"\(index)")
-                
+
                 let content = UNMutableNotificationContent()
                 content.title = (activite?.nom)!
                 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource, UITableViewDelegate {
 
@@ -167,11 +168,35 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
                 let ordonnance: Ordonnance = try ordonnanceDAO.create(withDateDebutTraitement: NSDate(), concern: patient, created_by: selectedMedecin!, untillDate: pickerDate.date as NSDate)
                 
                 let dates = DateHelper.getDates(dateD: NSDate(), dateF: pickerDate.date as NSDate)
+                var index = 1
                 for date in dates {
                     for i in 0..<medicaments.count {
                         let dateMAJ: NSDate = DateHelper.changeHour(date: date, heureMin: times[i] as NSDate)
                         let prise :PriseMedicamenteuse = try priseDAO.create(withName: "Prise Médicamenteuse", withDateTheorique: dateMAJ, withDose: doses[i], schedule_by: patient, belongs_to: medicaments[i], linked_to: ordonnance)
                         prises.append(prise)
+                        
+                        
+                        
+                        //Notififcation
+                        var intervaleHeure1 = prise.dateTheorique.timeIntervalSinceNow
+                        intervaleHeure1 = intervaleHeure1-300
+                        
+                        let content = UNMutableNotificationContent()
+                        content.title = prise.nom
+                        
+                        let dateFormatter : DateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "HH:mm"
+                        let heure = dateFormatter.string(from: prise.dateTheorique as Date)
+                        content.subtitle = heure
+                        content.body = prise.belongs_to!.nom + " " + "\(prise.dose)"
+                        content.badge = 1
+                        
+                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: intervaleHeure1, repeats: false)
+                        let request = UNNotificationRequest(identifier: "\(prise.dateTheorique)"+"\(index)", content: content, trigger: trigger)
+   
+                        
+                        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                        index = index+1
                     }
                 }
             } catch let error as NSError {
