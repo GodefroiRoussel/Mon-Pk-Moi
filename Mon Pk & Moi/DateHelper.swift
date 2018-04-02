@@ -72,7 +72,7 @@ class DateHelper{
     static func checkInterval(dateRDV: NSDate, interval numberDays: Int) -> Bool{
             days.day = -numberDays
             let dateDebutTraitement:NSDate = cal.date(byAdding : days as DateComponents, to: dateRDV as Date)! as NSDate
-        return NSDate().isBetweeen(date: dateDebutTraitement, andDate: dateRDV)
+        return NSDate().isBetweeen(date: self.startOfDay(day: dateDebutTraitement), andDate: self.endOfDay(day: dateRDV))
     }
     
     
@@ -107,6 +107,7 @@ class DateHelper{
     
     static func addDays(dayD: NSDate, nbDaysToAdd nbDays: Int) -> NSDate {
         days.day = nbDays
+        days.hour = 0
         return cal.date(byAdding : days as DateComponents, to: dayD as Date)! as NSDate
     }
 }

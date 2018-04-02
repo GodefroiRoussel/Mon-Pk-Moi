@@ -14,7 +14,11 @@ class RemplirTraceurViewController: UIViewController, UITableViewDelegate, UITab
     var heureFin: NSDate? = nil
     var etatChoisi: String? = nil
     var symptomes: [Symptome] = []
-    var date: NSDate = NSDate()
+    var traceur: Traceur? = nil
+    var date: NSDate? = nil
+    
+    @IBOutlet weak var flecheGauche: UIButton!
+    @IBOutlet weak var flecheDroite: UIButton!
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var plageHoraireLabel: UILabel!
@@ -29,6 +33,7 @@ class RemplirTraceurViewController: UIViewController, UITableViewDelegate, UITab
         let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
         let traceurDAO : TraceurDAO = factory.getTraceurDAO()
         do {
+            traceur = try traceurDAO.getTraceurEnCours()
             plageHoraireLabel.text = ""
             etatLabel.text = ""
         } catch {
@@ -36,6 +41,12 @@ class RemplirTraceurViewController: UIViewController, UITableViewDelegate, UITab
         }
         
         getCurrentDateTime()
+        
+        if firstDayOfTraceur() {
+            flecheGauche.isHidden = true
+        } else if lastDayOfTraceur() {
+            flecheDroite.isHidden = true
+        }
 
     }
 
@@ -44,47 +55,63 @@ class RemplirTraceurViewController: UIViewController, UITableViewDelegate, UITab
         // Dispose of any resources that can be recreated.
     }
     
+    func firstDayOfTraceur() -> Bool {
+        var firstDayOfTraceur: NSDate = DateHelper.addDays(dayD: (traceur?.belongs_to?.dateTheorique)!, nbDaysToAdd: -5)
+        firstDayOfTraceur = DateHelper.endOfDay(day: firstDayOfTraceur)
+        return date!.isLessThanDate(dateToCompare: firstDayOfTraceur)
+    }
+    
+    func lastDayOfTraceur() -> Bool {
+        var lastDayOfTraceur: NSDate = DateHelper.addDays(dayD: (traceur?.belongs_to?.dateTheorique)!, nbDaysToAdd: -1)
+        lastDayOfTraceur = DateHelper.startOfDay(day: lastDayOfTraceur)
+        return date!.isGreaterThanDate(dateToCompare: lastDayOfTraceur)
+    }
+    
     func getCurrentDateTime(){
+        date = NSDate()
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         formatter.timeStyle = .none
         formatter.locale = Locale(identifier: "FR-fr")
-        let str = formatter.string(from: date as Date)
+        let str = formatter.string(from: date as! Date)
         dateLabel.text = str
     }
     
     @IBAction func jourSubButton(_ sender: Any) {
-        //let dateFormatter = DateFormatter()
-        //dateFormatter.dateFormat = "dd/MM/yyyy"
-        //dateFormatter.locale = Locale(identifier: "FR-fr")
-        date = DateHelper.addDays(dayD: date, nbDaysToAdd: -1)
+        date = DateHelper.addDays(dayD: date!, nbDaysToAdd: -1)
         
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         formatter.timeStyle = .none
         formatter.locale = Locale(identifier: "FR-fr")
-        let str = formatter.string(from: date as Date)
+        let str = formatter.string(from: date as! Date)
         dateLabel.text = str
-
+        
+        flecheDroite.isHidden = false
+        if firstDayOfTraceur() {
+            flecheGauche.isHidden = true
+        } else {
+            flecheGauche.isHidden = false
+        }
     }
     
     
     @IBAction func jourAddButton(_ sender: Any) {
-        /* let date = dateLabel.text
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        dateFormatter.locale = Locale(identifier: "FR-fr")
-        let test = dateFormatter.date(from: date!)
-        let test2 = Date(timeInterval: 86400, since: test!)
-        */
-        date = DateHelper.addDays(dayD: date, nbDaysToAdd: 1)
+        date = DateHelper.addDays(dayD: date!, nbDaysToAdd: 1)
         
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         formatter.timeStyle = .none
         formatter.locale = Locale(identifier: "FR-fr")
-        let str = formatter.string(from: date as Date)
+        let str = formatter.string(from: date as! Date)
         dateLabel.text = str
+        
+        flecheGauche.isHidden = false
+        if lastDayOfTraceur() {
+            flecheDroite.isHidden = true
+        } else {
+            flecheDroite.isHidden = false
+        }
     }
     
     
@@ -138,8 +165,8 @@ class RemplirTraceurViewController: UIViewController, UITableViewDelegate, UITab
         let factory = CoreDataDAOFactory.getInstance()
         let evaluationDAO: EvaluationDAO = factory.getEvaluationDAO()
         let traceurDAO: TraceurDAO = factory.getTraceurDAO()
-        let dateEtHeureDebut: NSDate = DateHelper.changeHour(date: date, heureMin: heureDebut!)
-        let dateEtHeureFin: NSDate = DateHelper.changeHour(date: date, heureMin: heureFin!)
+        let dateEtHeureDebut: NSDate = DateHelper.changeHour(date: date!, heureMin: heureDebut!)
+        let dateEtHeureFin: NSDate = DateHelper.changeHour(date: date!, heureMin: heureFin!)
         
         do {
             let traceur: Traceur? = try traceurDAO.getTraceurEnCours()
