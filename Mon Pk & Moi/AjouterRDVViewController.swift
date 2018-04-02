@@ -13,7 +13,7 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
 
     @IBOutlet weak var nomField: UITextField!
     @IBOutlet weak var dateField: UITextField!
-    @IBOutlet weak var lieuField: UITextField!
+    @IBOutlet weak var tempsField: UITextField!
     @IBOutlet weak var dureeField: UITextField!
     @IBOutlet weak var medecinField: UITextField!
     
@@ -113,6 +113,11 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
             return
         }
         
+        guard let _ = tempsField.text, !(tempsField.text?.isEmpty)! else {
+            DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez entrer le temps pour y aller en minutes.", onView: self)
+            return
+        }
+        
         guard let _ = Int(dureeField.text!), !(dureeField.text?.isEmpty)! else {
             DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez entrer une durée en minutes.", onView: self)
             return
@@ -140,28 +145,21 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
             // TODO seulement si c'est un rendez-vous chez un Neurologue
             if selectedMedecin?.is_a?.libelle == "neurologue" {
                 traceur = try traceurDAO.create(withHeureDebut: test2 as NSDate, withHeureFin: test3 as NSDate)
-                rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: test3 as NSDate, withLieu: lieuField.text, withTempsPourAllerALEvenement: 60, withDuree: Int16(dureeField.text!)!, schedule_by: patient, has: traceur!, is_with: selectedMedecin!)
+                rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: test3 as NSDate, withLieu: selectedMedecin?.adresse!, withTempsPourAllerALEvenement: Int16(tempsField.text!)!, withDuree: Int16(dureeField.text!)!, schedule_by: patient, has: traceur!, is_with: selectedMedecin!)
             } else {
-                rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: test3 as NSDate, withLieu: lieuField.text, withTempsPourAllerALEvenement: 60, withDuree: Int16(dureeField.text!)!, schedule_by: patient, is_with: selectedMedecin!)
+                rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: test3 as NSDate, withLieu: selectedMedecin?.adresse!, withTempsPourAllerALEvenement: Int16(tempsField.text!)!, withDuree: Int16(dureeField.text!)!, schedule_by: patient, is_with: selectedMedecin!)
             }
             
             //Notififcation
             //var intervaleHeure = DateHelper.substractDateInSeconds(heure1: Date() as NSDate, heure2: dat)
             var intervaleHeure1 = rdv?.dateTheorique.timeIntervalSinceNow
-            
-            print(patient.tempsPreparation*60)
+
             let tempsPrepa = Double(patient.tempsPreparation * 60)
-            print(tempsPrepa)
-            let tempsAller = Double((rdv?.tempsPourAllerALEvenement)!)
-            print(rdv?.tempsPourAllerALEvenement)
-            print(tempsAller)
-            print(intervaleHeure1)
+            let tempsAller = Double((rdv?.tempsPourAllerALEvenement)!*60)
             
             intervaleHeure1 = intervaleHeure1!-(tempsPrepa+tempsAller)
             let intervaleHeure2 = intervaleHeure1!+tempsPrepa
             
-            print(intervaleHeure1)
-            print(intervaleHeure2)
             
             let content = UNMutableNotificationContent()
             content.title = (rdv?.nom)!
