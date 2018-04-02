@@ -130,21 +130,41 @@ class AjouterActiviteViewController: UIViewController {
             let dateFin = Date(timeInterval: interv, since: pickerDate.date)
             
             var dates = DateHelper.getDates(dateD: pickerTime.date as NSDate, dateF: dateFin as NSDate)
-            dates.append(Date(timeInterval: interv, since: pickerDate.date) as NSDate)
+            var index: Int = 1
+            var index1: Int = 2
             for dat in dates {
                 activite = try activiteDAO.create(withName: nomField.text!, withDateTheorique: dat as NSDate, withDuree: Int16(dureeField.text!)!, withDescription: descriptionField.text!, schedule_by: patient)
                 activites.append(activite!)
                 
+                //Notififcation
+                //var intervaleHeure = DateHelper.substractDateInSeconds(heure1: Date() as NSDate, heure2: dat)
+                var intervaleHeure1 = dat.timeIntervalSinceNow
+                print(dat)
+                print(intervaleHeure1)
+                intervaleHeure1 = intervaleHeure1-3600
+                let intervaleHeure2 = intervaleHeure1+1800
+                
+                print((activite?.nom)!+"\(index)")
+                
                 let content = UNMutableNotificationContent()
-                content.title = "Activité"
-                content.body = "Vas y bouge"
+                content.title = (activite?.nom)!
+                
+                let dateFormatter : DateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "HH:mm"
+                let heure = dateFormatter.string(from: activite?.dateTheorique as! Date)
+                content.subtitle = heure
+                content.body = (activite?.desc)!
                 content.badge = 1
                 
-                //let intervalTime: TimeInterval = pickerDate.date.timeIntervalSince(Date())
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
-                let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: intervaleHeure1, repeats: false)
+                let trigger1 = UNTimeIntervalNotificationTrigger(timeInterval: intervaleHeure2, repeats: false)
+                let request = UNNotificationRequest(identifier: (activite?.nom)!+"\(index)", content: content, trigger: trigger)
+                let request1 = UNNotificationRequest(identifier: (activite?.nom)!+"\(index1)", content: content, trigger: trigger1)
                 
                 UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                UNUserNotificationCenter.current().add(request1, withCompletionHandler: nil)
+                index = index+2
+                index1 = index1+2
             }
         } catch let error as NSError {
             DialogBoxHelper.alert(onError: error, onView: self)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
@@ -139,10 +140,51 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
             // TODO seulement si c'est un rendez-vous chez un Neurologue
             if selectedMedecin?.is_a?.libelle == "neurologue" {
                 traceur = try traceurDAO.create(withHeureDebut: test2 as NSDate, withHeureFin: test3 as NSDate)
-                rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: test3 as NSDate, withLieu: lieuField.text, withTempsPourAllerALEvenement: 120, withDuree: Int16(dureeField.text!)!, schedule_by: patient, has: traceur!, is_with: selectedMedecin!)
+                rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: test3 as NSDate, withLieu: lieuField.text, withTempsPourAllerALEvenement: 60, withDuree: Int16(dureeField.text!)!, schedule_by: patient, has: traceur!, is_with: selectedMedecin!)
             } else {
-                rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: test3 as NSDate, withLieu: lieuField.text, withTempsPourAllerALEvenement: 120, withDuree: Int16(dureeField.text!)!, schedule_by: patient, is_with: selectedMedecin!)
+                rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: test3 as NSDate, withLieu: lieuField.text, withTempsPourAllerALEvenement: 60, withDuree: Int16(dureeField.text!)!, schedule_by: patient, is_with: selectedMedecin!)
             }
+            
+            //Notififcation
+            //var intervaleHeure = DateHelper.substractDateInSeconds(heure1: Date() as NSDate, heure2: dat)
+            var intervaleHeure1 = rdv?.dateTheorique.timeIntervalSinceNow
+            
+            print(patient.tempsPreparation*60)
+            let tempsPrepa = Double(patient.tempsPreparation * 60)
+            print(tempsPrepa)
+            let tempsAller = Double((rdv?.tempsPourAllerALEvenement)!)
+            print(rdv?.tempsPourAllerALEvenement)
+            print(tempsAller)
+            print(intervaleHeure1)
+            
+            intervaleHeure1 = intervaleHeure1!-(tempsPrepa+tempsAller)
+            let intervaleHeure2 = intervaleHeure1!+tempsPrepa
+            
+            print(intervaleHeure1)
+            print(intervaleHeure2)
+            
+            let content = UNMutableNotificationContent()
+            content.title = (rdv?.nom)!
+            
+            dateFormatter.dateFormat = "HH:mm"
+            let heure = dateFormatter.string(from: rdv?.dateTheorique as! Date)
+            content.subtitle = heure
+            content.body = (rdv?.lieu)!
+            content.badge = 1
+            
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: intervaleHeure1!, repeats: false)
+            let trigger1 = UNTimeIntervalNotificationTrigger(timeInterval: intervaleHeure2, repeats: false)
+            let request = UNNotificationRequest(identifier: (rdv?.nom)!+"\(1)", content: content, trigger: trigger)
+            let request1 = UNNotificationRequest(identifier: (rdv?.nom)!+"\(2)", content: content, trigger: trigger1)
+            
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            UNUserNotificationCenter.current().add(request1, withCompletionHandler: nil)
+
+            
+            
+            
+            
+            
         } catch let error as NSError {
             DialogBoxHelper.alert(onError: error, onView: self)
             return
