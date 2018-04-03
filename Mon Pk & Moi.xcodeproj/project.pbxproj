@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B5B876D2073AFC800494F0C /* GererMedicamentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5B876C2073AFC800494F0C /* GererMedicamentTableViewController.swift */; };
+		2B5B876F2073B07200494F0C /* MedicamentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5B876E2073B07200494F0C /* MedicamentTableViewCell.swift */; };
 		2BEDF753206A41BE0099FCD2 /* MedicamentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF752206A41BE0099FCD2 /* MedicamentExtension.swift */; };
 		2BEDF755206A41DA0099FCD2 /* TypeContactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF754206A41DA0099FCD2 /* TypeContactExtension.swift */; };
 		2BEDF757206A41F10099FCD2 /* ContactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF756206A41F10099FCD2 /* ContactExtension.swift */; };
@@ -123,6 +125,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B5B876C2073AFC800494F0C /* GererMedicamentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GererMedicamentTableViewController.swift; sourceTree = "<group>"; };
+		2B5B876E2073B07200494F0C /* MedicamentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentTableViewCell.swift; sourceTree = "<group>"; };
 		2BEDF752206A41BE0099FCD2 /* MedicamentExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentExtension.swift; sourceTree = "<group>"; };
 		2BEDF754206A41DA0099FCD2 /* TypeContactExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeContactExtension.swift; sourceTree = "<group>"; };
 		2BEDF756206A41F10099FCD2 /* ContactExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactExtension.swift; sourceTree = "<group>"; };
@@ -486,6 +490,8 @@
 				7AA533FD2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift */,
 				7A4A735D2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift */,
 				7ADE30A82072F38F00C3EA45 /* ShowPriseViewController.swift */,
+				2B5B876C2073AFC800494F0C /* GererMedicamentTableViewController.swift */,
+				2B5B876E2073B07200494F0C /* MedicamentTableViewCell.swift */,
 			);
 			name = Pilulier;
 			sourceTree = "<group>";
@@ -650,6 +656,7 @@
 				2BEDF78C206A43E80099FCD2 /* EvenementDAO.swift in Sources */,
 				7A4D13B72062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift in Sources */,
 				7AA533FE2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift in Sources */,
+				2B5B876F2073B07200494F0C /* MedicamentTableViewCell.swift in Sources */,
 				2BEDF798206A44470099FCD2 /* TraceurDAO.swift in Sources */,
 				2BEDF78A206A43D60099FCD2 /* EvaluationDAO.swift in Sources */,
 				2BEDF786206A43A20099FCD2 /* AvisDAO.swift in Sources */,
@@ -668,6 +675,7 @@
 				BCC265FA206F8A2E008093C4 /* NSDateExtension.swift in Sources */,
 				2BEDF77B206A433F0099FCD2 /* DialogBoxHelper.swift in Sources */,
 				2BEDF790206A44050099FCD2 /* OrdonnanceDAO.swift in Sources */,
+				2B5B876D2073AFC800494F0C /* GererMedicamentTableViewController.swift in Sources */,
 				2BEDF765206A42710099FCD2 /* TraceurExtension.swift in Sources */,
 				2BEDF76B206A42A70099FCD2 /* AvisExtension.swift in Sources */,
 				2BEDF759206A42030099FCD2 /* PatientExtension.swift in Sources */,
