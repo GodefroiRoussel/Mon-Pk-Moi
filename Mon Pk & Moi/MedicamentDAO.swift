@@ -37,6 +37,14 @@ protocol MedicamentDAO {
     /// - Throws: nil
     func find(withName nom: String) throws -> Medicament?
     
+    // MARK: - Update function
+    
+    /// Function updating in the database a 'Medicament'
+    ///
+    /// - Parameter aMedicament: 'Medicament' : the 'Medicament' updated to save
+    /// - Returns: the 'Medicament' updated and saved
+    func update(aMedicament: Medicament) -> Medicament
+
     
     // MARK: - Delete function
     

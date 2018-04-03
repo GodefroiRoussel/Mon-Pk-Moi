@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B5B876F2073B07200494F0C /* MedicamentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5B876E2073B07200494F0C /* MedicamentTableViewCell.swift */; };
+		2B9369862073E53500E74F60 /* MedicamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9369852073E53500E74F60 /* MedicamentViewController.swift */; };
 		2BEDF770206A42DA0099FCD2 /* AbstractDAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF76F206A42DA0099FCD2 /* AbstractDAOFactory.swift */; };
 		2BEDF773206A42FA0099FCD2 /* CoreDataDAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF772206A42FA0099FCD2 /* CoreDataDAOFactory.swift */; };
 		2BEDF776206A43140099FCD2 /* MedicamentSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF775206A43140099FCD2 /* MedicamentSeeder.swift */; };
@@ -127,6 +128,7 @@
 
 /* Begin PBXFileReference section */
 		2B5B876E2073B07200494F0C /* MedicamentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentTableViewCell.swift; sourceTree = "<group>"; };
+		2B9369852073E53500E74F60 /* MedicamentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentViewController.swift; sourceTree = "<group>"; };
 		2BEDF76F206A42DA0099FCD2 /* AbstractDAOFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractDAOFactory.swift; sourceTree = "<group>"; };
 		2BEDF772206A42FA0099FCD2 /* CoreDataDAOFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDAOFactory.swift; sourceTree = "<group>"; };
 		2BEDF775206A43140099FCD2 /* MedicamentSeeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentSeeder.swift; sourceTree = "<group>"; };
@@ -494,6 +496,7 @@
 				7ADE30A82072F38F00C3EA45 /* ShowPriseViewController.swift */,
 				2B5B876E2073B07200494F0C /* MedicamentTableViewCell.swift */,
 				2BF593412073C4CF00E227D7 /* GererMedicamentViewController.swift */,
+				2B9369852073E53500E74F60 /* MedicamentViewController.swift */,
 			);
 			name = Pilulier;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 				2BEDF78A206A43D60099FCD2 /* EvaluationDAO.swift in Sources */,
 				2BEDF786206A43A20099FCD2 /* AvisDAO.swift in Sources */,
 				7BFCDC76206BBD3600A3A7CC /* AjouterContactViewController.swift in Sources */,
+				2B9369862073E53500E74F60 /* MedicamentViewController.swift in Sources */,
 				7B83BB8320739F0E0064632E /* SyntheseViewController.swift in Sources */,
 				2BEDF7A5206A44D00099FCD2 /* ContactCoreDataDAO.swift in Sources */,
 				2BEDF792206A44170099FCD2 /* PatientDAO.swift in Sources */,

@@ -56,6 +56,13 @@ class MedicamentCoreDataDAO: MedicamentDAO{
         }
     }
     
+    // MARK: - Update function
+    
+    func update(aMedicament medicament: Medicament) -> Medicament {
+        CoreDataManager.save()
+        return medicament
+    }
+    
     
     // MARK: - Delete function
     

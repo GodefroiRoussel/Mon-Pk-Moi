@@ -698,10 +698,10 @@
             </objects>
             <point key="canvasLocation" x="798.75" y="-1420.7746478873239"/>
         </scene>
-        <!--View Controller-->
+        <!--Editer Médicament-->
         <scene sceneID="gUh-ug-O3S">
             <objects>
-                <viewController id="Z1s-1Y-gl3" sceneMemberID="viewController">
+                <viewController title="Editer Médicament" id="Z1s-1Y-gl3" customClass="MedicamentViewController" customModule="Mon_Pk___Moi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RaH-QP-t3A"/>
                         <viewControllerLayoutGuide type="bottom" id="r6R-3Z-beu"/>
@@ -776,14 +776,25 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pjW-Jq-kA7">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="Supprimer" id="xRM-iH-6t0"/>
+                                    <barButtonItem title="Supprimer" id="xRM-iH-6t0">
+                                        <connections>
+                                            <action selector="supprimerMedicament:" destination="Z1s-1Y-gl3" id="dmC-SN-7o8"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="8Kh-eD-4cK"/>
-                                    <barButtonItem title="Modifier" id="H1B-T9-SVL"/>
+                                    <barButtonItem title="Modifier" id="H1B-T9-SVL">
+                                        <connections>
+                                            <action selector="modifierMedicament:" destination="Z1s-1Y-gl3" id="zRl-lI-kqj"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Spo-p7-hAd">
                                 <rect key="frame" x="102" y="472" width="117" height="30"/>
                                 <state key="normal" title="Ajouter une dose"/>
+                                <connections>
+                                    <action selector="ajouterDose:" destination="Z1s-1Y-gl3" eventType="touchUpInside" id="Lfm-wo-12l"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -805,6 +816,10 @@
                             <constraint firstItem="pjW-Jq-kA7" firstAttribute="leading" secondItem="yve-kg-LLA" secondAttribute="leading" id="wlc-MF-tYM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="doseTableView" destination="His-bW-eWL" id="1fM-Gy-Y36"/>
+                        <outlet property="nomLabel" destination="Onb-FS-csL" id="1ac-dh-nfV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTS-Km-T6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1049,7 +1064,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nomLabel" destination="sqi-ki-g8n" id="i7B-AA-xAT"/>
-                                            <segue destination="Z1s-1Y-gl3" kind="show" id="pca-QI-SRL"/>
+                                            <segue destination="Z1s-1Y-gl3" kind="show" identifier="showMedicamentSegue" id="pca-QI-SRL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
