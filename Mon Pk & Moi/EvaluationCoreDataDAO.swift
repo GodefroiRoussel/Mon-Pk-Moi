@@ -11,12 +11,23 @@ import CoreData
 
 class EvaluationCoreDataDAO: EvaluationDAO {
     
+    // MARK: - Properties functions
     
     let request : NSFetchRequest<Evaluation> = Evaluation.fetchRequest()
     
     init(){
     }
     
+    // MARK: - Create function
+    
+    func create(withEtat etat: String, withHeureDebut heureDebut: NSDate, withHeureFin heureFin: NSDate, is_linked traceur :Traceur) throws -> Evaluation {
+        let newEvaluation = Evaluation(withEtat: etat, withHeureDebut: heureDebut, withHeureFin: heureFin, is_linked: traceur)
+        CoreDataManager.save()
+        return newEvaluation
+    }
+    
+    
+    // MARK: - Getter functions
     func getAllEvaluations() throws -> [Evaluation] {
         do {
             let evaluations: [Evaluation] = try CoreDataManager.context.fetch(self.request)
@@ -24,12 +35,6 @@ class EvaluationCoreDataDAO: EvaluationDAO {
         } catch let error as NSError {
             throw error
         }
-    }
-    
-    func create(withEtat etat: String, withHeureDebut heureDebut: NSDate, withHeureFin heureFin: NSDate, is_linked traceur :Traceur) throws -> Evaluation {
-        let newEvaluation = Evaluation(withEtat: etat, withHeureDebut: heureDebut, withHeureFin: heureFin, is_linked: traceur)
-        CoreDataManager.save()
-        return newEvaluation
     }
     
     func find(atHeureDebut heureDebut: NSDate) throws -> Evaluation? {
@@ -44,12 +49,18 @@ class EvaluationCoreDataDAO: EvaluationDAO {
         }
     }
     
-    func update(anEvaluation evaluation: Evaluation) throws -> Evaluation {
+    
+    // MARK: - Update function
+    
+    func update(anEvaluation evaluation: Evaluation) -> Evaluation {
         CoreDataManager.save()
         return evaluation
     }
     
-    func delete(anEvaluation evaluation: Evaluation) throws {
+    
+    // MARK: - Delete function
+    
+    func delete(anEvaluation evaluation: Evaluation) {
         CoreDataManager.context.delete(evaluation)
         CoreDataManager.save()
     }

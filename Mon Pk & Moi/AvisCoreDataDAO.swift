@@ -11,11 +11,23 @@ import CoreData
 
 class AvisCoreDataDAO: AvisDAO {
     
+    // MARK: - Properties functions
     
     let request : NSFetchRequest<Avis> = Avis.fetchRequest()
     
     init(){
     }
+    
+    // MARK: - Create function
+
+    func create(withChoix choix: Bool, withCommentaire commentaire: String?, belongs_to traceur: Traceur, is_a typeAvis: TypeAvis) throws -> Avis {
+        let newAvis = Avis(withChoix: choix, withCommentaire: commentaire, belongs_to: traceur, is_a: typeAvis)
+        CoreDataManager.save()
+        return newAvis
+    }
+    
+    
+    // MARK: - Getter functions
     
     func getAllAvis() throws -> [Avis] {
         do {
@@ -25,19 +37,19 @@ class AvisCoreDataDAO: AvisDAO {
             throw error
         }
     }
+
     
-    func create(withChoix choix: Bool, withCommentaire commentaire: String?, belongs_to traceur: Traceur, is_a typeAvis: TypeAvis) throws -> Avis {
-        let newAvis = Avis(withChoix: choix, withCommentaire: commentaire, belongs_to: traceur, is_a: typeAvis)
-        CoreDataManager.save()
-        return newAvis
-    }
+    // MARK: - Update function
     
-    func update(anAvis avis: Avis) throws -> Avis {
+    func update(anAvis avis: Avis) -> Avis {
         CoreDataManager.save()
         return avis
     }
     
-    func delete(anAvis avis: Avis) throws {
+    
+    // MARK: - Delete function
+    
+    func delete(anAvis avis: Avis) {
         CoreDataManager.context.delete(avis)
         CoreDataManager.save()
     }

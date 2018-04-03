@@ -11,12 +11,16 @@ import CoreData
 
 class EvenementCoreDataDAO : EvenementDAO {
     
+    // MARK: - Properties functions
+    
     let requestActivite : NSFetchRequest<Activite> = Activite.fetchRequest()
     let requestPrise : NSFetchRequest<PriseMedicamenteuse> = PriseMedicamenteuse.fetchRequest()
     let requestRDV : NSFetchRequest<RDV> = RDV.fetchRequest()
     
     init(){
     }
+    
+    // MARK: - Getter functions
     
     //TODO : Add predicate patient
     func getAllEvenements() throws -> [Evenement] {

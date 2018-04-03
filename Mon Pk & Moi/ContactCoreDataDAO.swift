@@ -10,11 +10,22 @@ import Foundation
 import CoreData
 
 class ContactCoreDataDAO : ContactDAO {
+    // MARK: - Properties
     
     let request : NSFetchRequest<Contact> = Contact.fetchRequest()
     
     init(){
     }
+    
+    // MARK: - Create function
+    
+    func create(withName nom: String, withPrenom prenom: String?, withTelephone telephone: String?, withAdresse adresse: String?, is_a typeContact: TypeContact, is_connected_to patient: Patient ) throws -> Contact {
+        let newContact = Contact(withName: nom, withPrenom: prenom, withTelephone: telephone, withAdresse: adresse, is_a: typeContact, is_connected_to: patient)
+        CoreDataManager.save()
+        return newContact
+    }
+    
+    // MARK: - Getter functions
     
     func getAllContacts() throws -> [Contact]{
         do {
@@ -25,10 +36,16 @@ class ContactCoreDataDAO : ContactDAO {
         }
     }
     
-    func create(withName nom: String, withPrenom prenom: String?, withTelephone telephone: String?, withAdresse adresse: String?, is_a typeContact: TypeContact, is_connected_to patient: Patient ) throws -> Contact {
-        let newContact = Contact(withName: nom, withPrenom: prenom, withTelephone: telephone, withAdresse: adresse, is_a: typeContact, is_connected_to: patient)
-        CoreDataManager.save()
-        return newContact
+    func getAllMedecins() throws -> [Contact] {
+        
+        let typeContactDAO: TypeContactDAO = CoreDataDAOFactory.getInstance().getTypeContactDAO()
+        do {
+            self.request.predicate = NSPredicate(format: "%K != %@",#keyPath(Contact.is_a.plibelle) ,"Famille")
+            let contacts: [Contact] = try CoreDataManager.context.fetch(self.request)
+            return contacts
+        } catch let error as NSError {
+            throw error
+        }
     }
     
     func find(withName nom: String) throws -> Contact? {
@@ -43,24 +60,16 @@ class ContactCoreDataDAO : ContactDAO {
         }
     }
     
-    func update(an object: Contact) throws -> Contact {
+    // MARK: - Update function
+    
+    func update(an object: Contact) -> Contact {
         return Contact(context: CoreDataManager.context)
     }
     
-    func delete(aContact contact: Contact) throws {
+    // MARK: - Delete function
+    
+    func delete(aContact contact: Contact) {
         CoreDataManager.context.delete(contact)
         CoreDataManager.save()
-    }
-    
-    func getAllMedecins() throws -> [Contact] {
-        
-        let typeContactDAO: TypeContactDAO = CoreDataDAOFactory.getInstance().getTypeContactDAO()
-        do {
-            self.request.predicate = NSPredicate(format: "%K != %@",#keyPath(Contact.is_a.plibelle) ,"Famille")
-            let contacts: [Contact] = try CoreDataManager.context.fetch(self.request)
-            return contacts
-        } catch let error as NSError {
-            throw error
-        }
     }
 }

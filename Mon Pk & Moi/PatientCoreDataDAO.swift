@@ -10,11 +10,23 @@ import Foundation
 import CoreData
 
 class PatientCoreDataDAO : PatientDAO {
+    // MARK: - Properties functions
     
     let request : NSFetchRequest<Patient> = Patient.fetchRequest()
     
     init(){
     }
+    
+    // MARK: - Create function
+    
+    func create(withName nom: String, withPrenom prenom: String, withDateNaissance dateNaissance: NSDate, withAdresse adresse : String, withTempsPreparation tempsPreparation : Int16) throws -> Patient {
+        let newPatient = Patient(withName: nom, withPrenom: prenom, withDateNaissance: dateNaissance, withAdresse: adresse, withTempsPreparation: tempsPreparation)
+        CoreDataManager.save()
+        return newPatient
+    }
+    
+    
+    // MARK: - Getter functions
     
     func getAllPatients() throws -> [Patient]{
         do {
@@ -23,12 +35,6 @@ class PatientCoreDataDAO : PatientDAO {
         } catch let error as NSError {
             throw error
         }
-    }
-    
-    func create(withName nom: String, withPrenom prenom: String, withDateNaissance dateNaissance: NSDate, withAdresse adresse : String, withTempsPreparation tempsPreparation : Int16) throws -> Patient {
-        let newPatient = Patient(withName: nom, withPrenom: prenom, withDateNaissance: dateNaissance, withAdresse: adresse, withTempsPreparation: tempsPreparation)
-        CoreDataManager.save()
-        return newPatient
     }
     
     func find(withName nom: String) throws -> Patient? {
@@ -43,11 +49,15 @@ class PatientCoreDataDAO : PatientDAO {
         }
     }
     
-    func update(an object: Patient) throws -> Patient {
+    // MARK: - Update function
+    
+    func update(an object: Patient) -> Patient {
         return Patient(context: CoreDataManager.context)
     }
     
-    func delete(aPatient patient: Patient) throws {
+    // MARK: - Delete function
+    
+    func delete(aPatient patient: Patient) {
         CoreDataManager.context.delete(patient)
         CoreDataManager.save()
     }

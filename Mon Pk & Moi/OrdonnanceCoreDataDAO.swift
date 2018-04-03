@@ -10,11 +10,22 @@ import Foundation
 import CoreData
 
 class OrdonnanceCoreDataDAO : OrdonnanceDAO {
+    // MARK: - Properties functions
     
     let request : NSFetchRequest<Ordonnance> = Ordonnance.fetchRequest()
     
     init(){
     }
+    
+    // MARK: - Create function
+    
+    func create(withDateDebutTraitement dateDebut: NSDate, concern patient: Patient, created_by contact: Contact, untillDate dateFin: NSDate) throws -> Ordonnance {
+        let newOrdonnance = Ordonnance(withDateDebutTraitement: dateDebut, concern: patient, created_by:  contact, untillDate: dateFin)
+        CoreDataManager.save()
+        return newOrdonnance
+    }
+    
+    // MARK: - Getter functions
     
     func getAllOrdonnances() throws -> [Ordonnance]{
         do {
@@ -25,10 +36,22 @@ class OrdonnanceCoreDataDAO : OrdonnanceDAO {
         }
     }
     
-    func create(withDateDebutTraitement dateDebut: NSDate, concern patient: Patient, created_by contact: Contact, untillDate dateFin: NSDate) throws -> Ordonnance {
-        let newOrdonnance = Ordonnance(withDateDebutTraitement: dateDebut, concern: patient, created_by:  contact, untillDate: dateFin)
-        CoreDataManager.save()
-        return newOrdonnance
+    func voirCollectionMedicamentNonPris(withOrdonnance ordonnance: Ordonnance) -> [PriseMedicamenteuse] {
+        // To obtain the beginning
+        /*let numberOfDays = -5
+         calculatedDate = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: numberOfDays, toDate: ordonnance.dateFin, options: NSCalendarOptions.init(rawValue: 0))
+         self.request.predicate = NSPredicate(format: "date > %@", calculatedDate) // A tester
+         do{
+         let result = try CoreDataManager.context.fetch(request) as [PriseMedicament]
+         guard result.count != 0 else { return nil }
+         return result[0]
+         }
+         catch{
+         return nil
+         }
+         
+         let datePredicate = NSPredicate(format: "date > %@", currentDate)*/
+        return []
     }
     
     //A vérifier
@@ -44,32 +67,18 @@ class OrdonnanceCoreDataDAO : OrdonnanceDAO {
         }
     }
     
-    //TODO
-    func update(anOrdonnance ordonnance: Ordonnance) throws -> Ordonnance {
+    // MARK: - Update function
+    
+    func update(anOrdonnance ordonnance: Ordonnance) -> Ordonnance {
         CoreDataManager.save()
         return ordonnance
     }
     
-    func delete(anOrdonnance ordonnance: Ordonnance) throws {
+    
+    // MARK: - Delete function
+    
+    func delete(anOrdonnance ordonnance: Ordonnance) {
         CoreDataManager.context.delete(ordonnance)
         CoreDataManager.save()
-    }
-    
-    func voirCollectionMedicamentNonPris(withOrdonnance ordonnance: Ordonnance) -> [PriseMedicamenteuse?] {
-        // To obtain the beginning
-        /*let numberOfDays = -5
-        calculatedDate = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: numberOfDays, toDate: ordonnance.dateFin, options: NSCalendarOptions.init(rawValue: 0))
-        self.request.predicate = NSPredicate(format: "date > %@", calculatedDate) // A tester
-        do{
-            let result = try CoreDataManager.context.fetch(request) as [PriseMedicament]
-            guard result.count != 0 else { return nil }
-            return result[0]
-        }
-        catch{
-            return nil
-        }
-        
-        let datePredicate = NSPredicate(format: "date > %@", currentDate)*/
-        return [nil]
     }
 }

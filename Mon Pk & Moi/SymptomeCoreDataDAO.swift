@@ -11,11 +11,23 @@ import CoreData
 
 class SymptomeCoreDataDAO: SymptomeDAO {
     
+    // MARK: - Properties functions
     
     let request : NSFetchRequest<Symptome> = Symptome.fetchRequest()
     
     init(){
     }
+    
+    // MARK: - Create function
+    
+    func create(withLibelle libelle: String) throws -> Symptome {
+        let newSymptome = Symptome(withLibelle: libelle)
+        CoreDataManager.save()
+        return newSymptome
+    }
+    
+    
+    // MARK: - Getter functions
     
     func getAllSymptomes() throws -> [Symptome] {
         do {
@@ -24,12 +36,6 @@ class SymptomeCoreDataDAO: SymptomeDAO {
         } catch let error as NSError {
             throw error
         }
-    }
-    
-    func create(withLibelle libelle: String) throws -> Symptome {
-        let newSymptome = Symptome(withLibelle: libelle)
-        CoreDataManager.save()
-        return newSymptome
     }
     
     func find(withLibelle libelle: String) throws -> Symptome? {
@@ -44,12 +50,16 @@ class SymptomeCoreDataDAO: SymptomeDAO {
         }
     }
     
-    func update(aSymptome symptome: Symptome) throws -> Symptome {
+    // MARK: - Update function
+    
+    func update(aSymptome symptome: Symptome) -> Symptome {
         CoreDataManager.save()
         return symptome
     }
     
-    func delete(aSymptome symptome: Symptome) throws {
+    // MARK: - Delete function
+    
+    func delete(aSymptome symptome: Symptome) {
         CoreDataManager.context.delete(symptome)
         CoreDataManager.save()
     }

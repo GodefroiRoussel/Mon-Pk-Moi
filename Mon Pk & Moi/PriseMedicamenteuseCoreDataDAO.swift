@@ -10,11 +10,23 @@ import Foundation
 import CoreData
 
 class PriseMedicamenteuseCoreDataDAO : PriseMedicamenteuseDAO {
+    // MARK: - Properties functions
     
     let request : NSFetchRequest<PriseMedicamenteuse> = PriseMedicamenteuse.fetchRequest()
     
     init(){
     }
+    
+    // MARK: - Create function
+    
+    func create(withName nom: String, withDateTheorique dateTheorique: NSDate, withDose dose: Double, schedule_by patient : Patient, belongs_to medicament :Medicament, linked_to ordonnance : Ordonnance) throws -> PriseMedicamenteuse {
+        let newPriseMedicamenteuse = PriseMedicamenteuse(withName: nom, withDateTheorique: dateTheorique, withDose: dose, schedule_by: patient, belongs_to: medicament, linked_to : ordonnance)
+        CoreDataManager.save()
+        return newPriseMedicamenteuse
+    }
+    
+    
+    // MARK: - Getter functions
     
     func getAllPriseMedicamenteuses() throws -> [PriseMedicamenteuse]{
         do {
@@ -23,12 +35,6 @@ class PriseMedicamenteuseCoreDataDAO : PriseMedicamenteuseDAO {
         } catch let error as NSError {
             throw error
         }
-    }
-    
-    func create(withName nom: String, withDateTheorique dateTheorique: NSDate, withDose dose: Double, schedule_by patient : Patient, belongs_to medicament :Medicament, linked_to ordonnance : Ordonnance) throws -> PriseMedicamenteuse {
-        let newPriseMedicamenteuse = PriseMedicamenteuse(withName: nom, withDateTheorique: dateTheorique, withDose: dose, schedule_by: patient, belongs_to: medicament, linked_to : ordonnance)
-        CoreDataManager.save()
-        return newPriseMedicamenteuse
     }
     
     //A vérifier
@@ -44,25 +50,18 @@ class PriseMedicamenteuseCoreDataDAO : PriseMedicamenteuseDAO {
         }
     }
     
-    //TODO
-    func update(aPriseMedicamenteuse priseMedicamenteuse: PriseMedicamenteuse) throws -> PriseMedicamenteuse {
+
+    // MARK: - Update function
+    
+    func update(aPriseMedicamenteuse priseMedicamenteuse: PriseMedicamenteuse) -> PriseMedicamenteuse {
         CoreDataManager.save()
         return priseMedicamenteuse
     }
     
-    func delete(aPriseMedicamenteuse priseMedicamenteuse: PriseMedicamenteuse) throws {
+    // MARK: - Delete function
+    
+    func delete(aPriseMedicamenteuse priseMedicamenteuse: PriseMedicamenteuse) {
         CoreDataManager.context.delete(priseMedicamenteuse)
         CoreDataManager.save()
-    }
-    
-    //TODO : vérifier le format des dates ne fonctionne pas actuellement
-    func getAllPriseMedicamenteuseForADay(forDay day: NSDate) throws -> [PriseMedicamenteuse] {
-        do {
-            self.request.predicate = NSPredicate(format: " pdateTheorique == %@", day)
-            let priseMedicamenteuses: [PriseMedicamenteuse] = try CoreDataManager.context.fetch(self.request)
-            return priseMedicamenteuses
-        } catch let error as NSError {
-            throw error
-        }
     }
 }

@@ -10,6 +10,10 @@ import Foundation
 
 protocol EvenementDAO {
     
+    /// Function returning all 'Evenement'
+    ///
+    /// - Returns: array of 'Evenement'
+    /// - Throws: error
     func getAllEvenements() throws -> [Evenement]
     
 }

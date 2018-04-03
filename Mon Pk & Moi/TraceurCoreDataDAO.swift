@@ -11,11 +11,23 @@ import CoreData
 
 class TraceurCoreDataDAO: TraceurDAO {
     
+    // MARK: - Properties functions
     
     let request : NSFetchRequest<Traceur> = Traceur.fetchRequest()
     
     init(){
     }
+    
+    // MARK: - Create function
+    
+    func create(withHeureDebut heureDebut: NSDate, withHeureFin heureFin: NSDate) throws -> Traceur {
+        let newTraceur = Traceur(withHeureDebut: heureDebut, withHeureFin: heureFin)
+        CoreDataManager.save()
+        return newTraceur
+    }
+    
+    
+    // MARK: - Getter functions
     
     func getAllTraceurs() throws -> [Traceur] {
         do {
@@ -24,22 +36,6 @@ class TraceurCoreDataDAO: TraceurDAO {
         } catch let error as NSError {
             throw error
         }
-    }
-    
-    func create(withHeureDebut heureDebut: NSDate, withHeureFin heureFin: NSDate) throws -> Traceur {
-        let newTraceur = Traceur(withHeureDebut: heureDebut, withHeureFin: heureFin)
-        CoreDataManager.save()
-        return newTraceur
-    }
-    
-    func update(aTraceur traceur: Traceur) throws -> Traceur {
-        CoreDataManager.save()
-        return traceur
-    }
-    
-    func delete(aTraceur traceur: Traceur) throws {
-        CoreDataManager.context.delete(traceur)
-        CoreDataManager.save()
     }
     
     func getTraceurEnCours() throws -> Traceur? {
@@ -56,5 +52,20 @@ class TraceurCoreDataDAO: TraceurDAO {
         } catch let error as NSError {
             throw error
         }
+    }
+    
+    
+    // MARK: - Update function
+    
+    func update(aTraceur traceur: Traceur) -> Traceur {
+        CoreDataManager.save()
+        return traceur
+    }
+    
+    // MARK: - Delete functions
+    
+    func delete(aTraceur traceur: Traceur) {
+        CoreDataManager.context.delete(traceur)
+        CoreDataManager.save()
     }
 }

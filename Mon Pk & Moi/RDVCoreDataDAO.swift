@@ -11,20 +11,15 @@ import CoreData
 
 class RDVCoreDataDAO: RDVDAO {
     
+    // MARK: - Properties functions
     
     let request : NSFetchRequest<RDV> = RDV.fetchRequest()
     
     init(){
     }
     
-    func getAllRDVs() throws -> [RDV] {
-        do {
-            let rdvs: [RDV] = try CoreDataManager.context.fetch(self.request)
-            return rdvs
-        } catch let error as NSError {
-            throw error
-        }
-    }
+    // MARK: - Create functions
+    
     
     func create(withName nom: String, withDateTheorique dateTheorique: NSDate,withLieu lieu: String?, withTempsPourAllerALEvenement temps: Int16, withDuree duree: Int16, schedule_by patient : Patient, has traceur: Traceur, is_with contact: Contact) throws -> RDV {
         let newRDV = RDV(withName: nom, withDateTheorique: dateTheorique,withLieu: lieu, withTempsPourAllerALEvenement: temps, withDuree: duree, schedule_by: patient, has: traceur, is_with: contact)
@@ -39,6 +34,18 @@ class RDVCoreDataDAO: RDVDAO {
         return newRDV
     }
     
+    
+    // MARK: - Getter functions
+    
+    func getAllRDVs() throws -> [RDV] {
+        do {
+            let rdvs: [RDV] = try CoreDataManager.context.fetch(self.request)
+            return rdvs
+        } catch let error as NSError {
+            throw error
+        }
+    }
+    
     func find(withName nom: String) throws -> RDV? {
         self.request.predicate = NSPredicate(format: "pnom == %@", nom)
         do{
@@ -51,12 +58,16 @@ class RDVCoreDataDAO: RDVDAO {
         }
     }
     
-    func update(aRDV rdv: RDV) throws -> RDV {
+    // MARK: - Update function
+    
+    func update(aRDV rdv: RDV) -> RDV {
         CoreDataManager.save()
         return rdv
     }
     
-    func delete(aRDV rdv: RDV) throws {
+    // MARK: - Delete function
+    
+    func delete(aRDV rdv: RDV) {
         CoreDataManager.context.delete(rdv)
         CoreDataManager.save()
     }

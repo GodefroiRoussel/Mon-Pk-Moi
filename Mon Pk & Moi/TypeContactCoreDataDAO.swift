@@ -11,10 +11,14 @@ import CoreData
 
 class TypeContactCoreDataDAO: TypeContactDAO{
     
+    // MARK: - Properties functions
+    
     let request : NSFetchRequest<TypeContact> = TypeContact.fetchRequest()
     
     init(){
     }
+    
+    // MARK: - Create function
     
     func create(withLibelle libelle: String) throws -> TypeContact?{
         
@@ -25,7 +29,17 @@ class TypeContactCoreDataDAO: TypeContactDAO{
         return newTypeContact
     }
     
-    //TO DO: voir quoi passer en paramètre
+    // MARK: - Getter functions
+    
+    func getAllTypeContacts() throws -> [TypeContact] {
+        do {
+            let medicaments: [TypeContact] = try CoreDataManager.context.fetch(request)
+            return medicaments
+        } catch let error as NSError {
+            throw error
+        }
+    }
+
     func find(withLibelle libelle: String) throws -> TypeContact?{
         self.request.predicate = NSPredicate(format: "plibelle == %@", libelle)
         do{
@@ -35,21 +49,6 @@ class TypeContactCoreDataDAO: TypeContactDAO{
         }
         catch{
             return nil
-        }
-    }
-    
-    //TODO
-    func update(aTypeContact typeContact: TypeContact) throws -> TypeContact{
-        return typeContact
-    }
-    
-    
-    func getAllTypeContacts() throws -> [TypeContact] {
-        do {
-            let medicaments: [TypeContact] = try CoreDataManager.context.fetch(request)
-            return medicaments
-        } catch let error as NSError {
-            throw error
         }
     }
     

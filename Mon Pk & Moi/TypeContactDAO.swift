@@ -10,11 +10,29 @@ import Foundation
 
 protocol TypeContactDAO {
     
-    func getAllTypeContacts() throws -> [TypeContact]
+    // MARK: - Create function
     
+    /// Function creating a new TypeContact in the database
+    ///
+    /// - Parameter libelle: String : the libelle of the TypeAvis
+    /// - Returns: Return the new TypeContact
+    /// - Throws: error
     func create(withLibelle libelle: String) throws -> TypeContact?
     
-    func find(withLibelle libelle: String) throws -> TypeContact?
     
-    //func update(aTypeContact typeContact: TypeContact) throws -> TypeContact
+    // MARK: - Getter functions
+    
+    
+    /// Function returning all 'TypeContact'
+    ///
+    /// - Returns: array of 'TypeContact'
+    /// - Throws: error
+    func getAllTypeContacts() throws -> [TypeContact]
+    
+    /// Function returning a TypeAContact according to its libelle
+    ///
+    /// - Parameter libelle: String : the libelle to find
+    /// - Returns: Return the TypeContact found
+    /// - Throws: Return nil
+    func find(withLibelle libelle: String) throws -> TypeContact?
 }

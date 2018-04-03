@@ -11,11 +11,23 @@ import CoreData
 
 class TypeAvisCoreDataDAO: TypeAvisDAO {
     
+    // MARK: - Properties functions
     
     let request : NSFetchRequest<TypeAvis> = TypeAvis.fetchRequest()
     
     init(){
     }
+    
+    // MARK: - Create function
+   
+    func create(withLibelle libelle: String) throws -> TypeAvis {
+        let newTypeAvis = TypeAvis(withLibelle: libelle)
+        CoreDataManager.save()
+        return newTypeAvis
+    }
+    
+    
+    // MARK: - Getter functions
     
     func getAllTypeAvis() throws -> [TypeAvis] {
         do {
@@ -24,12 +36,6 @@ class TypeAvisCoreDataDAO: TypeAvisDAO {
         } catch let error as NSError {
             throw error
         }
-    }
-    
-    func create(withLibelle libelle: String) throws -> TypeAvis {
-        let newTypeAvis = TypeAvis(withLibelle: libelle)
-        CoreDataManager.save()
-        return newTypeAvis
     }
     
     func find(withLibelle libelle: String) throws -> TypeAvis? {
@@ -44,13 +50,16 @@ class TypeAvisCoreDataDAO: TypeAvisDAO {
         }
     }
     
+    // MARK: - Update function
     
-    func update(aTypeAvis typeAvis: TypeAvis) throws -> TypeAvis {
+    func update(aTypeAvis typeAvis: TypeAvis) -> TypeAvis {
         CoreDataManager.save()
         return typeAvis
     }
     
-    func delete(aTypeAvis typeAvis: TypeAvis) throws {
+    // MARK: - Delete function
+    
+    func delete(aTypeAvis typeAvis: TypeAvis) {
         CoreDataManager.context.delete(typeAvis)
         CoreDataManager.save()
     }

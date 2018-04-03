@@ -10,13 +10,45 @@ import Foundation
 
 protocol TypeAvisDAO {
     
-    func getAllTypeAvis() throws -> [TypeAvis]
+    // MARK: - Create function
     
+    /// Function creating a new TypeAvis in the database
+    ///
+    /// - Parameter libelle: String : the libelle of the TypeAvis
+    /// - Returns: The new TypeAvis
+    /// - Throws: error
     func create(withLibelle libelle: String) throws -> TypeAvis
     
+    
+    // MARK: - Getter functions
+    
+    /// Function returning all 'TypeAvis'
+    ///
+    /// - Returns: array of 'TypeAvis'
+    /// - Throws: error
+    func getAllTypeAvis() throws -> [TypeAvis]
+    
+    /// Function returning a TypeAvis according to his libelle
+    ///
+    /// - Parameter libelle: String : the libelle to find
+    /// - Returns: Return a TypeAvis
+    /// - Throws: Return nil
     func find(withLibelle libelle: String) throws -> TypeAvis?
     
-    func update(aTypeAvis typeAvis: TypeAvis) throws -> TypeAvis
     
-    func delete(aTypeAvis typeAvis: TypeAvis) throws
+    // MARK: - Update function
+    
+    /// Function updating in the database a 'TypeAvis'
+    ///
+    /// - Parameter aTypeAvis: 'TypeAvis' : the 'TypeAvis' updated to save
+    /// - Returns: the 'TypeAvis' updated and saved
+    func update(aTypeAvis typeAvis: TypeAvis) -> TypeAvis
+    
+    
+    // MARK: - Delete function
+    
+    /// Function deleting a 'TypeAvis'
+    ///
+    /// - Parameter aTypeAvis: 'TypeAvis' : the 'TypeAvis' to delete
+    func delete(aTypeAvis typeAvis: TypeAvis)
 }

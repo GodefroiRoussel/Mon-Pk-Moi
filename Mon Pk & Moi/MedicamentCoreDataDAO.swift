@@ -17,15 +17,31 @@ import CoreData
  */
 class MedicamentCoreDataDAO: MedicamentDAO{
     
+    // MARK: - Properties functions
+    
     let request : NSFetchRequest<Medicament> = Medicament.fetchRequest()
     
     init(){
     }
     
+    // MARK: - Create function
+    
     func create(withName nom: String, withDoses doses: [Double] ) throws -> Medicament{
         let newMedicament = Medicament(withName: nom, withDoses : doses)
         CoreDataManager.save()
         return newMedicament
+    }
+    
+    // MARK: - Getter functions
+    
+    func getAllMedicaments() throws -> [Medicament] {
+        
+        do {
+            let medicaments: [Medicament] = try CoreDataManager.context.fetch(self.request)
+            return medicaments
+        } catch let error as NSError {
+            throw error
+        }
     }
     
     func find(withName nom: String) throws -> Medicament?{
@@ -40,18 +56,11 @@ class MedicamentCoreDataDAO: MedicamentDAO{
         }
     }
     
-    func delete( aMedicament medicament: Medicament) throws{
+    
+    // MARK: - Delete function
+    
+    func delete( aMedicament medicament: Medicament) {
         CoreDataManager.context.delete(medicament)
         CoreDataManager.save()
-    }
-    
-    func getAllMedicaments() throws -> [Medicament] {
-        
-        do {
-            let medicaments: [Medicament] = try CoreDataManager.context.fetch(self.request)
-            return medicaments
-        } catch let error as NSError {
-            throw error
-        }
     }
 }

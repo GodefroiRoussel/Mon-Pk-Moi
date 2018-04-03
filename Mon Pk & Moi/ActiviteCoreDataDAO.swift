@@ -11,11 +11,23 @@ import CoreData
 
 class ActiviteCoreDataDAO: ActiviteDAO {
     
+    // MARK: - Properties functions
     
     let request : NSFetchRequest<Activite> = Activite.fetchRequest()
     
     init(){
     }
+    
+    // MARK: - Create functions
+    
+    func create(withName nom: String, withDateTheorique dateTheorique: NSDate, withDuree duree: Int16, withDescription desc: String, schedule_by patient : Patient) -> Activite {
+        let newActivite = Activite(withName: nom, withDateTheorique: dateTheorique, withDuree: duree, withDescription: desc, schedule_by: patient)
+        CoreDataManager.save()
+        return newActivite
+    }
+    
+    
+    // MARK: - Getter functions
     
     func getAllActivites() throws -> [Activite] {
         do {
@@ -26,11 +38,6 @@ class ActiviteCoreDataDAO: ActiviteDAO {
         }
     }
     
-    func create(withName nom: String, withDateTheorique dateTheorique: NSDate, withDuree duree: Int16, withDescription desc: String, schedule_by patient : Patient) throws -> Activite {
-        let newActivite = Activite(withName: nom, withDateTheorique: dateTheorique, withDuree: duree, withDescription: desc, schedule_by: patient)
-        CoreDataManager.save()
-        return newActivite
-    }
     
     func find(withName nom: String) throws -> Activite? {
         self.request.predicate = NSPredicate(format: "pnom == %@", nom)
@@ -44,12 +51,18 @@ class ActiviteCoreDataDAO: ActiviteDAO {
         }
     }
     
-    func update(anActivite activite: Activite) throws -> Activite {
+    
+    // MARK: - Update function
+    
+    func update(anActivite activite: Activite) -> Activite {
         CoreDataManager.save()
         return activite
     }
     
-    func delete(anActivite activite: Activite) throws {
+    
+    // MARK: - Delete function
+    
+    func delete(anActivite activite: Activite) {
         CoreDataManager.context.delete(activite)
         CoreDataManager.save()
     }
