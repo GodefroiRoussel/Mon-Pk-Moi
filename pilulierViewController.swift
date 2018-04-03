@@ -133,6 +133,18 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
         }
 
     }
+    
+    let segueShowPriseId = "ShowPriseSegue"
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == self.segueShowPriseId {
+            if let indexPath = self.priseMedicamentTable.indexPathForSelectedRow {
+                let showPriseViewController = segue.destination as! ShowPriseViewController
+                showPriseViewController.prise = self.priseMedicamenteuses[indexPath.row]
+                self.priseMedicamentTable.deselectRow(at: indexPath, animated: true)
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation
