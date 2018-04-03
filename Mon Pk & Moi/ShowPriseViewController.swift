@@ -17,6 +17,8 @@ class ShowPriseViewController: UIViewController {
     
     var prise : PriseMedicamenteuse? = nil
     
+    let factory: CoreDataDAOFactory = CoreDataDAOFactory.getInstance()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +34,8 @@ class ShowPriseViewController: UIViewController {
             dateFormatter.dateFormat = "HH:mm"
             let heure = dateFormatter.string(from: dateTheorique as Date)
             self.heureLabel.text = heure
+            
+            print(aprise.estEffectue)
         }
         
 
@@ -44,21 +48,32 @@ class ShowPriseViewController: UIViewController {
     }
     
     @IBAction func refuserPrise(_ sender: Any) {
-        prise?.estEffectue = false
-        print("faux")
+        
+        self.prise?.estEffectue = false
+        let priseMedicamenteuseDAO: PriseMedicamenteuseDAO = factory.getPriseMedicamenteuseDAO()
+        do {
+            try priseMedicamenteuseDAO.update(aPriseMedicamenteuse: self.prise!)
+        } catch let error as NSError {
+            DialogBoxHelper.alert(onError: error, onView: self)
+            return
+        }
+        
+        self.performSegue(withIdentifier: "pilulier", sender: self)
     }
 
     @IBAction func validerPrise(_ sender: Any) {
-        prise?.estEffectue = true
-        prise?.dateEffective = heurePicker.date as NSDate?
         
-        let dateFormatter : DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        let heure = dateFormatter.string(from: heurePicker.date)
-        print(heure)
+        self.prise?.estEffectue = true
+        self.prise?.dateEffective = heurePicker.date as NSDate?
+        let priseMedicamenteuseDAO: PriseMedicamenteuseDAO = factory.getPriseMedicamenteuseDAO()
+        do {
+            try priseMedicamenteuseDAO.update(aPriseMedicamenteuse: self.prise!)
+        } catch let error as NSError {
+            DialogBoxHelper.alert(onError: error, onView: self)
+            return
+        }
         
-        print(heurePicker.date as NSDate)
-        
+        self.performSegue(withIdentifier: "pilulier", sender: self)
     }
     /*
     // MARK: - Navigation

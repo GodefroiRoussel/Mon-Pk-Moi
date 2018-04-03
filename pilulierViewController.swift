@@ -103,6 +103,10 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
         self.priseMedicamentTable.reloadData()
     }
     
+    @IBAction func unwindToPilulierAfterValidatePrise(segue: UIStoryboardSegue){
+        self.priseMedicamentTable.reloadData()
+    }
+    
     func loadData(){
         priseMedicamenteuses.removeAll()
         allPriseMedicamenteuses.removeAll()
