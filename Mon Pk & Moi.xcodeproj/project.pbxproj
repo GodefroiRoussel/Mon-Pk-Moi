@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B5B876D2073AFC800494F0C /* GererMedicamentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5B876C2073AFC800494F0C /* GererMedicamentTableViewController.swift */; };
 		2B5B876F2073B07200494F0C /* MedicamentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5B876E2073B07200494F0C /* MedicamentTableViewCell.swift */; };
 		2BEDF753206A41BE0099FCD2 /* MedicamentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF752206A41BE0099FCD2 /* MedicamentExtension.swift */; };
 		2BEDF755206A41DA0099FCD2 /* TypeContactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF754206A41DA0099FCD2 /* TypeContactExtension.swift */; };
@@ -59,6 +58,7 @@
 		2BEDF7B7206A45810099FCD2 /* SymptomeCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF7B6206A45810099FCD2 /* SymptomeCoreDataDAO.swift */; };
 		2BEDF7B9206A45960099FCD2 /* AvisCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF7B8206A45960099FCD2 /* AvisCoreDataDAO.swift */; };
 		2BEDF7BB206A45AE0099FCD2 /* TypeAvisCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF7BA206A45AE0099FCD2 /* TypeAvisCoreDataDAO.swift */; };
+		2BF593422073C4CF00E227D7 /* GererMedicamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF593412073C4CF00E227D7 /* GererMedicamentViewController.swift */; };
 		7A2C29FF205429CA000EC45C /* AjouterPriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2C29FE205429CA000EC45C /* AjouterPriseViewController.swift */; };
 		7A4A735E2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4A735D2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift */; };
 		7A4D13B72062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D13B62062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift */; };
@@ -126,7 +126,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2B5B876C2073AFC800494F0C /* GererMedicamentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GererMedicamentTableViewController.swift; sourceTree = "<group>"; };
 		2B5B876E2073B07200494F0C /* MedicamentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentTableViewCell.swift; sourceTree = "<group>"; };
 		2BEDF752206A41BE0099FCD2 /* MedicamentExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentExtension.swift; sourceTree = "<group>"; };
 		2BEDF754206A41DA0099FCD2 /* TypeContactExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeContactExtension.swift; sourceTree = "<group>"; };
@@ -178,6 +177,7 @@
 		2BEDF7B6206A45810099FCD2 /* SymptomeCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomeCoreDataDAO.swift; sourceTree = "<group>"; };
 		2BEDF7B8206A45960099FCD2 /* AvisCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvisCoreDataDAO.swift; sourceTree = "<group>"; };
 		2BEDF7BA206A45AE0099FCD2 /* TypeAvisCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAvisCoreDataDAO.swift; sourceTree = "<group>"; };
+		2BF593412073C4CF00E227D7 /* GererMedicamentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GererMedicamentViewController.swift; sourceTree = "<group>"; };
 		7A2C29FE205429CA000EC45C /* AjouterPriseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AjouterPriseViewController.swift; path = ../AjouterPriseViewController.swift; sourceTree = "<group>"; };
 		7A4A735D2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriseOrdonnanceTableViewCell.swift; sourceTree = "<group>"; };
 		7A4D13B62062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjouterOrdonnanceViewController.swift; sourceTree = "<group>"; };
@@ -492,8 +492,8 @@
 				7AA533FD2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift */,
 				7A4A735D2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift */,
 				7ADE30A82072F38F00C3EA45 /* ShowPriseViewController.swift */,
-				2B5B876C2073AFC800494F0C /* GererMedicamentTableViewController.swift */,
 				2B5B876E2073B07200494F0C /* MedicamentTableViewCell.swift */,
+				2BF593412073C4CF00E227D7 /* GererMedicamentViewController.swift */,
 			);
 			name = Pilulier;
 			sourceTree = "<group>";
@@ -678,9 +678,9 @@
 				BCC265FA206F8A2E008093C4 /* NSDateExtension.swift in Sources */,
 				2BEDF77B206A433F0099FCD2 /* DialogBoxHelper.swift in Sources */,
 				2BEDF790206A44050099FCD2 /* OrdonnanceDAO.swift in Sources */,
-				2B5B876D2073AFC800494F0C /* GererMedicamentTableViewController.swift in Sources */,
 				2BEDF765206A42710099FCD2 /* TraceurExtension.swift in Sources */,
 				2BEDF76B206A42A70099FCD2 /* AvisExtension.swift in Sources */,
+				2BF593422073C4CF00E227D7 /* GererMedicamentViewController.swift in Sources */,
 				2BEDF759206A42030099FCD2 /* PatientExtension.swift in Sources */,
 				7A596601206EBCD5007F2ECA /* AjouterActiviteViewController.swift in Sources */,
 				2BEDF7A9206A44F30099FCD2 /* EvenementCoreDataDAO.swift in Sources */,
