@@ -16,6 +16,7 @@ public class DataHelper {
         seedMedicament()
         seedTypeContact()
         seedSymptome()
+        seedTypeAvis()
     }
     
     static func deleteSeeder(){
@@ -29,6 +30,7 @@ public class DataHelper {
             try deleteTraceurs()
             try deleteSymptomes()
             try deleteEvaluations()
+            try deleteTypeAvis()
         } catch {
             
         }
@@ -214,6 +216,38 @@ public class DataHelper {
             for evaluation in evaluations {
                 CoreDataManager.context.delete(evaluation)
                 print("Evaluation Supprimé")
+            }
+            CoreDataManager.save()
+        } catch let error as NSError{
+            throw error
+        }
+    }
+    
+    
+    
+    //MARK - TypeAvis functions
+    
+    fileprivate static func seedTypeAvis(){
+        let typesAvis = TypeAvisSeeder().typesAvis
+        
+        let typeAvisDAO = CoreDataDAOFactory.getInstance().getTypeAvisDAO()
+        
+        for libelle in typesAvis {
+            do{
+                let _ = try typeAvisDAO.create(withLibelle: libelle)
+            }catch {
+                fatalError("Error cannot populate DB")
+            }
+        }
+    }
+    
+    fileprivate static func deleteTypeAvis() throws{
+        let typeAvisDAO = CoreDataDAOFactory.getInstance().getTypeAvisDAO()
+        do {
+            let typeAvis : [TypeAvis] = try typeAvisDAO.getAllTypeAvis()
+            for typeavis in typeAvis {
+                CoreDataManager.context.delete(typeavis)
+                print("Type avis Supprimé")
             }
             CoreDataManager.save()
         } catch let error as NSError{

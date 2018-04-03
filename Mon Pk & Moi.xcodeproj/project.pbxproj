@@ -81,6 +81,8 @@
 		7AA533FE2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA533FD2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift */; };
 		7AA534022057C9FF00A2A443 /* pilulierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA534012057C9FF00A2A443 /* pilulierViewController.swift */; };
 		7ADE30A92072F38F00C3EA45 /* ShowPriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADE30A82072F38F00C3EA45 /* ShowPriseViewController.swift */; };
+		7B83BB8020737FF70064632E /* TypeAvisSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B83BB7F20737FF70064632E /* TypeAvisSeeder.swift */; };
+		7B83BB8320739F0E0064632E /* SyntheseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B83BB8220739F0E0064632E /* SyntheseViewController.swift */; };
 		7BFCDC6C206B84BE00A3A7CC /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFCDC6B206B84BE00A3A7CC /* InformationViewController.swift */; };
 		7BFCDC6E206B853500A3A7CC /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFCDC6D206B853500A3A7CC /* ContactTableViewCell.swift */; };
 		7BFCDC70206B8D9F00A3A7CC /* AgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFCDC6F206B8D9F00A3A7CC /* AgendaViewController.swift */; };
@@ -91,7 +93,6 @@
 		BCAE09BB206EF49E0066F9C1 /* RemplirTraceurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE09BA206EF49E0066F9C1 /* RemplirTraceurViewController.swift */; };
 		BCC265FA206F8A2E008093C4 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC265F9206F8A2E008093C4 /* NSDateExtension.swift */; };
 		BCCDB417207123AF00DB87AA /* TraceurTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCDB416207123AF00DB87AA /* TraceurTableViewCell.swift */; };
-		BCCDB4192071375E00DB87AA /* SyntheseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCDB4182071375E00DB87AA /* SyntheseViewController.swift */; };
 		BCCDB41B207154CB00DB87AA /* EvaluationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCDB41A207154CB00DB87AA /* EvaluationTableViewCell.swift */; };
 		BCCDB41D207154DB00DB87AA /* ActiviteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCDB41C207154DB00DB87AA /* ActiviteTableViewCell.swift */; };
 		BCCDB41F207154E800DB87AA /* PriseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCDB41E207154E800DB87AA /* PriseTableViewCell.swift */; };
@@ -202,6 +203,8 @@
 		7AA533FD2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriseMedicamentTableViewCell.swift; sourceTree = "<group>"; };
 		7AA534012057C9FF00A2A443 /* pilulierViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = pilulierViewController.swift; path = ../pilulierViewController.swift; sourceTree = "<group>"; };
 		7ADE30A82072F38F00C3EA45 /* ShowPriseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowPriseViewController.swift; sourceTree = "<group>"; };
+		7B83BB7F20737FF70064632E /* TypeAvisSeeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAvisSeeder.swift; sourceTree = "<group>"; };
+		7B83BB8220739F0E0064632E /* SyntheseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntheseViewController.swift; sourceTree = "<group>"; };
 		7BFCDC6B206B84BE00A3A7CC /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		7BFCDC6D206B853500A3A7CC /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		7BFCDC6F206B8D9F00A3A7CC /* AgendaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaViewController.swift; sourceTree = "<group>"; };
@@ -212,7 +215,6 @@
 		BCAE09BA206EF49E0066F9C1 /* RemplirTraceurViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemplirTraceurViewController.swift; sourceTree = "<group>"; };
 		BCC265F9206F8A2E008093C4 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		BCCDB416207123AF00DB87AA /* TraceurTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceurTableViewCell.swift; sourceTree = "<group>"; };
-		BCCDB4182071375E00DB87AA /* SyntheseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntheseViewController.swift; sourceTree = "<group>"; };
 		BCCDB41A207154CB00DB87AA /* EvaluationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluationTableViewCell.swift; sourceTree = "<group>"; };
 		BCCDB41C207154DB00DB87AA /* ActiviteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiviteTableViewCell.swift; sourceTree = "<group>"; };
 		BCCDB41E207154E800DB87AA /* PriseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriseTableViewCell.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				2BEDF775206A43140099FCD2 /* MedicamentSeeder.swift */,
 				2BEDF777206A43270099FCD2 /* TypeContactSeeder.swift */,
 				BCE76A15207039B1002580DF /* SymptomeSeeder.swift */,
+				7B83BB7F20737FF70064632E /* TypeAvisSeeder.swift */,
 			);
 			name = Seeders;
 			sourceTree = "<group>";
@@ -490,9 +493,9 @@
 		BCF2FD1E2070DE8500A6C8B3 /* Synthese */ = {
 			isa = PBXGroup;
 			children = (
+				7B83BB8220739F0E0064632E /* SyntheseViewController.swift */,
 				BCF2FD1F2070DED200A6C8B3 /* TraceursTableViewController.swift */,
 				BCCDB416207123AF00DB87AA /* TraceurTableViewCell.swift */,
-				BCCDB4182071375E00DB87AA /* SyntheseViewController.swift */,
 				BCCDB41A207154CB00DB87AA /* EvaluationTableViewCell.swift */,
 				BCCDB41C207154DB00DB87AA /* ActiviteTableViewCell.swift */,
 				BCCDB41E207154E800DB87AA /* PriseTableViewCell.swift */,
@@ -651,10 +654,10 @@
 				2BEDF78A206A43D60099FCD2 /* EvaluationDAO.swift in Sources */,
 				2BEDF786206A43A20099FCD2 /* AvisDAO.swift in Sources */,
 				7BFCDC76206BBD3600A3A7CC /* AjouterContactViewController.swift in Sources */,
+				7B83BB8320739F0E0064632E /* SyntheseViewController.swift in Sources */,
 				2BEDF7A5206A44D00099FCD2 /* ContactCoreDataDAO.swift in Sources */,
 				2BEDF757206A41F10099FCD2 /* ContactExtension.swift in Sources */,
 				2BEDF792206A44170099FCD2 /* PatientDAO.swift in Sources */,
-				BCCDB4192071375E00DB87AA /* SyntheseViewController.swift in Sources */,
 				2BEDF75B206A42130099FCD2 /* EvenementExtension.swift in Sources */,
 				7ADE30A92072F38F00C3EA45 /* ShowPriseViewController.swift in Sources */,
 				2BEDF796206A44370099FCD2 /* RDVDAO.swift in Sources */,
@@ -670,6 +673,7 @@
 				2BEDF759206A42030099FCD2 /* PatientExtension.swift in Sources */,
 				7A596601206EBCD5007F2ECA /* AjouterActiviteViewController.swift in Sources */,
 				2BEDF7A9206A44F30099FCD2 /* EvenementCoreDataDAO.swift in Sources */,
+				7B83BB8020737FF70064632E /* TypeAvisSeeder.swift in Sources */,
 				7BFCDC72206B8EBD00A3A7CC /* EvenementTableViewCell.swift in Sources */,
 				BCE76A1420703303002580DF /* NewSymptomeViewController.swift in Sources */,
 				2BEDF77F206A43640099FCD2 /* DataHelper.swift in Sources */,

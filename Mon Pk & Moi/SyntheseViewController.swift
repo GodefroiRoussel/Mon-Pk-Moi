@@ -42,7 +42,10 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
             prises = try priseDAO.getAllPriseMedicamenteuses()
             medicamentsNonPris = self.keepUntakenPrises(forPrises: self.keepOnlyPrisesForLastFiveDays(withDateRDV: (traceur?.belongs_to?.dateTheorique)!))
             avis = try avisDAO.getAllAvis() //TODO: Changer en tous les avis pour ce traceur
-            activites = self.activitesForLastFiveDays(withDateRDV: (traceur?.belongs_to?.dateTheorique)!)
+            for avi in avis {
+                print(avi)
+            }
+            activites = try activiteDAO.getAllActivites() //TODO: Changer en toutes les activités réalisées lors des 5 derniers jours
             titreLabel.text = "Les évaluations du patient"
         } catch let error as NSError {
             DialogBoxHelper.alert(onError: error, onView: self)
@@ -161,9 +164,8 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
      case 2:
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "avisCell", for: indexPath)
             as! AvisTableViewCell
+        print(self.avis[indexPath.row])
         cell.questionLabel.text = self.avis[indexPath.row].is_a!.libelle
-        cell.reponseLabel.text = String(self.avis[indexPath.row].choix)
-        cell.commentaireLabel.text = self.avis[indexPath.row].commentaire
         return cell
      case 3:
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "activiteCell", for: indexPath)

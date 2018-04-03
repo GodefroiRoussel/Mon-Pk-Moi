@@ -10,9 +10,9 @@ import UIKit
 
 class AvisTableViewCell: UITableViewCell {
 
+
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var reponseLabel: UILabel!
-    @IBOutlet weak var commentaireLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

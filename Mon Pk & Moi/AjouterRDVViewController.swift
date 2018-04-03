@@ -25,6 +25,7 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     var rdv: RDV? = nil
     var traceur: Traceur? = nil
+    var avis: Avis? = nil
     
     var pickerView = UIPickerView()
     let pickerDate = UIDatePicker()
@@ -131,6 +132,8 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
         let rdvDAO: RDVDAO = factory.getRDVDAO()
         let traceurDAO: TraceurDAO = factory.getTraceurDAO()
         let patientDAO: PatientDAO = factory.getPatientDAO()
+        let avisDAO: AvisDAO = factory.getAvisDAO()
+        let typeAvisDAO: TypeAvisDAO = factory.getTypeAvisDAO()
         do {
             let patient: Patient = try patientDAO.getAllPatients()[0] // TODO: Changer cette solution temporaire en faisant passer le patient dans une variable globale
             
@@ -142,9 +145,14 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
             let test2 = Date(timeInterval: -432000, since: test!)
             let test3 = Date(timeInterval: 432000, since: test2)
             
+            let typeAvis: [TypeAvis] = try typeAvisDAO.getAllTypeAvis()
+            
             // TODO seulement si c'est un rendez-vous chez un Neurologue
             if selectedMedecin?.is_a?.libelle == "neurologue" {
                 traceur = try traceurDAO.create(withHeureDebut: test2 as NSDate, withHeureFin: test3 as NSDate)
+                for typeavis in typeAvis {
+                    avis = try avisDAO.create(withChoix: false, withCommentaire: nil, belongs_to: traceur!, is_a: typeavis)
+                }
                 rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: test3 as NSDate, withLieu: selectedMedecin?.adresse!, withTempsPourAllerALEvenement: Int16(tempsField.text!)!, withDuree: Int16(dureeField.text!)!, schedule_by: patient, has: traceur!, is_with: selectedMedecin!)
             } else {
                 rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: test3 as NSDate, withLieu: selectedMedecin?.adresse!, withTempsPourAllerALEvenement: Int16(tempsField.text!)!, withDuree: Int16(dureeField.text!)!, schedule_by: patient, is_with: selectedMedecin!)
