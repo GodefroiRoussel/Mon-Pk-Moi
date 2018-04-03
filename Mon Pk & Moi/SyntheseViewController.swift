@@ -10,8 +10,11 @@ import UIKit
 
 class SyntheseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    let factory = CoreDataDAOFactory.getInstance()
+    
     var traceur: Traceur? = nil
     var evaluations: [Evaluation] = []
+    var prises: [PriseMedicamenteuse] = []
     var medicamentsNonPris: [PriseMedicamenteuse] = []
     var avis: [Avis] = []
     var activites: [Activite] = []
@@ -29,24 +32,21 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let factory = CoreDataDAOFactory.getInstance()
         let evaluationDAO: EvaluationDAO = factory.getEvaluationDAO()
         let priseDAO: PriseMedicamenteuseDAO = factory.getPriseMedicamenteuseDAO()
         let avisDAO: AvisDAO = factory.getAvisDAO()
-        let activiteDAO: ActiviteDAO = factory.getActiviteDAO()
+        
         
         do {
             evaluations = try evaluationDAO.getAllEvaluations() //TODO: Changer en évaluation pour ce traceur
-            medicamentsNonPris = try priseDAO.getAllPriseMedicamenteuses() //TODO: Changer en toutes les prises non effectuées ou effectuées en retard lors des 5 derniers jours
+            prises = try priseDAO.getAllPriseMedicamenteuses()
+            medicamentsNonPris = self.keepUntakenPrises(forPrises: self.keepOnlyPrisesForLastFiveDays(withDateRDV: (traceur?.belongs_to?.dateTheorique)!))
             avis = try avisDAO.getAllAvis() //TODO: Changer en tous les avis pour ce traceur
             for avi in avis {
                 print(avi)
             }
             activites = try activiteDAO.getAllActivites() //TODO: Changer en toutes les activités réalisées lors des 5 derniers jours
             titreLabel.text = "Les évaluations du patient"
-            for evaluation in evaluations {
-                print(evaluation)
-            }
         } catch let error as NSError {
             DialogBoxHelper.alert(onError: error, onView: self)
         }
@@ -59,6 +59,61 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     
+    func keepOnlyPrisesForLastFiveDays(withDateRDV dateRDV: NSDate) -> [PriseMedicamenteuse] {
+        var newPrises: [PriseMedicamenteuse] = []
+
+        // We retrieve the start of the first day of the traceur
+        let dateDebut: NSDate = DateHelper.startOfDay(day: DateHelper.addDays(dayD: dateRDV, nbDaysToAdd: -6))
+        let dateDebutRDV: NSDate = DateHelper.startOfDay(day: dateRDV)
+        
+        for prise in prises {
+            if prise.dateTheorique.isGreaterThanDate(dateToCompare: dateDebut) && prise.dateTheorique.isLessThanDate(dateToCompare: dateDebutRDV) {
+                newPrises.append(prise)
+            }
+        }
+        return newPrises
+    }
+    
+    func keepUntakenPrises(forPrises prises: [PriseMedicamenteuse]) -> [PriseMedicamenteuse] {
+        medicamentsNonPris.removeAll()
+        var prisesUntaken: [PriseMedicamenteuse] = []
+        for prise in prises {
+            // If the prise isn't effectuated, we consider that he didn't take the prise
+            if prise.dateEffective != nil {
+                //Then we calculate the time between the theoric date and the effective date and we check if there is an interval of 15 minutes or more
+                let timeBetweenDates: TimeInterval = prise.dateTheorique.timeIntervalSince(prise.dateEffective! as Date)
+                if timeBetweenDates > 60 * 15 {
+                    prisesUntaken.append(prise)
+                }
+            } else {
+                prisesUntaken.append(prise)
+            }
+        }
+        return prisesUntaken
+        
+    }
+    
+    
+    func activitesForLastFiveDays(withDateRDV dateRDV: NSDate) -> [Activite] {
+        var lastActivites: [Activite] = []
+        
+        // We retrieve the start of the first day of the traceur
+        let dateDebut: NSDate = DateHelper.startOfDay(day: DateHelper.addDays(dayD: dateRDV, nbDaysToAdd: -6))
+        
+        do {
+            let activiteDAO: ActiviteDAO = factory.getActiviteDAO()
+            let activites: [Activite] = try activiteDAO.getAllActivites()
+            for activite in activites {
+                if activite.dateTheorique.isGreaterThanDate(dateToCompare: dateDebut) && activite.dateTheorique.isLessThanDate(dateToCompare: dateRDV) {
+                    lastActivites.append(activite)
+                }
+            }
+        } catch {
+            print("error")
+        }
+
+        return lastActivites
+    }
     
     @IBAction func indexChanged(_ sender: Any) {
         tableView.reloadData()
