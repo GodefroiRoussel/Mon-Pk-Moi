@@ -12,6 +12,7 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
 
     var traceur: Traceur? = nil
     var evaluations: [Evaluation] = []
+    var prises: [PriseMedicamenteuse] = []
     var medicamentsNonPris: [PriseMedicamenteuse] = []
     var avis: [Avis] = []
     var activites: [Activite] = []
@@ -37,7 +38,11 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
         
         do {
             evaluations = try evaluationDAO.getAllEvaluations() //TODO: Changer en évaluation pour ce traceur
-            medicamentsNonPris = try priseDAO.getAllPriseMedicamenteuses() //TODO: Changer en toutes les prises non effectuées ou effectuées en retard lors des 5 derniers jours
+            prises = try priseDAO.getAllPriseMedicamenteuses()
+            medicamentsNonPris = self.keepUntakenPrises(forPrises: self.keepOnlyLastFiveDays(withDateRDV: (traceur?.belongs_to?.dateTheorique)!))
+            for prise in medicamentsNonPris {
+                print(prise)
+            }
             avis = try avisDAO.getAllAvis() //TODO: Changer en tous les avis pour ce traceur
             activites = try activiteDAO.getAllActivites() //TODO: Changer en toutes les activités réalisées lors des 5 derniers jours
             titreLabel.text = "Les évaluations du patient"
@@ -55,6 +60,39 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func keepOnlyLastFiveDays(withDateRDV dateRDV: NSDate) -> [PriseMedicamenteuse] {
+        var newPrises: [PriseMedicamenteuse] = []
+
+        // We retrieve the start of the first day of the traceur
+        let dateDebut: NSDate = DateHelper.startOfDay(day: DateHelper.addDays(dayD: dateRDV, nbDaysToAdd: -6))
+        
+        for prise in prises {
+            if prise.dateTheorique.isGreaterThanDate(dateToCompare: dateDebut) && prise.dateTheorique.isLessThanDate(dateToCompare: dateRDV) {
+                newPrises.append(prise)
+            }
+        }
+        return newPrises
+    }
+    
+    func keepUntakenPrises(forPrises prises: [PriseMedicamenteuse]) -> [PriseMedicamenteuse] {
+        medicamentsNonPris.removeAll()
+        var prisesUntaken: [PriseMedicamenteuse] = []
+        for prise in prises {
+            // If the prise isn't effectuated, we consider that he didn't take the prise
+            if prise.dateEffective != nil {
+                //Then we calculate the time between the theoric date and the effective date and we check if there is an interval of 15 minutes or more
+                let timeBetweenDates: TimeInterval = prise.dateTheorique.timeIntervalSince(prise.dateEffective! as Date)
+                if timeBetweenDates > 60 * 15 {
+                    prisesUntaken.append(prise)
+                }
+            } else {
+                prisesUntaken.append(prise)
+            }
+        }
+        return prisesUntaken
+        
+    }
     
     
     @IBAction func indexChanged(_ sender: Any) {
