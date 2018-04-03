@@ -40,6 +40,10 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
         let contactDAO : ContactDAO = factory.getContactDAO()
         do {
             medecins = try contactDAO.getAllMedecins()
+            if medecins.count == 0 {
+                medecinField.text = "Aucun médecin n'a encore été créé"
+                medecinField.isEnabled = false
+            }
         } catch let error as NSError {
             print("error")
         }
@@ -69,9 +73,12 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedMedecin = medecins[row]
-        medecinField.text = selectedMedecin?.nom
-        medecinField.resignFirstResponder()
+        if medecins.count > 0{
+            selectedMedecin = medecins[row]
+            medecinField.text = selectedMedecin?.nom
+            medecinField.resignFirstResponder()
+        }
+        
     }
     
     // MARK: - PickerDate
@@ -134,7 +141,7 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
             return
         }
         
-        guard let _ = medecinField.text, !(medecinField.text?.isEmpty)! else {
+        guard let _ = medecinField.text, selectedMedecin != nil else {
             DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez choisir un médecin.", onView: self)
             return
         }
