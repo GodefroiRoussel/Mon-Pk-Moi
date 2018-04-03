@@ -61,6 +61,7 @@
 		2BF5935D2073CE2A00E227D7 /* TypeAvisExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF593502073CE2A00E227D7 /* TypeAvisExtension.swift */; };
 		2BF5935E2073CE2A00E227D7 /* TypeContactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF593512073CE2A00E227D7 /* TypeContactExtension.swift */; };
 		7A2C29FF205429CA000EC45C /* AjouterPriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2C29FE205429CA000EC45C /* AjouterPriseViewController.swift */; };
+		7A46B0EC20743DF600A3EDE7 /* ShowActiviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A46B0EB20743DF600A3EDE7 /* ShowActiviteViewController.swift */; };
 		7A4A735E2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4A735D2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift */; };
 		7A4D13B72062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D13B62062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift */; };
 		7A4D13B920630AF4005E8D6D /* fleche.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4D13B820630AF4005E8D6D /* fleche.png */; };
@@ -181,6 +182,7 @@
 		2BF593502073CE2A00E227D7 /* TypeAvisExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAvisExtension.swift; sourceTree = "<group>"; };
 		2BF593512073CE2A00E227D7 /* TypeContactExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeContactExtension.swift; sourceTree = "<group>"; };
 		7A2C29FE205429CA000EC45C /* AjouterPriseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AjouterPriseViewController.swift; path = ../AjouterPriseViewController.swift; sourceTree = "<group>"; };
+		7A46B0EB20743DF600A3EDE7 /* ShowActiviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowActiviteViewController.swift; sourceTree = "<group>"; };
 		7A4A735D2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriseOrdonnanceTableViewCell.swift; sourceTree = "<group>"; };
 		7A4D13B62062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjouterOrdonnanceViewController.swift; sourceTree = "<group>"; };
 		7A4D13B820630AF4005E8D6D /* fleche.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fleche.png; sourceTree = "<group>"; };
@@ -512,6 +514,7 @@
 				BCCDB41C207154DB00DB87AA /* ActiviteTableViewCell.swift */,
 				BCCDB41E207154E800DB87AA /* PriseTableViewCell.swift */,
 				BCCDB420207154F200DB87AA /* AvisTableViewCell.swift */,
+				7A46B0EB20743DF600A3EDE7 /* ShowActiviteViewController.swift */,
 			);
 			name = Synthese;
 			sourceTree = "<group>";
@@ -714,6 +717,7 @@
 				BCE76A16207039B1002580DF /* SymptomeSeeder.swift in Sources */,
 				2BEDF7B5206A456F0099FCD2 /* EvaluationCoreDataDAO.swift in Sources */,
 				BCCDB421207154F200DB87AA /* AvisTableViewCell.swift in Sources */,
+				7A46B0EC20743DF600A3EDE7 /* ShowActiviteViewController.swift in Sources */,
 				7BFCDC6E206B853500A3A7CC /* ContactTableViewCell.swift in Sources */,
 				2BEDF781206A437A0099FCD2 /* DateHelper.swift in Sources */,
 				2BEDF79A206A44570099FCD2 /* TypeAvisDAO.swift in Sources */,

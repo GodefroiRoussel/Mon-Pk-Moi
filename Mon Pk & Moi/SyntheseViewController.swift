@@ -176,7 +176,6 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
         dateFormatter.dateFormat = "dd/MM - HH:mm"
         cell.dateLabel.text = dateFormatter.string(from: self.activites[indexPath.row].dateTheorique as Date)
         cell.nomLabel.text = self.activites[indexPath.row].nom
-        cell.estEffectueLabel.text = String(self.activites[indexPath.row].estEffectue)
         return cell
      default:
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "evaluationCell", for: indexPath)
@@ -197,6 +196,7 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     let segueShowAvisId = "showAvisId"
+        let segueShowActiviteId = "ShowActiviteId"
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == self.segueShowAvisId {
@@ -206,7 +206,19 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
                 self.tableView.deselectRow(at: indexPath, animated: true)
             }
         }
+        
+        if segue.identifier == self.segueShowActiviteId {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let showActiviteViewController = segue.destination as! ShowActiviteViewController
+                showActiviteViewController.activite = self.activites[indexPath.row]
+                self.tableView.deselectRow(at: indexPath, animated: true)
+            }
+        }
     }
+    
+    
+    
+    
     
     @IBAction func unwindToSyntheseAfterModifieAvis(segue: UIStoryboardSegue){
         self.tableView.reloadData()

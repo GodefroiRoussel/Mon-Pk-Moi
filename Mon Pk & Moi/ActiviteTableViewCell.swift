@@ -12,7 +12,7 @@ class ActiviteTableViewCell: UITableViewCell {
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var nomLabel: UILabel!
-    @IBOutlet weak var estEffectueLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
