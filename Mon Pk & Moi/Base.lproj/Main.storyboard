@@ -2708,9 +2708,11 @@
                         <outlet property="commentaireField" destination="2a4-n4-rpc" id="tJt-Jx-d9p"/>
                         <outlet property="nomAvisLabel" destination="TMG-ix-bUk" id="uls-UQ-HTk"/>
                         <outlet property="switch" destination="yEw-yZ-eI2" id="HDg-5u-zy3"/>
+                        <segue destination="BEY-q2-Csd" kind="unwind" identifier="synthese" unwindAction="unwindToSyntheseAfterModifieAvisWithSegue:" id="dc7-oz-slP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dp4-Ht-cdt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="BEY-q2-Csd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1824" y="2401"/>
         </scene>

@@ -48,7 +48,7 @@ class GererMedicamentTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "medicamentCell", for: indexPath)
-        cell.nomLabel.text = self.medicaments[indexPath.row].nom
+        //cell.nomLabel.text = self.medicaments[indexPath.row].nom
         return cell
     }
     
