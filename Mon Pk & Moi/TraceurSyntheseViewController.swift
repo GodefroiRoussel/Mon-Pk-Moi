@@ -10,8 +10,23 @@ import UIKit
 
 class TraceurSyntheseViewController: UIViewController {
 
+    @IBOutlet weak var firstButton: UIButton!
+    
+    let factory = CoreDataDAOFactory.getInstance()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        do {
+            let traceurDAO: TraceurDAO = factory.getTraceurDAO()
+            let traceur: Traceur? = try traceurDAO.getTraceurEnCours()
+            if traceur == nil {
+                firstButton.setTitle("Aucun traceur n'est actuellement en cours", for: .normal)
+                firstButton.isEnabled = false
+            }
+        } catch {
+            print("error")
+        }
 
         // Do any additional setup after loading the view.
     }
