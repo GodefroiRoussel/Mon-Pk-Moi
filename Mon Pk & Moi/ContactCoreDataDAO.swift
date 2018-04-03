@@ -40,7 +40,7 @@ class ContactCoreDataDAO : ContactDAO {
         
         let typeContactDAO: TypeContactDAO = CoreDataDAOFactory.getInstance().getTypeContactDAO()
         do {
-            self.request.predicate = NSPredicate(format: "%K != %@",#keyPath(Contact.is_a.plibelle) ,"Famille")
+            self.request.predicate = NSPredicate(format: "%K != %@",#keyPath(Contact.is_a.plibelle) ,"Contact d'urgence")
             let contacts: [Contact] = try CoreDataManager.context.fetch(self.request)
             return contacts
         } catch let error as NSError {

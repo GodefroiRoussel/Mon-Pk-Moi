@@ -118,8 +118,11 @@ class AjouterContactViewController: UIViewController, UIPickerViewDelegate, UIPi
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let dest = segue.destination as! InformationViewController
-        dest.contacts.append(contact!)
+        if segue.identifier == "informations" {
+            let dest = segue.destination as! InformationViewController
+            dest.contacts.append(contact!)
+        }
+        
     }
     /*
      // MARK: - Navigation

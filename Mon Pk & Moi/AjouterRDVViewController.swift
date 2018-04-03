@@ -39,6 +39,7 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
         //Récuperation de l'ensemble des médecins
         let contactDAO : ContactDAO = factory.getContactDAO()
         do {
+            medecinField.text = ""
             medecins = try contactDAO.getAllMedecins()
             if medecins.count == 0 {
                 medecinField.text = "Aucun médecin n'a encore été créé"
@@ -164,7 +165,7 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
             
             let typeAvis: [TypeAvis] = try typeAvisDAO.getAllTypeAvis()
             
-            if selectedMedecin?.is_a?.libelle == "neurologue" {
+            if selectedMedecin?.is_a?.libelle == "Neurologue" {
                 traceur = try traceurDAO.create(withHeureDebut: test2 as NSDate, withHeureFin: test3 as NSDate)
                 for typeavis in typeAvis {
                     avis = try avisDAO.create(withChoix: false, withCommentaire: nil, belongs_to: traceur!, is_a: typeavis)
