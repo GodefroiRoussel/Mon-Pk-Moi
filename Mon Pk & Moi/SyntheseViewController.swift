@@ -45,7 +45,7 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
             for avi in avis {
                 print(avi)
             }
-            activites = try activiteDAO.getAllActivites() //TODO: Changer en toutes les activités réalisées lors des 5 derniers jours
+            activites = self.activitesForLastFiveDays(withDateRDV: (traceur?.belongs_to?.dateTheorique)!)
             titreLabel.text = "Les évaluations du patient"
         } catch let error as NSError {
             DialogBoxHelper.alert(onError: error, onView: self)
@@ -159,7 +159,7 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
         dateFormatter.dateFormat = "dd/MM - HH:mm"
         cell.datePriseLabel.text = dateFormatter.string(from: self.medicamentsNonPris[indexPath.row].dateTheorique as Date)
         cell.medicamentLabel.text = self.medicamentsNonPris[indexPath.row].belongs_to?.nom
-        cell.doseLabel.text = self.medicamentsNonPris[indexPath.row].dose
+        cell.doseLabel.text = String(self.medicamentsNonPris[indexPath.row].dose)
         return cell
      case 2:
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "avisCell", for: indexPath)

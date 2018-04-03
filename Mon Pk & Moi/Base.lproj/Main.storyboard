@@ -2420,21 +2420,30 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medicament" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x08-JJ-htF">
-                                                    <rect key="frame" x="104" y="11" width="95" height="21"/>
+                                                    <rect key="frame" x="64" y="11" width="95" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8y-4o-8cI">
+                                                    <rect key="frame" x="187" y="11" width="40" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="x08-JJ-htF" firstAttribute="top" secondItem="92O-Pb-1Tf" secondAttribute="topMargin" constant="3" id="AiY-Sh-1G5"/>
                                                 <constraint firstItem="Upo-JM-mcM" firstAttribute="leading" secondItem="92O-Pb-1Tf" secondAttribute="leadingMargin" id="G66-DS-77u"/>
-                                                <constraint firstItem="x08-JJ-htF" firstAttribute="top" secondItem="92O-Pb-1Tf" secondAttribute="topMargin" constant="3" id="Oab-gs-3bt"/>
-                                                <constraint firstItem="x08-JJ-htF" firstAttribute="leading" secondItem="Upo-JM-mcM" secondAttribute="trailing" constant="60" id="auL-kE-TsF"/>
+                                                <constraint firstItem="x08-JJ-htF" firstAttribute="leading" secondItem="Upo-JM-mcM" secondAttribute="trailing" constant="20" id="HBJ-gs-zfM"/>
+                                                <constraint firstItem="n8y-4o-8cI" firstAttribute="top" secondItem="92O-Pb-1Tf" secondAttribute="topMargin" constant="3" id="fa9-E9-YWQ"/>
                                                 <constraint firstItem="Upo-JM-mcM" firstAttribute="top" secondItem="92O-Pb-1Tf" secondAttribute="topMargin" constant="3" id="gMK-A1-1MV"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="n8y-4o-8cI" secondAttribute="trailing" constant="5" id="iGj-tl-PWQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="datePriseLabel" destination="Upo-JM-mcM" id="jQi-Bx-DCD"/>
+                                            <outlet property="doseLabel" destination="n8y-4o-8cI" id="2CE-ob-oV4"/>
                                             <outlet property="medicamentLabel" destination="x08-JJ-htF" id="XOE-gw-IhW"/>
                                         </connections>
                                     </tableViewCell>
