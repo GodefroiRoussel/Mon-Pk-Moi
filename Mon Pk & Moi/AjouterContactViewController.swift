@@ -29,6 +29,7 @@ class AjouterContactViewController: UIViewController, UIPickerViewDelegate, UIPi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //recupère l'ensemble des types de conatct et le tri dans l'ordre
         let typeContactDAO : TypeContactDAO = factory.getTypeContactDAO()
         do {
             typeContacts = try typeContactDAO.getAllTypeContacts()
@@ -49,10 +50,13 @@ class AjouterContactViewController: UIViewController, UIPickerViewDelegate, UIPi
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Annuler action
+    //Fonction qui permet d'annuler l'action sans rien modifier
     @IBAction func cancelAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    // MARK: - Table View
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -71,6 +75,8 @@ class AjouterContactViewController: UIViewController, UIPickerViewDelegate, UIPi
         typeContactLabel.resignFirstResponder()
     }
 
+    // MARK: - Ajouter Contact
+    //Fonction qui permet d'ajouter un contact
     @IBAction func ajouterContact(_ sender: Any) {
         guard let _ = typeContactLabel.text, !(typeContactLabel.text?.isEmpty)! else {
             DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez choisir un type de contact.", onView: self)
@@ -97,13 +103,11 @@ class AjouterContactViewController: UIViewController, UIPickerViewDelegate, UIPi
             return
         }
         
-        //Start the business logic
-        //A  revoir 
-        
         let contactDAO: ContactDAO = factory.getContactDAO()
         let patientDAO: PatientDAO = factory.getPatientDAO()
         do {
-            let patient: Patient = try patientDAO.getAllPatients()[0] //TODO : SOLUTION TEMPORAIRE A CHANGER
+            //ajoute un contact
+            let patient: Patient = try patientDAO.getAllPatients()[0]
             contact = try contactDAO.create(withName: nomField.text!, withPrenom: prenomField.text, withTelephone: numeroField.text, withAdresse: adresseField.text, is_a: selectedTypeContact!, is_connected_to: patient)
 
         } catch let error as NSError {
@@ -116,6 +120,7 @@ class AjouterContactViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     }
 
+    //Fonction qui permet de faire le lien avec la tableView de la page informations
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "informations" {

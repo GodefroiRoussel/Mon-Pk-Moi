@@ -45,6 +45,7 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
+    //fonction qui permet de supprimer un contact
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             contacts.remove(at: indexPath.row)
@@ -52,6 +53,7 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+    //fonction qui permet de faire le lien avec la page ajouter contact
     @IBAction func unwindToInformationAfterSavingContact(segue: UIStoryboardSegue){
         self.contactsTable.reloadData()
     }
