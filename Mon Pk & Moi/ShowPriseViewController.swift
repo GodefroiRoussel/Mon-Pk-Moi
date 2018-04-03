@@ -50,12 +50,15 @@ class ShowPriseViewController: UIViewController {
     @IBAction func refuserPrise(_ sender: Any) {
         
         self.prise?.estEffectue = false
+        self.prise?.dateEffective = prise?.dateTheorique
         let priseMedicamenteuseDAO: PriseMedicamenteuseDAO = factory.getPriseMedicamenteuseDAO()
         do {
+            //DialogBoxHelper.alert(withTitle: "Prise", andMessage: "La prise a été refusée", onView: self)
             try priseMedicamenteuseDAO.update(aPriseMedicamenteuse: self.prise!)
         } catch let error as NSError {
             DialogBoxHelper.alert(onError: error, onView: self)
             return
+            
         }
         
         self.performSegue(withIdentifier: "pilulier", sender: self)
@@ -67,6 +70,7 @@ class ShowPriseViewController: UIViewController {
         self.prise?.dateEffective = heurePicker.date as NSDate?
         let priseMedicamenteuseDAO: PriseMedicamenteuseDAO = factory.getPriseMedicamenteuseDAO()
         do {
+            //DialogBoxHelper.alert(withTitle: "Prise", andMessage: "La prise a été validée", onView: self)
             try priseMedicamenteuseDAO.update(aPriseMedicamenteuse: self.prise!)
         } catch let error as NSError {
             DialogBoxHelper.alert(onError: error, onView: self)
@@ -74,6 +78,9 @@ class ShowPriseViewController: UIViewController {
         }
         
         self.performSegue(withIdentifier: "pilulier", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
     /*
     // MARK: - Navigation

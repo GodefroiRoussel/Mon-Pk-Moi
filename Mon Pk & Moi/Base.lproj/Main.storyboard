@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3tf-50-PKF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3tf-50-PKF">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -772,13 +772,19 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvK-KO-HUL">
-                                                    <rect key="frame" x="145" y="8" width="38" height="27"/>
+                                                    <rect key="frame" x="110" y="8" width="38" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3h-qp-Sby">
-                                                    <rect key="frame" x="212" y="8" width="42" height="27"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3h-qp-Sby">
+                                                    <rect key="frame" x="170.5" y="8" width="37.5" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5k-41-flM">
+                                                    <rect key="frame" x="250.5" y="0.0" width="37.5" height="43.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -787,18 +793,22 @@
                                             <constraints>
                                                 <constraint firstItem="CPB-at-3r0" firstAttribute="top" secondItem="KlN-mJ-v19" secondAttribute="topMargin" id="26B-pd-o23"/>
                                                 <constraint firstItem="CPB-at-3r0" firstAttribute="leading" secondItem="KlN-mJ-v19" secondAttribute="leadingMargin" id="2uY-H7-idG"/>
-                                                <constraint firstItem="tvK-KO-HUL" firstAttribute="centerX" secondItem="KlN-mJ-v19" secondAttribute="centerX" constant="20" id="3xg-UZ-MKx"/>
+                                                <constraint firstItem="tvK-KO-HUL" firstAttribute="centerX" secondItem="KlN-mJ-v19" secondAttribute="centerX" constant="-15" id="3xg-UZ-MKx"/>
                                                 <constraint firstItem="tvK-KO-HUL" firstAttribute="top" secondItem="KlN-mJ-v19" secondAttribute="topMargin" id="9iD-no-X48"/>
                                                 <constraint firstItem="tvK-KO-HUL" firstAttribute="bottom" secondItem="KlN-mJ-v19" secondAttribute="bottomMargin" id="FBM-g0-gx9"/>
+                                                <constraint firstAttribute="bottom" secondItem="i5k-41-flM" secondAttribute="bottom" id="TqF-SY-Tbj"/>
+                                                <constraint firstAttribute="trailing" secondItem="i5k-41-flM" secondAttribute="trailing" id="Xxp-0d-Ck1"/>
                                                 <constraint firstItem="CPB-at-3r0" firstAttribute="bottom" secondItem="KlN-mJ-v19" secondAttribute="bottomMargin" id="YoD-qU-POP"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Y3h-qp-Sby" secondAttribute="bottom" id="eKR-Va-4tZ"/>
                                                 <constraint firstItem="CPB-at-3r0" firstAttribute="leading" secondItem="KlN-mJ-v19" secondAttribute="leadingMargin" id="l1G-89-zA6"/>
                                                 <constraint firstItem="Y3h-qp-Sby" firstAttribute="top" secondItem="KlN-mJ-v19" secondAttribute="topMargin" id="lvY-Yo-5kx"/>
-                                                <constraint firstAttribute="trailing" secondItem="Y3h-qp-Sby" secondAttribute="trailing" constant="8" id="xjq-2C-3fB"/>
+                                                <constraint firstItem="i5k-41-flM" firstAttribute="top" secondItem="KlN-mJ-v19" secondAttribute="top" id="svc-zS-wtr"/>
+                                                <constraint firstAttribute="trailing" secondItem="Y3h-qp-Sby" secondAttribute="trailing" constant="80" id="xjq-2C-3fB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="doseLabel" destination="tvK-KO-HUL" id="Q2A-PD-mcX"/>
+                                            <outlet property="etatLabel" destination="i5k-41-flM" id="qxr-aA-4yG"/>
                                             <outlet property="medicamentNameLabel" destination="CPB-at-3r0" id="ZJl-Ry-QO9"/>
                                             <outlet property="timeLabel" destination="Y3h-qp-Sby" id="WVj-RC-eWa"/>
                                             <segue destination="Wrd-10-lYX" kind="show" identifier="ShowPriseSegue" id="e8K-fD-Ad4"/>
@@ -3140,10 +3150,10 @@
         <image name="user.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EKe-9N-e2u"/>
-        <segue reference="da1-Zu-eWq"/>
-        <segue reference="9wV-Hr-QX6"/>
         <segue reference="NF4-pS-3wl"/>
+        <segue reference="vrs-xg-WVI"/>
+        <segue reference="9wV-Hr-QX6"/>
+        <segue reference="8Ec-Hm-Ldp"/>
         <segue reference="87U-Nj-Oh4"/>
     </inferredMetricsTieBreakers>
 </document>
