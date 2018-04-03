@@ -38,6 +38,8 @@ class AjouterActiviteViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - PickerDate
+    //fonction qui permet de créer le pickerDate
     func createDatePicker() {
         
         let toolbar = UIToolbar()
@@ -54,6 +56,8 @@ class AjouterActiviteViewController: UIViewController {
         
     }
     
+    // MARK: - Affiche Valeur PickerDate
+    //fonction qui permet d'afficher la valeur de la date choisie dans le textField
     func donePressedDate() {
         
         let dateFormatter = DateFormatter()
@@ -66,6 +70,8 @@ class AjouterActiviteViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    // MARK: - PickerTime
+    //fonction qui permet de créer le pickerTime
     func createTimePicker() {
         
         let toolbar = UIToolbar()
@@ -81,6 +87,8 @@ class AjouterActiviteViewController: UIViewController {
         
     }
     
+    // MARK: - Affiche Valeur PickerTime
+    //fonction qui permet d'afficher la valeur de l'heure choisie dans le textField
     func donePressedTime() {
         
         let dateFormatter = DateFormatter()
@@ -94,11 +102,14 @@ class AjouterActiviteViewController: UIViewController {
     }
 
     
-    
+    // MARK: - Revenir à l'agenda
+    //Fonction qui permet de revenir à l'agenda sans aucune action si on appuye sur le bouton annuler
     @IBAction func cancelAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 
+    // MARK: - Ajouter activite
+    //Fonction qui permet d'ajouter une activite
     @IBAction func AjouterActivite(_ sender: Any) {
         guard let _ = nomField.text, !(nomField.text?.isEmpty)! else {
             DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez entrer un nom pour l'activité.", onView: self)
@@ -136,15 +147,17 @@ class AjouterActiviteViewController: UIViewController {
                 activite = try activiteDAO.create(withName: nomField.text!, withDateTheorique: dat as NSDate, withDuree: Int16(dureeField.text!)!, withDescription: descriptionField.text!, schedule_by: patient)
                 activites.append(activite!)
                 
-                //Notififcation
+                
+                // MARK: - Creation Notifications
+                //Creation des notifications pour chaque activite (1 notification 1h avant l'activite, 1 notification 30min avant l'activite)
                 var intervaleHeure1 = dat.timeIntervalSinceNow
                 print(intervaleHeure1)
                 intervaleHeure1 = intervaleHeure1-3600
                 let intervaleHeure2 = intervaleHeure1+1800
 
+                //Creation du contenu de la notification
                 let content = UNMutableNotificationContent()
                 content.title = (activite?.nom)!
-                
                 let dateFormatter : DateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "HH:mm"
                 let heure = dateFormatter.string(from: activite?.dateTheorique as! Date)
@@ -152,6 +165,7 @@ class AjouterActiviteViewController: UIViewController {
                 content.body = (activite?.desc)!
                 content.badge = 1
                 
+                //ajout des notifications
                 let trigger = UNTimeIntervalNotificationTrigger(timeInterval: intervaleHeure1, repeats: false)
                 let trigger1 = UNTimeIntervalNotificationTrigger(timeInterval: intervaleHeure2, repeats: false)
                 let request = UNNotificationRequest(identifier: (activite?.nom)!+"\(index)", content: content, trigger: trigger)
@@ -171,6 +185,8 @@ class AjouterActiviteViewController: UIViewController {
         
     }
     
+    // MARK: - Faire lien avec l'agenda
+    //Fonction qui fait le lien avec l'agenda
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination as! AgendaViewController
         for activite in activites {

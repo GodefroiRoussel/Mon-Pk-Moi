@@ -11,6 +11,7 @@ import UIKit
 class AgendaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var evenementsTable: UITableView!
+
     var allEvenements: [Evenement] = []
     var evenements: [Evenement] = []
     
@@ -19,6 +20,8 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // MARK: - Recuperation allEvenements
+        //Récupération de tous les événements qui ne sont pas encore passé (supérieur à la date du jour)
         let evenementDAO : EvenementDAO = factory.getEvenementDAO()
         do {
             allEvenements = try evenementDAO.getAllEvenements()
@@ -27,6 +30,9 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
                     evenements.append(eve)
                 }
             }
+            
+            // MARK: - Trie TableView
+            //Trie de la TableView selon la date de chaque evenement
             evenements.sort(by: { (element0, element1) -> Bool in
                 if element0.dateTheorique as Date > element1.dateTheorique as Date {
                     return false
@@ -47,6 +53,7 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
         // Dispose of any resources that can be recreated.
     }
     
+    //
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.evenements.count
     }
@@ -66,12 +73,12 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
+    // MARK: - Suppression
+    //Fonction qui permet de supprimer un evenement de la TableView (check si il s'agit d'une activite ou d'un RDV)
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-            
             let activiteDAO: ActiviteDAO = factory.getActiviteDAO()
             let rdvDAO: RDVDAO = factory.getRDVDAO()
-            //let test: RDV = RDV(context: evenements[indexPath.row])
             do {
                 if try rdvDAO.find(withName: evenements[indexPath.row].nom) == nil {
                     try activiteDAO.delete(anActivite: evenements[indexPath.row] as! Activite)
@@ -86,23 +93,19 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+    //Fonction qui permet fait le lien avec l'ajout de RDV
     @IBAction func unwindToAgendaAfterSavingRDV(segue: UIStoryboardSegue){
         self.evenementsTable.reloadData()
     }
     
+    //Fonction qui permet de faire le lien avec l'ajout d'activité
     @IBAction func unwindToAgendaAfterSavingActivite(segue: UIStoryboardSegue){
         self.evenementsTable.reloadData()
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

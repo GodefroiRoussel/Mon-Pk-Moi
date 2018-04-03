@@ -35,6 +35,8 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
         
         createDatePicker()
         
+        // MARK: - Recuperation allMedecins
+        //Récuperation de l'ensemble des médecins
         let contactDAO : ContactDAO = factory.getContactDAO()
         do {
             medecins = try contactDAO.getAllMedecins()
@@ -72,6 +74,8 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
         medecinField.resignFirstResponder()
     }
     
+    // MARK: - PickerDate
+    //fonction qui permet de créer le pickerDate
     func createDatePicker() {
         
         let toolbar = UIToolbar()
@@ -87,6 +91,8 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
         
     }
     
+    // MARK: - Affiche Valeur PickerDate
+    //fonction qui permet d'afficher la valeur de la date choisie dans le textField
     func donePressed() {
         
         let dateFormatter = DateFormatter()
@@ -99,10 +105,14 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
         self.view.endEditing(true)
     }
     
+    // MARK: - Revenir à l'agenda
+    //Fonction qui permet de revenir à l'agenda sans aucune action si on appuye sur le bouton annuler
     @IBAction func cancelAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 
+    // MARK: - AjouterRDV
+    //Fonction qui permet d'ajouter un RDV
     @IBAction func ajouterRDV(_ sender: Any) {
         guard let _ = nomField.text, !(nomField.text?.isEmpty)! else {
             DialogBoxHelper.alert(withTitle: "Valeur(s) manquante(s)", andMessage: "Veuillez entrer un nom pour le RDV.", onView: self)
@@ -147,7 +157,6 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
             
             let typeAvis: [TypeAvis] = try typeAvisDAO.getAllTypeAvis()
             
-            // TODO seulement si c'est un rendez-vous chez un Neurologue
             if selectedMedecin?.is_a?.libelle == "neurologue" {
                 traceur = try traceurDAO.create(withHeureDebut: test2 as NSDate, withHeureFin: test3 as NSDate)
                 for typeavis in typeAvis {
@@ -158,26 +167,28 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
                 rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: test3 as NSDate, withLieu: selectedMedecin?.adresse!, withTempsPourAllerALEvenement: Int16(tempsField.text!)!, withDuree: Int16(dureeField.text!)!, schedule_by: patient, is_with: selectedMedecin!)
             }
             
-            //Notififcation
-            //var intervaleHeure = DateHelper.substractDateInSeconds(heure1: Date() as NSDate, heure2: dat)
+            // MARK: - Creation Notifications
+            //Creation des notifications pour chaque RDV (1 notification 1h avant le RDV, 1 notification 30min avant le RDV)
             var intervaleHeure1 = rdv?.dateTheorique.timeIntervalSinceNow
 
             let tempsPrepa = Double(patient.tempsPreparation * 60)
             let tempsAller = Double((rdv?.tempsPourAllerALEvenement)!*60)
             
+            //calcul de l'intervalleTemps pour 1h avant le RDV
             intervaleHeure1 = intervaleHeure1!-(tempsPrepa+tempsAller)
+            //calcul de l'intervalleTemps pour 30min avant le RDV
             let intervaleHeure2 = intervaleHeure1!+tempsPrepa
             
-            
+            //Création du contenu de la notification
             let content = UNMutableNotificationContent()
             content.title = (rdv?.nom)!
-            
             dateFormatter.dateFormat = "HH:mm"
             let heure = dateFormatter.string(from: rdv?.dateTheorique as! Date)
             content.subtitle = heure
             content.body = (rdv?.lieu)!
             content.badge = 1
-            
+        
+            //ajout des notifications
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: intervaleHeure1!, repeats: false)
             let trigger1 = UNTimeIntervalNotificationTrigger(timeInterval: intervaleHeure2, repeats: false)
             let request = UNNotificationRequest(identifier: (rdv?.nom)!+"\(1)", content: content, trigger: trigger)
@@ -185,11 +196,6 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
             
             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
             UNUserNotificationCenter.current().add(request1, withCompletionHandler: nil)
-
-            
-            
-            
-            
             
         } catch let error as NSError {
             DialogBoxHelper.alert(onError: error, onView: self)
@@ -199,6 +205,8 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
         self.performSegue(withIdentifier: "agenda", sender: self)
     }
     
+    // MARK: - Faire lien avec l'agenda
+    //Fonction qui fait le lien avec l'agenda
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination as! AgendaViewController
         dest.evenements.append(rdv!)
@@ -206,7 +214,6 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
             if element0.dateTheorique as Date > element1.dateTheorique as Date {
                 return false
             }
-            
             return true
         })
     }
