@@ -8,20 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2B5B876F2073B07200494F0C /* MedicamentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5B876E2073B07200494F0C /* MedicamentTableViewCell.swift */; };
-		2BEDF753206A41BE0099FCD2 /* MedicamentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF752206A41BE0099FCD2 /* MedicamentExtension.swift */; };
-		2BEDF755206A41DA0099FCD2 /* TypeContactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF754206A41DA0099FCD2 /* TypeContactExtension.swift */; };
-		2BEDF757206A41F10099FCD2 /* ContactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF756206A41F10099FCD2 /* ContactExtension.swift */; };
-		2BEDF759206A42030099FCD2 /* PatientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF758206A42030099FCD2 /* PatientExtension.swift */; };
-		2BEDF75B206A42130099FCD2 /* EvenementExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF75A206A42130099FCD2 /* EvenementExtension.swift */; };
-		2BEDF75D206A42260099FCD2 /* OrdonnanceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF75C206A42260099FCD2 /* OrdonnanceExtension.swift */; };
-		2BEDF75F206A423D0099FCD2 /* PriseMedicamenteuseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF75E206A423D0099FCD2 /* PriseMedicamenteuseExtension.swift */; };
-		2BEDF761206A424E0099FCD2 /* ActiviteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF760206A424E0099FCD2 /* ActiviteExtension.swift */; };
-		2BEDF763206A42600099FCD2 /* RDVExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF762206A42600099FCD2 /* RDVExtension.swift */; };
-		2BEDF765206A42710099FCD2 /* TraceurExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF764206A42710099FCD2 /* TraceurExtension.swift */; };
-		2BEDF767206A42810099FCD2 /* EvaluationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF766206A42810099FCD2 /* EvaluationExtension.swift */; };
-		2BEDF769206A42960099FCD2 /* SymptomeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF768206A42960099FCD2 /* SymptomeExtension.swift */; };
-		2BEDF76B206A42A70099FCD2 /* AvisExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF76A206A42A70099FCD2 /* AvisExtension.swift */; };
-		2BEDF76D206A42B50099FCD2 /* TypeAvisExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF76C206A42B50099FCD2 /* TypeAvisExtension.swift */; };
 		2BEDF770206A42DA0099FCD2 /* AbstractDAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF76F206A42DA0099FCD2 /* AbstractDAOFactory.swift */; };
 		2BEDF773206A42FA0099FCD2 /* CoreDataDAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF772206A42FA0099FCD2 /* CoreDataDAOFactory.swift */; };
 		2BEDF776206A43140099FCD2 /* MedicamentSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF775206A43140099FCD2 /* MedicamentSeeder.swift */; };
@@ -59,6 +45,20 @@
 		2BEDF7B9206A45960099FCD2 /* AvisCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF7B8206A45960099FCD2 /* AvisCoreDataDAO.swift */; };
 		2BEDF7BB206A45AE0099FCD2 /* TypeAvisCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF7BA206A45AE0099FCD2 /* TypeAvisCoreDataDAO.swift */; };
 		2BF593422073C4CF00E227D7 /* GererMedicamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF593412073C4CF00E227D7 /* GererMedicamentViewController.swift */; };
+		2BF593442073CE0A00E227D7 /* ActiviteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF593432073CE0A00E227D7 /* ActiviteExtension.swift */; };
+		2BF593522073CE2A00E227D7 /* AvisExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF593452073CE2A00E227D7 /* AvisExtension.swift */; };
+		2BF593532073CE2A00E227D7 /* ContactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF593462073CE2A00E227D7 /* ContactExtension.swift */; };
+		2BF593542073CE2A00E227D7 /* EvaluationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF593472073CE2A00E227D7 /* EvaluationExtension.swift */; };
+		2BF593552073CE2A00E227D7 /* EvenementExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF593482073CE2A00E227D7 /* EvenementExtension.swift */; };
+		2BF593562073CE2A00E227D7 /* MedicamentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF593492073CE2A00E227D7 /* MedicamentExtension.swift */; };
+		2BF593572073CE2A00E227D7 /* OrdonnanceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5934A2073CE2A00E227D7 /* OrdonnanceExtension.swift */; };
+		2BF593582073CE2A00E227D7 /* PatientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5934B2073CE2A00E227D7 /* PatientExtension.swift */; };
+		2BF593592073CE2A00E227D7 /* PriseMedicamenteuseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5934C2073CE2A00E227D7 /* PriseMedicamenteuseExtension.swift */; };
+		2BF5935A2073CE2A00E227D7 /* RDVExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5934D2073CE2A00E227D7 /* RDVExtension.swift */; };
+		2BF5935B2073CE2A00E227D7 /* SymptomeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5934E2073CE2A00E227D7 /* SymptomeExtension.swift */; };
+		2BF5935C2073CE2A00E227D7 /* TraceurExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5934F2073CE2A00E227D7 /* TraceurExtension.swift */; };
+		2BF5935D2073CE2A00E227D7 /* TypeAvisExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF593502073CE2A00E227D7 /* TypeAvisExtension.swift */; };
+		2BF5935E2073CE2A00E227D7 /* TypeContactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF593512073CE2A00E227D7 /* TypeContactExtension.swift */; };
 		7A2C29FF205429CA000EC45C /* AjouterPriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2C29FE205429CA000EC45C /* AjouterPriseViewController.swift */; };
 		7A4A735E2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4A735D2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift */; };
 		7A4D13B72062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D13B62062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift */; };
@@ -127,20 +127,6 @@
 
 /* Begin PBXFileReference section */
 		2B5B876E2073B07200494F0C /* MedicamentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentTableViewCell.swift; sourceTree = "<group>"; };
-		2BEDF752206A41BE0099FCD2 /* MedicamentExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentExtension.swift; sourceTree = "<group>"; };
-		2BEDF754206A41DA0099FCD2 /* TypeContactExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeContactExtension.swift; sourceTree = "<group>"; };
-		2BEDF756206A41F10099FCD2 /* ContactExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactExtension.swift; sourceTree = "<group>"; };
-		2BEDF758206A42030099FCD2 /* PatientExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientExtension.swift; sourceTree = "<group>"; };
-		2BEDF75A206A42130099FCD2 /* EvenementExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvenementExtension.swift; sourceTree = "<group>"; };
-		2BEDF75C206A42260099FCD2 /* OrdonnanceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdonnanceExtension.swift; sourceTree = "<group>"; };
-		2BEDF75E206A423D0099FCD2 /* PriseMedicamenteuseExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriseMedicamenteuseExtension.swift; sourceTree = "<group>"; };
-		2BEDF760206A424E0099FCD2 /* ActiviteExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiviteExtension.swift; sourceTree = "<group>"; };
-		2BEDF762206A42600099FCD2 /* RDVExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RDVExtension.swift; sourceTree = "<group>"; };
-		2BEDF764206A42710099FCD2 /* TraceurExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceurExtension.swift; sourceTree = "<group>"; };
-		2BEDF766206A42810099FCD2 /* EvaluationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluationExtension.swift; sourceTree = "<group>"; };
-		2BEDF768206A42960099FCD2 /* SymptomeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomeExtension.swift; sourceTree = "<group>"; };
-		2BEDF76A206A42A70099FCD2 /* AvisExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvisExtension.swift; sourceTree = "<group>"; };
-		2BEDF76C206A42B50099FCD2 /* TypeAvisExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAvisExtension.swift; sourceTree = "<group>"; };
 		2BEDF76F206A42DA0099FCD2 /* AbstractDAOFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractDAOFactory.swift; sourceTree = "<group>"; };
 		2BEDF772206A42FA0099FCD2 /* CoreDataDAOFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDAOFactory.swift; sourceTree = "<group>"; };
 		2BEDF775206A43140099FCD2 /* MedicamentSeeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentSeeder.swift; sourceTree = "<group>"; };
@@ -178,6 +164,20 @@
 		2BEDF7B8206A45960099FCD2 /* AvisCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvisCoreDataDAO.swift; sourceTree = "<group>"; };
 		2BEDF7BA206A45AE0099FCD2 /* TypeAvisCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAvisCoreDataDAO.swift; sourceTree = "<group>"; };
 		2BF593412073C4CF00E227D7 /* GererMedicamentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GererMedicamentViewController.swift; sourceTree = "<group>"; };
+		2BF593432073CE0A00E227D7 /* ActiviteExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiviteExtension.swift; sourceTree = "<group>"; };
+		2BF593452073CE2A00E227D7 /* AvisExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvisExtension.swift; sourceTree = "<group>"; };
+		2BF593462073CE2A00E227D7 /* ContactExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactExtension.swift; sourceTree = "<group>"; };
+		2BF593472073CE2A00E227D7 /* EvaluationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluationExtension.swift; sourceTree = "<group>"; };
+		2BF593482073CE2A00E227D7 /* EvenementExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvenementExtension.swift; sourceTree = "<group>"; };
+		2BF593492073CE2A00E227D7 /* MedicamentExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentExtension.swift; sourceTree = "<group>"; };
+		2BF5934A2073CE2A00E227D7 /* OrdonnanceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdonnanceExtension.swift; sourceTree = "<group>"; };
+		2BF5934B2073CE2A00E227D7 /* PatientExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientExtension.swift; sourceTree = "<group>"; };
+		2BF5934C2073CE2A00E227D7 /* PriseMedicamenteuseExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriseMedicamenteuseExtension.swift; sourceTree = "<group>"; };
+		2BF5934D2073CE2A00E227D7 /* RDVExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RDVExtension.swift; sourceTree = "<group>"; };
+		2BF5934E2073CE2A00E227D7 /* SymptomeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomeExtension.swift; sourceTree = "<group>"; };
+		2BF5934F2073CE2A00E227D7 /* TraceurExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceurExtension.swift; sourceTree = "<group>"; };
+		2BF593502073CE2A00E227D7 /* TypeAvisExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAvisExtension.swift; sourceTree = "<group>"; };
+		2BF593512073CE2A00E227D7 /* TypeContactExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeContactExtension.swift; sourceTree = "<group>"; };
 		7A2C29FE205429CA000EC45C /* AjouterPriseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AjouterPriseViewController.swift; path = ../AjouterPriseViewController.swift; sourceTree = "<group>"; };
 		7A4A735D2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriseOrdonnanceTableViewCell.swift; sourceTree = "<group>"; };
 		7A4D13B62062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjouterOrdonnanceViewController.swift; sourceTree = "<group>"; };
@@ -261,20 +261,20 @@
 		2BEDF751206A41A40099FCD2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2BEDF760206A424E0099FCD2 /* ActiviteExtension.swift */,
-				2BEDF76A206A42A70099FCD2 /* AvisExtension.swift */,
-				2BEDF756206A41F10099FCD2 /* ContactExtension.swift */,
-				2BEDF766206A42810099FCD2 /* EvaluationExtension.swift */,
-				2BEDF75A206A42130099FCD2 /* EvenementExtension.swift */,
-				2BEDF752206A41BE0099FCD2 /* MedicamentExtension.swift */,
-				2BEDF75C206A42260099FCD2 /* OrdonnanceExtension.swift */,
-				2BEDF758206A42030099FCD2 /* PatientExtension.swift */,
-				2BEDF75E206A423D0099FCD2 /* PriseMedicamenteuseExtension.swift */,
-				2BEDF762206A42600099FCD2 /* RDVExtension.swift */,
-				2BEDF768206A42960099FCD2 /* SymptomeExtension.swift */,
-				2BEDF764206A42710099FCD2 /* TraceurExtension.swift */,
-				2BEDF76C206A42B50099FCD2 /* TypeAvisExtension.swift */,
-				2BEDF754206A41DA0099FCD2 /* TypeContactExtension.swift */,
+				2BF593452073CE2A00E227D7 /* AvisExtension.swift */,
+				2BF593462073CE2A00E227D7 /* ContactExtension.swift */,
+				2BF593472073CE2A00E227D7 /* EvaluationExtension.swift */,
+				2BF593482073CE2A00E227D7 /* EvenementExtension.swift */,
+				2BF593492073CE2A00E227D7 /* MedicamentExtension.swift */,
+				2BF5934A2073CE2A00E227D7 /* OrdonnanceExtension.swift */,
+				2BF5934B2073CE2A00E227D7 /* PatientExtension.swift */,
+				2BF5934C2073CE2A00E227D7 /* PriseMedicamenteuseExtension.swift */,
+				2BF5934D2073CE2A00E227D7 /* RDVExtension.swift */,
+				2BF5934E2073CE2A00E227D7 /* SymptomeExtension.swift */,
+				2BF5934F2073CE2A00E227D7 /* TraceurExtension.swift */,
+				2BF593502073CE2A00E227D7 /* TypeAvisExtension.swift */,
+				2BF593512073CE2A00E227D7 /* TypeContactExtension.swift */,
+				2BF593432073CE0A00E227D7 /* ActiviteExtension.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -657,6 +657,7 @@
 			files = (
 				2BEDF7B1206A45410099FCD2 /* RDVCoreDataDAO.swift in Sources */,
 				2BEDF78C206A43E80099FCD2 /* EvenementDAO.swift in Sources */,
+				2BF593572073CE2A00E227D7 /* OrdonnanceExtension.swift in Sources */,
 				7A4D13B72062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift in Sources */,
 				7AA533FE2057C09C00A2A443 /* PriseMedicamentTableViewCell.swift in Sources */,
 				2B5B876F2073B07200494F0C /* MedicamentTableViewCell.swift in Sources */,
@@ -666,33 +667,37 @@
 				7BFCDC76206BBD3600A3A7CC /* AjouterContactViewController.swift in Sources */,
 				7B83BB8320739F0E0064632E /* SyntheseViewController.swift in Sources */,
 				2BEDF7A5206A44D00099FCD2 /* ContactCoreDataDAO.swift in Sources */,
-				2BEDF757206A41F10099FCD2 /* ContactExtension.swift in Sources */,
 				2BEDF792206A44170099FCD2 /* PatientDAO.swift in Sources */,
-				2BEDF75B206A42130099FCD2 /* EvenementExtension.swift in Sources */,
 				7ADE30A92072F38F00C3EA45 /* ShowPriseViewController.swift in Sources */,
+				2BF5935A2073CE2A00E227D7 /* RDVExtension.swift in Sources */,
 				2BEDF796206A44370099FCD2 /* RDVDAO.swift in Sources */,
 				7BFCDC70206B8D9F00A3A7CC /* AgendaViewController.swift in Sources */,
 				BCF2FD202070DED200A6C8B3 /* TraceursTableViewController.swift in Sources */,
 				7BFCDC74206BA2E600A3A7CC /* MonProfilViewController.swift in Sources */,
 				7A4A735E2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift in Sources */,
+				2BF593522073CE2A00E227D7 /* AvisExtension.swift in Sources */,
+				2BF5935B2073CE2A00E227D7 /* SymptomeExtension.swift in Sources */,
+				2BF593592073CE2A00E227D7 /* PriseMedicamenteuseExtension.swift in Sources */,
 				BCC265FA206F8A2E008093C4 /* NSDateExtension.swift in Sources */,
 				2BEDF77B206A433F0099FCD2 /* DialogBoxHelper.swift in Sources */,
 				2BEDF790206A44050099FCD2 /* OrdonnanceDAO.swift in Sources */,
-				2BEDF765206A42710099FCD2 /* TraceurExtension.swift in Sources */,
-				2BEDF76B206A42A70099FCD2 /* AvisExtension.swift in Sources */,
 				2BF593422073C4CF00E227D7 /* GererMedicamentViewController.swift in Sources */,
-				2BEDF759206A42030099FCD2 /* PatientExtension.swift in Sources */,
 				7A596601206EBCD5007F2ECA /* AjouterActiviteViewController.swift in Sources */,
 				2BEDF7A9206A44F30099FCD2 /* EvenementCoreDataDAO.swift in Sources */,
+				2BF593542073CE2A00E227D7 /* EvaluationExtension.swift in Sources */,
+				2BF593442073CE0A00E227D7 /* ActiviteExtension.swift in Sources */,
 				7B83BB8020737FF70064632E /* TypeAvisSeeder.swift in Sources */,
 				7BFCDC72206B8EBD00A3A7CC /* EvenementTableViewCell.swift in Sources */,
+				2BF5935D2073CE2A00E227D7 /* TypeAvisExtension.swift in Sources */,
 				BCE76A1420703303002580DF /* NewSymptomeViewController.swift in Sources */,
 				2BEDF77F206A43640099FCD2 /* DataHelper.swift in Sources */,
+				2BF5935E2073CE2A00E227D7 /* TypeContactExtension.swift in Sources */,
 				2BEDF7B3206A455B0099FCD2 /* TraceurCoreDataDAO.swift in Sources */,
 				7A6BB3612050281C00A46AB3 /* ViewController.swift in Sources */,
 				2BEDF7B9206A45960099FCD2 /* AvisCoreDataDAO.swift in Sources */,
 				2BEDF773206A42FA0099FCD2 /* CoreDataDAOFactory.swift in Sources */,
 				2BEDF78E206A43F70099FCD2 /* MedicamentDAO.swift in Sources */,
+				2BF593532073CE2A00E227D7 /* ContactExtension.swift in Sources */,
 				2BEDF776206A43140099FCD2 /* MedicamentSeeder.swift in Sources */,
 				2BEDF79E206A447B0099FCD2 /* SymptomeDAO.swift in Sources */,
 				BCFF8260206AFAD6006AE4D6 /* InscriptionViewController.swift in Sources */,
@@ -701,18 +706,15 @@
 				BCE76A1220702A07002580DF /* newEtatViewController.swift in Sources */,
 				2BEDF79C206A44680099FCD2 /* TypeContactDAO.swift in Sources */,
 				2BEDF7AD206A451A0099FCD2 /* PriseMedicamenteuseCoreDataDAO.swift in Sources */,
+				2BF593552073CE2A00E227D7 /* EvenementExtension.swift in Sources */,
 				BCE76A16207039B1002580DF /* SymptomeSeeder.swift in Sources */,
 				2BEDF7B5206A456F0099FCD2 /* EvaluationCoreDataDAO.swift in Sources */,
 				BCCDB421207154F200DB87AA /* AvisTableViewCell.swift in Sources */,
 				7BFCDC6E206B853500A3A7CC /* ContactTableViewCell.swift in Sources */,
-				2BEDF753206A41BE0099FCD2 /* MedicamentExtension.swift in Sources */,
-				2BEDF763206A42600099FCD2 /* RDVExtension.swift in Sources */,
 				2BEDF781206A437A0099FCD2 /* DateHelper.swift in Sources */,
 				2BEDF79A206A44570099FCD2 /* TypeAvisDAO.swift in Sources */,
-				2BEDF755206A41DA0099FCD2 /* TypeContactExtension.swift in Sources */,
 				2BEDF794206A44290099FCD2 /* PriseMedicamenteuseDAO.swift in Sources */,
 				BCCDB41D207154DB00DB87AA /* ActiviteTableViewCell.swift in Sources */,
-				2BEDF75D206A42260099FCD2 /* OrdonnanceExtension.swift in Sources */,
 				7AA534022057C9FF00A2A443 /* pilulierViewController.swift in Sources */,
 				2BEDF7AF206A45300099FCD2 /* ActiviteCoreDataDAO.swift in Sources */,
 				2BEDF7BB206A45AE0099FCD2 /* TypeAvisCoreDataDAO.swift in Sources */,
@@ -722,23 +724,21 @@
 				7A6BB3672050281C00A46AB3 /* Mon_Pk___Moi.xcdatamodeld in Sources */,
 				7A2C29FF205429CA000EC45C /* AjouterPriseViewController.swift in Sources */,
 				BCCDB417207123AF00DB87AA /* TraceurTableViewCell.swift in Sources */,
-				2BEDF761206A424E0099FCD2 /* ActiviteExtension.swift in Sources */,
-				2BEDF76D206A42B50099FCD2 /* TypeAvisExtension.swift in Sources */,
 				7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */,
 				BCCDB41B207154CB00DB87AA /* EvaluationTableViewCell.swift in Sources */,
 				2BEDF784206A43970099FCD2 /* ActiviteDAO.swift in Sources */,
+				2BF593582073CE2A00E227D7 /* PatientExtension.swift in Sources */,
 				7B83BB872073B0F40064632E /* ShowAvisViewController.swift in Sources */,
 				2BEDF7A1206A44A10099FCD2 /* MedicamentCoreDataDAO.swift in Sources */,
 				2BEDF770206A42DA0099FCD2 /* AbstractDAOFactory.swift in Sources */,
 				BCE76A18207040F2002580DF /* SymptomeTableViewCell.swift in Sources */,
+				2BF593562073CE2A00E227D7 /* MedicamentExtension.swift in Sources */,
 				2BEDF7A3206A44BF0099FCD2 /* TypeContactCoreDataDAO.swift in Sources */,
 				2BEDF7AB206A45000099FCD2 /* OrdonnanceCoreDataDAO.swift in Sources */,
-				2BEDF767206A42810099FCD2 /* EvaluationExtension.swift in Sources */,
 				2BEDF77D206A43550099FCD2 /* CoreDataManager.swift in Sources */,
-				2BEDF769206A42960099FCD2 /* SymptomeExtension.swift in Sources */,
 				7A6CB976206D9BBA00601DF5 /* AjouterRDVViewController.swift in Sources */,
+				2BF5935C2073CE2A00E227D7 /* TraceurExtension.swift in Sources */,
 				2BEDF788206A43BD0099FCD2 /* ContactDAO.swift in Sources */,
-				2BEDF75F206A423D0099FCD2 /* PriseMedicamenteuseExtension.swift in Sources */,
 				BC348F12206F6AD100686D9E /* newPlageHoraireController.swift in Sources */,
 				7BFCDC6C206B84BE00A3A7CC /* InformationViewController.swift in Sources */,
 			);

@@ -208,11 +208,9 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
-    /*
-    @IBAction func unwindTo(segue: UIStoryboardSegue){
-        self.priseMedicamentTable.reloadData()
+    @IBAction func unwindToSyntheseAfterModifieAvis(segue: UIStoryboardSegue){
+        self.tableView.reloadData()
     }
-    */
     
     /*
     // MARK: - Navigation
