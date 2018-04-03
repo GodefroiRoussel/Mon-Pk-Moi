@@ -155,8 +155,8 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
             as! PriseTableViewCell
         dateFormatter.dateFormat = "dd/MM - HH:mm"
         cell.datePriseLabel.text = dateFormatter.string(from: self.medicamentsNonPris[indexPath.row].dateTheorique as Date)
-        cell.medicamentLabel.text = self.medicamentsNonPris[indexPath.row].nom
-        //TODO: rajouter la dose aussi
+        cell.medicamentLabel.text = self.medicamentsNonPris[indexPath.row].belongs_to?.nom
+        cell.doseLabel.text = self.medicamentsNonPris[indexPath.row].dose
         return cell
      case 2:
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "avisCell", for: indexPath)
