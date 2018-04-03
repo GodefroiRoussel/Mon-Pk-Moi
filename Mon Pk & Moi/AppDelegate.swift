@@ -94,7 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
              print(patient)
              }*/
             
-            let typeMedecin : TypeContact = try typeContactDAO.find(withLibelle:"kinésithérapeute")!
+            let typeMedecin : TypeContact = try typeContactDAO.find(withLibelle:"neurologue")!
             let contactRouquier : Contact = try contactDAO.create(withName: "Rouquier", withPrenom: "Clément", withTelephone: "0606060606", withAdresse: "Polytech", is_a: typeMedecin, is_connected_to : patient)
             
             print("J'ai créé \(contactRouquier.nom)")

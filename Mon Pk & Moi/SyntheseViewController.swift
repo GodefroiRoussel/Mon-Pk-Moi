@@ -39,6 +39,9 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
             evaluations = try evaluationDAO.getAllEvaluations() //TODO: Changer en évaluation pour ce traceur
             medicamentsNonPris = try priseDAO.getAllPriseMedicamenteuses() //TODO: Changer en toutes les prises non effectuées ou effectuées en retard lors des 5 derniers jours
             avis = try avisDAO.getAllAvis() //TODO: Changer en tous les avis pour ce traceur
+            for avi in avis {
+                print(avi)
+            }
             activites = try activiteDAO.getAllActivites() //TODO: Changer en toutes les activités réalisées lors des 5 derniers jours
             titreLabel.text = "Les évaluations du patient"
             for evaluation in evaluations {
@@ -106,9 +109,8 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
      case 2:
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "avisCell", for: indexPath)
             as! AvisTableViewCell
+        print(self.avis[indexPath.row])
         cell.questionLabel.text = self.avis[indexPath.row].is_a!.libelle
-        cell.reponseLabel.text = String(self.avis[indexPath.row].choix)
-        cell.commentaireLabel.text = self.avis[indexPath.row].commentaire
         return cell
      case 3:
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "activiteCell", for: indexPath)

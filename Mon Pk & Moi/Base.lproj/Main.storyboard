@@ -2487,37 +2487,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2p-2h-MOf">
-                                                    <rect key="frame" x="8" y="11" width="69" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oui/Non" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhZ-wR-s9h">
-                                                    <rect key="frame" x="117" y="11" width="63" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Commentare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eh2-lh-im8">
-                                                    <rect key="frame" x="190" y="11" width="100" height="21"/>
+                                                    <rect key="frame" x="85.5" y="11" width="69" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="lhZ-wR-s9h" firstAttribute="leading" secondItem="q2p-2h-MOf" secondAttribute="trailing" constant="40" id="G9C-Nr-mXK"/>
-                                                <constraint firstItem="eh2-lh-im8" firstAttribute="top" secondItem="bJ9-f9-I8K" secondAttribute="top" constant="11" id="YCD-yy-GlK"/>
-                                                <constraint firstItem="q2p-2h-MOf" firstAttribute="leading" secondItem="bJ9-f9-I8K" secondAttribute="leadingMargin" id="a2L-ix-6te"/>
+                                                <constraint firstItem="q2p-2h-MOf" firstAttribute="centerX" secondItem="bJ9-f9-I8K" secondAttribute="centerX" id="LNX-Hx-id7"/>
                                                 <constraint firstItem="q2p-2h-MOf" firstAttribute="top" secondItem="bJ9-f9-I8K" secondAttribute="topMargin" constant="3" id="j7l-Ub-IzH"/>
-                                                <constraint firstItem="lhZ-wR-s9h" firstAttribute="top" secondItem="bJ9-f9-I8K" secondAttribute="topMargin" constant="3" id="pep-Pl-qXo"/>
-                                                <constraint firstItem="eh2-lh-im8" firstAttribute="leading" secondItem="lhZ-wR-s9h" secondAttribute="trailing" constant="10" id="zir-PZ-e6G"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="commentaireLabel" destination="eh2-lh-im8" id="5kS-I4-abB"/>
-                                            <outlet property="questionLabel" destination="q2p-2h-MOf" id="pFI-gj-hYD"/>
-                                            <outlet property="reponseLabel" destination="lhZ-wR-s9h" id="1UN-sN-b51"/>
+                                            <outlet property="questionLabel" destination="q2p-2h-MOf" id="bHu-wG-HUz"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="activiteCell" id="xLq-Uf-tTi" customClass="ActiviteTableViewCell" customModule="Mon_Pk___Moi" customModuleProvider="target">
@@ -3151,9 +3133,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NF4-pS-3wl"/>
-        <segue reference="vrs-xg-WVI"/>
-        <segue reference="9wV-Hr-QX6"/>
-        <segue reference="8Ec-Hm-Ldp"/>
+        <segue reference="ygy-gA-OZd"/>
+        <segue reference="hUg-lN-TUu"/>
         <segue reference="87U-Nj-Oh4"/>
+        <segue reference="9wV-Hr-QX6"/>
     </inferredMetricsTieBreakers>
 </document>
