@@ -164,10 +164,11 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
             let patientDAO: PatientDAO = factory.getPatientDAO()
             let priseDAO: PriseMedicamenteuseDAO = factory.getPriseMedicamenteuseDAO()
             do {
+                let dateDemain: NSDate = DateHelper.addDays(dayD: NSDate(), nbDaysToAdd: 1)
                 let patient: Patient = try patientDAO.getAllPatients()[0] //TODO : SOLUTION TEMPORAIRE A CHANGER
-                let ordonnance: Ordonnance = try ordonnanceDAO.create(withDateDebutTraitement: NSDate(), concern: patient, created_by: selectedMedecin!, untillDate: pickerDate.date as NSDate)
+                let ordonnance: Ordonnance = try ordonnanceDAO.create(withDateDebutTraitement: dateDemain, concern: patient, created_by: selectedMedecin!, untillDate: pickerDate.date as NSDate)
                 
-                let dates = DateHelper.getDates(dateD: NSDate(), dateF: pickerDate.date as NSDate)
+                let dates = DateHelper.getDates(dateD: dateDemain, dateF: pickerDate.date as NSDate)
                 var index = 1
                 for date in dates {
                     for i in 0..<medicaments.count {
@@ -210,7 +211,7 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
         
         func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             let dest = segue.destination as! pilulierViewController
-            for pri in prises {
+            /*for pri in prises {
                 let formatter = DateFormatter()
                 formatter.dateStyle = .long
                 formatter.timeStyle = .none
@@ -220,7 +221,7 @@ class AjouterOrdonnanceViewController: UIViewController, UIPickerViewDelegate, U
                 if dest.dateLabel.text == str {
                     dest.priseMedicamenteuses.append(pri)
                 }
-            }
+            }*/
             dest.priseMedicamenteuses.sort(by: { (element0, element1) -> Bool in
                 if element0.dateTheorique as Date > element1.dateTheorique as Date {
                     return false
