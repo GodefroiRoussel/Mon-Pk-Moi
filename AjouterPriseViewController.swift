@@ -27,6 +27,7 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
         let medicamentDAO : MedicamentDAO = factory.getMedicamentDAO()
         do {
             medicaments = try medicamentDAO.getAllMedicaments()
+            medicaments.sort(by: { (medicament1, medicament2) -> Bool in medicament1.nom < medicament2.nom } )
             self.medicamentPickerView.dataSource = self
             self.medicamentPickerView.delegate = self
             
