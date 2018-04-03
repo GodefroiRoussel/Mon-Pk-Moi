@@ -86,6 +86,15 @@ class pilulierViewController: UIViewController, UITableViewDataSource, UITableVi
         dateFormatter.dateFormat = "HH:mm"
         let heure = dateFormatter.string(from: dateTheorique as! Date)
         cell.timeLabel.text = heure
+        if priseMedicamenteuses[indexPath.row].pdateEffective == nil {
+            cell.etatLabel.text = "en attente"
+        } else {
+            if priseMedicamenteuses[indexPath.row].estEffectue == false {
+                cell.etatLabel.text = "refusée"
+            } else {
+                cell.etatLabel.text = "validée"
+            }
+        }
         return cell
     }
     
