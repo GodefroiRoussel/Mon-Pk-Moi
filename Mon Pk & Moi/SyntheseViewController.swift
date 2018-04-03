@@ -17,6 +17,7 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
     var prises: [PriseMedicamenteuse] = []
     var medicamentsNonPris: [PriseMedicamenteuse] = []
     var avis: [Avis] = []
+    var avi: [Avis] = []
     var activites: [Activite] = []
     
     let dateFormatter: DateFormatter = DateFormatter()
@@ -42,8 +43,10 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
             prises = try priseDAO.getAllPriseMedicamenteuses()
             medicamentsNonPris = self.keepUntakenPrises(forPrises: self.keepOnlyPrisesForLastFiveDays(withDateRDV: (traceur?.belongs_to?.dateTheorique)!))
             avis = try avisDAO.getAllAvis() //TODO: Changer en tous les avis pour ce traceur
-            for avi in avis {
-                print(avi)
+            for index in avis {
+                if index.belongs_to == traceur {
+                    avi.append(index)
+                }
             }
             activites = self.activitesForLastFiveDays(withDateRDV: (traceur?.belongs_to?.dateTheorique)!)
             titreLabel.text = "Les évaluations du patient"
@@ -141,7 +144,7 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
         case 1:
             return self.medicamentsNonPris.count
         case 2:
-            return self.avis.count
+            return self.avi.count
         case 3:
             return self.activites.count
         default:
@@ -165,7 +168,7 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "avisCell", for: indexPath)
             as! AvisTableViewCell
         print(self.avis[indexPath.row])
-        cell.questionLabel.text = self.avis[indexPath.row].is_a!.libelle
+        cell.questionLabel.text = self.avi[indexPath.row].is_a!.libelle
         return cell
      case 3:
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "activiteCell", for: indexPath)
@@ -191,6 +194,22 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.symptomesLabel.text = "Test"
         return cell
      }
+    }
+    
+    let segueShowAvisId = "showAvisId"
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == self.segueShowAvisId {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let showAvisViewController = segue.destination as! ShowAvisViewController
+                showAvisViewController.avis = self.avi[indexPath.row]
+                self.tableView.deselectRow(at: indexPath, animated: true)
+            }
+        }
+    }
+    
+    @IBAction func unwindTo(segue: UIStoryboardSegue){
+        self.priseMedicamentTable.reloadData()
     }
     
     /*

@@ -85,6 +85,7 @@
 		7ADE30A92072F38F00C3EA45 /* ShowPriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADE30A82072F38F00C3EA45 /* ShowPriseViewController.swift */; };
 		7B83BB8020737FF70064632E /* TypeAvisSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B83BB7F20737FF70064632E /* TypeAvisSeeder.swift */; };
 		7B83BB8320739F0E0064632E /* SyntheseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B83BB8220739F0E0064632E /* SyntheseViewController.swift */; };
+		7B83BB872073B0F40064632E /* ShowAvisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B83BB862073B0F40064632E /* ShowAvisViewController.swift */; };
 		7BFCDC6C206B84BE00A3A7CC /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFCDC6B206B84BE00A3A7CC /* InformationViewController.swift */; };
 		7BFCDC6E206B853500A3A7CC /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFCDC6D206B853500A3A7CC /* ContactTableViewCell.swift */; };
 		7BFCDC70206B8D9F00A3A7CC /* AgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFCDC6F206B8D9F00A3A7CC /* AgendaViewController.swift */; };
@@ -209,6 +210,7 @@
 		7ADE30A82072F38F00C3EA45 /* ShowPriseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowPriseViewController.swift; sourceTree = "<group>"; };
 		7B83BB7F20737FF70064632E /* TypeAvisSeeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAvisSeeder.swift; sourceTree = "<group>"; };
 		7B83BB8220739F0E0064632E /* SyntheseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntheseViewController.swift; sourceTree = "<group>"; };
+		7B83BB862073B0F40064632E /* ShowAvisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAvisViewController.swift; sourceTree = "<group>"; };
 		7BFCDC6B206B84BE00A3A7CC /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		7BFCDC6D206B853500A3A7CC /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		7BFCDC6F206B8D9F00A3A7CC /* AgendaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaViewController.swift; sourceTree = "<group>"; };
@@ -499,6 +501,7 @@
 		BCF2FD1E2070DE8500A6C8B3 /* Synthese */ = {
 			isa = PBXGroup;
 			children = (
+				7B83BB862073B0F40064632E /* ShowAvisViewController.swift */,
 				7B83BB8220739F0E0064632E /* SyntheseViewController.swift */,
 				BCF2FD1F2070DED200A6C8B3 /* TraceursTableViewController.swift */,
 				BCCDB416207123AF00DB87AA /* TraceurTableViewCell.swift */,
@@ -724,6 +727,7 @@
 				7A6BB35F2050281C00A46AB3 /* AppDelegate.swift in Sources */,
 				BCCDB41B207154CB00DB87AA /* EvaluationTableViewCell.swift in Sources */,
 				2BEDF784206A43970099FCD2 /* ActiviteDAO.swift in Sources */,
+				7B83BB872073B0F40064632E /* ShowAvisViewController.swift in Sources */,
 				2BEDF7A1206A44A10099FCD2 /* MedicamentCoreDataDAO.swift in Sources */,
 				2BEDF770206A42DA0099FCD2 /* AbstractDAOFactory.swift in Sources */,
 				BCE76A18207040F2002580DF /* SymptomeTableViewCell.swift in Sources */,
