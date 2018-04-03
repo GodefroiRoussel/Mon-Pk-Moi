@@ -60,18 +60,20 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == medicamentPickerView {
-            selectedMedicament = medicaments[row]
-            return selectedMedicament!.nom
+            return medicaments[row].nom
         } else {
             let selection = medicamentPickerView.selectedRow(inComponent: 0)
-            selectedDose = medicaments[selection].doses[row]
-            return String(describing: selectedDose!)
+            return String(describing: medicaments[selection].doses[row])
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == medicamentPickerView {
+            selectedMedicament = medicaments[row]
             dosePickerView.reloadAllComponents()
+        } else if pickerView == dosePickerView {
+            let selection = medicamentPickerView.selectedRow(inComponent: 0)
+            selectedDose = medicaments[selection].doses[row]
         }
     }
     
