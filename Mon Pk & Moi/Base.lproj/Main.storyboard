@@ -5,7 +5,8 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -755,7 +756,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nomMedicament" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Onb-FS-csL">
-                                <rect key="frame" x="96" y="148" width="129" height="21"/>
+                                <rect key="frame" x="95.5" y="148" width="129" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -790,7 +791,7 @@
                                 </items>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Spo-p7-hAd">
-                                <rect key="frame" x="102" y="428" width="117" height="30"/>
+                                <rect key="frame" x="101.5" y="428" width="117" height="30"/>
                                 <state key="normal" title="Ajouter une dose"/>
                                 <connections>
                                     <action selector="ajouterDose:" destination="Z1s-1Y-gl3" eventType="touchUpInside" id="Lfm-wo-12l"/>
@@ -931,7 +932,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAw-rF-quI">
-                                <rect key="frame" x="102" y="416" width="117" height="30"/>
+                                <rect key="frame" x="101.5" y="416" width="117" height="30"/>
                                 <state key="normal" title="Ajouter une dose"/>
                             </button>
                         </subviews>
@@ -1022,7 +1023,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liste des médicaments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uU2-Xh-uAW">
-                                <rect key="frame" x="72" y="148" width="177" height="21"/>
+                                <rect key="frame" x="71.5" y="148" width="177" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1047,11 +1048,11 @@
                                         <rect key="frame" x="0.0" y="28" width="288" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ris-FK-VoI" id="2O0-Fj-6e3">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nomMedicament" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqi-ki-g8n">
-                                                    <rect key="frame" x="80" y="12" width="129" height="21"/>
+                                                    <rect key="frame" x="79.5" y="12" width="129" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -2258,15 +2259,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yid-7r-p4E">
-                                <rect key="frame" x="70" y="447" width="180" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="tXV-zN-hlg"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Durée du RDV (en minutes)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRG-Y2-Rcx">
                                 <rect key="frame" x="56" y="351" width="208" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -2282,6 +2274,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Aucun médecin n'a encore été créé" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yid-7r-p4E">
+                                <rect key="frame" x="28" y="447" width="264" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Yid-7r-p4E" secondAttribute="height" multiplier="44:5" id="xwY-0V-sHf"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -2290,11 +2291,11 @@
                             <constraint firstItem="Qaa-W8-flh" firstAttribute="leading" secondItem="usG-An-aud" secondAttribute="leading" id="BHX-Wr-vTh"/>
                             <constraint firstItem="58G-A8-kxS" firstAttribute="centerX" secondItem="usG-An-aud" secondAttribute="centerX" id="CSr-tT-Xfa"/>
                             <constraint firstItem="IRG-Y2-Rcx" firstAttribute="top" secondItem="Rcp-kJ-uFJ" secondAttribute="bottom" constant="8" id="FfB-6x-m99"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Yid-7r-p4E" secondAttribute="trailing" constant="12" id="HLA-Bz-F2z"/>
                             <constraint firstItem="IRG-Y2-Rcx" firstAttribute="centerX" secondItem="usG-An-aud" secondAttribute="centerX" id="O0a-Hm-dRK"/>
                             <constraint firstItem="HLU-NH-Ot5" firstAttribute="top" secondItem="Y0C-Nv-JWW" secondAttribute="bottom" constant="8" id="RHv-Qo-S8a"/>
                             <constraint firstItem="lGD-wE-ZAZ" firstAttribute="centerX" secondItem="usG-An-aud" secondAttribute="centerX" id="TMB-BC-oeP"/>
                             <constraint firstItem="Y0C-Nv-JWW" firstAttribute="top" secondItem="lGD-wE-ZAZ" secondAttribute="bottom" constant="8" id="UYR-vn-Ywy"/>
-                            <constraint firstItem="Yid-7r-p4E" firstAttribute="top" secondItem="O15-C4-ccO" secondAttribute="bottom" constant="8" id="UcZ-QK-8vC"/>
                             <constraint firstAttribute="trailing" secondItem="Qaa-W8-flh" secondAttribute="trailing" id="V9e-sl-04s"/>
                             <constraint firstItem="e1a-VP-wCI" firstAttribute="centerX" secondItem="usG-An-aud" secondAttribute="centerX" id="VHG-cN-BIK"/>
                             <constraint firstItem="Rcp-kJ-uFJ" firstAttribute="top" secondItem="EDa-DG-jOC" secondAttribute="bottom" constant="8" id="Xgv-7v-nk0"/>
@@ -2308,9 +2309,10 @@
                             <constraint firstItem="58G-A8-kxS" firstAttribute="top" secondItem="IRG-Y2-Rcx" secondAttribute="bottom" constant="8" id="fv6-gd-Cgo"/>
                             <constraint firstItem="emi-gm-OyR" firstAttribute="top" secondItem="3lO-YO-gqq" secondAttribute="bottom" id="gK7-HV-TQh"/>
                             <constraint firstItem="3lO-YO-gqq" firstAttribute="leading" secondItem="usG-An-aud" secondAttribute="leading" id="iqt-hu-J5P"/>
+                            <constraint firstItem="Yid-7r-p4E" firstAttribute="leading" secondItem="usG-An-aud" secondAttribute="leadingMargin" constant="12" id="j5l-Wg-GRo"/>
                             <constraint firstItem="lGD-wE-ZAZ" firstAttribute="top" secondItem="Qaa-W8-flh" secondAttribute="bottom" constant="10" id="l6M-jP-yHR"/>
+                            <constraint firstItem="Yid-7r-p4E" firstAttribute="top" secondItem="O15-C4-ccO" secondAttribute="bottom" constant="8" id="m1K-M0-wFA"/>
                             <constraint firstItem="O15-C4-ccO" firstAttribute="top" secondItem="58G-A8-kxS" secondAttribute="bottom" constant="8" id="o1S-Hk-cTP"/>
-                            <constraint firstItem="Yid-7r-p4E" firstAttribute="centerX" secondItem="usG-An-aud" secondAttribute="centerX" id="qfc-UW-Nhj"/>
                         </constraints>
                     </view>
                     <connections>
@@ -2325,7 +2327,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rai-F1-yUX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="wUe-JV-4G5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2222" y="-672"/>
+            <point key="canvasLocation" x="2221.875" y="-672.88732394366195"/>
         </scene>
         <!--Mon profil-->
         <scene sceneID="zUT-ub-EYO">

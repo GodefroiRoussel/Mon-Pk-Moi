@@ -10,15 +10,15 @@ import Foundation
 
 struct TypeContactSeeder {
     let types:[String] = [
-        "kinésithérapeute","orthophoniste","infirmier", "psychologue clinicien","neuropsychologue",
-        "neurologue", "médecin généraliste", "psychiatre", "neurochirurgien", "médecin de structure antidouleur"
-        ,"gériatre", "médecin spécialiste en médecine physique", "gastro-entérologue", "urologue, gynécologue, sexologue",
-         "ophtalmologiste", "ORL-phoniatre", "rhumatologue", "chirurgien orthopédique", "pneumologue",
-         "cardiologue", "médecin du travail", "chirurgien-dentiste", "ergothérapeute", "psychomotricien",
-         "pédicure-podologue", "diététicien(ne)", "orthoptiste", "assistant de service social", "Personnels de transport sanitaire",
-         "personnels de soins infirmiers à domicile", "personnels des services d’aide à domicile", "personnels des services d’aide à la personne",
-         "Personnels de coordination gérontologique", "maisons départementales des personnes handicapées", "éducateur médico-sportif",
-         "éducateur médico-sportif", "associations de patients"
+        "Kinésithérapeute","Orthophoniste","Infirmier", "Psychologue clinicien","Neuropsychologue",
+        "Neurologue", "Médecin généraliste", "Psychiatre", "Neurochirurgien", "Médecin de structure antidouleur"
+        ,"Gériatre", "Médecin spécialiste en médecine physique", "Gastro-entérologue", "Urologue, gynécologue, sexologue",
+         "Ophtalmologiste", "ORL-phoniatre", "Rhumatologue", "Chirurgien orthopédique", "Pneumologue",
+         "Cardiologue", "Médecin du travail", "Chirurgien-dentiste", "Ergothérapeute", "Psychomotricien",
+         "Pédicure-podologue", "Diététicien(ne)", "Orthoptiste", "Assistant de service social", "Personnels de transport sanitaire",
+         "Personnels de soins infirmiers à domicile", "Personnels des services d’aide à domicile", "Personnels des services d’aide à la personne",
+         "Personnels de coordination gérontologique", "Maisons départementales des personnes handicapées", "Educateur médico-sportif",
+         "Educateur médico-sportif", "Associations de patients", "Contact d'urgence"
         
     ]
 }
