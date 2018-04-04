@@ -23,23 +23,13 @@ class ShowEvaluationViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let symptomeDAO: SymptomeDAO = factory.getSymptomeDAO()
         
-        do {
-            allSymptome = try symptomeDAO.getAllSymptomes()
-            for symp in allSymptome {
-                print(symp)
-                print(symp.can_be)
-                print(symp.can_be == evaluation)
-                if symp.can_be == evaluation {
-                    symptome.append(symp)
-                }
+        if let symptos = evaluation?.can_have {
+            for sympto in symptos {
+                symptome.append(sympto as! Symptome)
             }
-        } catch let error as NSError {
-            DialogBoxHelper.alert(onError: error, onView: self)
         }
-        
+
         if let aEvaluation = self.evaluation {
             
             let dateFormatter = DateFormatter()
