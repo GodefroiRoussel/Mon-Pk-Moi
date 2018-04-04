@@ -427,8 +427,27 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="sFJ-ZN-PlD"/>
                                 </items>
                             </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7d-79-9mF">
+                                <rect key="frame" x="129" y="581" width="117" height="30"/>
+                                <state key="normal" title="Ajouter une prise"/>
+                                <connections>
+                                    <segue destination="26g-hp-E6H" kind="presentation" identifier="ajouterPrise" id="d5y-pe-3jw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisir le médecin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iei-79-HX6">
+                                <rect key="frame" x="117" y="148" width="141" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisir la date de fin du traitement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wum-hL-uP2">
+                                <rect key="frame" x="55.5" y="215" width="264" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vug-mq-pMJ">
-                                <rect key="frame" x="67.5" y="294" width="240" height="279"/>
+                                <rect key="frame" x="67" y="294" width="240" height="279"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="y1j-XC-Q2W"/>
@@ -484,25 +503,6 @@
                                     <outlet property="delegate" destination="xa7-2G-8Pe" id="2r6-IA-3mq"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7d-79-9mF">
-                                <rect key="frame" x="129" y="581" width="117" height="30"/>
-                                <state key="normal" title="Ajouter une prise"/>
-                                <connections>
-                                    <segue destination="26g-hp-E6H" kind="presentation" identifier="ajouterPrise" id="d5y-pe-3jw"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisir le médecin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iei-79-HX6">
-                                <rect key="frame" x="117" y="148" width="141" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choisir la date de fin du traitement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wum-hL-uP2">
-                                <rect key="frame" x="55.5" y="215" width="264" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1624,9 +1624,6 @@
                                             <constraint firstAttribute="width" constant="120" id="s4E-Gb-im0"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="logo.png"/>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" id="JsC-gR-F1o"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Flz-Ce-NpQ">
                                         <rect key="frame" x="290" y="23" width="50" height="50"/>
@@ -1635,9 +1632,6 @@
                                             <constraint firstAttribute="width" constant="50" id="X50-43-cua"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="user.png"/>
-                                        <connections>
-                                            <segue destination="cog-UE-aAu" kind="presentation" id="K4C-6u-N2d"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon profil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ez-EV-ISe">
                                         <rect key="frame" x="277" y="81" width="77" height="21"/>
@@ -2446,14 +2440,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kri-ks-v4a">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="IXB-Oa-w32"/>
-                                    <barButtonItem title="Modifier" id="Gep-6Y-W2n"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="FPV-tb-jYo"/>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -2463,9 +2449,7 @@
                             <constraint firstItem="CzH-3K-8ab" firstAttribute="centerX" secondItem="J7d-pn-wWh" secondAttribute="centerX" id="72W-wV-cPt"/>
                             <constraint firstItem="yWV-UX-GM1" firstAttribute="top" secondItem="YCa-wM-3Ze" secondAttribute="bottom" constant="25" id="9eb-MY-dxJ"/>
                             <constraint firstItem="Oeh-0i-HMu" firstAttribute="top" secondItem="CzH-3K-8ab" secondAttribute="bottom" constant="15" id="FS6-hf-47y"/>
-                            <constraint firstItem="aYU-uN-Muj" firstAttribute="top" secondItem="Kri-ks-v4a" secondAttribute="bottom" id="Ffy-be-tIe"/>
                             <constraint firstItem="Vw8-Dl-SyB" firstAttribute="leading" secondItem="J7d-pn-wWh" secondAttribute="leading" constant="40" id="Fv1-x9-WSI"/>
-                            <constraint firstItem="Kri-ks-v4a" firstAttribute="leading" secondItem="J7d-pn-wWh" secondAttribute="leading" id="HxI-8W-qL4"/>
                             <constraint firstItem="Oeh-0i-HMu" firstAttribute="centerX" secondItem="J7d-pn-wWh" secondAttribute="centerX" id="I0r-6o-NLX"/>
                             <constraint firstItem="mmE-ae-jKL" firstAttribute="leading" secondItem="J7d-pn-wWh" secondAttribute="leading" constant="40" id="MKr-NM-xcG"/>
                             <constraint firstItem="7L3-gC-ZIs" firstAttribute="top" secondItem="oBP-D6-qcJ" secondAttribute="bottom" constant="8" id="OiU-Ug-XoM"/>
@@ -2479,7 +2463,6 @@
                             <constraint firstItem="3Hi-Hh-MBi" firstAttribute="centerX" secondItem="J7d-pn-wWh" secondAttribute="centerX" id="mQQ-fl-2qa"/>
                             <constraint firstItem="oBP-D6-qcJ" firstAttribute="top" secondItem="3Hi-Hh-MBi" secondAttribute="bottom" constant="15" id="md0-gk-ouR"/>
                             <constraint firstAttribute="trailing" secondItem="YCa-wM-3Ze" secondAttribute="trailing" id="sVc-4s-7Kc"/>
-                            <constraint firstAttribute="trailing" secondItem="Kri-ks-v4a" secondAttribute="trailing" id="vnz-7B-qAN"/>
                             <constraint firstItem="cgQ-bS-cAc" firstAttribute="top" secondItem="rNr-u0-Qcn" secondAttribute="bottom" constant="20" id="wlZ-ac-7Je"/>
                             <constraint firstItem="YCa-wM-3Ze" firstAttribute="top" secondItem="kf7-wh-Off" secondAttribute="bottom" id="xSt-m6-rc7"/>
                             <constraint firstItem="7L3-gC-ZIs" firstAttribute="centerX" secondItem="J7d-pn-wWh" secondAttribute="centerX" id="zF5-rj-Prd"/>
@@ -2575,10 +2558,7 @@
                                 <rect key="frame" x="87.5" y="281" width="200" height="30"/>
                                 <state key="normal" title="Voir les tableaux de synthèse"/>
                                 <connections>
-                                    <segue destination="OGo-Wf-cij" kind="show" action="showDetailViewController:sender:" id="cey-Z7-Lrf">
-                                        <segue key="commit" inheritsFrom="parent" id="00U-5Y-tho"/>
-                                        <segue key="preview" inheritsFrom="commit" id="liF-ZX-JRo"/>
-                                    </segue>
+                                    <segue destination="OGo-Wf-cij" kind="show" id="Zhi-Pc-jRz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNT-iy-NdE">
@@ -2639,10 +2619,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="logo.png"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="J6E-Ti-95r">
-                                                <segue key="commit" inheritsFrom="parent" id="Efg-qp-YKg"/>
-                                                <segue key="preview" inheritsFrom="commit" id="Llh-eZ-wla"/>
-                                            </segue>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="J6E-Ti-95r"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3x-zQ-oeL">
@@ -2653,10 +2630,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="user.png"/>
                                         <connections>
-                                            <segue destination="cog-UE-aAu" kind="show" id="63B-Ek-vpv">
-                                                <segue key="commit" inheritsFrom="parent" id="wSa-Sa-mnf"/>
-                                                <segue key="preview" inheritsFrom="commit" id="re7-gl-bD1"/>
-                                            </segue>
+                                            <segue destination="cog-UE-aAu" kind="show" id="63B-Ek-vpv"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon profil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUU-9l-HL6">
@@ -2780,7 +2754,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="user.png"/>
                                         <connections>
-                                            <segue destination="cog-UE-aAu" kind="presentation" id="hUg-lN-TUu"/>
+                                            <segue destination="cog-UE-aAu" kind="show" id="FX4-cW-eYK"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon profil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfl-Ee-XvA">
@@ -3229,9 +3203,6 @@
                                             <constraint firstAttribute="height" constant="120" id="qnT-s4-rdE"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="logo.png"/>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" id="EKe-9N-e2u"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWL-0w-ODl">
                                         <rect key="frame" x="290" y="23" width="50" height="50"/>
@@ -3240,9 +3211,6 @@
                                             <constraint firstAttribute="width" constant="50" id="rpv-3s-GDJ"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="user.png"/>
-                                        <connections>
-                                            <segue destination="cog-UE-aAu" kind="presentation" id="da1-Zu-eWq"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon profil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgr-h5-pf6">
                                         <rect key="frame" x="277" y="81" width="77" height="21"/>
@@ -3465,9 +3433,6 @@
                                             <constraint firstAttribute="width" constant="120" id="OHJ-Xd-M7Z"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="logo.png"/>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" id="kaq-ma-1aX"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ijq-e6-w8z">
                                         <rect key="frame" x="290" y="23" width="50" height="50"/>
@@ -3476,9 +3441,6 @@
                                             <constraint firstAttribute="width" constant="50" id="7Wh-ss-ZCK"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="user.png"/>
-                                        <connections>
-                                            <segue destination="cog-UE-aAu" kind="presentation" id="80w-Tn-Hzk"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon profil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5q-Z3-Y7h">
                                         <rect key="frame" x="277" y="81" width="77" height="21"/>
@@ -3564,9 +3526,6 @@
                                             <constraint firstAttribute="height" constant="120" id="KCa-tl-PX9"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="logo.png"/>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" id="knJ-Bo-NrP"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NuO-h7-3s7">
                                         <rect key="frame" x="290" y="23" width="50" height="50"/>
@@ -3575,9 +3534,6 @@
                                             <constraint firstAttribute="height" constant="50" id="Rz9-pP-WnN"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="user.png"/>
-                                        <connections>
-                                            <segue destination="cog-UE-aAu" kind="presentation" id="XRf-3J-a3F"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon profil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6N-l7-oYu">
                                         <rect key="frame" x="277" y="81" width="77" height="21"/>
@@ -3664,9 +3620,6 @@
                                             <constraint firstAttribute="width" constant="120" id="tcw-1Q-25U"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="logo.png"/>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" id="voT-fs-9os"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x01-tN-aQ2">
                                         <rect key="frame" x="290" y="23" width="50" height="50"/>
@@ -3675,9 +3628,6 @@
                                             <constraint firstAttribute="width" constant="50" id="rbe-Eq-ySH"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="user.png"/>
-                                        <connections>
-                                            <segue destination="cog-UE-aAu" kind="presentation" id="Meu-Dd-qc6"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon profil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8d-50-TL5">
                                         <rect key="frame" x="277" y="81" width="77" height="21"/>
@@ -3762,12 +3712,11 @@
         <image name="user.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Pn0-xC-y9k"/>
-        <segue reference="U3a-n5-doJ"/>
         <segue reference="6T3-ss-Ey5"/>
-        <segue reference="cey-Z7-Lrf"/>
-        <segue reference="PeD-k7-VyH"/>
-        <segue reference="lkY-Vq-5Ct"/>
+        <segue reference="U3a-n5-doJ"/>
         <segue reference="yR1-uu-Jgj"/>
+        <segue reference="Pn0-xC-y9k"/>
+        <segue reference="lkY-Vq-5Ct"/>
+        <segue reference="PeD-k7-VyH"/>
     </inferredMetricsTieBreakers>
 </document>
