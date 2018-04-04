@@ -28,6 +28,11 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
         do {
             medicaments = try medicamentDAO.getAllMedicaments()
             medicaments.sort(by: { (medicament1, medicament2) -> Bool in medicament1.nom < medicament2.nom } )
+            
+            //Initialisation
+            selectedMedicament = medicaments[0]
+            selectedDose = medicaments[0].doses[0]
+            
             self.medicamentPickerView.dataSource = self
             self.medicamentPickerView.delegate = self
             
@@ -71,6 +76,7 @@ class AjouterPriseViewController: UIViewController, UIPickerViewDelegate, UIPick
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == medicamentPickerView {
             selectedMedicament = medicaments[row]
+            selectedDose = medicaments[row].doses[0]
             dosePickerView.reloadAllComponents()
         } else if pickerView == dosePickerView {
             let selection = medicamentPickerView.selectedRow(inComponent: 0)
