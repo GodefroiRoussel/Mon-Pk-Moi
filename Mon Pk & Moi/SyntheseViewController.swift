@@ -190,13 +190,18 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.plageLabel.text = heure
         cell.etatLabel.text = self.evaluations[indexPath.row].etat
         //TODO : rajouter les symptomes
-        cell.symptomesLabel.text = "Test"
+        if ((evaluations[indexPath.row].can_have?.count)! >= 1) {
+            cell.symptomesLabel.text = "Oui"
+        } else {
+            cell.symptomesLabel.text = "Non"
+        }
         return cell
      }
     }
     
     let segueShowAvisId = "showAvisId"
-        let segueShowActiviteId = "ShowActiviteId"
+    let segueShowActiviteId = "ShowActiviteId"
+    let segueShowEvaluationId = "ShowEvaluationId"
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == self.segueShowAvisId {
@@ -211,6 +216,14 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let showActiviteViewController = segue.destination as! ShowActiviteViewController
                 showActiviteViewController.activite = self.activites[indexPath.row]
+                self.tableView.deselectRow(at: indexPath, animated: true)
+            }
+        }
+        
+        if segue.identifier == self.segueShowEvaluationId {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let showEvaluationViewController = segue.destination as! ShowEvaluationViewController
+                showEvaluationViewController.evaluation = self.evaluations[indexPath.row]
                 self.tableView.deselectRow(at: indexPath, animated: true)
             }
         }

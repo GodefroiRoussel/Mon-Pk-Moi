@@ -62,6 +62,8 @@
 		2BF5935E2073CE2A00E227D7 /* TypeContactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF593512073CE2A00E227D7 /* TypeContactExtension.swift */; };
 		7A2C29FF205429CA000EC45C /* AjouterPriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2C29FE205429CA000EC45C /* AjouterPriseViewController.swift */; };
 		7A46B0EC20743DF600A3EDE7 /* ShowActiviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A46B0EB20743DF600A3EDE7 /* ShowActiviteViewController.swift */; };
+		7A46B0EE20746C7200A3EDE7 /* ShowEvaluationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A46B0ED20746C7200A3EDE7 /* ShowEvaluationViewController.swift */; };
+		7A46B0F020746DD500A3EDE7 /* SymptomesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A46B0EF20746DD500A3EDE7 /* SymptomesTableViewCell.swift */; };
 		7A4A735E2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4A735D2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift */; };
 		7A4D13B72062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D13B62062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift */; };
 		7A4D13B920630AF4005E8D6D /* fleche.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4D13B820630AF4005E8D6D /* fleche.png */; };
@@ -184,6 +186,8 @@
 		2BF593512073CE2A00E227D7 /* TypeContactExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeContactExtension.swift; sourceTree = "<group>"; };
 		7A2C29FE205429CA000EC45C /* AjouterPriseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AjouterPriseViewController.swift; path = ../AjouterPriseViewController.swift; sourceTree = "<group>"; };
 		7A46B0EB20743DF600A3EDE7 /* ShowActiviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowActiviteViewController.swift; sourceTree = "<group>"; };
+		7A46B0ED20746C7200A3EDE7 /* ShowEvaluationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowEvaluationViewController.swift; sourceTree = "<group>"; };
+		7A46B0EF20746DD500A3EDE7 /* SymptomesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomesTableViewCell.swift; sourceTree = "<group>"; };
 		7A4A735D2069BBC0002D1958 /* PriseOrdonnanceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriseOrdonnanceTableViewCell.swift; sourceTree = "<group>"; };
 		7A4D13B62062FAAC005E8D6D /* AjouterOrdonnanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjouterOrdonnanceViewController.swift; sourceTree = "<group>"; };
 		7A4D13B820630AF4005E8D6D /* fleche.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fleche.png; sourceTree = "<group>"; };
@@ -518,6 +522,8 @@
 				BCCDB41E207154E800DB87AA /* PriseTableViewCell.swift */,
 				BCCDB420207154F200DB87AA /* AvisTableViewCell.swift */,
 				7A46B0EB20743DF600A3EDE7 /* ShowActiviteViewController.swift */,
+				7A46B0ED20746C7200A3EDE7 /* ShowEvaluationViewController.swift */,
+				7A46B0EF20746DD500A3EDE7 /* SymptomesTableViewCell.swift */,
 			);
 			name = Synthese;
 			sourceTree = "<group>";
@@ -677,6 +683,7 @@
 				2B9369862073E53500E74F60 /* MedicamentViewController.swift in Sources */,
 				7B83BB8320739F0E0064632E /* SyntheseViewController.swift in Sources */,
 				2BEDF7A5206A44D00099FCD2 /* ContactCoreDataDAO.swift in Sources */,
+				7A46B0EE20746C7200A3EDE7 /* ShowEvaluationViewController.swift in Sources */,
 				2BEDF792206A44170099FCD2 /* PatientDAO.swift in Sources */,
 				7ADE30A92072F38F00C3EA45 /* ShowPriseViewController.swift in Sources */,
 				2BF5935A2073CE2A00E227D7 /* RDVExtension.swift in Sources */,
@@ -741,6 +748,7 @@
 				2BEDF784206A43970099FCD2 /* ActiviteDAO.swift in Sources */,
 				2BF593582073CE2A00E227D7 /* PatientExtension.swift in Sources */,
 				7B83BB872073B0F40064632E /* ShowAvisViewController.swift in Sources */,
+				7A46B0F020746DD500A3EDE7 /* SymptomesTableViewCell.swift in Sources */,
 				2BEDF7A1206A44A10099FCD2 /* MedicamentCoreDataDAO.swift in Sources */,
 				2BEDF770206A42DA0099FCD2 /* AbstractDAOFactory.swift in Sources */,
 				BCE76A18207040F2002580DF /* SymptomeTableViewCell.swift in Sources */,
