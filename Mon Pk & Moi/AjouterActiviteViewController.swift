@@ -137,10 +137,14 @@ class AjouterActiviteViewController: UIViewController {
             let patient: Patient = try patientDAO.getAllPatients()[0] // TODO: Changer cette solution temporaire en faisant passer le patient dans une variable globale
             
             let interv: TimeInterval = pickerTime.date.timeIntervalSinceNow
-            print(interv)
-            let dateFin = Date(timeInterval: interv, since: pickerDate.date)
             
-            var dates = DateHelper.getDates(dateD: pickerTime.date as NSDate, dateF: dateFin as NSDate)
+            let dateDEBUT: NSDate = pickerTime.date as NSDate
+            let dateFIN: NSDate = pickerDate.date as NSDate
+            
+            var dates = DateHelper.getDates(dateD: dateDEBUT, dateF: dateFIN)
+            for date in dates {
+                print(date)
+            }
             var index: Int = 1
             var index1: Int = 2
             for dat in dates {

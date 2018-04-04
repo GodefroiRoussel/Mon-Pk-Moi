@@ -18,6 +18,7 @@ class DateHelper{
         var dayCount = 0
         while true {
             days.day = dayCount
+            days.hour = 0
             let date:NSDate = cal.date(byAdding : days as DateComponents, to: dateD as Date)! as NSDate
             if date.compare(dateF as Date) == .orderedDescending {
                 break

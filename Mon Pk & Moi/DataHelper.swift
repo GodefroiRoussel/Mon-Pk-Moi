@@ -31,6 +31,7 @@ public class DataHelper {
             try deleteSymptomes()
             try deleteEvaluations()
             try deleteTypeAvis()
+            try deleteActivites()
         } catch {
             
         }
@@ -248,6 +249,22 @@ public class DataHelper {
             for typeavis in typeAvis {
                 CoreDataManager.context.delete(typeavis)
                 print("Type avis Supprimé")
+            }
+            CoreDataManager.save()
+        } catch let error as NSError{
+            throw error
+        }
+    }
+    
+    // MARK: - Activite functions 
+    
+    fileprivate static func deleteActivites() throws{
+        let activiteDAO = CoreDataDAOFactory.getInstance().getActiviteDAO()
+        do {
+            let activites : [Activite] = try activiteDAO.getAllActivites()
+            for activite in activites {
+                CoreDataManager.context.delete(activite)
+                print("Activité Supprimée")
             }
             CoreDataManager.save()
         } catch let error as NSError{
