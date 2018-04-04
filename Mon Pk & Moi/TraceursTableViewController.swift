@@ -52,10 +52,10 @@ class TraceursTableViewController: UIViewController, UITableViewDataSource, UITa
             if DateHelper.checkInterval(dateRDV: dateTheorique, interval: 5) {
                 cell.etatLabel.text = "En cours"
             } else {
-                cell.etatLabel.text = "Fini"
+                cell.etatLabel.text = "En attente"
             }
         } else {
-            cell.etatLabel.text = "En attente"
+            cell.etatLabel.text = "Fini"
         }
 
         return cell
