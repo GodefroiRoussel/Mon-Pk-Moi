@@ -167,7 +167,7 @@ class SyntheseViewController: UIViewController, UITableViewDataSource, UITableVi
      case 2:
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "avisCell", for: indexPath)
             as! AvisTableViewCell
-        print(self.avis[indexPath.row])
+        print(self.avi[indexPath.row])
         cell.questionLabel.text = self.avi[indexPath.row].is_a!.libelle
         return cell
      case 3:

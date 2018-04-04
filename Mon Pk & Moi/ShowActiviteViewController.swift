@@ -23,13 +23,13 @@ class ShowActiviteViewController: UIViewController {
         
         //Affecte les différents labels aux valeurs de l'activité
         if let aActivite = self.activite {
-            
             let dateFormatter : DateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
             let heure = dateFormatter.string(from: aActivite.dateTheorique as Date)
             self.dateLabel.text = heure
             self.nomActiviteLabel.text = aActivite.nom
             self.descriptionLabel.text = aActivite.pdesc
+            print(aActivite)
         }
 
         // Do any additional setup after loading the view.

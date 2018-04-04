@@ -57,7 +57,6 @@ class TraceursTableViewController: UIViewController, UITableViewDataSource, UITa
         } else {
             cell.etatLabel.text = "Fini"
         }
-
         return cell
     }
     
