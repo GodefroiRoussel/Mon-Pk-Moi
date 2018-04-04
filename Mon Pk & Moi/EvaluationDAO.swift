@@ -48,6 +48,15 @@ protocol EvaluationDAO {
     func update(anEvaluation evaluation: Evaluation) -> Evaluation
     
     
+    /// Function adding a symptome
+    ///
+    /// - Parameters:
+    ///   - evaluation: <#evaluation description#>
+    ///   - symptome: <#symptome description#>
+    /// - Returns: <#return value description#>
+    func addSymptome(toAnEvaluation evaluation: Evaluation, symptomes symptome: Symptome) -> Evaluation
+    
+    
     // MARK: - Delete function
     
     /// Function deleting an 'Evaluation'

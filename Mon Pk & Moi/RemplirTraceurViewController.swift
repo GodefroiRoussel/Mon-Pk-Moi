@@ -173,7 +173,7 @@ class RemplirTraceurViewController: UIViewController, UITableViewDelegate, UITab
             let evaluation: Evaluation = try evaluationDAO.create(withEtat: etatChoisi!, withHeureDebut: dateEtHeureDebut, withHeureFin: dateEtHeureFin, is_linked: traceur!)
             
             for symptome in symptomes {
-                evaluation.addToCan_have(symptome)
+                let _ = evaluationDAO.addSymptome(toAnEvaluation: evaluation, symptomes: symptome)
             }
         } catch let error as NSError {
             DialogBoxHelper.alert(onError: error, onView: self)

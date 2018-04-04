@@ -57,6 +57,11 @@ class EvaluationCoreDataDAO: EvaluationDAO {
         return evaluation
     }
     
+    func addSymptome(toAnEvaluation evaluation: Evaluation, symptomes symptome: Symptome) -> Evaluation {
+        evaluation.addToCan_have(symptome)
+        return update(anEvaluation: evaluation)
+    }
+    
     
     // MARK: - Delete function
     

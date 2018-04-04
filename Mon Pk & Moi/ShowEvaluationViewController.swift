@@ -29,6 +29,9 @@ class ShowEvaluationViewController: UIViewController, UITableViewDelegate, UITab
         do {
             allSymptome = try symptomeDAO.getAllSymptomes()
             for symp in allSymptome {
+                print(symp)
+                print(symp.can_be)
+                print(symp.can_be == evaluation)
                 if symp.can_be == evaluation {
                     symptome.append(symp)
                 }
