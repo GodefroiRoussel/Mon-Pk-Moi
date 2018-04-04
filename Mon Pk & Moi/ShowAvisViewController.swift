@@ -21,6 +21,7 @@ class ShowAvisViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //affiche les différentes données de l'avis
         if let aAvis = self .avis {
             self.nomAvisLabel.text = aAvis.is_a?.libelle
             if aAvis.choix == false {
@@ -39,6 +40,7 @@ class ShowAvisViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //fonction qui permet d'actionner le switch
     @IBAction func `switch`(_ sender: UISwitch) {
         if (sender.isOn == true) {
             self.avis?.choix = true
@@ -47,6 +49,7 @@ class ShowAvisViewController: UIViewController {
         }
     }
     
+    //fonction qui permet de modifier un avis
     @IBAction func modifier(_ sender: Any) {
 
         self.avis?.commentaire = commentaireField.text
@@ -62,6 +65,7 @@ class ShowAvisViewController: UIViewController {
         self.performSegue(withIdentifier: "synthese", sender: self)
     }
     
+    //fonction qui fait le lien avec la tableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
 

@@ -21,6 +21,7 @@ class ShowActiviteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Affecte les différents labels aux valeurs de l'activité
         if let aActivite = self.activite {
             
             let dateFormatter : DateFormatter = DateFormatter()
