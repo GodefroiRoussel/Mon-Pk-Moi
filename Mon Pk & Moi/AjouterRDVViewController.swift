@@ -159,20 +159,23 @@ class AjouterRDVViewController: UIViewController, UIPickerViewDataSource, UIPick
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
             dateFormatter.locale = Locale(identifier: "FR-fr")
-            let test = dateFormatter.date(from: date!)
-            let test2 = Date(timeInterval: -432000, since: test!)
-            let test3 = Date(timeInterval: 432000, since: test2)
+            let dateRDV = dateFormatter.date(from: date!)
             
+            dateFormatter.dateFormat = "HH:mm"
             let typeAvis: [TypeAvis] = try typeAvisDAO.getAllTypeAvis()
             
+            let heureDebutTraceur: NSDate = DateHelper.changeHour(date: dateRDV! as NSDate, heureMin: dateFormatter.date(from: UserDefaults.standard.string(forKey: "hourStartTraceur")! )! as NSDate )
+            
+            let heureFinTraceur: NSDate = DateHelper.changeHour(date: dateRDV! as NSDate, heureMin: dateFormatter.date(from: UserDefaults.standard.string(forKey: "hourEndTraceur")! )! as NSDate )
+            
             if selectedMedecin?.is_a?.libelle == "Neurologue" {
-                traceur = try traceurDAO.create(withHeureDebut: test2 as NSDate, withHeureFin: test3 as NSDate)
+                traceur = try traceurDAO.create(withHeureDebut: heureDebutTraceur, withHeureFin: heureFinTraceur)
                 for typeavis in typeAvis {
                     avis = try avisDAO.create(withChoix: false, withCommentaire: nil, belongs_to: traceur!, is_a: typeavis)
                 }
-                rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: test3 as NSDate, withLieu: selectedMedecin?.adresse!, withTempsPourAllerALEvenement: Int16(tempsField.text!)!, withDuree: Int16(dureeField.text!)!, schedule_by: patient, has: traceur!, is_with: selectedMedecin!)
+                rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: dateRDV! as NSDate, withLieu: selectedMedecin?.adresse!, withTempsPourAllerALEvenement: Int16(tempsField.text!)!, withDuree: Int16(dureeField.text!)!, schedule_by: patient, has: traceur!, is_with: selectedMedecin!)
             } else {
-                rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: test3 as NSDate, withLieu: selectedMedecin?.adresse!, withTempsPourAllerALEvenement: Int16(tempsField.text!)!, withDuree: Int16(dureeField.text!)!, schedule_by: patient, is_with: selectedMedecin!)
+                rdv = try rdvDAO.create(withName: nomField.text!, withDateTheorique: dateRDV! as NSDate, withLieu: selectedMedecin?.adresse!, withTempsPourAllerALEvenement: Int16(tempsField.text!)!, withDuree: Int16(dureeField.text!)!, schedule_by: patient, is_with: selectedMedecin!)
             }
             
             // MARK: - Creation Notifications

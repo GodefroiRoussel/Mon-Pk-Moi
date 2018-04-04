@@ -103,7 +103,11 @@ class InscriptionViewController: UIViewController {
         
         do{
             let _ = try CoreDataDAOFactory.getInstance().getPatientDAO().create(withName: lastName, withPrenom: firstName, withDateNaissance: datePicker.date as NSDate, withAdresse: adress, withTempsPreparation: Int16(tempsPrepa))
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
             UserDefaults.standard.set(true, forKey: "wasLaunched")
+            UserDefaults.standard.set("08:00", forKey: "hourStartTraceur")
+            UserDefaults.standard.set("22:00", forKey: "hourEndTraceur")
             let storyboard = UIStoryboard.init(name: "Main",bundle: nil)
             let view = storyboard.instantiateViewController(withIdentifier: "NavController") as! UINavigationController
             self.present(view, animated: true, completion: nil)

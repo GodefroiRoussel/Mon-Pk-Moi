@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool {
         // If it's the first launch of the application, we create the data in the database
-        UserDefaults.standard.set(false, forKey: "wasLaunched")
+        //UserDefaults.standard.set(false, forKey: "wasLaunched")
         if(!UserDefaults.standard.bool(forKey: "wasLaunched")){
             DataHelper.deleteSeeder()
             DataHelper.seedDataStore()
