@@ -99,6 +99,7 @@
 		BC348F12206F6AD100686D9E /* newPlageHoraireController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC348F11206F6AD100686D9E /* newPlageHoraireController.swift */; };
 		BCAE09BB206EF49E0066F9C1 /* RemplirTraceurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE09BA206EF49E0066F9C1 /* RemplirTraceurViewController.swift */; };
 		BCB1C5FD2074402B000565D6 /* TraceurSyntheseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB1C5FC2074402B000565D6 /* TraceurSyntheseViewController.swift */; };
+		BCB1C5FF20747CD4000565D6 /* ParametrerTraceurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB1C5FE20747CD4000565D6 /* ParametrerTraceurViewController.swift */; };
 		BCC265FA206F8A2E008093C4 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC265F9206F8A2E008093C4 /* NSDateExtension.swift */; };
 		BCCDB417207123AF00DB87AA /* TraceurTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCDB416207123AF00DB87AA /* TraceurTableViewCell.swift */; };
 		BCCDB41B207154CB00DB87AA /* EvaluationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCDB41A207154CB00DB87AA /* EvaluationTableViewCell.swift */; };
@@ -229,6 +230,7 @@
 		BC348F11206F6AD100686D9E /* newPlageHoraireController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newPlageHoraireController.swift; sourceTree = "<group>"; };
 		BCAE09BA206EF49E0066F9C1 /* RemplirTraceurViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemplirTraceurViewController.swift; sourceTree = "<group>"; };
 		BCB1C5FC2074402B000565D6 /* TraceurSyntheseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceurSyntheseViewController.swift; sourceTree = "<group>"; };
+		BCB1C5FE20747CD4000565D6 /* ParametrerTraceurViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametrerTraceurViewController.swift; sourceTree = "<group>"; };
 		BCC265F9206F8A2E008093C4 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		BCCDB416207123AF00DB87AA /* TraceurTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceurTableViewCell.swift; sourceTree = "<group>"; };
 		BCCDB41A207154CB00DB87AA /* EvaluationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluationTableViewCell.swift; sourceTree = "<group>"; };
@@ -469,6 +471,7 @@
 				BCE76A1120702A07002580DF /* newEtatViewController.swift */,
 				BCE76A1320703303002580DF /* NewSymptomeViewController.swift */,
 				BCE76A17207040F2002580DF /* SymptomeTableViewCell.swift */,
+				BCB1C5FE20747CD4000565D6 /* ParametrerTraceurViewController.swift */,
 			);
 			name = RemplirTraceur;
 			sourceTree = "<group>";
@@ -686,6 +689,7 @@
 				7A46B0EE20746C7200A3EDE7 /* ShowEvaluationViewController.swift in Sources */,
 				2BEDF792206A44170099FCD2 /* PatientDAO.swift in Sources */,
 				7ADE30A92072F38F00C3EA45 /* ShowPriseViewController.swift in Sources */,
+				BCB1C5FF20747CD4000565D6 /* ParametrerTraceurViewController.swift in Sources */,
 				2BF5935A2073CE2A00E227D7 /* RDVExtension.swift in Sources */,
 				2BEDF796206A44370099FCD2 /* RDVDAO.swift in Sources */,
 				7BFCDC70206B8D9F00A3A7CC /* AgendaViewController.swift in Sources */,
